@@ -1,0 +1,58 @@
+<!--
+	This is only used once to set the main tracking in LAYOUTS/theme.liquid
+-->
+<!-- MIXPANEL  ⬇ -->
+<script type="text/javascript">(function(e,b){if(!b.__SV){var a,f,i,g;window.mixpanel=b;b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable time_event track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.set_once people.increment people.append people.union people.track_charge people.clear_charges people.delete_user".split(" ");
+	for(g=0;g<i.length;g++)f(c,i[g]);b._i.push([a,e,d])};b.__SV=1.2;a=e.createElement("script");a.type="text/javascript";a.async=!0;a.src="undefined"!==typeof MIXPANEL_CUSTOM_LIB_URL?MIXPANEL_CUSTOM_LIB_URL:"file:"===e.location.protocol&&"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//)?"https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js":"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";f=e.getElementsByTagName("script")[0];f.parentNode.insertBefore(a,f)}})(document,window.mixpanel||[]); 
+	mixpanel.init("2c57a6bc8da1e23548fd2c3b8dda6e2d", { //9de67913ff56693e76306919cc0fe64e //2c57a6bc8da1e23548fd2c3b8dda6e2d
+		loaded: function() {
+			//
+			//
+			//-- 1) - get all possible URL variables
+			function getUrlVars() {var vars = {};var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {vars[key] = value;}); return vars;}
+			var checkout             = getUrlVars()["checkout"];		//-- only used to close funnel and open condition to set user
+			var customer_first_name  = getUrlVars()["first_name"];		//-- data from checkout page to create a user
+			var customer_last_name   = getUrlVars()["last_name"];
+			var customer_email       = getUrlVars()["email"];
+			var customer_order_count = getUrlVars()["order_count"];
+			var customer_total_spent = getUrlVars()["total_spent"];
+			//
+			//
+			//-- 2) capute and store UTM data for user
+			function getQueryParam(url, param) {param = param.replace(/[[]/, "\[").replace(/[]]/, "\]");var regexS = "[\?&]" + param + "=([^&#]*)", regex = new RegExp( regexS ), results = regex.exec(url);if (results === null || (results && typeof(results[1]) !== 'string' && results[1].length)) { return ''; } else { return decodeURIComponent(results[1]).replace(/\W/gi, ' '); }};function campaignParams() {var campaign_keywords = 'utm_source utm_medium utm_campaign utm_content utm_term'.split(' ') , kw = '' , params = {} , first_params = {};var index;for (index = 0; index < campaign_keywords.length; ++index) { kw = getQueryParam(document.URL, campaign_keywords[index]); if (kw.length) { params[campaign_keywords[index] + ' [last touch]'] = kw; }}for (index = 0; index < campaign_keywords.length; ++index) { kw = getQueryParam(document.URL, campaign_keywords[index]); if (kw.length) { first_params[campaign_keywords[index] + ' [first touch]'] = kw;}}mixpanel.people.set(params);mixpanel.people.set_once(first_params);mixpanel.register(params);}campaignParams();
+			//
+			//
+			//-- 3) complete sales funnels
+			if(checkout == "true"){
+				//-- close the funnel first
+				mixpanel.track("PAGE", { "URL"  : "shop.jewelbots.com/checkout" });
+				mixpanel.register_once({ "EMAIL": customer_email }); //-- makes it easier to see inside mixpanel
+				//-- was this a returning customer?
+				if(customer_order_count > 1){
+					mixpanel.identify(customer_email);
+					mixpanel.people.set({
+						"$first_name": customer_first_name,
+						"$last_name": customer_last_name,
+						"$email": customer_email,
+						"$orders": customer_order_count,
+						"$total_spent": customer_total_spent
+					});
+				} else {
+					// YES
+					mixpanel.alias(customer_email);
+					mixpanel.identify();
+					mixpanel.people.set({
+						"$first_name": customer_first_name,
+						"$last_name": customer_last_name,
+						"$email": customer_email,
+						"$orders": customer_order_count,
+						"$total_spent": customer_total_spent
+					});
+				}
+			} else {
+				mixpanel.track("PAGE",     {"URL": "shop.jewelbots.com"+window.location.pathname });
+			}
+	    }
+	});
+</script>
+<!-- MIXPANEL  ⬆ -->

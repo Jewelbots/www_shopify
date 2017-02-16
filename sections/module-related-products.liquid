@@ -1,0 +1,92 @@
+{% if section.settings.enable %}
+  {% if collection == null or collection.handle == 'frontpage' or collection.handle == 'all' %}
+    {% assign found_a_collection = false %}
+    {% for c in product.collections %}
+      {% if found_a_collection == false and c.handle != 'frontpage' and c.handle != 'all' %}
+        {% assign found_a_collection = true %}
+        {% assign collection = c %}
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+
+  {% if collection.products.size > 1 %}
+    <div class="module-wrapper style-{{ section.settings.style }}">
+      <div class="module related-products">
+        <div class="module-header related-products-header">
+          <h3 class="module-title related-products-title">
+            {{ 'products.related_products.header' | t }}
+          </h3>
+        </div>
+        <div class="module-body related-products-body">
+          <div class="list compact crop image-contain column-3">
+            {% assign current_product_found = false %}
+            {% assign count = 0 %}
+            {% for prod in collection.products %}
+              {% include 'bold-product' with prod, hide_action: 'skip' %}
+              {% if count < 3 and prod.title != product.title %}
+                {% include 'product-list-item', excludeCover: true %}
+                {% assign clear = settings.related-products-column %}
+                {% assign group = 'related' %}
+                {% include 'clear' %}
+                {% assign count = count | plus: 1 %}
+              {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+{% endif %}
+{% schema %}
+{
+  "name": "Related products",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "enable",
+      "label": "Enable",
+      "default": false
+    },
+    {
+      "type": "select",
+      "id": "style",
+      "label": "Background style",
+      "options": [
+        {
+          "value": "default",
+          "label": "Default"
+        },
+        {
+          "value": "light",
+          "label": "Light"
+        },
+        {
+          "value": "color",
+          "label": "Color"
+        },
+        {
+          "value": "gradient",
+          "label": "Gradient"
+        }
+      ],
+      "default": "light"
+    },
+    {
+      "type": "header",
+      "content": "Stock level indicator"
+    },
+    {
+      "type": "checkbox",
+      "id": "stock_overlay_show",
+      "label": "Show indicator",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "stock_overlay_threshold",
+      "label": "Display when stock is lower than:",
+      "default": "5"
+    }
+  ]
+}
+{% endschema %}

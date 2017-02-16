@@ -1,0 +1,68 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie10 lt-ie9 lt-ie8 lt-ie7" lang="en"><![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie10 lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie10 lt-ie9" lang="en"><![endif]-->
+<!--[if IE 9 ]><html class="ie9 lt-ie10 no-js" lang="en"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><html class="no-js" lang="en"><![endif]-->
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+  {% assign tab_index = 0 %}
+
+  {% if template == 'index' %}
+    <title>{{ shop.name }} | {{ page_title }}</title>
+  {% elsif template == '404' %}
+    <title>{{ "general.404.title" | t }} | {{ shop.name }}</title>
+  {% else %}
+    <title>{{ page_title }} | {{ shop.name }}</title>
+  {% endif %}
+
+  {% if page_description %}
+    <meta name="description" content="{{ page_description | escape }}" />
+  {% endif %}
+
+  {% include 'favicon' %}
+
+  <link rel="canonical" href="{{ canonical_url }}" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  {{ content_for_header }}
+
+  {% include 'social-meta' %}
+
+  {% include 'scripts-styles-header' %}
+
+	<!-- TYPEKIT: used for adding Museo Font ⬇ -->
+	<script src="//use.typekit.net/rbz5qur.js"></script>
+	<script>try{Typekit.load();}catch(e){}</script>
+	<!-- TYPEKIT  ⬆ -->
+</head>
+
+{% include 'additional-classes' %}
+<body class="{{ bodyClasses }}">
+
+  {% section 'general-header' %}
+
+  <main class="main-content">
+
+    {% unless template contains 'index' or fullBleed %}
+      {% unless template contains 'slideshow' and settings.product-slideshow-layout == 'full-width' %}
+        <!--{% include 'breadcrumbs' %}-->
+      {% endunless %}
+    {% endunless %}
+
+    {{ content_for_layout }}
+  </main>
+
+  {% section 'general-newsletter' %}
+
+  {% section 'general-social-feeds' %}
+
+  {% section 'general-footer' %}
+
+  {% include 'scripts-styles-footer' %}
+
+</body>
+</html>

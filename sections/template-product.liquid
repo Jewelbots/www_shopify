@@ -1,0 +1,413 @@
+{% include 'bold-product' with product, hide_action: 'break' %}{% if bold_hidden_product %}{% break %}{%endif %}
+{% assign selectedVariant = product.selected_or_first_available_variant | default: product.variants.first %}
+{% capture productGoalDeliveryDate %}{{ settings.product-sale-goal-estimated-delivery-date | trim }}{% endcapture %}
+
+{% assign add_to_cart_button = 'products.product.add_to_cart' | t %}
+{% if product.handle == settings.featured-product-main and settings.product-sale-goal-use %}
+  {%- capture add_to_cart_button -%}
+    {%- if settings.product-sale-goal-button != blank -%}
+      {{ settings.product-sale-goal-button }}
+    {%- else -%}
+      {{ "home.goal.pre_order" | t }}
+    {%- endif -%}
+  {%- endcapture -%}
+{% endif %}
+
+{% assign form_id = product.id %}
+
+<div class="module-wrapper">
+  <div class="module module-product">
+    <div itemscope itemtype="http://schema.org/Product">
+      <div class="product-details mobile">
+        <div class="product-title">
+          <h1 itemprop="name">{{ product.title }}</h1>
+        </div>
+        <div class="product-price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+          <span class="price" itemprop="price">
+            <span class="money">{{ selectedVariant.price | money }}</span>
+            {% unless product.variants.size == 1 and product.compare_at_price_min <= selectedVariant.price %}
+              <span class="product-price-compare {% if product.compare_at_price_min <= selectedVariant.price %}hidden{% endif %}">
+                <span class="original money">
+                  {% if selectedVariant.compare_at_price > selectedVariant.price %}
+                    {{ selectedVariant.compare_at_price | money }}
+                  {% endif %}
+                </span>
+                <span class="saving">
+                  {% if selectedVariant.compare_at_price > selectedVariant.price %}
+                    <span> {{ "products.product.saving" | t }} </span>
+                    <span class="saving-result money">
+                      {{ selectedVariant.compare_at_price | minus: selectedVariant.price | money }}
+                    </span>
+                  {% endif %}
+                </span>
+              </span>
+            {% endunless %}
+          </span>
+        </div>
+      </div>
+      {% assign featured_image = selectedVariant.featured_image | default: product.featured_image %}
+      <div class="product-slideshow clearfix">
+        <div class="product-image-container clearfix">
+          <div class="product-big-image" data-no-image-svg="{{ 'no-image.svg' | asset_url }}" data-no-image-png="{{ 'no-image.png' | asset_url }}">
+            <span class="product-slideshow-loader"></span>
+            {% if product.images.size > 0 %}
+              <img
+                src="{{ featured_image | product_img_url: '600x600' }}"
+                alt="{{ product.title | escape }}"
+                data-high-res="{{ featured_image | product_img_url: '2048x2048' }}">
+            {% else %}
+              <img
+                class="product-no-images"
+                src="{{ 'no-image.svg' | asset_url }}"
+                onerror="this.src='{{'no-image.png' | asset_url}}'; this.onerror=null;" />
+            {% endif %}
+            {% if section.settings.enable_zoom %}
+              <div class="product-image-zoom"></div>
+            {% endif %}
+          </div>
+          {% if product.images.size > 1 %}
+            <a class="product-slideshow-navigation product-slideshow-previous icon icon-arrow-left" href="#" tabindex="0"></a>
+            <a class="product-slideshow-navigation product-slideshow-next icon icon-arrow-right" href="#" tabindex="0"></a>
+          {% endif %}
+        </div>
+        {% if product.images.size > 1 %}
+          <div class="product-slideshow-pagination product-thumbnails">
+            {% for image in product.images %}
+              <a
+                class="product-slideshow-pagination-item {% if image == featured_image %}active{% endif %}"
+                style="background-image:url('{{ image | product_img_url: '50x50' }}')"
+                data-default-res="{{ image | product_img_url: '600x600' }}"
+                data-high-res="{{ image | product_img_url: '2048x2048' }}"
+                data-alt="{{ image.alt }}"
+                href="#"
+                tabindex="0"></a>
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+      <div class="product-wrap">
+        <div class="product-details">
+          <div class="product-title">
+            <h1 itemprop="name">{{ product.title }}</h1>
+            <p style="max-width: 400px;">This tech-inspired friendship bracelet lets you communicate through secret codes and lights up when your friends are close by.</p>
+          </div>
+          <div class="product-price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+            <span class="price" itemprop="price">
+              <span class="money">{{ selectedVariant.price | money }}</span>
+                <span class="product-price-compare">
+                  <span class="original money">
+                      {{ 6900 | money }}
+                  </span>
+                  <span class="saving">
+                      <span> {{ "products.product.saving" | t }} </span>
+                      <span class="saving-result money">{{ 6900 | minus: selectedVariant.price | money }} per Jewelbot</span>
+                  </span>
+                </span>
+            </span>
+          </div>
+
+          <!-- discount table -->
+            {% unless qb_loaded == 'true' %}
+              <div class="shappify-qty-msg">{{bold_selected_or_first_available_variant.metafields.shappify_qb.pricing_html}}</div>
+              {% assign qb_loaded = 'true' %}
+            {% endunless %}
+          <!-- // end -->
+
+          {% if settings.product-display-vendor %}
+            <div class="product-vendor" itemprop="brand">
+              {{ product.vendor }}
+            </div>
+          {% endif %}
+        </div>
+        {% if settings.product-sale-goal-use and product.handle == settings.featured-product-main %}
+          <div class="product-goal">
+            {% include "product-goal" %}
+          </div>
+        {% endif %}
+
+        <form
+          class="product-form shapp_qb_prod"
+          id="product-form-{{ form_id }}"
+          action="/cart/add"
+          method="post"
+          data-product-form="{{ form_id }}">
+          <div class="clearfix product-form-nav">
+
+	
+            {% if product.variants.size > 1 %}
+              <div class="product-options">
+	
+                {% include 'product-options-dropdown' %}
+
+                <div class="selector-wrapper no-js-required">
+                  <select
+                    class="product-select"
+                    name="id"
+                    id="product-select-{{ form_id }}">
+                    {% for variant in product.variants %}
+                      {% include 'bold-hidden-variants' with variant, bold_loop: 'loop' %}
+                      {%- capture option_content -%}
+                        {%- if variant.available -%}
+                          {{ variant.title }} - {{ variant.price | money }}
+                        {%- else -%}
+                          {{ variant.title }} - {{ 'products.product.sold_out' | t }}
+                        {%- endif -%}
+                      {%- endcapture -%}
+                      <option
+                        {% if variant.id == selected_variant.id %}selected="selected"{% endif %}
+                        data-variant-id="{{ variant.id }}"
+                        {% if variant.available %}
+                          data-sku="{{ variant.sku }}"
+                          value="{{ variant.id }}"
+                        {% else %}
+                          disabled="disabled"
+                        {% endif %}>
+                        {{ option_content | strip_newlines }}
+                      </option>
+                    {% endfor %}
+                  </select>
+                </div>
+              </div>
+            {% else %}
+              <input
+                class="product-select"
+                name="id"
+                value="{{ product.variants[0].id }}"
+                type="hidden"
+                data-variant-title="{{ product.variants[0].title }}" />
+            {% endif %}
+
+            <div id="infiniteoptions-container"></div>
+            <div id="uploadery-container"></div>
+
+            {% include 'bold-hidden-variants' with variant, bold_loop: 'loop' %}
+
+			<!-- for bold variations and quantity please look at product-options-dropdown.liquid -->
+
+          </div>
+          <div class="add-to-cart">
+            {% if product.available %}
+              <div class="product-form-submit-wrap">
+                <input class="button outline add-to-cart-button" type="submit" value="{{ add_to_cart_button | strip_newlines | strip_html | strip }}" />
+                <div class="add-to-cart-loader"></div>
+              </div>
+              <div class="product-cart-message" data-product-message></div>
+            {% else %}
+              <input type="submit" class="button outline disabled" disabled="disabled" value="{{ 'products.product.sold_out' | t }}" />
+            {% endif %}
+          </div>
+
+          {% if settings.product-sale-goal-estimated-delivery-date != blank and showDeliveryEstimate %}
+            <span class="product-featured-goal-delivery-date">
+              {{ productGoalDeliveryDate }}
+            </span>
+          {% endif %}
+        </form>
+
+        {% if section.settings.additional_info_text_1 != blank or section.settings.additional_info_text_2 != blank %}
+          <div class="product-more-info">
+            {% if section.settings.additional_info_text_1 != blank %}
+              <p class="product-info-link {{ section.settings.additional_info_icon_1 }}">
+                {% if section.settings.additional_info_url_1 != blank %}
+                  <a href="{{ section.settings.additional_info_url_1 }}">
+                {% endif %}
+
+                {{ section.settings.additional_info_text_1 }}
+
+                {% if section.settings.additional_info_url_1 != blank %}
+                  </a>
+                {% endif %}
+              </p>
+            {% endif %}
+            {% if section.settings.additional_info_text_2 != blank %}
+              <p class="product-info-link {{ section.settings.additional_info_icon_2 }}">
+                {% if section.settings.additional_info_url_2 != blank  %}
+                  <a href="{{ section.settings.additional_info_url_2 }}">
+                {% endif %}
+
+                {{ section.settings.additional_info_text_2 }}
+
+                {% if section.settings.additional_info_url_2 != blank  %}
+                  </a>
+                {% endif %}
+              </p>
+            {% endif %}
+          </div>
+        {% endif %}
+
+        {% if product.description.size > 0 %}
+          <div class="product-tabs">
+            <div class="product-tabs-header">
+              <div class="product-tabs-header-item active" data-tab="product-tab-description">
+                {{ "products.product.description" | t }}
+              </div>
+            </div>
+            <div class="product-tabs-body">
+              <div class="product-tabs-body-item rte active" id="product-tab-description" itemprop="description">
+                {{ product.description }}
+              </div>
+            </div>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% if section.settings.enable-share-buttons %}
+  <div class="module-wrapper">
+    <div class="module module-share">
+      <div class="module-body clearfix">
+        {%
+          include 'share-buttons',
+          item: product,
+          is_product: true
+        %}
+      </div>
+    </div>
+  </div>
+{% endif %}
+
+{%- capture cart_link -%}
+  <a href="/cart">{{ 'products.product.cart_link' | t }}</a>
+{%- endcapture -%}
+{%- capture continue_link -%}
+  <a href="/collections/all">{{ 'products.product.continue_link' | t }}</a>
+{%- endcapture -%}
+{%- capture checkout_link -%}
+  <a href="/checkout">{{ 'products.product.checkout_link' | t }}</a>
+{%- endcapture -%}
+
+<script type="application/json" data-product-settings-{{ form_id }}>
+  {
+    "addToCartText": {{ add_to_cart_button | strip_newlines | strip_html | strip | json }},
+    "disableAjaxAddProduct": {{ section.settings.disable_ajax_add_product }},
+    "enableHistory": true,
+    "imageZoom": {{ section.settings.enable_zoom }},
+    "linkedOptions": true,
+    "processingText": {{ 'products.product.processing' | t | json }},
+    "setQuantityText": {{ 'products.product.set_quantity' | t | json }},
+    "soldOutText": {{ 'products.product.sold_out' | t | json }},
+    "successMessage": {{ 'products.product.success_html' | t: cart_link: cart_link, continue_link: continue_link, checkout_link: checkout_link | json }},
+    "unavailableText": {{ 'products.product.unavailable' | t | json }}
+  }
+</script>
+
+<script type="application/json" data-product-json-{{ form_id }}>{{ product | json }}</script>
+{% schema %}
+{
+  "name": "Product pages",
+  "class": "section-product",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "enable_zoom",
+      "label": "Enable image zoom",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "disable_ajax_add_product",
+      "label": "Enable cart redirection",
+      "info": "Automatically sends users to the Cart page after adding a product.",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "enable-share-buttons",
+      "label": "Show share buttons",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Additional info links"
+    },
+    {
+      "type": "paragraph",
+      "content": "[Additional Info Links](https:\/\/s3.amazonaws.com\/cdn.pixelunion.net\/startup\/additional-info-screenshot.png) appear wherever a customer can view product information. They’re perfect for linking to size charts, refund policies, or ordering details. Pick from six unique icons."
+    },
+    {
+      "type": "text",
+      "id": "additional_info_text_1",
+      "label": "Text"
+    },
+    {
+      "type": "url",
+      "id": "additional_info_url_1",
+      "label": "Link"
+    },
+    {
+      "type": "select",
+      "id": "additional_info_icon_1",
+      "label": "Icon",
+      "options": [
+        {
+          "value": "info",
+          "label": "Information (i)"
+        },
+        {
+          "value": "question-mark",
+          "label": "Question mark"
+        },
+        {
+          "value": "ruler",
+          "label": "Ruler"
+        },
+        {
+          "value": "envelope",
+          "label": "Envelope"
+        },
+        {
+          "value": "pencil",
+          "label": "Pencil"
+        },
+        {
+          "value": "shirt",
+          "label": "Shirt"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "additional_info_text_2",
+      "label": "Text"
+    },
+    {
+      "type": "url",
+      "id": "additional_info_url_2",
+      "label": "Link"
+    },
+    {
+      "type": "select",
+      "id": "additional_info_icon_2",
+      "label": "Icon",
+      "options": [
+        {
+          "value": "info",
+          "label": "Information (i)"
+        },
+        {
+          "value": "question-mark",
+          "label": "Question mark"
+        },
+        {
+          "value": "ruler",
+          "label": "Ruler"
+        },
+        {
+          "value": "envelope",
+          "label": "Envelope"
+        },
+        {
+          "value": "pencil",
+          "label": "Pencil"
+        },
+        {
+          "value": "shirt",
+          "label": "Shirt"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

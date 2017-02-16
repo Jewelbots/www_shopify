@@ -1,0 +1,494 @@
+<!-- modal_newsletter  ⬇ -->
+<div id="modal_newsletter">
+	<div class="modal">
+		<script>mixpanel.track_forms(".mixpanel_modal_newsletter", 	"NEWSLETTER", {"STEP": "submitted email", "POSITION": "modal"});</script>
+		<form method="post" action="//jewelbots.us3.list-manage.com/subscribe/post?u=ccc4b9448a982cacc6429f42f&amp;id=419ec4b9b5" id="subscribe" role="form" name="mc-embedded-subscribe-form" class="validate mixpanel_modal_newsletter">
+
+			<a class="close" href="javascript:void();" onClick="modal_newsletter('close');">X</a>
+			<h1>Enter your email and receive $10 off your first order!</h1>
+			<!--<p>Enter your email and <strong>enjoy $10 off</strong> your first order!</p>-->
+
+			<div class="mc-field-group">
+				<input type="email" name="EMAIL" class="required email" id="mce-EMAIL" value="Enter your email!" onfocus="if(this.value==this.defaultValue)this.value=''; mixpanel.track('NEWSLETTER', {'STEP': 'typed email', 'POSITION': 'modal'});" onBlur="if(this.value=='')this.value=this.defaultValue;">
+			</div>
+			<div id="mce-responses" class="clear">
+				<div class="response" id="mce-error-response" style="display:none"></div>
+				<div class="response" id="mce-success-response" style="display:none"></div>
+			</div>
+			<div style="position: absolute; left: -5000px;"><input type="text" name="b_ccc4b9448a982cacc6429f42f_c5c8a04f03" tabindex="-1" value=""></div>
+			<div class="clear"><input type="submit" value="Subscribe + Save" name="subscribe" id="mc-embedded-subscribe" class="btn" onClick="mixpanel.register_once({ 'NEWSLETTER': 'modal closed' });"></div>
+
+		</form>
+	</div>
+	<div class="background" onClick="modal_newsletter('close');"></div>
+</div>
+<!-- modal_newsletter  ⬆ -->
+
+<style>
+	/* @group------ modal_newsletter -----------------*/
+	#modal_newsletter {
+		display: none;
+	}
+
+	#modal_newsletter.overlay .modal .save, #modal_newsletter.overlay .modal .news {
+		display: none;
+	}
+
+	/* @group - modal - (overlay) ------- */
+	#modal_newsletter.overlay {
+		display: none;
+		position: fixed;
+		width: 100%;
+		height: 100%;
+		left: 0px;
+		top: 0px;
+		right: 0px;
+		bottom: 0px;
+		margin: 0 0 0 0;
+		padding: 0 0 0 0;
+
+		z-index: 10000;
+		opacity: 1.0;
+	}
+
+	#modal_newsletter.overlay .background {
+		display: block;
+		position: fixed;
+		width: 100%;
+		height: 100%;
+		left: 0px;
+		top: 0px;
+		right: 0px;
+		bottom: 0px;
+		margin: 0 0 0 0;
+		padding: 0 0 0 0;
+		background-color: rgba(40,45,50,0.8);
+
+		z-index: 0;
+	}
+	#modal_newsletter.overlay .modal {
+		display: block;
+		position: fixed;
+		width: 600px;
+		height: 340px;
+		left: 50%;
+		top: 50%;
+		right: 0px;
+		bottom: 0px;
+		margin: -170px 0 0 -300px;
+		padding: 0 0 0 0;
+		background-image: url( {{ 'JBS__newsletter_modal__background__v1.jpg' | asset_url }} );
+
+		-webkit-background-size: cover;
+	       -moz-background-size: cover;
+		     -o-background-size: cover;
+		        background-size: cover;
+
+		z-index: 1000;
+
+		-webkit-border-radius: 5px;
+		   -moz-border-radius: 5px;
+			    border-radius: 5px;
+
+		-webkit-box-shadow: 0px 2px 7px 0px rgba(0,0,0,0.2);
+		   -moz-box-shadow: 0px 2px 7px 0px rgba(0,0,0,0.2);
+				box-shadow: 0px 2px 7px 0px rgba(0,0,0,0.2);
+	}
+	#modal_newsletter.overlay .modal a.close {
+		display: block;
+		position: absolute;
+		width: 60px;
+		height: 60px;
+		right: 0px;
+		top: 0px;
+		margin: 0 0 0 0;
+		padding: 0 0 0 0;
+		background-image: url( {{ 'JBS__newsletter_modal__close.png' | asset_url }} );
+		background-size: 60px 120px;
+		background-position: 0px 0px;
+
+		text-indent: -999px;
+		overflow: hidden;
+	}
+	#modal_newsletter.overlay .modal a.close:hover {
+		background-position: 0px -60px;
+	}
+	#modal_newsletter.overlay .modal h1 {
+		display: block;
+		position: relative;
+		width: auto;
+		height: auto;
+		margin: 50px 0 10px 0;
+		padding: 0 0 0 0;
+
+		font-family: "museo-sans-rounded",sans-serif;
+		font-style: normal;
+		font-weight: 700;
+		font-size: 30px;
+		line-height: 36px;
+		letter-spacing: 1px;
+		text-indent: 0;
+		text-transform: none;
+		text-align: center;
+		color: rgba(255,255,255,1.0);
+	}
+	#modal_newsletter.overlay .modal p {
+		display: block;
+		position: relative;
+		width: auto;
+		height: auto;
+		margin: 0 70px 20px 70px;
+		padding: 10px 0 0 0;
+		border-top: solid 1px rgba(90,225,200,0.9);
+
+		font-family: "museo-sans", sans-serif;
+		font-style: normal;
+		font-weight: 100;
+		font-size: 16px;
+		line-height: 20px;
+		letter-spacing: 0px;
+		text-indent: 0;
+		text-transform: none;
+		text-align: center;
+		color: rgba(255,255,255,1.0);
+	}
+	#modal_newsletter.overlay .modal #mce-EMAIL {
+		display: block;
+		position: relative;
+		width: 340px;
+		height: 50px;
+		margin: 20px auto 10px auto;
+		padding: 0 0 0 0;
+		border: solid 1px rgba(40,40,40,0.2);
+		background-color: rgba(245,245,245,1.0);
+
+		font-family: "museo-sans", sans-serif;
+		font-style: normal;
+		font-weight: 500;
+		font-size: 16px;
+		line-height: 50px;
+		letter-spacing: 0px;
+		text-indent: 0;
+		text-transform: none;
+		text-align: center;
+		color: rgba(0,165,150,1.0);
+
+		  -webkit-border-radius: 5px;
+			 -moz-border-radius: 5px;
+				  border-radius: 5px;
+
+			/* -webkit-box-shadow: inset 0px 0px 3px 0px rgba(0,0,0,0.2);
+			   -moz-box-shadow: inset 0px 0px 3px 0px rgba(0,0,0,0.2);
+					box-shadow: inset 0px 0px 3px 0px rgba(0,0,0,0.2); */
+	}
+	#modal_newsletter.overlay .modal #mc-embedded-subscribe {
+		display: block;
+		position: relative;
+		width: 340px;
+		height: 50px;
+		margin: 0 auto 0 auto;
+		padding: 0 0 0 0;
+		border: 0px;
+		background-color: rgba(255,60,0,1.0);
+		color: rgba(255,255,255,1.0);
+
+		font-family: "museo-sans", sans-serif;
+		font-style: normal;
+		font-weight: 300;
+		font-size: 20px;
+		line-height: 50px;
+		letter-spacing: 0px;
+		text-indent: 0;
+		text-transform: uppercase;
+
+		-webkit-box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.4);
+		   -moz-box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.4);
+				box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.4);
+
+		-webkit-border-radius: 3px;
+		   -moz-border-radius: 3px;
+			    border-radius: 3px;
+
+		cursor: pointer;
+	}
+	#modal_newsletter.overlay .modal #mc-embedded-subscribe:hover {
+		padding: 0 0 0 0;
+		background-color: rgba(255,255,255,1.0);
+
+		font-weight: 500;
+		color: rgba(255,60,0,0.6);
+
+		-webkit-box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.0);
+		   -moz-box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.0);
+				box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.0);
+	}
+
+
+	@media (max-width: 1023px) {}
+	@media (max-width: 900px) {}
+	@media (max-width: 767px) {
+		#modal_newsletter {}
+
+		#modal_newsletter.overlay .background {}
+		#modal_newsletter.overlay .modal {
+			width: 100%;
+			height: auto;
+			left: 0px;
+			top: 0px;
+			right: 0px;
+			bottom: 0px;
+			margin: 0 0 0 0;
+			padding: 20px 20px 20px 20px;
+
+					-webkit-box-shadow: 0px 2px 7px 0px rgba(0,0,0,0.0);
+					   -moz-box-shadow: 0px 2px 7px 0px rgba(0,0,0,0.0);
+							box-shadow: 0px 2px 7px 0px rgba(0,0,0,0.0);
+		}
+		#modal_newsletter.overlay .modal a.close {}
+		#modal_newsletter.overlay .modal a.close:hover {}
+		#modal_newsletter.overlay .modal h1 {
+			margin: 50px 0 10px 0;
+		}
+		#modal_newsletter.overlay .modal p {}
+		#modal_newsletter.overlay .modal #mce-EMAIL {
+			width: 300px;
+		}
+		#modal_newsletter.overlay .modal #mc-embedded-subscribe {
+			width: 300px;
+		}
+		#modal_newsletter.overlay .modal #mc-embedded-subscribe:hover {}
+	}
+	/* @end */
+	/* @group - modal - (fixed) --------- */
+	#modal_newsletter.fixed {
+		display: none;
+		position: fixed;
+		width: auto;
+		height: auto;
+		margin: 0 0 0 0;
+		padding: 0 0 0 0;
+
+		z-index: 10000;
+		opacity: 1.0;
+	}
+
+	#modal_newsletter.fixed .background {
+		display: none;
+	}
+	#modal_newsletter.fixed .modal {
+		display: block;
+		position: fixed;
+		width: 500px;
+		height: 225px;
+		left: 50%;
+		bottom: 0px;
+		margin: 0 0 0 -250px;
+		padding: 0 0 0 0;
+		background-image: url(../../assets/images/site_modal_newsletter__background_1.jpg);
+
+		-webkit-background-size: cover;
+	       -moz-background-size: cover;
+		     -o-background-size: cover;
+		        background-size: cover;
+
+		z-index: 1000;
+
+		-webkit-border-radius: 0px;
+		   -moz-border-radius: 0px;
+			    border-radius: 0px;
+
+				-webkit-box-shadow: 0px 2px 7px 0px rgba(0,0,0,0.5);
+				   -moz-box-shadow: 0px 2px 7px 0px rgba(0,0,0,0.5);
+						box-shadow: 0px 2px 7px 0px rgba(0,0,0,0.5);
+	}
+	#modal_newsletter.fixed .modal a.close {
+		display: block;
+		position: absolute;
+		width: 60px;
+		height: 60px;
+		right: 0px;
+		top: 0px;
+		margin: 0 0 0 0;
+		padding: 0 0 0 0;
+		background-image: url(../../assets/images/site_modal__close.png);
+		background-size: 60px 120px;
+		background-position: 0px 0px;
+
+		text-indent: -999px;
+		overflow: hidden;
+	}
+	#modal_newsletter.fixed .modal a.close:hover {
+		background-position: 0px -60px;
+	}
+	#modal_newsletter.fixed .modal h1 {
+		display: block;
+		position: relative;
+		width: auto;
+		height: auto;
+		max-width: 300px;
+		margin: 25px auto 5px auto;
+		padding: 0 0 0 0;
+
+		font-family: "museo-sans-rounded",sans-serif;
+		font-style: normal;
+		font-weight: 700;
+		font-size: 25px;
+		line-height: 30px;
+		letter-spacing: 1px;
+		text-indent: 0;
+		text-transform: none;
+		text-align: center;
+		color: rgba(255,255,255,1.0);
+	}
+	#modal_newsletter.fixed .modal p {
+		display: block;
+		position: relative;
+		width: auto;
+		height: auto;
+		margin: 0 70px 20px 70px;
+		padding: 5px 0 0 0;
+		border-top: solid 1px rgba(90,225,200,0.9);
+
+		font-family: "museo-sans", sans-serif;
+		font-style: normal;
+		font-weight: 100;
+		font-size: 14px;
+		line-height: 20px;
+		letter-spacing: 0px;
+		text-indent: 0;
+		text-transform: none;
+		text-align: center;
+		color: rgba(255,255,255,1.0);
+	}
+	#modal_newsletter.fixed .modal #mce-EMAIL {
+		display: block;
+		position: relative;
+		width: 300px;
+		height: 40px;
+		margin: 10px auto 5px auto;
+		padding: 0 0 0 0;
+		border: solid 1px rgba(40,40,40,0.2);
+		background-color: rgba(245,245,245,1.0);
+
+		font-family: "museo-sans", sans-serif;
+		font-style: normal;
+		font-weight: 300;
+		font-size: 15px;
+		line-height: 40px;
+		letter-spacing: 0px;
+		text-indent: 0;
+		text-transform: none;
+		text-align: center;
+		color: rgba(0,165,150,1.0);
+
+		  -webkit-border-radius: 3px;
+			 -moz-border-radius: 3px;
+				  border-radius: 3px;
+
+			/* -webkit-box-shadow: inset 0px 0px 3px 0px rgba(0,0,0,0.2);
+			   -moz-box-shadow: inset 0px 0px 3px 0px rgba(0,0,0,0.2);
+					box-shadow: inset 0px 0px 3px 0px rgba(0,0,0,0.2); */
+	}
+	#modal_newsletter.fixed .modal #mc-embedded-subscribe {
+		display: block;
+		position: relative;
+		width: 300px;
+		height: 40px;
+		margin: 0 auto 0 auto;
+		padding: 0 0 0 0;
+		border: 0px;
+		background-color: rgba(255,60,0,1.0);
+		color: rgba(255,255,255,1.0);
+
+		font-family: "museo-sans", sans-serif;
+		font-style: normal;
+		font-weight: 300;
+		font-size: 16px;
+		line-height: 40px;
+		letter-spacing: 0px;
+		text-indent: 0;
+		text-transform: uppercase;
+
+	  -webkit-border-radius: 3px;
+		 -moz-border-radius: 3px;
+			  border-radius: 3px;
+
+				-webkit-box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.4);
+				   -moz-box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.4);
+						box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.4);
+
+			cursor: pointer;
+	}
+	#modal_newsletter.fixed .modal #mc-embedded-subscribe:hover {
+		padding: 0 0 0 0;
+		background-color: rgba(255,255,255,1.0);
+
+		font-weight: 500;
+		color: rgba(255,60,0,0.6);
+
+		-webkit-box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.0);
+		   -moz-box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.0);
+				box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.0);
+	}
+
+
+	@media (max-width: 1023px) {}
+	@media (max-width: 900px) {}
+	@media (max-width: 767px) {
+		#modal_newsletter.fixed .modal {
+			width: 100%;
+			left: 0;
+			margin: 0 0 0 0;
+		}
+	}
+	/* @end */
+
+
+	/* @end */
+</style>
+
+<!-- RUN  ⬇ -->
+<script type="text/javascript">
+setTimeout(function(){
+  	var opted_out_of_modal = mixpanel.get_property('NEWSLETTER');
+	if(mixpanel.get_property('NEWSLETTER') == null ){
+		modal_newsletter('open_overlay');
+		mixpanel.track('NEWSLETTER', {'STEP': 'opened modal', 'POSITION': 'modal'});
+	} else {
+		// trigger a specific call to action --> based on order number link to go page or forum etc.
+	}
+}, 15000);
+function modal_newsletter(state){
+	if(state=='open_overlay'){
+		$('#site_container').addClass('blurred');
+
+		$('#modal_newsletter').addClass('overlay');
+		$('#modal_newsletter.overlay').stop().show().animate({'opacity':'1.0'}, 500, function() { /* do nothing */ });
+	//	$('#modal_newsletter.overlay .modal').stop().show().animate({'top':'50%'}, 200, function() { /* do nothing */ });
+
+		$('#modal_newsletter .modal .save').css('display', 'block' );
+		$('#modal_newsletter .modal .news').css('display', 'none' );
+	}
+	if(state=='close'){
+		
+		mixpanel.track('NEWSLETTER', {'STEP': 'closed', 'POSITION': 'modal'});
+		mixpanel.register_once({ "NEWSLETTER": "modal closed" });
+		
+		$('#site_container').removeClass('blurred');
+
+		$('#modal_newsletter .modal').stop().animate({'opacity':'0.0', 'top':'-50%'}, 500, function() {
+			$('#modal_newsletter').stop().animate({'opacity':'0.0'}, 200, function() {
+				$('#modal_newsletter').stop().hide();
+				$('#modal_newsletter .modal').css('opacity', '1.0' );
+
+				$('#modal_newsletter').removeClass('overlay');
+				$('#modal_newsletter').removeClass('fixed');
+
+				$('#modal_newsletter .modal .save').css('display', 'none' );
+				$('#modal_newsletter .modal .news').css('display', 'none' );
+			});
+		});
+	}
+}
+</script>
+<!-- RUN  ⬆ -->

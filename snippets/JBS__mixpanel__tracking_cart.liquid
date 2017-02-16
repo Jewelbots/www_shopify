@@ -1,0 +1,19 @@
+<!--
+	This is only used once to set the additional tracking for UTM and CUSTOMER infos in SECTIONS/JBS__cart__template.liquid
+-->
+<!-- MIXPANEL  ⬇ -->
+<input type="hidden" id="mixpanel_id" name="attributes[Mixpanel ID]" value="" />
+<input type="hidden" id="utm_campaign_first" name="attributes[UTM Campaign - (first touch)]" value="" />
+<input type="hidden" id="utm_campaign_last" name="attributes[UTM Campaign - (last touch)]" value="" />
+<script>
+    $(document).ready(function() {
+        window.onload = function() {
+            document.getElementById("mixpanel_id").value = mixpanel.get_distinct_id();
+			document.getElementById("utm_campaign_first").value = mixpanel.get_property('utm_campaign');
+			document.getElementById("utm_campaign_last").value  = mixpanel.get_property('utm_campaign [last touch]');
+		//	alert('first UTM: '+mixpanel.get_property('utm_campaign'));
+		//	alert('current UTM: '+mixpanel.get_property('utm_campaign [last touch]'));
+        };
+    });
+</script>
+<!-- MIXPANEL  ⬆ -->

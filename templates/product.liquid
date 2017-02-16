@@ -1,0 +1,33 @@
+{% include 'bold-product' with product, hide_action: 'break' %}{% if bold_hidden_product %}{% break %}{%endif %}
+{% section 'template-product' %}
+
+{% if product.handle == settings.featured-product-main %}
+  {% assign used_product_focus = false %}
+  {% assign used_technical_specifications = false %}
+  {% assign module_1 = settings.product_module_1 %}
+  {% assign module_2 = settings.product_module_2 %}
+
+  {% if module_1 != 'none' %}
+    {% if module_1 == 'module-technical-specifications' %}
+      {% section 'module-technical-specifications' %}
+      {% assign used_technical_specifications = true %}
+    {% endif %}
+
+    {% if module_1 == 'module-product-focus' %}
+      {% section 'module-product-focus' %}
+      {% assign used_product_focus = true %}
+    {% endif %}
+  {% endif %}
+
+  {% if module_2 != 'none' %}
+    {% if module_2 == 'module-technical-specifications' and used_technical_specifications == false %}
+      {% section 'module-technical-specifications' %}
+    {% endif %}
+
+    {% if module_2 == 'module-product-focus' and used_product_focus == false %}
+      {% section 'module-product-focus' %}
+    {% endif %}
+  {% endif %}
+{% endif %}
+
+{% section 'module-related-products' %}

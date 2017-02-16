@@ -1,0 +1,33 @@
+{% capture add_to_cart_button %}{{ 'products.product.add_to_cart' | t }}{% endcapture %}
+{% if product.handle == settings.featured-product-main and settings.product-sale-goal-use %}
+  {% capture add_to_cart_button %}
+    {% if settings.product-sale-goal-button != blank %}
+      {{ settings.product-sale-goal-button }}
+    {% else %}
+      {{ "home.goal.pre_order" | t }}
+    {% endif %}
+  {% endcapture %}
+{% endif %}
+
+{% capture themeGlobals %}
+  <script type="text/javascript">
+    Theme = {};
+    Theme.version = "2.0.0";
+    Theme.currency = '{{ shop.currency }}';
+    shopCurrency = '{{ shop.currency }}'; /* used by shipping calculator */
+    Theme.moneyFormat = {{ shop.money_format | strip_html | json }};
+    Theme.moneyFormatCurrency = {{ shop.money_with_currency_format | strip_html | json }};
+
+    {% if settings.show-currency-switcher %}
+      Theme.currencySwitcher = true;
+      {% if settings.currency-switcher-format %}
+        Theme.currencySwitcherFormat = '{{ settings.currency-switcher-format }}';
+        Theme.moneyFormat = {{ shop.[settings.currency-switcher-format] | json }};
+      {% endif %}
+      {% if settings.currency-switcher-default.size > 0 %}
+        Theme.defaultCurrency = '{{ settings.currency-switcher-default }}';
+      {% endif %}
+    {% endif %}
+  </script>
+{% endcapture %}
+{{ themeGlobals | strip_newlines }}

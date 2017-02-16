@@ -1,0 +1,87 @@
+{% if section.settings.enable %}
+  <div class="module-wrapper style-{{ section.settings.style }}">
+    <div class="module mailing-list-signup">
+      <div class="mailing-list-signup-container">
+
+        <div class="module-header">
+          <h3 class="module-title">{{ 'general.mailing_list.title' | t }}</h3>
+          <p class="module-subtitle">
+            {{ 'general.mailing_list.description' | t }}
+          </p>
+        </div>
+
+        <div class="module-body">
+          <div class="mailing-list-signup-form-container">
+            {% form 'customer', id: 'newsletter-form' %}
+              {% if form.posted_successfully? %}
+                <p class="module-subtitle">
+                  {{ 'general.mailing_list.success' | t }}
+                </p>
+              {% else %}
+                <input type="hidden" id="contact_tags" name="contact[tags]" value="prospect, newsletter">
+
+                <div class="mailing-list-signup-form-field">
+                  <input
+                    class="mailing-list-signup-form-email icon-arrow-right"
+                    name="contact[email]"
+                    type="email"
+                    placeholder="{{ 'general.general.email_placeholder' | t }}"
+                    aria-label="{{ 'general.general.email_placeholder' | t }}">
+                  <div class="mailing-list-signup-form-field-icon icon icon-mail"></div>
+                </div>
+
+                <div class="mailing-list-signup-form-cta">
+                  <input
+                    class="mailing-list-signup-form-submit"
+                    name="subscribe"
+                    type="submit"
+                    value="{{ 'general.general.subscribe' | t }}"
+                    aria-label="{{ 'general.general.subscribe' | t }}" />
+                  <div class="mailing-list-signup-form-submit-icon icon icon-arrow-right"></div>
+                </div>
+              {% endif %}
+            {% endform %}
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Newsletter",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "enable",
+      "label": "Enable"
+    },
+    {
+      "type": "select",
+      "id": "style",
+      "label": "Background style",
+      "options": [
+        {
+          "value": "default",
+          "label": "Default"
+        },
+        {
+          "value": "light",
+          "label": "Light"
+        },
+        {
+          "value": "color",
+          "label": "Color"
+        },
+        {
+          "value": "gradient",
+          "label": "Gradient"
+        }
+      ],
+      "default": "default"
+    }
+  ]
+}
+{% endschema %}

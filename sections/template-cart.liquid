@@ -1,0 +1,169 @@
+<div class="module-wrapper">
+  <div class="module cart">
+    <div class="module-header cart-header">
+      <h1 class="module-title">{{ 'cart.general.header' | t }}</h1>
+    </div>
+
+    <!-- Bold: Quantity Breaks - Step 7 -->
+    <div id="shappify-qty-cart-msg"></div>
+    <!-- // end Bold code -->
+
+    <div class="module-body">
+      <div class="module-content">
+        {% if cart.item_count > 0 %}
+          <form action="/cart" method="post">
+            <div class="cart-items-container">
+              <table class="cart-items clean">
+                <thead class="cart-items-thead">
+                  <tr>
+                    <th class="first">{{ 'general.general.product' | t}}</th>
+                    <th>{{ 'general.general.price' | t }}</th>
+                    <th>{{ 'general.general.quantity' | t }} <span style="font-size: 10px;"> &nbsp; <strong><a href="mailto:hi@jewelbots.com?subject=Help! I need more Jewelbots!">Need more?</a></strong></span></th>
+                    <th class="last">{{ 'general.general.total' | t }}</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for item in cart.items %}
+                    <tr
+                      class="cart-item variant-{{ item.variant.id }} {% include 'for-looper' %}"
+                      data-variant="{{ item.variant.id }}"
+                      data-title="{{ item.product.title }}"
+                      data-url="{{ item.url }}">
+                      <td class="cart-item-product cart-item-td">
+                        <div class="cart-item-image-container">
+                          <a class="cart-image" href="{{ item.url }}">
+                            <img src="{{ item | img_url: 'small' }}" alt="{{ item.product.title }}">
+                          </a>
+                          <a class="cart-item-remove mobile-only" href="/cart/change?line={{ forloop.index }}&amp;quantity=0">
+                            <span class="icon icon-cross"></span>
+                          </a>
+                        </div>
+                        <div class="cart-item-product-wrap">
+                          <span class="cart-title"><a href="{{ item.url }}">{{ item.product.title }}</a></span>
+                          <span class="cart-vendor vendor">{{ item.vendor }}</span>
+                          <!--{% unless item.variant.title == 'Default Title' %}
+                            <span class="cart-variant">{{ item.variant.title }}</span>
+                          {% endunless %}-->
+                        </div>
+                      </td>
+                      <td class="cart-item-price cart-item-td">
+                        <div class="cart-item-unit-price">
+                          <span class="mobile-only">{{ 'general.general.price' | t }}:</span>
+                          <span class="money">{{ item.price | money }}</span>
+                        </div>
+                      </td>
+                      {% unless item.variant.inventory_management == blank or item.variant.inventory_policy == 'continue' %}
+                        {% assign inventory = true %}
+                      {% endunless %}
+                      <td class="cart-item-quantity cart-item-td" {% if inventory == true %}data-max="{{ item.variant.inventory_quantity }}"{% endif %}><!--onClick="alert('Please update the cart before checking out!');"-->
+                        <!-- original number checkout
+                        <div class="number-input-wrapper cart-item-quantity-wrapper clearfix">
+                          <div class="number-input-field">
+                            <input type="number" id="cart-item-{{ item.id }}" name="updates[]" class="cart-item-quantity-display" value="{{ item.quantity }}" size="1"  aria-label="{{ "general.general.quantity" | t }}" />
+                            <label class="number-input-label" for="cart-item-{{ item.id }}">{{ 'general.general.quantity' | t }}</label>
+                          </div>
+                          <div class="number-input-nav">
+                            <div class="number-input-nav-item icon icon-plus cart-item-increase"></div>
+                            <div class="number-input-nav-item icon icon-minus cart-item-decrease"></div>
+                          </div>
+                        </div>
+                        -->
+                        <!-- dropdown list --> 
+                          <select id="updates_{{ item.id }}" name="updates[]" onchange="this.form.submit();"> 
+                          {% for i in (1..12) %} {% assign q = i | times: 1 %}
+                            <option value="{{ q }}"{% if item.quantity == q %} selected{% endif %}>Jewelbots {{ i }}-Pack</option>
+                          {% endfor %}
+                          </select>
+                        <!--// end -->
+                      </td>
+                      <td class="cart-item-total cart-item-td">
+                        <div class="cart-item-total-container">
+                          <span class="mobile-only">{{ 'general.general.total' | t }}:</span>
+                          <span class="money">{{ item.quantity | times: item.price | money }}</span>
+                          <a class="cart-item-remove" href="/cart/change?line={{ forloop.index }}&amp;quantity=0">
+                            <span class="icon icon-cross"></span>
+                          </a>
+                        </div>
+                      </td>
+                    </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+            </div>
+            <div class="cart-tools">
+              <div class="cart-totals">
+                <div class="cart-price-info">
+                  <p class="sub-total">{{ 'general.general.subtotal' | t}}</p>
+                  <p class="cart-price"><span class="money">{{ cart.total_price | money }}</span></p>
+                  <p class="cart-message meta"><!--{{ 'cart.general.tax_and_shipping' | t }}-->Excluding Tax. Need help? Email us <strong><a href="mailto:hi@jewelbots.com">hi@jewelbots.com</a></strong></p>
+                  {% if settings.show-currency-switcher %}
+                    <p class="cart-currency-note meta">{{ 'cart.general.currency_note_html' | t: currency: shop.currency }}</p>
+                  {% endif %}
+                </div>
+                <div class="cart-cta">
+                  <input type="submit" name="update" value="{{ 'cart.general.update_button' | t }}" class="button outline cart-button cart-update-button">
+                  <input type="submit" name="checkout" value="{{ 'cart.general.submit' | t }}" class="button secondary inverse cart-button">
+                  {% if additional_checkout_buttons %}
+                    <div class="cart-additional-checkout-buttons">
+                      {{ content_for_additional_checkout_buttons }}
+                    </div>
+                  {% endif %}
+                </div>
+              </div>
+              {% if section.settings.order_notes %}
+                <div class="cart-instructions">
+                  <p><label for="cart-notes">{{ 'cart.general.instructions_title' | t }}</label></p>
+                  <textarea rows="6" name="note" id="cart-notes" placeholder="{{ 'cart.general.instructions_placeholder' | t }}">{{ cart.note }}</textarea>
+                </div>
+              {% endif %}
+            </div>
+{% include 'JBS__mixpanel__tracking_cart' %}
+          </form>
+
+          {% if section.settings.show_shipping_calculator and cart.requires_shipping %}
+            {% include 'shipping-calculator' %}
+          {% endif %}
+        {% else %}
+          <p class="empty">{{ 'cart.general.empty' | t }} <!--<a href="{{ shop.url }}/collections/all">{{ 'cart.general.continue' | t }}</a>--><a href="https://shop.jewelbots.com/products/jewelbots-open-source-programmable-friendship-bracelet?variant=29628588497">Continue Shopping</a></p>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="application/json" data-cart-strings>
+  {
+    "notAvailableText": {{ 'cart.general.not_available'| t | json }},
+    "stockLevelText": {{ 'cart.general.stock_level' | t: stock_count: '** stock_count **' | json }},
+    "okayText": {{ 'cart.general.okay' | t | json }}
+  }
+</script>
+{% schema %}
+{
+  "name": "Cart page",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "order_notes",
+      "label": "Enable order notes",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Shipping calculator"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_shipping_calculator",
+      "label": "Enable",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "shipping_calculator_default_country",
+      "label": "Default country",
+      "default": "United States"
+    }
+  ]
+}
+{% endschema %}

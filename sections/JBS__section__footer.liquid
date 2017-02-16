@@ -1,0 +1,266 @@
+{% include 'JBS__newsletter__static__v1' %}
+
+<!-- section_footer  ⬇ -->
+<div class="section_footer">
+	<img class="logo" src="{{ 'JBS__section_footer__logo.png' | asset_url }}" />
+	<ul class="navigation">
+		{% for link in linklists.footer.links %}
+			<li><a href="{{ link.url }}" title="{{ link.title }}" target="_self">{{ link.title }}</a></li>
+		{% endfor %}
+	</ul>
+	<p class="address">
+		50 Eldridge Street, 3rd Floor, New York, NY 10002<br />
+		<a href="mailto:hi@jewelbots.com">hi@jewelbots.com</a><br />
+		(862) 201-3065<br />
+	</p>
+	<ul class="social">
+		<li><a class="facebook" href="https://www.facebook.com/jewelbots" target="_blank">f</a></li>
+		<li><a class="twitter" href="https://twitter.com/jewelbots" target="_blank">t</a></li>
+		<li><a class="instagram" href="https://instagram.com/jewelbots" target="_blank">i</a></li>
+		<li><a class="pinterest" href="https://www.pinterest.com/girldeveloper/jewliebots-trends/" target="_blank">p</a></li>
+	</ul>
+	<p class="credits">
+		Jewelbots © {{ 'now' | date: "%Y" }} &nbsp; | &nbsp; Made with love in NYC &nbsp; | &nbsp; Changing the world one Jewelbot at a time
+	</p>
+</div>
+<!-- section_footer  ⬆ -->
+
+<style>
+	.section_footer {
+		display: block;
+		position: relative;
+		width: 100%;
+		height: auto;
+		min-height: 575px;
+		margin: 0 0 0 0;
+		padding: 0 0 50px 0;
+		background-color: rgba(80,215,235,1.0);
+		background-image: url('{{ 'JBS__section_footer__background.gif' | asset_url }}');
+
+/*
+		 -webkit-border-bottom-left-radius: 25px;
+		-webkit-border-bottom-right-radius: 25px;
+			 -moz-border-radius-bottomleft: 25px;
+			-moz-border-radius-bottomright: 25px;
+				 border-bottom-left-radius: 25px;
+				border-bottom-right-radius: 25px;
+*/
+
+		font-family: "museo-sans", sans-serif;
+		font-style: normal;
+		letter-spacing: 0px;
+		text-indent: 0;
+		text-transform: none;
+		text-align: center;
+		color: rgba(255,255,255,1.0);
+	}
+
+	.section_footer a {
+		color: rgba(255,255,255,1.0);
+		text-decoration: none;
+		border-bottom: solid 3px rgba(255,255,255,0.0);
+
+		-webkit-transition: .3s ease-in-out;
+		   -moz-transition: .3s ease-in-out;
+			 -o-transition: .3s ease-in-out;
+			-ms-transition: .3s ease-in-out;
+				transition: .3s ease-in-out;
+	}
+	.section_footer a:hover, .section_footer a.active {
+		color: rgba(255,255,255,0.8);
+		border-bottom: solid 3px rgba(255,255,255,0.6);
+	}
+	.section_footer img.logo {
+		display: block;
+		position: relative;
+		width: 160px;
+		height: auto;
+		margin: 0 auto 0 auto;
+		padding: 60px 0 0 0;
+	}
+
+	.section_footer ul.navigation {
+		display: block;
+		position: relative;
+		width: auto;
+		height: auto;
+		margin: 0 auto 0 auto;
+		padding: 28px 0 0 0;
+	}
+	.section_footer ul.navigation li {
+		display: inline-block;
+		padding: 0px;
+	}
+	.section_footer ul.navigation li a {
+		padding: 12px;
+
+		font-weight: 700;
+		font-size: 16px;
+		line-height: 25px;
+		letter-spacing: 1px;
+		text-transform: uppercase;
+	}
+
+	.section_footer ul.social {
+		display: table;
+		position: relative;
+		width: auto;
+		height: auto;
+		margin: 40px auto 30px auto;
+		padding: 0 0 0 0;
+	}
+	.section_footer ul.social li {
+		display: inline-block;
+		position: relative;
+		width: auto;
+		height: auto;
+		margin: 0 10px 0 10px;
+	}
+	.section_footer ul.social li a {
+		display: inline-block;
+		position: relative;
+		width: 60px;
+		height: 60px;
+		margin: 0 0 0 0;
+
+		opacity: 1;
+		overflow: hidden;
+		text-indent: -666px;
+
+		-webkit-transition: .17s ease-in-out;
+		-moz-transition: .17s ease-in-out;
+		-o-transition: .17s ease-in-out;
+		-ms-transition: .17s ease-in-out;
+		transition: .17s ease-in-out;
+	}
+	.section_footer ul.social li a.facebook {
+		background-image: url('{{ 'JBS__section_footer__social.png' | asset_url }}');
+		background-size: 240px 60px;
+		background-position: 0px 0px;
+	}
+	.section_footer ul.social li a.twitter {
+		background-image: url('{{ 'JBS__section_footer__social.png' | asset_url }}');
+		background-size: 240px 60px;
+		background-position: -60px 0px;
+	}
+	.section_footer ul.social li a.instagram {
+		background-image: url('{{ 'JBS__section_footer__social.png' | asset_url }}');
+		background-size: 240px 60px;
+		background-position: -120px 0px;
+	}
+	.section_footer ul.social li a.pinterest {
+		background-image: url('{{ 'JBS__section_footer__social.png' | asset_url }}');
+		background-size: 240px 60px;
+		background-position: -180px 0px;
+	}
+	.section_footer ul.social li a:hover {
+		border-bottom: solid 0px rgba(255,255,255,0.6);
+		opacity: 0.4;
+	}
+
+	.section_footer p.address {
+		display: block;
+		position: relative;
+		width: auto;
+		max-width: 900px;
+		height: auto;
+		margin: 0 auto 0 auto;
+		padding: 30px 0 0 0;
+
+		font-weight: 100;
+		font-size: 14px;
+		line-height: 25px;
+	}
+	.section_footer p.credits {
+		display: block;
+		position: relative;
+		width: auto;
+		height: auto;
+		margin: 0 auto 0 auto;
+		padding: 30px 0 60px 0;
+
+		font-weight: 100;
+		font-size: 10px;
+		line-height: 20px;
+		text-transform: uppercase;
+	}
+
+
+	@media (max-width: 1279px) {}
+	@media (max-width: 1023px) {}
+	@media (max-width: 767px) {
+		.section_footer {
+			margin: 0 auto 0 auto;
+			padding: 0 20px 50px 20px;
+		}
+
+		.section_footer a.cta {
+			display: block;
+			position: relative;
+			width: auto;
+			height: auto;
+			left: 0;
+			bottom: 50px;
+			margin: 0 20px 0 20px;
+			padding: 10px 10px 10px 10px;
+
+			font-weight: 300;
+			font-size: 18px;
+			line-height: 20px;
+			text-align: center;
+
+			-webkit-transition: .2s ease-in-out;
+			   -moz-transition: .2s ease-in-out;
+			     -o-transition: .2s ease-in-out;
+			    -ms-transition: .2s ease-in-out;
+			        transition: .2s ease-in-out;
+
+			-webkit-border-radius: 15px;
+			   -moz-border-radius: 15px;
+			        border-radius: 15px;
+
+			cursor: pointer;
+		}
+		.section_footer a.cta:hover {}
+
+		.section_footer ul.navigation {}
+		.section_footer ul.navigation li {
+			display: block;
+			margin: 0 0 10px 0;
+			padding: 0 0 0 0;
+		}
+		.section_footer ul.navigation li a {
+			padding: 0 0 0 0;
+
+			font-size: 20px;
+			line-height: 30px;
+		}
+		.section_footer ul.navigation li a:hover {}
+		.section_footer ul.navigation li a.small {
+			font-size: 16px;
+			line-height: 20px;
+		}
+
+		.section_footer p.small {
+			margin: 30px 0 100px 0;
+			padding: 0 0 0 0;
+
+			font-size: 11px;
+			line-height: 22px;
+		}
+	}
+</style>
+
+
+
+{% schema %}
+{
+  "name": "MAIN FOOTER",
+  "settings": [
+	{
+		"type":    "header",
+		"content": "FOOTER SETTINGS"
+	}
+  ]
+}
+{% endschema %}

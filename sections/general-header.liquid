@@ -1,0 +1,179 @@
+{% comment %}
+  Removed the settings_schema option to change header,
+    - header_navigation_location can be either header, or drawer.
+{% endcomment %}
+{% assign header_navigation_location = 'header' %}
+
+{%- capture additional_classes -%}
+  header
+
+  {%- if header_navigation_location == 'drawer' -%}
+    collapsed-navigation
+  {%- endif -%}
+
+  {% if section.settings.header_sticky %}
+    sticky-header
+  {% endif %}
+{%- endcapture -%}
+
+{% assign default_logo = section.settings.header_logo %}
+{% assign alternate_logo = section.settings.header_logo_alternate %}
+{% assign menu = section.settings.menu %}
+
+{% include 'product-goal-enabled' %}
+{% if product_goal_enabled %}
+  {% include 'header-goal' %}
+{% endif %}
+
+<div
+  class="{{ additional_classes | strip_newlines }}"
+  {% if section.settings.header_sticky %}
+    data-sticky-header
+  {% endif %}
+  data-main-header="{{ header_navigation_location }}"
+  data-section-id="{{ section.id }}"
+  data-section-type="header">
+  <div class="main-header-wrapper">
+    <div class="main-header" role="banner" data-header-content>
+      <div class="branding {% if alternate_logo %}alternate-logo-in-drawer{% else %}regular-logo-in-drawer{% endif %} {% if default_logo %}has-logo{% endif %}">
+        <a class="branding-logo-link" href="/">
+          {% if default_logo %}
+            <img
+              class="branding-logo-image logo-regular"
+              alt="{{ shop.name | escape }}"
+              src="{{ default_logo | img_url: '200x100' }}"
+              data-header-logo>
+            {% if alternate_logo %}
+              <img
+                class="branding-logo-image logo-alternate"
+                alt="{{ shop.name | escape }}"
+                src="{{ alternate_logo | img_url: '200x100' }}"
+                data-header-logo>
+            {% endif %}
+          {% else %}
+            <h2 class="branding-logo-heading">{{ shop.name }}</h2>
+          {% endif %}
+        </a>
+      </div>
+      {% if show_search %}
+        <div class="header-search-wrapper">
+          <form class="header-search-form" action="/search" method="get">
+            <input class="header-search-input" name="q" type="text" placeholder="{{ 'general.general.search_placeholder' | t }}" value="">
+          </form>
+        </div>
+      {% endif %}
+      <div class="header-tools">
+        {% if header_navigation_location == 'header' %}
+          {%
+            include 'navigation',
+            showArrows: false,
+            navigation_menu: menu
+          %}
+        {% endif %}
+        <div class="header-actions">
+          <div class="header-actions-list">
+            <div class="header-actions-list-item header-currency-switcher currency-switcher coin-container"></div>
+            {% if settings.show-currency-switcher %}
+              <div class="header-actions-list-item header-currency-switcher currency-switcher">
+                {% include "currency-selector" %}
+              </div>
+            {% endif %}
+            {% if show_search %}
+              <a class="header-actions-list-item header-search-toggle icon-search" href="#" data-search-toggle></a>
+            {% endif %}
+            {% if section.settings.show_cart %}
+              <a class="header-actions-list-item icon-cart header-cart-link" href="/cart"  tabindex="0">
+                <span class="header-cart-count {% if cart.item_count > 0 %}active{% endif%}">{{ cart.item_count }}</span>
+              </a>
+            {% endif %}
+            {% if header_navigation_location == 'header' %}
+              {% if shop.customer_accounts_enabled %}
+                <a class="header-actions-list-item header-account-link icon-head" href="/account"></a>
+              {% endif %}
+            {% endif %}
+            <a class="header-actions-list-item drawer-toggle" data-drawer-toggle tabindex="0" href="#">
+              <span class="icon-menu"></span>
+              <span class="icon-cross"></span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="header-drawer" tabindex="-1" data-header-drawer>
+    {%
+      include 'navigation',
+      showArrows: true,
+      navigation_menu: menu
+    %}
+    <div class="coin-container"></div>
+    {% if settings.show-currency-switcher %}
+      <div class="drawer-currency-switcher currency-switcher">
+        {% include "currency-selector" %}
+      </div>
+    {% endif %}
+    {% if shop.customer_accounts_enabled %}
+      <a href="/account" class="drawer-account-link button">{{ 'general.general.my_account' | t }}</a>
+    {% endif %}
+    {% if section.settings.drawer_social_icons %}
+      <div class="drawer-social-icons">
+        {% assign social_media_accounts = "facebook|twitter|google|pinterest|instagram|vimeo|youtube|rss" | split: "|" %}
+        {% for account in social_media_accounts %}
+          {% capture url %}social-{{account}}-url{% endcapture %}
+          {% if settings[url] != blank %}
+            <a href="{{ settings[url] }}">{{ account | capitalize }}</a>
+          {% endif %}
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Header",
+  "settings": [
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Menu",
+      "default": "main-menu"
+    },
+    {
+      "type": "checkbox",
+      "id": "header_sticky",
+      "label": "Enable fixed header",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_cart",
+      "label": "Show cart",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "drawer_social_icons",
+      "label": "Enable social icons in collapsed navigation",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Logo"
+    },
+    {
+      "type": "image_picker",
+      "id": "header_logo",
+      "label": "Logo image",
+      "info": "400 x 200px .png recommended"
+    },
+    {
+      "type": "image_picker",
+      "id": "header_logo_alternate",
+      "label": "Inverted logo image",
+      "info": "400 x 200px .png recommended"
+    }
+  ]
+}
+{% endschema %}

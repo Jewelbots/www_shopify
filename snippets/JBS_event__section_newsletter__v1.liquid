@@ -1,0 +1,395 @@
+<!-- section_newsletter  ⬇ -->
+<div class="section_newsletter">
+	<p>Join the Jewelbots Newsletter</p>
+	<h3>Want to know more about Jewelbots and code education? <br/> Sign up for our email and receive bi-monthly content directly to your inbox!</h3>
+	<form method="post" action="/subscribe" id="subscribe" role="form" name="mc-embedded-subscribe-form" class="validate">
+		<div class="mc-field-group">
+			<input type="email" name="EMAIL" class="required email" id="mce-EMAIL" value="Enter your email for updates" onfocus="if(this.value==this.defaultValue)this.value=''; mixpanel.track('NEWSLETTER', {'STEP': 'typed_email', 'POSITION': 'index_section'});" onBlur="if(this.value=='')this.value=this.defaultValue;">
+		</div>
+		<div id="mce-responses" class="clear">
+			<div class="response" id="mce-error-response" style="display:none"></div>
+			<div class="response" id="mce-success-response" style="display:none"></div>
+		</div><!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+		<div style="position: absolute; left: -5000px;"><input type="text" name="b_ccc4b9448a982cacc6429f42f_c5c8a04f03" tabindex="-1" value=""></div>
+		<input type="submit" value="+" name="subscribe" id="mc-embedded-subscribe" class="btn">
+	</form>
+
+	<div class="section_press_quotes">
+		<ul class="quotes">
+			<li>
+				<a class="quote" href="http://www.brit.co/jewelbots-friendship-bracelet-future/" target="_blank">»This Is the Friendship Bracelet of the Future...«</a>
+				<img class="quote" src="{{ 'JBS_event__section_newsletter__press_britco.png' | asset_url }}" height="30" />
+			</li>
+			<li>
+				<img class="stars" src="{{ 'JBS_event__section_newsletter__press_stars.png' | asset_url }}" />
+				<a class="quote" href="http://www.wired.com/2015/07/somehow-teen-girls-get-coolest-wearable/" target="_blank">»The most interesting wearable I’ve seen this year...«</a>
+				<img class="quote" src="{{ 'JBS_event__section_newsletter__press_wired.png' | asset_url }}" height="15" />
+			</li>
+			<li>
+				<a class="quote" href="http://www.psfk.com/2015/06/girls-coding-programmable-bracelets-inspire-girls-to-code.html" target="_blank">»An introduction to coding motivated by high school tribes...«</a>
+				<img class="quote" src="{{ 'JBS_event__section_newsletter__press_psfk.png' | asset_url }}" height="30" />
+			</li>
+		</ul>
+		<ul class="logos">
+			<li><a href="http://www.forbes.com/sites/leoking/2015/07/31/tech-women-triumph-women-in-tech-jewelbots-ellen-pao-susan-wojcicki/" target="_blank"><img src="{{ 'JBS_event__section_newsletter__press_forbes.png' | asset_url }}" /></a></li><!--
+		 --><li><a href="http://www.bustle.com/articles/97235-jewelbots-programmable-friendship-bracelets-are-designed-to-get-girls-coding-plus-4-other-toys-getting-girls" target="_blank"><img src="{{ 'JBS_event__section_newsletter__press_bustle.png' | asset_url }}" /></a></li><!--
+		 --><li><a href="http://www.theverge.com/2015/7/23/9020083/jewelbots-programming-wearable-jewelry" target="_blank"><img src="{{ 'JBS_event__section_newsletter__press_theverge.png' | asset_url }}" /></a></li><!--
+		 --><li><a href="http://techcrunch.com/2015/07/13/jewelbots-is-a-friendship-bracelet-that-teaches-girls-how-to-code/" target="_blank"><img src="{{ 'JBS_event__section_newsletter__press_techcrunch.png' | asset_url }}" /></a></li><!--
+		 --><li><a href="http://www.businessinsider.com/wearable-tech-is-all-the-rage-at-this-hackathon-for-girls-as-young-as-five-years-old-2015-6" target="_blank"><img src="{{ 'JBS_event__section_newsletter__press_businessinsider.png' | asset_url }}" /></a></li><!--
+		 --><li><a href="http://www.glamour.com/fashion/blogs/dressed/2015/07/jewelbots-teaches-teen-girls-t" target="_blank"><img src="{{ 'JBS_event__section_newsletter__press_glamour.png' | asset_url }}" /></a></li><!--
+		 --><li><a href="http://www.teenvogue.com/story/jewelbot-bracelet-code-education" target="_blank"><img src="{{ 'JBS_event__section_newsletter__press_teenvogue.png' | asset_url }}" /></a></li><!--
+		 --><li><a href="http://finance.yahoo.com/news/startup-bets-wearable-will-solve-a-huge-problem-for-girls-145434164.html" target="_blank"><img src="{{ 'JBS_event__section_newsletter__press_yahoo.png' | asset_url }}" /></a></li><!--
+		 --><li><a href="http://www.buzzfeed.com/nicolenguyen/hurry-up-and-exist-irl#.evylyjyx6" target="_blank"><img src="{{ 'JBS_event__section_newsletter__press_buzzfeed.png' | asset_url }}" /></a></li>
+		</ul>
+	</div><!--//section_press_quotes -->
+
+</div>
+<!-- section_newsletter  ⬆ -->
+
+<style>
+/* @group ----- section_newsletter -------------- */
+.section_newsletter {
+	display: block;
+	position: relative;
+	width: 100%;
+	height: auto;
+	margin: 0 0 0 0;
+	padding: 180px 75px 90px 75px;
+	background-image: url({{ 'JBS_event__section_newsletter__background_1.jpg' | asset_url }});
+
+	-webkit-background-size: cover;
+       -moz-background-size: cover;
+	     -o-background-size: cover;
+	        background-size: cover;
+
+			 -webkit-border-top-left-radius: 25px;
+			-webkit-border-top-right-radius: 25px;
+				 -moz-border-radius-topleft: 25px;
+				-moz-border-radius-topright: 25px;
+					 border-top-left-radius: 25px;
+					border-top-right-radius: 25px;
+
+	text-align: center;
+}
+
+.section_newsletter h3 {
+	display: block;
+	position: relative;
+	width: auto;
+	height: auto;
+	margin: 0 0 0 0;
+	padding: 15px 0 0 0;
+
+	font-family: "museo-sans",sans-serif;
+	font-style: normal;
+	font-weight: 300;
+	font-size: 30px;
+	line-height: 35px;
+	letter-spacing: 0;
+	text-indent: 0;
+	text-transform: none;
+	color: rgb(255,255,255);
+	text-shadow: 0px 0px 10px rgba(0,0,0,0.6);
+}
+.section_newsletter p {
+	display: block;
+	position: relative;
+	width: auto;
+	height: auto;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+
+	font-family: "museo-sans", sans-serif;
+	font-style: normal;
+	font-weight: 300;
+	font-size: 16px;
+	line-height: 25px;
+	letter-spacing: 0px;
+	text-indent: 0;
+	text-transform: none;
+	color: rgb(255,255,255);
+}
+
+.section_newsletter form {
+	display: block;
+	position: relative;
+	width: 360px;
+	height: auto;
+	margin: 0 auto 0 auto;
+	padding: 25px 0 25px 0;
+}
+.section_newsletter form #mce-EMAIL {
+	display: block;
+	position: relative;
+	width: 100%;
+	height: 50px;
+	margin: 0 0 0 0;
+	padding: 0 15px 0 15px;
+	border: 0px solid rgba(0,0,0,0);
+
+	-webkit-border-radius: 3px;
+	   -moz-border-radius: 3px;
+	        border-radius: 3px;
+
+	font-family: "museo-sans", sans-serif;
+	font-weight: 300;
+	font-size: 16px;
+	line-height: 50px;
+	text-transform: none;
+	text-align: left;
+	color: rgba(100,100,100,1.0);
+
+	-webkit-transition: .2s ease-in-out;
+	   -moz-transition: .2s ease-in-out;
+	     -o-transition: .2s ease-in-out;
+	    -ms-transition: .2s ease-in-out;
+	        transition: .2s ease-in-out;
+}
+.section_newsletter form #mce-EMAIL:focus {
+	background-color: rgba(245,245,245,1.0);
+
+	color: rgb(255,135,0);
+	outline: none;
+
+	-webkit-box-shadow: inset 0px 0px 15px 0px rgba(0,0,0,0.0);
+       -moz-box-shadow: inset 0px 0px 15px 0px rgba(0,0,0,0.0);
+            box-shadow: inset 0px 0px 15px 0px rgba(0,0,0,0.0);
+}
+.section_newsletter form #mc-embedded-subscribe {
+	display: block;
+	position: relative;
+	width: 70px;
+	height: 50px;
+	margin: -50px 0 0 290px;
+	padding: 0 0 0 0;
+	background-color: rgba(255,60,0,1.0);
+	border: solid 2px rgba(255,60,0,0.6);
+	color: rgba(255,255,255,1.0);
+
+	font-family: "museo-sans", sans-serif;
+	font-weight: 300;
+	font-size: 16px;
+	line-height: 46px;
+	text-transform: uppercase;
+	text-align: center;
+	color: rgba(255,255,255,1.0);
+
+	        border-radius: 0px 3px 3px 0px;
+	   -moz-border-radius: 0px 3px 3px 0px;
+	-webkit-border-radius: 0px 3px 3px 0px;
+
+		-webkit-box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.4);
+		   -moz-box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.4);
+				box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.4);
+
+	-webkit-transition: .2s ease-in-out;
+	   -moz-transition: .2s ease-in-out;
+	     -o-transition: .2s ease-in-out;
+	    -ms-transition: .2s ease-in-out;
+	        transition: .2s ease-in-out;
+
+	cursor: pointer;
+}
+.section_newsletter form #mc-embedded-subscribe:hover {
+	background-color: rgba(255,255,255,1.0);
+	border: solid 2px rgba(255,60,0,0.6);
+
+	font-weight: 700;
+	color: rgba(255,60,0,0.6);
+
+	-webkit-box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.0);
+	   -moz-box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.0);
+			box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.0);
+}
+
+
+@media (max-width: 1279px) {}
+@media (max-width: 1023px) {}
+@media (max-width: 767px) {
+	.section_newsletter {
+		padding: 60px 25px 50px 25px;
+
+		 -webkit-border-top-left-radius: 0;
+		-webkit-border-top-right-radius: 0;
+			 -moz-border-radius-topleft: 0;
+			-moz-border-radius-topright: 0;
+				 border-top-left-radius: 0;
+				border-top-right-radius: 0;
+	}
+
+	.section_newsletter h3 {}
+	.section_newsletter p {}
+
+	.section_newsletter form {
+		width: 100%;
+		margin: 0 auto 0 auto;
+		padding: 25px 0 25px 0;
+	}
+	.section_newsletter form #mce-EMAIL {
+		display: block;
+		position: relative;
+		width: 100%;
+		height: 50px;
+		margin: 0 auto 0 auto;
+		padding: 0 15px 0 15px;
+	}
+	.section_newsletter form #mce-EMAIL:focus {}
+	.section_newsletter form #mc-embedded-subscribe {
+		display: block;
+		position: relative;
+		width: 100%;
+		height: 50px;
+		margin: 10px auto 0 auto;
+		cursor: pointer;
+	}
+	.section_newsletter form #mc-embedded-subscribe:hover {}
+}
+/* @end */
+/* @group ----- section_press_quotes ------------ */
+.section_press_quotes {
+	display: block;
+	position: relative;
+	width: 100%;
+	height: 100%;
+	/* min-height: 800px; */
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	background-color: rgba(160,0,185,0.0);
+
+	-webkit-background-size: cover;
+       -moz-background-size: cover;
+	     -o-background-size: cover;
+	        background-size: cover;
+
+	font-family: "museo-sans", sans-serif;
+	font-style: normal;
+	letter-spacing: 0px;
+	text-indent: 0;
+	text-transform: none;
+	text-align: center;
+	color: rgb(255,255,255);
+
+	overflow: hidden;
+	opacity: 1.0;
+}
+
+.section_press_quotes {
+	display: block;
+	position: relative;
+	width: auto;
+	height: auto;
+	margin: 0 auto 0 auto;
+	padding: 0 50px 0 50px;
+
+	z-index: 7;
+}
+.section_press_quotes ul.quotes {
+	display: block;
+	position: relative;
+	width: 100%;
+	max-width: 1200px;
+	height: auto;
+	margin: 0 auto 0 auto;
+	padding: 0 0 0 0;
+}
+.section_press_quotes ul.quotes li {
+	display: inline-block;
+	position: relative;
+	width: auto;
+	max-width: 280px;
+	height: auto;
+	margin: 0 15px 0 15px;
+	padding: 0 0 0 0
+}
+.section_press_quotes ul.quotes li a.quote {
+	display: block;
+	position: relative;
+	width: auto;
+	height: auto;
+	margin: 0 auto 0 auto;
+	padding: 0 0 0 0;
+
+	font-family: "museo-sans", sans-serif;
+	font-style: italic;
+	font-weight: 100;
+	font-size: 16px;
+	line-height: 25px;
+	color: rgba(255,255,255,0.8);
+}
+.section_press_quotes ul.quotes li img.stars {
+	display: block;
+	position: relative;
+	width: auto;
+	height: 20px;
+	margin: 40px auto 5px auto;
+	padding: 0 0 0 0;
+
+	opacity: 0.8;
+}
+.section_press_quotes ul.quotes li img.quote {
+	display: block;
+	position: relative;
+	margin: 10px auto 35px auto;
+	padding: 0 0 0 0;
+
+	opacity: 0.8;
+}
+
+.section_press_quotes ul.logos {
+	display: block;
+	position: relative;
+	width: 100%;
+	max-width: 1200px;
+	height: auto;
+	margin: 0 auto 40px auto;
+	padding: 0 0 0 0;
+}
+.section_press_quotes ul.logos li {
+	display: inline-block;
+	position: relative;
+	width: auto;
+	height: 35px;
+	margin: 0 10px 0 10px;
+	padding: 0 0 0 0
+}
+.section_press_quotes ul.logos li img {
+	display: block;
+	position: relative;
+	width: auto;
+	height: 100%;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+
+	opacity: 1.0;
+}
+.section_press_quotes ul.logos li a:hover img {
+	opacity: 0.6;
+}
+
+@media (max-width: 1279px) {}
+@media (max-width: 1023px) {}
+@media (max-width: 767px) {
+	.section_press_quotes {
+		display: block;
+		position: relative;
+		width: auto;
+		height: auto;
+		margin: 0 auto 0 auto;
+		padding: 40px 50px 0 50px;
+
+		z-index: 7;
+	}
+
+	.section_press_quotes ul.quotes li a.quote {}
+	.section_press_quotes ul.quotes li img.stars {
+		margin: 0 auto 10px auto;
+	}
+	.section_press_quotes ul.quotes li img.quote {}
+
+	.section_press_quotes ul.logos {}
+	.section_press_quotes ul.logos li {}
+	.section_press_quotes ul.logos li img {}
+	.section_press_quotes ul.logos li a:hover img {}
+}
+/* @end */
+</style>
