@@ -1,1 +1,501 @@
-{"current":{"theme-primary-color":"#00c49c","theme-secondary-color":"#fc3e1d","heading-text-color":"#000000","body-text-color":"#797676","border-color":"#e3e3e3","body-background-color":"#fff","body-font":"Roboto, sans-serif","body-font-weight":"300","heading-font":"'Open Sans', sans-serif","heading-font-weight":"300","primary-button-font":"'Open Sans', sans-serif","primary-button-font-weight":"700","featured-product-main":"","product_module_1":"module-product-focus","product_module_2":"module-technical-specifications","product-sale-goal-use":true,"product-sale-goal-style":"color","product-sale-goal-button":"Order your limited Jewelbot Now","product-sale-goal-estimated-delivery-date":"Estimated delivery: 02\/08","product-goal-starting-quantity":"999","product-goal":"10","product-goal-use-quantity":true,"product-sale-goal-date-time":"02\/08\/2017 15:00","social-facebook-url":"","social-twitter-url":"","social-google-url":"","social-pinterest-url":"","social-instagram-url":"","social-vimeo-url":"","social-youtube-url":"","social-rss-url":"","show-currency-switcher":true,"currency-switcher-format":"money_format","currency-switcher-supported-currencies":"INR GBP CAD USD AUD EUR JPY","currency-switcher-default":"USD","favicon":"shopify:\/\/shop_images\/v3__favicon_32x32_253a392a-1e55-4971-82c0-769d61deefd9.png","checkout_header_image":"","checkout_logo_image":"shopify:\/\/shop_images\/v3__logo_400x200_30a1dc47-f8b0-45b7-9dfe-0196d143f343.png","checkout_logo_position":"left","checkout_logo_size":"large","checkout_body_background_image":"","checkout_body_background_color":"#efefef","checkout_input_background_color_mode":"white","checkout_sidebar_background_image":"","checkout_sidebar_background_color":"#14c8aa","checkout_heading_font":"Source Sans Pro","checkout_body_font":"Source Sans Pro","checkout_accent_color":"#009ee6","checkout_button_color":"#009ee6","checkout_error_color":"#ff4141","theme-primary-color-hover":"#0288b5","sections":{"general-newsletter":{"type":"general-newsletter","settings":{"enable":false,"style":"color"}},"general-social-feeds":{"type":"general-social-feeds","settings":{}},"general-footer":{"type":"general-footer","blocks":{"footer-block-1":{"type":"menu","settings":{"menu":"main-menu"}},"footer-block-2":{"type":"menu","settings":{"menu":"footer"}}},"block_order":["footer-block-1","footer-block-2"],"settings":{"style":"default","enable_borders":true,"payment_icons":false,"show_logo":true,"footer_logo":"","footer_logo_alternate":""}},"general-header":{"type":"general-header","settings":{"menu":"main-menu","header_sticky":true,"show_cart":true,"drawer_social_icons":true,"header_logo":"","header_logo_alternate":""}},"template-product":{"type":"template-product","settings":{"enable_zoom":true,"disable_ajax_add_product":true,"enable-share-buttons":true,"additional_info_text_1":"","additional_info_url_1":"","additional_info_icon_1":"info","additional_info_text_2":"","additional_info_url_2":"","additional_info_icon_2":"info"}},"module-related-products":{"type":"module-related-products","settings":{"enable":false,"style":"light","stock_overlay_show":true,"stock_overlay_threshold":"1000"}},"JBS__section__header":{"type":"JBS__section__header","settings":{}},"JBS_index__section_hero__img":{"type":"JBS_index__section_hero__img","settings":{"hero_enabled":true,"hero_size":true,"background_color":"#14143C","background_opacity":"0.2","background_image":"shopify:\/\/shop_images\/20161106_160912.jpg","background_image_blurr":"0px","content_headline":"The friendship bracelet that teaches kids to code!","content_subheadline":"","cta_copy":"Buy Now","cta_link":"https:\/\/shop.jewelbots.com\/products\/jewelbots-open-source-programmable-friendship-bracelet?variant=29752700561","cta_note":"To learn more please <br \/> scroll down.","cta_note_icon":"ion-arrow-down-c"}},"JBS__section__footer":{"type":"JBS__section__footer","settings":{}},"JBS_contact__section_hero__img":{"type":"JBS_contact__section_hero__img","settings":{"hero_enabled":true,"hero_size":false,"background_color":"#ff58ac","background_opacity":"0.0","background_image":"shopify:\/\/shop_images\/go_section_hero__background_1.jpg","background_image_blurr":"0px","content_headline":"Contact Us","content_subheadline":"There are many ways for you to get in touch!","cta_copy":"","cta_link":"mailto:hi@jewelbots.com","cta_note":"","cta_note_icon":"ion-arrow-down-c"}},"JBS_privacy__section_hero__img":{"type":"JBS_privacy__section_hero__img","settings":{"hero_enabled":true,"hero_size":true,"background_color":"#0c3e47","background_opacity":"0.2","background_image":"shopify:\/\/shop_images\/about_section_hero__background_1.jpg","background_image_blurr":"0px","content_headline":"PRIVACY AT JEWELBOTS","content_subheadline":"We are making a product for kids, and their safety is our number one priority. Jewelbots don’t contain a GPS and we don’t store any personal data of any kind.","cta_copy":"Our Privacy Policy","cta_link":"#learn_more","cta_note":"To learn more please <br \/> scroll down.","cta_note_icon":"ion-arrow-down-c"}},"JBS_story__section_hero__img":{"type":"JBS_story__section_hero__img","settings":{"hero_enabled":true,"hero_size":true,"background_color":"#000000","background_opacity":"0.3","background_image":"shopify:\/\/shop_images\/12.jpg","background_image_blurr":"0px","content_headline":"OUR STORY","content_subheadline":"Our goal is to make products that expose young girls to technology and make technology accessible to their interests. We want to build better software and have fun doing it. We believe strongly that diverse teams build better products.","cta_copy":"Learn More","cta_link":"#learn_more","cta_note":"To learn more please <br \/> scroll down.","cta_note_icon":"ion-arrow-down-c"}},"JBS_faqs__section_hero__img":{"type":"JBS_faqs__section_hero__img","settings":{"hero_enabled":true,"hero_size":false,"background_color":"#14143C","background_opacity":"0.4","background_image":"shopify:\/\/shop_images\/new_index_section_hero__background_5.jpg","background_image_blurr":"0px","content_headline":"Frequently asked questions","content_subheadline":"","cta_copy":"Email us","cta_link":"mailto:hi@jewelbots.com","cta_note":"","cta_note_icon":""}},"JBS_jobs__section_hero__img":{"type":"JBS_jobs__section_hero__img","settings":{"hero_enabled":true,"hero_size":false,"background_color":"#14143C","background_opacity":"0.4","background_image":"shopify:\/\/shop_images\/newsletter_section_hero__background_1.jpg","background_image_blurr":"0px","content_headline":"Jobs at Jewelbots","content_subheadline":"No jobs currently open.","cta_copy":"","cta_link":"","cta_note":"To learn more please <br \/> scroll down.","cta_note_icon":"ion-arrow-down-c"}},"JBS_ambassador__section_hero__img":{"type":"JBS_ambassador__section_hero__img","settings":{"hero_enabled":true,"hero_size":true,"background_color":"#14143C","background_opacity":"0.2","background_image":"shopify:\/\/shop_images\/index_girls_section_video__background_1.jpg","background_image_blurr":"0px","content_headline":"JEWELBOTS AMBASSADOR","content_subheadline":"Become a brand ambassador today to receive exclusive offers and fun Jewelbots swag.","cta_copy":"Learn More","cta_link":"#learn_more","cta_note":"We'd love to meet you!","cta_note_icon":"ion-heart"}},"JBS_404__section_hero__img":{"type":"JBS_404__section_hero__img","settings":{"hero_enabled":true,"hero_size":false,"background_color":"#14143C","background_opacity":"0.2","background_image":"shopify:\/\/shop_images\/JBS_404__background_x_1400x1400_2x.progressive_d4099954-faf0-4d6b-b72f-1689e6c937a0.jpg","background_image_blurr":"0px","content_headline":"404","content_subheadline":"Something went wrong!","cta_copy":"Please go back","cta_link":"https:\/\/shop.jewelbots.com","cta_note":"","cta_note_icon":""}},"JBS_event__section_hero__img":{"type":"JBS_event__section_hero__img","settings":{"hero_enabled":true,"hero_size":false,"background_color":"#14143C","background_opacity":"0.0","background_image":"shopify:\/\/shop_images\/header-for-classes.jpg","background_image_blurr":"0px","content_headline":"Spring Break Maker Camp","content_subheadline":"with Jewelbots","cta_copy":"Register Now","cta_link":"","cta_note":"To learn more please <br \/> scroll down.","cta_note_icon":"ion-arrow-down-c"}}},"content_for_index":[]},"presets":{"Cool":{"theme-primary-color":"#0381A2","theme-primary-color-hover":"#0288b5","theme-secondary-color":"#554d99","heading-text-color":"#000000","body-text-color":"#797676","border-color":"#e3e3e3","body-background-color":"#fff","body-font":"Roboto, sans-serif","body-font-weight":"300","heading-font":"'Open Sans', sans-serif","heading-font-weight":"300","primary-button-font":"'Open Sans', sans-serif","primary-button-font-weight":"700","sections":{"general-newsletter":{"type":"general-newsletter","settings":{"enable":true,"style":"default"}},"general-social-feeds":{"type":"general-social-feeds","blocks":{"widget-block-1":{"type":"instagram","settings":{}}},"block_order":["widget-block-1"],"settings":{}},"general-footer":{"type":"general-footer","blocks":{"footer-block-1":{"type":"menu","settings":{"menu":"main-menu"}},"footer-block-2":{"type":"menu","settings":{"menu":"footer"}}},"block_order":["footer-block-1","footer-block-2"],"settings":{"style":"default","enable_borders":true}}},"content_for_index":[]},"Fresh":{"theme-primary-color":"#857b58","theme-primary-color-hover":"#6f6850","theme-secondary-color":"#4e7f74","heading-text-color":"#191919","body-text-color":"#5e5e5e","border-color":"#e6e6e6","body-background-color":"#ffffff","body-font":"Roboto Condensed, sans-serif","body-font-weight":"300","heading-font":"'Playfair Display', serif","heading-font-weight":"700","primary-button-font":"Roboto, sans-serif","primary-button-font-weight":"700","sections":{"general-newsletter":{"type":"general-newsletter","settings":{"enable":true,"style":"default"}},"general-social-feeds":{"type":"general-social-feeds","blocks":{"widget-block-1":{"type":"twitter","settings":{"style":"gradient"}}},"block_order":["widget-block-1"],"settings":{}},"general-footer":{"type":"general-footer","blocks":{"footer-block-1":{"type":"menu","settings":{"menu":"main-menu"}},"footer-block-2":{"type":"menu","settings":{"menu":"footer"}}},"block_order":["footer-block-1","footer-block-2"],"settings":{"style":"light","enable_borders":true,"show_logo":true}}},"content_for_index":[]},"Bold":{"theme-primary-color":"#ea2931","theme-primary-color-hover":"#d1282f","theme-secondary-color":"#fd8311","heading-text-color":"#161a1c","body-text-color":"#7f7f7f","border-color":"#e3e3e3","body-background-color":"#ffffff","body-font":"'Source Sans Pro', sans-serif","body-font-weight":"300","heading-font":"Montserrat, sans-serif","heading-font-weight":"400","primary-button-font":"'Source Sans Pro', sans-serif","primary-button-font-weight":"700","sections":{"general-header":{"type":"general-header","settings":{"header_sticky":true}},"general-newsletter":{"type":"general-newsletter","settings":{"enable":true,"style":"default"}},"general-social-feeds":{"type":"general-social-feeds","blocks":{"widget-block-1":{"type":"instagram","settings":{}},"widget-block-2":{"type":"twitter","settings":{"style":"light"}}},"block_order":["widget-block-1","widget-block-2"],"settings":{}},"general-footer":{"type":"general-footer","blocks":{"footer-block-1":{"type":"menu","settings":{"menu":"main-menu"}},"footer-block-2":{"type":"menu","settings":{"menu":"footer"}}},"block_order":["footer-block-1","footer-block-2"],"settings":{"style":"default","enable_borders":true,"show_logo":true}}},"content_for_index":[]}}}
+{
+  "current": {
+    "theme-primary-color": "#00c49c",
+    "theme-secondary-color": "#fc3e1d",
+    "heading-text-color": "#000000",
+    "body-text-color": "#797676",
+    "border-color": "#e3e3e3",
+    "body-background-color": "#fff",
+    "body-font": "Roboto, sans-serif",
+    "body-font-weight": "300",
+    "heading-font": "'Open Sans', sans-serif",
+    "heading-font-weight": "300",
+    "primary-button-font": "'Open Sans', sans-serif",
+    "primary-button-font-weight": "700",
+    "featured-product-main": "",
+    "product_module_1": "module-product-focus",
+    "product_module_2": "module-technical-specifications",
+    "product-sale-goal-use": true,
+    "product-sale-goal-style": "color",
+    "product-sale-goal-button": "Order your limited Jewelbot Now",
+    "product-sale-goal-estimated-delivery-date": "Estimated delivery: 02\/08",
+    "product-goal-starting-quantity": "999",
+    "product-goal": "10",
+    "product-goal-use-quantity": true,
+    "product-sale-goal-date-time": "02\/08\/2017 15:00",
+    "social-facebook-url": "",
+    "social-twitter-url": "",
+    "social-google-url": "",
+    "social-pinterest-url": "",
+    "social-instagram-url": "",
+    "social-vimeo-url": "",
+    "social-youtube-url": "",
+    "social-rss-url": "",
+    "show-currency-switcher": true,
+    "currency-switcher-format": "money_format",
+    "currency-switcher-supported-currencies": "INR GBP CAD USD AUD EUR JPY",
+    "currency-switcher-default": "USD",
+    "favicon": "shopify:\/\/shop_images\/v3__favicon_32x32_253a392a-1e55-4971-82c0-769d61deefd9.png",
+    "checkout_header_image": "",
+    "checkout_logo_image": "shopify:\/\/shop_images\/v3__logo_400x200_30a1dc47-f8b0-45b7-9dfe-0196d143f343.png",
+    "checkout_logo_position": "left",
+    "checkout_logo_size": "large",
+    "checkout_body_background_image": "",
+    "checkout_body_background_color": "#efefef",
+    "checkout_input_background_color_mode": "white",
+    "checkout_sidebar_background_image": "",
+    "checkout_sidebar_background_color": "#14c8aa",
+    "checkout_heading_font": "Source Sans Pro",
+    "checkout_body_font": "Source Sans Pro",
+    "checkout_accent_color": "#009ee6",
+    "checkout_button_color": "#009ee6",
+    "checkout_error_color": "#ff4141",
+    "theme-primary-color-hover": "#0288b5",
+    "sections": {
+      "general-newsletter": {
+        "type": "general-newsletter",
+        "settings": {
+          "enable": false,
+          "style": "color"
+        }
+      },
+      "general-social-feeds": {
+        "type": "general-social-feeds",
+        "settings": {}
+      },
+      "general-footer": {
+        "type": "general-footer",
+        "blocks": {
+          "footer-block-1": {
+            "type": "menu",
+            "settings": {
+              "menu": "main-menu"
+            }
+          },
+          "footer-block-2": {
+            "type": "menu",
+            "settings": {
+              "menu": "footer"
+            }
+          }
+        },
+        "block_order": [
+          "footer-block-1",
+          "footer-block-2"
+        ],
+        "settings": {
+          "style": "default",
+          "enable_borders": true,
+          "payment_icons": false,
+          "show_logo": true,
+          "footer_logo": "",
+          "footer_logo_alternate": ""
+        }
+      },
+      "general-header": {
+        "type": "general-header",
+        "settings": {
+          "menu": "main-menu",
+          "header_sticky": true,
+          "show_cart": true,
+          "drawer_social_icons": true,
+          "header_logo": "",
+          "header_logo_alternate": ""
+        }
+      },
+      "template-product": {
+        "type": "template-product",
+        "settings": {
+          "enable_zoom": true,
+          "disable_ajax_add_product": true,
+          "enable-share-buttons": true,
+          "additional_info_text_1": "",
+          "additional_info_url_1": "",
+          "additional_info_icon_1": "info",
+          "additional_info_text_2": "",
+          "additional_info_url_2": "",
+          "additional_info_icon_2": "info"
+        }
+      },
+      "module-related-products": {
+        "type": "module-related-products",
+        "settings": {
+          "enable": false,
+          "style": "light",
+          "stock_overlay_show": true,
+          "stock_overlay_threshold": "1000"
+        }
+      },
+      "JBS__section__header": {
+        "type": "JBS__section__header",
+        "settings": {}
+      },
+      "JBS_index__section_hero__img": {
+        "type": "JBS_index__section_hero__img",
+        "settings": {
+          "hero_enabled": true,
+          "hero_size": true,
+          "background_color": "#14143C",
+          "background_opacity": "0.2",
+          "background_image": "shopify:\/\/shop_images\/20161106_160912.jpg",
+          "background_image_blurr": "0px",
+          "content_headline": "The friendship bracelet that teaches kids to code!",
+          "content_subheadline": "",
+          "cta_copy": "Buy Now",
+          "cta_link": "https:\/\/shop.jewelbots.com\/products\/jewelbots-open-source-programmable-friendship-bracelet?variant=29752700561",
+          "cta_note": "To learn more please <br \/> scroll down.",
+          "cta_note_icon": "ion-arrow-down-c"
+        }
+      },
+      "JBS__section__footer": {
+        "type": "JBS__section__footer",
+        "settings": {}
+      },
+      "JBS_contact__section_hero__img": {
+        "type": "JBS_contact__section_hero__img",
+        "settings": {
+          "hero_enabled": true,
+          "hero_size": false,
+          "background_color": "#ff58ac",
+          "background_opacity": "0.0",
+          "background_image": "shopify:\/\/shop_images\/go_section_hero__background_1.jpg",
+          "background_image_blurr": "0px",
+          "content_headline": "Contact Us",
+          "content_subheadline": "There are many ways for you to get in touch!",
+          "cta_copy": "",
+          "cta_link": "mailto:hi@jewelbots.com",
+          "cta_note": "",
+          "cta_note_icon": "ion-arrow-down-c"
+        }
+      },
+      "JBS_privacy__section_hero__img": {
+        "type": "JBS_privacy__section_hero__img",
+        "settings": {
+          "hero_enabled": true,
+          "hero_size": true,
+          "background_color": "#0c3e47",
+          "background_opacity": "0.2",
+          "background_image": "shopify:\/\/shop_images\/about_section_hero__background_1.jpg",
+          "background_image_blurr": "0px",
+          "content_headline": "PRIVACY AT JEWELBOTS",
+          "content_subheadline": "We are making a product for kids, and their safety is our number one priority. Jewelbots don’t contain a GPS and we don’t store any personal data of any kind.",
+          "cta_copy": "Our Privacy Policy",
+          "cta_link": "#learn_more",
+          "cta_note": "To learn more please <br \/> scroll down.",
+          "cta_note_icon": "ion-arrow-down-c"
+        }
+      },
+      "JBS_story__section_hero__img": {
+        "type": "JBS_story__section_hero__img",
+        "settings": {
+          "hero_enabled": true,
+          "hero_size": true,
+          "background_color": "#000000",
+          "background_opacity": "0.3",
+          "background_image": "shopify:\/\/shop_images\/12.jpg",
+          "background_image_blurr": "0px",
+          "content_headline": "OUR STORY",
+          "content_subheadline": "Our goal is to make products that expose young girls to technology and make technology accessible to their interests. We want to build better software and have fun doing it. We believe strongly that diverse teams build better products.",
+          "cta_copy": "Learn More",
+          "cta_link": "#learn_more",
+          "cta_note": "To learn more please <br \/> scroll down.",
+          "cta_note_icon": "ion-arrow-down-c"
+        }
+      },
+      "JBS_faqs__section_hero__img": {
+        "type": "JBS_faqs__section_hero__img",
+        "settings": {
+          "hero_enabled": true,
+          "hero_size": false,
+          "background_color": "#14143C",
+          "background_opacity": "0.4",
+          "background_image": "shopify:\/\/shop_images\/new_index_section_hero__background_5.jpg",
+          "background_image_blurr": "0px",
+          "content_headline": "Frequently asked questions",
+          "content_subheadline": "",
+          "cta_copy": "Email us",
+          "cta_link": "mailto:hi@jewelbots.com",
+          "cta_note": "",
+          "cta_note_icon": ""
+        }
+      },
+      "JBS_jobs__section_hero__img": {
+        "type": "JBS_jobs__section_hero__img",
+        "settings": {
+          "hero_enabled": true,
+          "hero_size": false,
+          "background_color": "#14143C",
+          "background_opacity": "0.4",
+          "background_image": "shopify:\/\/shop_images\/newsletter_section_hero__background_1.jpg",
+          "background_image_blurr": "0px",
+          "content_headline": "Jobs at Jewelbots",
+          "content_subheadline": "No jobs currently open.",
+          "cta_copy": "",
+          "cta_link": "",
+          "cta_note": "To learn more please <br \/> scroll down.",
+          "cta_note_icon": "ion-arrow-down-c"
+        }
+      },
+      "JBS_ambassador__section_hero__img": {
+        "type": "JBS_ambassador__section_hero__img",
+        "settings": {
+          "hero_enabled": true,
+          "hero_size": true,
+          "background_color": "#14143C",
+          "background_opacity": "0.2",
+          "background_image": "shopify:\/\/shop_images\/index_girls_section_video__background_1.jpg",
+          "background_image_blurr": "0px",
+          "content_headline": "JEWELBOTS AMBASSADOR",
+          "content_subheadline": "Become a brand ambassador today to receive exclusive offers and fun Jewelbots swag.",
+          "cta_copy": "Learn More",
+          "cta_link": "#learn_more",
+          "cta_note": "We'd love to meet you!",
+          "cta_note_icon": "ion-heart"
+        }
+      },
+      "JBS_404__section_hero__img": {
+        "type": "JBS_404__section_hero__img",
+        "settings": {
+          "hero_enabled": true,
+          "hero_size": false,
+          "background_color": "#14143C",
+          "background_opacity": "0.2",
+          "background_image": "shopify:\/\/shop_images\/JBS_404__background_x_1400x1400_2x.progressive_d4099954-faf0-4d6b-b72f-1689e6c937a0.jpg",
+          "background_image_blurr": "0px",
+          "content_headline": "404",
+          "content_subheadline": "Something went wrong!",
+          "cta_copy": "Please go back",
+          "cta_link": "https:\/\/shop.jewelbots.com",
+          "cta_note": "",
+          "cta_note_icon": ""
+        }
+      },
+      "JBS_event__section_hero__img": {
+        "type": "JBS_event__section_hero__img",
+        "settings": {
+          "hero_enabled": true,
+          "hero_size": false,
+          "background_color": "#14143C",
+          "background_opacity": "0.0",
+          "background_image": "shopify:\/\/shop_images\/header-for-classes.jpg",
+          "background_image_blurr": "0px",
+          "content_headline": "Spring Break Maker Camp",
+          "content_subheadline": "with Jewelbots",
+          "cta_copy": "Register Now",
+          "cta_link": "",
+          "cta_note": "To learn more please <br \/> scroll down.",
+          "cta_note_icon": "ion-arrow-down-c"
+        }
+      }
+    },
+    "content_for_index": []
+  },
+  "presets": {
+    "Cool": {
+      "theme-primary-color": "#0381A2",
+      "theme-primary-color-hover": "#0288b5",
+      "theme-secondary-color": "#554d99",
+      "heading-text-color": "#000000",
+      "body-text-color": "#797676",
+      "border-color": "#e3e3e3",
+      "body-background-color": "#fff",
+      "body-font": "Roboto, sans-serif",
+      "body-font-weight": "300",
+      "heading-font": "'Open Sans', sans-serif",
+      "heading-font-weight": "300",
+      "primary-button-font": "'Open Sans', sans-serif",
+      "primary-button-font-weight": "700",
+      "sections": {
+        "general-newsletter": {
+          "type": "general-newsletter",
+          "settings": {
+            "enable": true,
+            "style": "default"
+          }
+        },
+        "general-social-feeds": {
+          "type": "general-social-feeds",
+          "blocks": {
+            "widget-block-1": {
+              "type": "instagram",
+              "settings": {}
+            }
+          },
+          "block_order": [
+            "widget-block-1"
+          ],
+          "settings": {}
+        },
+        "general-footer": {
+          "type": "general-footer",
+          "blocks": {
+            "footer-block-1": {
+              "type": "menu",
+              "settings": {
+                "menu": "main-menu"
+              }
+            },
+            "footer-block-2": {
+              "type": "menu",
+              "settings": {
+                "menu": "footer"
+              }
+            }
+          },
+          "block_order": [
+            "footer-block-1",
+            "footer-block-2"
+          ],
+          "settings": {
+            "style": "default",
+            "enable_borders": true
+          }
+        }
+      },
+      "content_for_index": []
+    },
+    "Fresh": {
+      "theme-primary-color": "#857b58",
+      "theme-primary-color-hover": "#6f6850",
+      "theme-secondary-color": "#4e7f74",
+      "heading-text-color": "#191919",
+      "body-text-color": "#5e5e5e",
+      "border-color": "#e6e6e6",
+      "body-background-color": "#ffffff",
+      "body-font": "Roboto Condensed, sans-serif",
+      "body-font-weight": "300",
+      "heading-font": "'Playfair Display', serif",
+      "heading-font-weight": "700",
+      "primary-button-font": "Roboto, sans-serif",
+      "primary-button-font-weight": "700",
+      "sections": {
+        "general-newsletter": {
+          "type": "general-newsletter",
+          "settings": {
+            "enable": true,
+            "style": "default"
+          }
+        },
+        "general-social-feeds": {
+          "type": "general-social-feeds",
+          "blocks": {
+            "widget-block-1": {
+              "type": "twitter",
+              "settings": {
+                "style": "gradient"
+              }
+            }
+          },
+          "block_order": [
+            "widget-block-1"
+          ],
+          "settings": {}
+        },
+        "general-footer": {
+          "type": "general-footer",
+          "blocks": {
+            "footer-block-1": {
+              "type": "menu",
+              "settings": {
+                "menu": "main-menu"
+              }
+            },
+            "footer-block-2": {
+              "type": "menu",
+              "settings": {
+                "menu": "footer"
+              }
+            }
+          },
+          "block_order": [
+            "footer-block-1",
+            "footer-block-2"
+          ],
+          "settings": {
+            "style": "light",
+            "enable_borders": true,
+            "show_logo": true
+          }
+        }
+      },
+      "content_for_index": []
+    },
+    "Bold": {
+      "theme-primary-color": "#ea2931",
+      "theme-primary-color-hover": "#d1282f",
+      "theme-secondary-color": "#fd8311",
+      "heading-text-color": "#161a1c",
+      "body-text-color": "#7f7f7f",
+      "border-color": "#e3e3e3",
+      "body-background-color": "#ffffff",
+      "body-font": "'Source Sans Pro', sans-serif",
+      "body-font-weight": "300",
+      "heading-font": "Montserrat, sans-serif",
+      "heading-font-weight": "400",
+      "primary-button-font": "'Source Sans Pro', sans-serif",
+      "primary-button-font-weight": "700",
+      "sections": {
+        "general-header": {
+          "type": "general-header",
+          "settings": {
+            "header_sticky": true
+          }
+        },
+        "general-newsletter": {
+          "type": "general-newsletter",
+          "settings": {
+            "enable": true,
+            "style": "default"
+          }
+        },
+        "general-social-feeds": {
+          "type": "general-social-feeds",
+          "blocks": {
+            "widget-block-1": {
+              "type": "instagram",
+              "settings": {}
+            },
+            "widget-block-2": {
+              "type": "twitter",
+              "settings": {
+                "style": "light"
+              }
+            }
+          },
+          "block_order": [
+            "widget-block-1",
+            "widget-block-2"
+          ],
+          "settings": {}
+        },
+        "general-footer": {
+          "type": "general-footer",
+          "blocks": {
+            "footer-block-1": {
+              "type": "menu",
+              "settings": {
+                "menu": "main-menu"
+              }
+            },
+            "footer-block-2": {
+              "type": "menu",
+              "settings": {
+                "menu": "footer"
+              }
+            }
+          },
+          "block_order": [
+            "footer-block-1",
+            "footer-block-2"
+          ],
+          "settings": {
+            "style": "default",
+            "enable_borders": true,
+            "show_logo": true
+          }
+        }
+      },
+      "content_for_index": []
+    }
+  }
+}
