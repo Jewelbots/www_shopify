@@ -13,7 +13,7 @@
 			{% endfor %}
 		</ul>
 		<a class="cart{% if cart.item_count > 0 %} active{% endif%}" href="/cart" href="/cart" target="_self">
-			
+
 		</a>
 		{% for link in linklists.header-cta-primary.links %}
 			<a class="cta_primary" href="{{ link.url }}" title="{{ link.title }}" target="_self">{{ link.title }}</a>
@@ -28,14 +28,11 @@
 <script>
 	$(document).ready(function(){
 		$(window).resize(); //-- and force
-		header();
 	});
 	$(window).scroll(function(){
-		header();
 		$(window).resize(); //-- and force
 	});
 	$(window).resize(function(){
-		header();
 	});
 	$(window).bind('orientationchange', function(event) {
 		$(window).resize(); //-- and force
