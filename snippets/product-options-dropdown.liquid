@@ -11,18 +11,14 @@
           class="selected-text"
           for="{{ option_id }}"
           data-select-text>
-          Jewelbots <strong><span data-selected-option></span>-Pack</strong><!-- site.js ll: 1206 -->
+          Jewelbots <strong><span data-selected-option></span></strong><!-- site.js ll: 1206 -->
         </label>
         <select onchange="update_variant();"
           class="single-option-selector"
-          id="{{ option_id }}"
-          data-option-select="{{ form_id }}"
-          data-option-index="{{ option_index }}">
-          {% for value in option.values %}
-            <option
-              value="{{ value | escape }}"
-              {% if option.selected_value == value %}selected="selected"{% endif %}>
-              Jewelbots {{ value | remove: "+" }}-Pack
+          id="variant_options">
+          {% for variant in product.variants %}
+            <option value="{{ variant.id }}">
+              {{ variant.title }}
             </option>
           {% endfor %}
         </select>
@@ -31,26 +27,32 @@
   {% endfor %}
 {% endunless %}
 
-<br /><br /><br /><br />
-<!-- this replaces the original quantity selector and is updated with the variant above -->
-<select id="quantity" name="quantity" style="display: none;">
-  {% for i in (1..3) %}
-    <option value="{{ i }}"{% if item.quantity == 1 %} selected{% endif %}>Jewelbots {{ i }}-Pack</option>
-  {% endfor %}
-</select>
 
 <script>
   function update_variant(){
-    var packsize = $('.single-option-selector').val()
-    var element = document.getElementById('quantity');
-    if(packsize=='1+'){
-      element.value = 1;
-    }
-    if(packsize=='2+'){
-      element.value = 2;
-    }
-    if(packsize=='3+'){
-      element.value = 3;
-    }
+    $('#checkout-link').attr('href', 'http://shop.jewelbots.com/cart/' + $('#variant_options option:selected').val() + ':1');
+    $(".selected-text").text($('#variant_options option:selected').text());
   };
+
+  var urlParams;
+  (window.onpopstate = function () {
+      var match,
+          pl     = /\+/g,  // Regex for replacing addition symbol with a space
+          search = /([^&=]+)=?([^&]*)/g,
+          decode = function (s) { return decodeURIComponent(s.replace(pl, " ")); },
+          query  = window.location.search.substring(1);
+
+      urlParams = {};
+      while (match = search.exec(query))
+         urlParams[decode(match[1])] = decode(match[2]);
+  })();
+
+$(function(){
+  var param = urlParams["variant"];
+  if(param > "")
+  $('#variant_options').val(urlParams["variant"]);
+  else
+  update_variant();
+});
+
 </script>

@@ -12,6 +12,7 @@
     {%- endif -%}
   {%- endcapture -%}
 {% endif %}
+<div> item count {{ cart.item_count }}</div>
 
 {% assign form_id = product.id %}
 
@@ -89,11 +90,10 @@
         <div class="product-details">
           <div class="product-title">
             <h1 itemprop="name">{{ product.title }}</h1>
-            <p style="max-width: 400px;">This tech-inspired friendship bracelet lets you communicate through secret codes and lights up when your friends are close by.</p>
           </div>
           <div class="product-price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
             <span class="price" itemprop="price">
-              <span class="money">{{ selectedVariant.price | money }}</span>
+              <span class="money">{{ checkout.total_price | money }}</span>
                 <span class="product-price-compare">
                   <span class="original money">
                       {{ 6900 | money }}
@@ -171,7 +171,7 @@
             {% else %}
               <input
                 class="product-select"
-                name="id"
+                name="{{product.variants[0].id}}"
                 value="{{ product.variants[0].id }}"
                 type="hidden"
                 data-variant-title="{{ product.variants[0].title }}" />
@@ -185,13 +185,13 @@
 			<!-- for bold variations and quantity please look at product-options-dropdown.liquid -->
 
           </div>
+
           <div class="add-to-cart">
+
             {% if product.available %}
-              <div class="product-form-submit-wrap">
-                <input class="button outline add-to-cart-button" type="submit" value="{{ add_to_cart_button | strip_newlines | strip_html | strip }}" />
-                <div class="add-to-cart-loader"></div>
-              </div>
-              <div class="product-cart-message" data-product-message></div>
+
+                  <a id="checkout-link" class="cta_buy" href="http://shop.jewelbots.com/cart/{{products.variants.id}}:1"> buy now </a>
+
             {% else %}
               <input type="submit" class="button outline disabled" disabled="disabled" value="{{ 'products.product.sold_out' | t }}" />
             {% endif %}

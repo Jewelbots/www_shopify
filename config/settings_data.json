@@ -61,7 +61,8 @@
       },
       "general-social-feeds": {
         "type": "general-social-feeds",
-        "settings": {}
+        "settings": {
+        }
       },
       "general-footer": {
         "type": "general-footer",
@@ -128,7 +129,8 @@
       },
       "JBS__section__header": {
         "type": "JBS__section__header",
-        "settings": {}
+        "settings": {
+        }
       },
       "JBS_index__section_hero__img": {
         "type": "JBS_index__section_hero__img",
@@ -142,14 +144,15 @@
           "content_headline": "The friendship bracelet that teaches kids to code!",
           "content_subheadline": "",
           "cta_copy": "Buy Now",
-          "cta_link": "https:\/\/shop.jewelbots.com\/products\/jewelbots-open-source-programmable-friendship-bracelet?variant=29752700561",
+          "cta_link": "https:\/\/shop.jewelbots.com\/products\/jewelbots-open-source-programmable-friendship-bracelet?variant=29751932753",
           "cta_note": "To learn more please <br \/> scroll down.",
           "cta_note_icon": "ion-arrow-down-c"
         }
       },
       "JBS__section__footer": {
         "type": "JBS__section__footer",
-        "settings": {}
+        "settings": {
+        }
       },
       "JBS_contact__section_hero__img": {
         "type": "JBS_contact__section_hero__img",
@@ -286,9 +289,28 @@
           "cta_note": "To learn more please <br \/> scroll down.",
           "cta_note_icon": "ion-arrow-down-c"
         }
+      },
+      "JBS_zine__section_hero__img": {
+        "type": "JBS_zine__section_hero__img",
+        "settings": {
+          "hero_enabled": true,
+          "hero_size": false,
+          "background_color": "#14143C",
+          "background_opacity": "0.4",
+          "background_image": "shopify:\/\/shop_images\/zine_header_8561ed09-2bf1-42bc-abdf-d98a4aa48298.jpg",
+          "background_image_blurr": "0px",
+          "content_headline": "Monthly Girl Power Boost",
+          "content_subheadline": "With the Jewelbots 'Zine",
+          "cta_copy": "Subscribe",
+          "cta_link": "http:\/\/shop.jewelbots.com\/products\/digital-zine",
+          "cta_note": "To learn more please <br \/> scroll down.",
+          "cta_note_icon": "ion-arrow-down-c"
+        }
       }
     },
-    "content_for_index": []
+    "content_for_index": [
+
+    ]
   },
   "presets": {
     "Cool": {
@@ -318,13 +340,15 @@
           "blocks": {
             "widget-block-1": {
               "type": "instagram",
-              "settings": {}
+              "settings": {
+              }
             }
           },
           "block_order": [
             "widget-block-1"
           ],
-          "settings": {}
+          "settings": {
+          }
         },
         "general-footer": {
           "type": "general-footer",
@@ -352,7 +376,9 @@
           }
         }
       },
-      "content_for_index": []
+      "content_for_index": [
+
+      ]
     },
     "Fresh": {
       "theme-primary-color": "#857b58",
@@ -389,7 +415,8 @@
           "block_order": [
             "widget-block-1"
           ],
-          "settings": {}
+          "settings": {
+          }
         },
         "general-footer": {
           "type": "general-footer",
@@ -418,7 +445,9 @@
           }
         }
       },
-      "content_for_index": []
+      "content_for_index": [
+
+      ]
     },
     "Bold": {
       "theme-primary-color": "#ea2931",
@@ -453,7 +482,8 @@
           "blocks": {
             "widget-block-1": {
               "type": "instagram",
-              "settings": {}
+              "settings": {
+              }
             },
             "widget-block-2": {
               "type": "twitter",
@@ -466,7 +496,8 @@
             "widget-block-1",
             "widget-block-2"
           ],
-          "settings": {}
+          "settings": {
+          }
         },
         "general-footer": {
           "type": "general-footer",
@@ -495,7 +526,9 @@
           }
         }
       },
-      "content_for_index": []
+      "content_for_index": [
+
+      ]
     }
   }
 }
