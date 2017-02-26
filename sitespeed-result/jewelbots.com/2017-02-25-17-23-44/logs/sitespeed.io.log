@@ -1,0 +1,8 @@
+Versions OS: darwin 16.1.0 nodejs: v7.2.0 sitespeed.io: 4.4.2 browsertime: 1.0.0-beta.25 coach: 0.31.0
+Starting chrome for analysing http://jewelbots.com 3 time(s)
+Testing url http://jewelbots.com run 1
+Testing url http://jewelbots.com run 2
+Testing url http://jewelbots.com run 3
+145 requests, 13215.94 kb, firstPaint: 517ms (±70.91ms), DOMContentLoaded: 827ms (±67.04ms), Load: 2.56s (±29.38ms), rumSpeedIndex: 2229 (±75.95) (3 runs)
+Render HTML for 1 page(s) 
+HTML stored in /Users/sara/Development/Jewelbots/www_theme/sitespeed-result/jewelbots.com/2017-02-25-17-23-44

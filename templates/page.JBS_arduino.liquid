@@ -1,0 +1,25 @@
+{% layout 'theme.JBS.support' %}
+
+{% section 'JBS_howto__section_sidebar' %}
+
+<div class="welcome" id="page-content-wrapper">
+<h3><span>1. </span>Install the Arduino Software (IDE), this is what you will use to program your Jewelbots.</h3>
+After you are done with this step, proceed to adding the Jewelbots boards.
+  <p>a. <a href="https://www.arduino.cc/en/Guide/Windows" target="_blank">Windows</a>
+  <br>b. <a href="https://www.arduino.cc/en/Guide/MacOSX" target="_blank">Mac OS X</a>
+  <br>c. <a href="https://www.arduino.cc/en/Guide/Linux" target="_blank">Linux</a></p>
+  <p>Ardunio Software (IDE) is a program that allows you to code your Jewelbot on your computer! </p>
+
+<h3><span>1a. </span> LINUX USERS ONLY STEP</h3>
+  <p>You may not have access to the USB port. You need to be a member of the "dialout" group. Add yourself via the command prompt. </p>
+  <p>ONLY tested for Ubuntu 16.04 LTS - should possibly work for recent Ubuntu versions though.</p>
+  <p>a. First check if you are a member of that group:
+      <br>		groups ${USER}
+      <br>This will list all the groups you belong to.
+  <br>b. If you don't belong to the dialout grup then add yourself to it, for example:
+      <br>		sudo gpasswd --add ${USER} dialout
+  <br>c. You then need to resart your computer again for it to be effective.
+
+  </p>
+</div>
+<div class="clear"></div>

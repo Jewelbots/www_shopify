@@ -1,0 +1,40 @@
+{% layout 'theme.JBS.support' %}
+
+{% section 'JBS_howto__section_sidebar' %}
+
+<div class="welcome" id="page-content-wrapper">
+<h2>Sample Code</h2>
+<p>This sample code is the "Hello World" for your Jewelbots.
+Copy and paste the sample test code into the Arduino IDE as a new sketch.
+This makes one of the LEDs on your Jewelbot turn green:</p>
+<div class="sample_code">#include "Arduino.h"
+void setup() {</br>
+// put your setup code here, to run once:</br>
+}</br>
+</br>
+void loop() {</br>
+// put your main code here, to run repeatedly:</br>
+LED led;</br>
+led.turn_on_single(SE, GREEN);</br>
+}
+</div>
+<p>
+BEFORE UPLOADING THE CODE, PUT YOUR JEWELBOT INTO UPLOAD MODE BY PLUGGING IN THE USB AND HOLDING THE MAGIC BUTTON DOWN FOR TWO SECONDS.
+Remember, two full seconds (1 mississippi...)
+Either the charging light will go out (if you did not update your firmware yet) or your device will flash purple and then fade to indicate that coding mode is activated (if you updated your firmware).
+</p>
+<p>
+CLICK ON THE UPLOAD BUTTON FROM THE ARDUINO IDE TO TRANSFER THE CODE TO YOUR JEWELBOT.
+</p>
+<p>ONCE THE CODE IS UPLOADED ONTO YOUR JEWELBOT, UNPLUG IT TO SEE THE RESULTS!!
+The act of your Jewelbot running your code is it being in Coding Mode! (Isn't that cool?!)
+</p>
+<p>TEST OUT MORE CODE COMBINATIONS BY CHANGING THE VARIABLES IN THE “LED.ON(INT, STRING, TIME)” METHOD!
+</p>
+<p>
+Possible LED positions are NW,NE,SW,SE. The south side being where the USB port is. Possible colors would be RED, GREEN, BLUE, YELLOW, MAGENTA, CYAN, WHITE. These have to be typed in capitals to work.
+</p>
+<p>
+LEARN MORE ABOUT CODING YOUR JEWELBOT <a href="http://community.jewelbots.com"> HERE ON THE FORUMS! </a></p>
+</div>
+<div class="clear"></div>

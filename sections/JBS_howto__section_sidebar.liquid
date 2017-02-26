@@ -1,0 +1,50 @@
+
+
+<div class="nav-wrapper">
+
+<nav class="navbar navbar-default sidebar" role="navigation">
+    <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-sidebar-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-sidebar-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+      <li class="dropdown open">
+        <a href="/support" class="dropdown-toggle" data-toggle="dropdown">Welcome<span class="caret"></span><span style="font-size:16px;" class="pull-right hidden-xs showopacity">{{ '1f917.png' | asset_url | img_tag }}</span></a>
+        <ul class="dropdown-menu forAnimate" role="menu">
+          <li>{{ 'Charging' | link_to: '/pages/charging' }}</li>
+          <li><a href="/pages/firmware">Update Firmware</a></li>
+        </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Friendship<span class="caret"></span><span style="font-size:16px;" class="pull-right hidden-xs showopacity">{{ '1f415.png' | asset_url | img_tag }}</span></a>
+          <ul class="dropdown-menu forAnimate" role="menu">
+            <li><a href="/pages/pairing">Pairing</a></li>
+            <li><a href="/pages/messaging">Messaging</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Coding<span class="caret"></span><span style="font-size:16px;" class="pull-right hidden-xs showopacity">{{ '1f308.png' | asset_url | img_tag }}</span></a>
+          <ul class="dropdown-menu forAnimate" role="menu">
+            <li><a href="/pages/arduino">Install Arduino IDE</a></li>
+            <li><a href="/pages/boards">Add Boards</a></li>
+            <li><a href="/pages/sketch">Upload Sketch</a></li>
+            <li><a href="/pages/samples">Sample Code</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="/pages/faqs">FAQs</span><span style="font-size:16px;" class="pull-right hidden-xs showopacity">{{ '1f511.png' | asset_url | img_tag }}</span></a></li>
+        <li class="dropdown">
+          <a href="/pages/library">Library</span><span style="font-size:16px;" class="pull-right hidden-xs showopacity">{{ '1f392.png' | asset_url | img_tag }}</span></a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div style="clear: both;"></div>
+
+</div>

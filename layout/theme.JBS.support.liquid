@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title>{{ page_title }}{% if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif %}{% if current_page != 1 %} &ndash; Page {{ current_page }}{% endif %}{% unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless %}</title>
+	<meta name="description" content="{{ page_description | escape }}" />
+	<!--
+	***********************************************************************************************************
+
+		www.shop.jewelbots.com
+		v.4.1
+                                _ _           _
+           (♥) _____      _____| | |__   ___ | |_ ___
+           | |/ _ \ \ /\ / / _ \ | '_ \ / _ \| __/ __|
+           | |  __/\ V  V /  __/ | |_) | (_) | |_\__ \
+          _/ |\___| \_/\_/ \___|_|_.__/ \___/ \__|___/
+         |__/
+
+	***********************************************************************************************************
+	-->
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<meta name="HandheldFriendly" content="true" />
+	<meta name="format-detection" content="telephone=no">
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+	<meta name="robots" content="index, follow" />
+	<meta name="revisit-after" content="15" />
+	<meta name="google-site-verification" content="WkWMC2U0n_lT3U1t_-PhLM0CGoeS25ux-D6LGOwu8Fg" />
+	<link rel="shortcut icon" href="{{ 'JBS__favicon.png' | asset_url }}" type="image/png">
+	<link rel="canonical" href="{{ canonical_url }}" />
+
+	<!-- STYLES: ⬇ -->
+  <link type="text/css" rel="stylesheet" href="{{ 'JBS__style_reset.css' | asset_url }}" media="screen" />
+	<link type="text/css" rel="stylesheet" href="{{ 'JBS__style.css' | asset_url }}" media="screen" />
+	<link type="text/css" rel="stylesheet" href="//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" media="screen" />
+	<link type="text/css" rel="stylesheet" href="{{ 'bootstrap.min.css' | asset_url }}" media="screen" />
+
+	<!-- STYLES  ⬆ -->
+	<!-- TYPEKIT: ⬇ used for adding Museo Font -->
+	<script src="//use.typekit.net/rbz5qur.js"></script>
+	<script>try{Typekit.load();}catch(e){}</script>
+	<!-- TYPEKIT  ⬆ -->
+	<!-- SCRIPTS: ⬇ note: oll other functions are found inside the individual section's source file -->
+  <script src="{{ 'jquery-3.1.1.min.js' | asset_url }}" ></script>
+	<script src="{{ 'bootstrap.js' | asset_url }}" ></script>
+
+	<script>
+		window.onload=body_load; function body_load(){$('body').stop().show().animate({'opacity': '1.0'}, 250, function() {	});}
+	</script>
+	<style>
+	body {opacity: 0.0;}
+	</style>
+
+  	{{ content_for_header }}
+
+
+	<!-- SCRIPTS  ⬆ -->
+	{% include 'JBS__mixpanel__tracking_theme' %}
+
+	<!-- ZENDESK  ⬇ -->
+	<script>/*<![CDATA[*/window.zEmbed||function(e,t){var n,o,d,i,s,a=[],r=document.createElement("iframe");window.zEmbed=function(){a.push(arguments)},window.zE=window.zE||window.zEmbed,r.src="javascript:false",r.title="",r.role="presentation",(r.frameElement||r).style.cssText="display: none",d=document.getElementsByTagName("script"),d=d[d.length-1],d.parentNode.insertBefore(r,d),i=r.contentWindow,s=i.document;try{o=s}catch(e){n=document.domain,r.src='javascript:var d=document.open();d.domain="'+n+'";void(0);',o=s}o.open()._l=function(){var o=this.createElement("script");n&&(this.domain=n),o.id="js-iframe-async",o.src=e,this.t=+new Date,this.zendeskHost=t,this.zEQueue=a,this.body.appendChild(o)},o.write('<body onload="document._l();">'),o.close()}("https://assets.zendesk.com/embeddable_framework/main.js","jewelbots.zendesk.com");
+	/*]]>*/</script>
+	<!-- ZENDESK  ⬆ -->
+</head>
+
+<body>
+	{% include 'JBS__newsletter__modal__v1' %}
+	{% section 'JBS__section__header' %}
+	<div id="site_container">
+		{{ content_for_layout }} <!-- placeholder for each template file -->
+	</div>
+</body>
+</html>
