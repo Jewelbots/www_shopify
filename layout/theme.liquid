@@ -7,7 +7,7 @@
 
 <head>
   <meta charset="utf-8">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8 ;">
 
   {% assign tab_index = 0 %}
 
@@ -38,16 +38,17 @@
 	<script src="//use.typekit.net/rbz5qur.js"></script>
 	<script>try{Typekit.load();}catch(e){}</script>
 	<!-- TYPEKIT  ⬆ -->
-	<link type="text/css" rel="stylesheet" href="{{ 'JBS__style.css' | asset_url }}" media="screen" />
-	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-	{% include 'JBS__mixpanel__tracking_theme' %}
+{% include 'JBS__mixpanel__tracking_theme' %}
+<link type="text/css" rel="stylesheet" href="{{ 'JBS__style.css' | asset_url }}" media="screen" />
+
+
 </head>
 
 {% include 'additional-classes' %}
 <body class="{{ bodyClasses }}" style="border-top: solid 70px rgba(20,200,170,0.0);">
 	{% section 'JBS__section__header' %}
 	<div id="site_container">
-		
+
 
 		  <main class="main-content">
 

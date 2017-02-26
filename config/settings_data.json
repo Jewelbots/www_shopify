@@ -306,6 +306,23 @@
           "cta_note": "To learn more please <br \/> scroll down.",
           "cta_note_icon": "ion-arrow-down-c"
         }
+      },
+      "JBS_emailstory__section_hero__img": {
+        "type": "JBS_emailstory__section_hero__img",
+        "settings": {
+          "hero_enabled": true,
+          "hero_size": true,
+          "background_color": "#14143C",
+          "background_opacity": "0.0",
+          "background_image": "shopify:\/\/shop_images\/1_398b6e26-f455-4353-929f-7e8ca0c84181.jpg",
+          "background_image_blurr": "5px",
+          "content_headline": "Friends that code together",
+          "content_subheadline": "are friends that stay together",
+          "cta_copy": "Learn More",
+          "cta_link": "",
+          "cta_note": "To learn more please <br \/> scroll down.",
+          "cta_note_icon": "ion-arrow-down-c"
+        }
       }
     },
     "content_for_index": [

@@ -5,17 +5,17 @@
 
 setTimeout(function(){
   	if (Math.random() >= 0.5){
-		mixpanel.register_once({ "T__3": "A" });
+		mixpanel.register_once({ "T__5": "A" });
 		$('.test_A').show();
 		$('.test_B').hide();
 	} else {
-		mixpanel.register_once({ "T__3": "B" });
+		mixpanel.register_once({ "T__5": "B" });
 		$('.test_A').hide();
 		$('.test_B').show();
 	}
 }, 100);
 setTimeout(function(){
-  	if(mixpanel.get_property('T__3') == 'A' ){
+  	if(mixpanel.get_property('T__5') == 'A' ){
 		$('.test_A').show();
 		$('.test_B').hide();
 	} else {
@@ -80,17 +80,7 @@ setTimeout(function(){
 	vertical-align: middle;
 }
 </style>
-<div class="section_how">
-	<h3>How it works</h3>
-	<h4>1. Become friends</h4>
-	<p>Sally, Adam and Shana are best friends. With the push of a button they connect their Jewelbots:</p>
-	<img class="nopadding" src="{{ 'index_section_how__1_top.gif' | asset_url }}" /><!--
-	--><img class="nopadding" src="{{ 'index_section_how__1_middle.gif' | asset_url }}" /><!--
-	--><img src="{{ 'index_section_how__1_bottom.gif' | asset_url }}" />
-	<h4>2. Interact and send secret messages</h4>
-	<p>Their paired Jewelbots light up when they are close by. They then can send each other secret buzz codes.</p>
-	<img class="jewelbots" src="{{ 'index_section_how__2.gif' | asset_url }}" />
-</div><!--//section_how -->
+
 <div class="section_specs" id="section_specs">
 	<div class="left">
 		<h4>Specifications</h4>
@@ -162,7 +152,7 @@ setTimeout(function(){
 			<li>
 				<img src="{{ 'new_index_section_features__icon_1.png' | asset_url }}" />
 				<h5>Connect with Friends</h5>
-				<p>Out of the box kids can connect with up to 8 different friends and assign a color to them. If a friend is nearby the Jewelbot will glow in that color and friends can send secret messages to each other.</p>
+				<p>Out of the box kids can connect with up to 8 different friends and give them a friendship color. If a friend is nearby the Jewelbot will glow in their color and friends can send secret messages to each other.</p>
 			</li><!--
 		 --><li>
 				<img src="{{ 'new_index_section_features__icon_2.png' | asset_url }}" />
@@ -184,12 +174,12 @@ setTimeout(function(){
 		<ul class="copy">
 			<li>
 					<img src="{{ 'new_index_section_features__icon_3.png' | asset_url }}" />
-					<h5>Jewelbots App</h5>
+					<h5>Coding through Arduino</h5>
 					<!--<p>
 						Our innovative Jewelbots App allows kids without prior coding experience to learn the fundamentals of computer science and to create their own Jewelbots functions.
 					</p>-->
 					<p>
-						Coming Soon! The Jewelbots App. You don’t need the app to play with your Jewelbots, it’s just another fun way to engage! Be sure to sign up for our email list so you know when it’s ready.
+						Using the Arduino development environment users can build their own functionality for their Jewelbots. Making them as unique as they are!
 					</p>
 			</li><!--
 		 --><li>
@@ -206,7 +196,46 @@ setTimeout(function(){
 			</li>
 		</ul>
 	</div>
+  <div class="clear"></div>
+
+  <div class="section_how">
+  	<h3>How it works</h3>
+  	<h4>1. Become friends</h4>
+  	<p>Rahima, Jewel and Kiara are best friends. With the push of a button they connect their Jewelbots:</p>
+  	<img class="nopadding" src="{{ 'index_section_how__1_top.gif' | asset_url }}" /><!--
+  	--><img class="nopadding" src="{{ 'index_section_how__1_middle.gif' | asset_url }}" /><!--
+  	--><img src="{{ 'index_section_how__1_bottom.gif' | asset_url }}" />
+  	<h4>2. Interact and send secret messages</h4>
+  	<p>Their paired Jewelbots light up when they are close by. They then can send each other secret messages.</p>
+  	<img class="jewelbots" src="{{ 'index_section_how__2.gif' | asset_url }}" />
+    <h4>3. Give their devices superpowers through coding</h4>
+    <p>Using a desktop or a laptop users can code and personalize their devices, the only limit is their imagination!</p>
+
+  </div><!--//section_how -->
 	<div class="clear"></div>
+  <div class="section_text">
+  	<ul class="copy">
+  		<li>
+  			<h4>Create Their Own Code</h4>
+  			<p>
+  				Jewelbots are the perfect tool to introduce kids 7-14 to the principles of programming. Jewelbots are perfect for beginners and our open source Arduino IDE offers a full fledged coding experience for pros. Jewelbots use Arduino - a language also taught in many school's educational programs.
+  			</p>
+  		</li><!--
+  	 --><li>
+  			<h4>No Prior Experience Needed</h4>
+  			<p>
+  				Even without prior exposure to code, or help from a parent, kids can learn how to write their own software for their Jewelbots. Our step-by-step tutorials and online courses take kids by the hand, resulting in a quick sense of achievement and motivational boost.
+  			</p>
+  		</li><!--
+  	 --><li>
+  			<h4>Online Community And Tutorials</h4>
+  			<p>
+  				Want to share what you have done? Get inspired and see what's possible with Jewelbots? Our Online Community offers easy step-by-step tutorials, sample code and articles for kids and parents alike. It's a safe, judgement free environment, and the perfect place to meet new friends and engage with likeminded coders.
+  			</p>
+  		</li>
+  	</ul>
+  </div>
+  <div class="clear"></div>
 	<div class="cta_preorder">Get Your Jewelbot</div>
 </div><!--//section_features -->
 <div class="section_sale" id="section_sale">
@@ -291,28 +320,7 @@ setTimeout(function(){
 		<li id="dot_3" onClick="javascript:section_testimonials('3'); mixpanel.track('INTERACTION', {'ACTION': 'clicked_section_testimonials'});">●</li>
 	</ul>
 </div><!--//section_testimonials -->
-<div class="section_text">
-	<ul class="copy">
-		<li>
-			<h4>Create Their Own Code</h4>
-			<p>
-				Jewelbots are the perfect tool to introduce kids 7-14 to the principles of programming. Jewelbots are perfect for beginners and our open source Arduino IDE offers a full fledged coding experience for pros. Jewelbots use Arduino - a language also taught in many school's educational programs.
-			</p>
-		</li><!--
-	 --><li>
-			<h4>No Prior Experience Needed</h4>
-			<p>
-				Even without prior exposure to code, or help from a parent, kids can learn how to write their own software for their Jewelbots. Our step-by-step tutorials and online courses take kids by the hand, resulting in a quick sense of achievement and motivational boost.
-			</p>
-		</li><!--
-	 --><li>
-			<h4>Online Community And Tutorials</h4>
-			<p>
-				Want to share what you have done? Get inspired and see what's possible with Jewelbots? Our Online Community offers easy step-by-step tutorials, sample code and articles for kids and parents alike. It's a safe, judgement free environment, and the perfect place to meet new friends and engage with likeminded coders.
-			</p>
-		</li>
-	</ul>
-</div>
+
 <div class="clear"></div>
 
 <div class="section_outofthebox" id="section_outofthebox">
@@ -1672,7 +1680,7 @@ setTimeout(function(){
 		height: 100%;
 		min-height: 300px;
 		margin: 0 0 0 0;
-		padding: 50px 20px 30px 20px;
+		padding: 0px 0px 0px 0px;
 		background-color: rgba(255,255,255,1.0);
 
 		font-family: "museo-sans", sans-serif;

@@ -31,26 +31,28 @@
 	<link rel="canonical" href="{{ canonical_url }}" />
 
 	<!-- STYLES: ⬇ -->
-    <link type="text/css" rel="stylesheet" href="{{ 'JBS__style_reset.css' | asset_url }}" media="screen" />
+  <link type="text/css" rel="stylesheet" href="{{ 'JBS__style_reset.css' | asset_url }}" media="screen" />
 	<link type="text/css" rel="stylesheet" href="{{ 'JBS__style.css' | asset_url }}" media="screen" />
 	<link type="text/css" rel="stylesheet" href="//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" media="screen" />
+
 	<!-- STYLES  ⬆ -->
 	<!-- TYPEKIT: ⬇ used for adding Museo Font -->
 	<script src="//use.typekit.net/rbz5qur.js"></script>
 	<script>try{Typekit.load();}catch(e){}</script>
 	<!-- TYPEKIT  ⬆ -->
-	
+	<!-- SCRIPTS: ⬇ note: oll other functions are found inside the individual section's source file -->
+  <script src="{{ 'jquery-3.1.1.min.js' | asset_url }}" ></script>
+
 	<script>
-		window.onload=body_load; function body_load(){$('body').stop().show().animate({'opacity': '1.0'}, 250, function() {	});}
+		window.onload=body_load; function body_load(){$('.section_header').stop().show().animate({'opacity': '1.0'}, 250, function() {	});}
 	</script>
 	<style>
-	body {opacity: 0.0;}
+	.section_header {opacity: 0.0;}
 	</style>
 
   	{{ content_for_header }}
 
-	<!-- SCRIPTS: ⬇ note: oll other functions are found inside the individual section's source file -->
-	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
 	<!-- SCRIPTS  ⬆ -->
 	{% include 'JBS__mixpanel__tracking_theme' %}
 
