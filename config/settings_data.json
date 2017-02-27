@@ -143,8 +143,8 @@
           "background_image_blurr": "0px",
           "content_headline": "The friendship bracelet that teaches kids to code!",
           "content_subheadline": "",
-          "cta_copy": "Buy Now",
-          "cta_link": "https:\/\/shop.jewelbots.com\/products\/jewelbots-open-source-programmable-friendship-bracelet?variant=29751932753",
+          "cta_copy": "Learn MOre",
+          "cta_link": "https:\/\/jewelbots.com\/products\/jewelbots-open-source-programmable-friendship-bracelet?variant=29751932753",
           "cta_note": "To learn more please <br \/> scroll down.",
           "cta_note_icon": "ion-arrow-down-c"
         }
@@ -268,7 +268,7 @@
           "content_headline": "404",
           "content_subheadline": "Something went wrong!",
           "cta_copy": "Please go back",
-          "cta_link": "https:\/\/shop.jewelbots.com",
+          "cta_link": "https:\/\/jewelbots.com",
           "cta_note": "",
           "cta_note_icon": ""
         }
@@ -302,7 +302,7 @@
           "content_headline": "Monthly Girl Power Boost",
           "content_subheadline": "With the Jewelbots 'Zine",
           "cta_copy": "Subscribe",
-          "cta_link": "http:\/\/shop.jewelbots.com\/products\/digital-zine",
+          "cta_link": "http:\/\/jewelbots.com\/products\/digital-zine",
           "cta_note": "To learn more please <br \/> scroll down.",
           "cta_note_icon": "ion-arrow-down-c"
         }

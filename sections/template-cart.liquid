@@ -68,8 +68,8 @@
                           </div>
                         </div>
                         -->
-                        <!-- dropdown list --> 
-                          <select id="updates_{{ item.id }}" name="updates[]" onchange="this.form.submit();"> 
+                        <!-- dropdown list -->
+                          <select id="updates_{{ item.id }}" name="updates[]" onchange="this.form.submit();">
                           {% for i in (1..12) %} {% assign q = i | times: 1 %}
                             <option value="{{ q }}"{% if item.quantity == q %} selected{% endif %}>Jewelbots {{ i }}-Pack</option>
                           {% endfor %}
@@ -124,7 +124,7 @@
             {% include 'shipping-calculator' %}
           {% endif %}
         {% else %}
-          <p class="empty">{{ 'cart.general.empty' | t }} <!--<a href="{{ shop.url }}/collections/all">{{ 'cart.general.continue' | t }}</a>--><a href="https://shop.jewelbots.com/products/jewelbots-open-source-programmable-friendship-bracelet?variant=29628588497">Continue Shopping</a></p>
+          <p class="empty">{{ 'cart.general.empty' | t }} <!--<a href="{{ shop.url }}/collections/all">{{ 'cart.general.continue' | t }}</a>--><a href="https://jewelbots.com/products/jewelbots-open-source-programmable-friendship-bracelet?variant=29628588497">Continue Shopping</a></p>
         {% endif %}
       </div>
     </div>
