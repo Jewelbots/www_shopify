@@ -443,10 +443,13 @@ nav.sidebar{
 	nav.sidebar{
 		padding-top: 0px;
 	}
+
+	.jbot_onboarding img{
+		display:none;
+	}
 }
 @media (min-width: 765px) {
 
-.
 .navbar-default.main{
     position: absolute;
     width: calc(100% - 40px);
