@@ -21,7 +21,9 @@
 			</p>
 		{% endif %}
 		<div class="background_color"></div>
-		<div class="background_image"></div>
+		<div class="test_A background_image"></div>
+
+		<div class="test_B background_image"></div>
 	</div>
 	<!-- section_hero  ⬆ -->
 
@@ -83,7 +85,7 @@
 			bottom:           0px;
 			margin:           0 0 0 0;
 			padding:          0 0 0 0;
-			background:       url( {{ section.settings.background_image | img_url: '1400x1400', format: 'pjpg', scale: 2 }} ) no-repeat top center;
+//			background:       url( {{ section.settings.background_image | img_url: '1400x1400', format: 'pjpg', scale: 2 }} ) no-repeat top center;
 
 			-webkit-background-size: cover;
 		       -moz-background-size: cover;
@@ -98,6 +100,14 @@
 
 			z-index:          1;
 		}
+		.section_hero .background_image.test_A {
+		background-image: url({{ 'https://cdn.shopify.com/s/files/1/0935/5176/files/20161106_160912_1400x1400@2x.progressive.jpg?v=1487090428'  | img_url: '1400x1400', format: 'pjpg', scale: 2 }}) no-repeat top center;
+		}
+
+
+    .section_hero .background_image.test_B {
+			background-image: url( {{ 'https://cdn.shopify.com/s/files/1/0935/5176/files/12_1400x1400@2x.progressive.jpg?v=1488069304' | img_url: '1400x1400', format: 'pjpg', scale: 2 }} ) no-repeat top center;
+			}
 
 		.section_hero h1 {
 			display:          block;

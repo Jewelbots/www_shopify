@@ -44,13 +44,16 @@
 	<!-- SCRIPTS: ⬇ note: oll other functions are found inside the individual section's source file -->
   <script src="{{ 'jquery-3.1.1.min.js' | asset_url }}" ></script>
 	<script src="{{ 'bootstrap.js' | asset_url }}" ></script>
+	<script src="{{ 'modernizr.js' | asset_url }}" ></script>
 
 	<script>
-		window.onload=body_load; function body_load(){$('body').stop().show().animate({'opacity': '1.0'}, 250, function() {	});}
-	</script>
-	<style>
-	body {opacity: 0.0;}
-	</style>
+
+
+			window.onload=body_load; function body_load(){$('.section_header').stop().show().animate({'opacity': '1.0'}, 250, function() {	});}
+		</script>
+		<style>
+		.section_header {opacity: 0.0;}
+		</style>
 
   	{{ content_for_header }}
 
@@ -65,10 +68,10 @@
 </head>
 
 <body>
-	{% include 'JBS__newsletter__modal__v1' %}
 	{% section 'JBS__section__header' %}
 	<div id="site_container">
 		{{ content_for_layout }} <!-- placeholder for each template file -->
 	</div>
+
 </body>
 </html>
