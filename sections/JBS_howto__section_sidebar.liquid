@@ -43,3 +43,36 @@
 <div style="clear: both;"></div>
 
 </div>
+
+<script>
+
+//iframe solution for shopify template problem
+
+$('.dropdown').children('a').click(function(){
+  $('iframe.sub-page').attr('src', this.href);
+  return false;
+});
+
+var buffer = 20; //scroll bar buffer
+var iframe = document.getElementsByClassName('sub-page');
+
+function pageY(elem) {
+    return elem.offsetParent ? (elem.offsetTop + pageY(elem.offsetParent)) : elem.offsetTop;
+}
+
+function resizeIframe() {
+    var height = document.documentElement.clientHeight;
+    height -= pageY(document.getElementById('sub-page'))+ buffer ;
+    height = (height < 0) ? 0 : height;
+    document.getElementsByClassName('sub-page').style.height = height + 'px';
+}
+
+if (iframe.attachEvent) {
+    iframe.attachEvent("onload", resizeIframe);
+} else {
+    iframe.onload=resizeIframe;
+}
+
+window.onresize=resizeIframe;
+
+</script>

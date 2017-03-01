@@ -557,13 +557,26 @@ nav:hover .forAnimate{
 }
 
 
-.welcome{
+.inner-welcome{
 	display: inline-block;
-	width: 80%;
+	min-width: 80%;
+	color: #2e2e2e;
 	padding-top: 70px;
-		right:0;
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+	font-weight: 400;
+	right:0;
 	top: 0;
-	padding-right: 100px;
+	min-height: 700px;
+}
+
+.welcome iframe{
+	display: inline-block;
+	min-width: 80%;
+	padding-top: 70px;
+	font-weight: 400;
+	right:0;
+	top: 0;
+	min-height: 700px;
 }
 
 .welcome img{
@@ -579,7 +592,7 @@ nav:hover .forAnimate{
 .nav-wrapper
 {
 	  display: inline-block;
-    width: 20%;
+    min-width: 10%;
 		height:100%;
     float: left;
     min-height: 700px;

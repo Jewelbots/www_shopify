@@ -190,7 +190,8 @@
 
             {% if product.available %}
 
-                  <a id="checkout-link" class="cta_buy" href="http://jewelbots.com/cart/{{products.variants.id}}:1"> buy now </a>
+                  <a id="checkout-link test_A" class="cta_buy" href="http://jewelbots.com/cart/{{products.variants.id}}:1"> buy now </a>
+                  <a id="checkout-link test_B" class="cta_buy" href="http://jewelbots.com/cart/{{products.variants.id}}:1"> add to cart </a>
 
             {% else %}
               <input type="submit" class="button outline disabled" disabled="disabled" value="{{ 'products.product.sold_out' | t }}" />
@@ -291,6 +292,31 @@
     "successMessage": {{ 'products.product.success_html' | t: cart_link: cart_link, continue_link: continue_link, checkout_link: checkout_link | json }},
     "unavailableText": {{ 'products.product.unavailable' | t | json }}
   }
+
+  <!-- A/B TESTS  ⬇ -->
+
+  setTimeout(function(){
+    	if (Math.random() >= 0.5){
+  		mixpanel.register_once({ "T__6": "A" });
+  		$('.test_A').show();
+  		$('.test_B').hide();
+  	} else {
+  		mixpanel.register_once({ "T__6": "B" });
+  		$('.test_A').hide();
+  		$('.test_B').show();
+  	}
+  }, 100);
+  setTimeout(function(){
+    	if(mixpanel.get_property('T__6') == 'A' ){
+  		$('.test_A').show();
+  		$('.test_B').hide();
+  	} else {
+  		$('.test_A').hide();
+  		$('.test_B').show();
+  	}
+  }, 500);
+  <!-- A/B TESTS  ⬆ -->
+
 </script>
 
 <script type="application/json" data-product-json-{{ form_id }}>{{ product | json }}</script>
