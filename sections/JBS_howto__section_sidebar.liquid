@@ -1,18 +1,22 @@
 
-
 <div class="nav-wrapper">
 
 <nav class="navbar navbar-default sidebar" role="navigation">
     <div class="container-fluid">
     <div class="navbar-header">
-
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-sidebar-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
     </div>
     <div class="collapse navbar-collapse" id="bs-sidebar-navbar-collapse-1">
       <ul class="nav navbar-nav">
       <li class="dropdown open">
         <a href="/support" class="dropdown-toggle" data-toggle="dropdown">Welcome<span class="caret"></span><span style="font-size:16px;" class="pull-right hidden-xs showopacity">{{ '1f917.png' | asset_url | img_tag }}</span></a>
         <ul class="dropdown-menu forAnimate" role="menu">
-          <li><a href="/pages/charging">Charging</a></li>
+          <li>{{ 'Charging' | link_to: '/pages/charging' }}</li>
           <li><a href="/pages/firmware">Update Firmware</a></li>
         </ul>
         </li>
@@ -33,14 +37,16 @@
           </ul>
         </li>
         <li class="dropdown">
-        <a href="/support" class="dropdown-toggle" data-toggle="dropdown">FAQs<span class="caret"></span><span style="font-size:16px;" class="pull-right hidden-xs showopacity">{{ '1f917.png' | asset_url | img_tag }}</span></a>
-        <ul class="dropdown-menu forAnimate" role="menu">
-          <li><a href="/pages/FAQgeneral">General</a></li>
-          <li><a href="/pages/FAQbattery">Battery</a></li>
-          <li><a href="/pages/FAQpairing">Pairing</a></li>
-          <li><a href="/pages/FAQmessaging">Messaging</a></li>
-
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Troubleshooting<span class="caret"></span><span style="font-size:16px;" class="pull-right hidden-xs showopacity">{{ '1f511.png' | asset_url | img_tag }}</span></a>
+          <ul class="dropdown-menu forAnimate" role="menu">
+            <li><a href="/pages/FAQ-general">General</a></li>
+            <li><a href="/pages/FAQ-battery">Battery</a></li>
+            <li><a href="/pages/FAQ-messaging">Messaging</a></li>
+            <li><a href="/pages/FAQ-pairing">Pairing</a></li>
+          </ul>
+        </li>
         <li class="dropdown">
+
           <a href="/pages/library">Library</span><span style="font-size:16px;" class="pull-right hidden-xs showopacity">{{ '1f392.png' | asset_url | img_tag }}</span></a></li>
       </ul>
     </div>
@@ -51,34 +57,20 @@
 </div>
 
 <script>
+(function() {
 
-//iframe solution for shopify template problem
 
-$('.dropdown').children('a').click(function(){
+
+$('.dropdown').find('a:not(.dropdown-toggle)').click(function(){
   $('iframe.sub-page').attr('src', this.href);
+  $("body").scrollTop(0);
+  if($(".navbar-toggle").css('display') == "block")
+  {
+    $(".navbar-collapse").collapse('hide');
+  }
   return false;
 });
 
-var buffer = 20; //scroll bar buffer
-var iframe = document.getElementsByClassName('sub-page');
 
-function pageY(elem) {
-    return elem.offsetParent ? (elem.offsetTop + pageY(elem.offsetParent)) : elem.offsetTop;
-}
-
-function resizeIframe() {
-    var height = document.documentElement.clientHeight;
-    height -= pageY(document.getElementById('sub-page'))+ buffer ;
-    height = (height < 0) ? 0 : height;
-    document.getElementsByClassName('sub-page').style.height = height + 'px';
-}
-
-if (iframe.attachEvent) {
-    iframe.attachEvent("onload", resizeIframe);
-} else {
-    iframe.onload=resizeIframe;
-}
-
-window.onresize=resizeIframe;
-
+})();
 </script>

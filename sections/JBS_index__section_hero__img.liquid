@@ -85,7 +85,7 @@
 			bottom:           0px;
 			margin:           0 0 0 0;
 			padding:          0 0 0 0;
-//			background:       url( {{ section.settings.background_image | img_url: '1400x1400', format: 'pjpg', scale: 2 }} ) no-repeat top center;
+			background:       url( {{ section.settings.background_image | img_url: '1400x1400', format: 'pjpg', scale: 2 }} ) no-repeat top center;
 
 			-webkit-background-size: cover;
 		       -moz-background-size: cover;
@@ -100,14 +100,7 @@
 
 			z-index:          1;
 		}
-		.section_hero .background_image.test_A {
-		background: url({{ 'HeroB.jpg'  | asset_url }}) no-repeat top center;
-		}
 
-
-    .section_hero .background_image.test_B {
-			background: url( {{ 'HeroA.jpg' | asset_url }} ) no-repeat top center;
-			}
 
 		.section_hero h1 {
 			display:          block;

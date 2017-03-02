@@ -30,7 +30,7 @@
 
 <script>
   function update_variant(){
-    $('#checkout-link').attr('href', 'http://jewelbots.com/cart/' + $('#variant_options option:selected').val() + ':1');
+    $('.checkout-link').attr('href', 'http://jewelbots.com/cart/' + $('#variant_options option:selected').val() + ':1');
     $(".selected-text").text($('#variant_options option:selected').text());
   };
 
@@ -54,5 +54,27 @@ $(function(){
   else
   update_variant();
 });
+
+
+setTimeout(function(){
+  	if (Math.random() >= 0.5){
+		mixpanel.register_once({ "T__7": "A" });
+		$('.test_A').show();
+		$('.test_B').hide();
+	} else {
+		mixpanel.register_once({ "T__7": "B" });
+		$('.test_A').hide();
+		$('.test_B').show();
+	}
+}, 100);
+setTimeout(function(){
+  	if(mixpanel.get_property('T__7') == 'A' ){
+		$('.test_A').show();
+		$('.test_B').hide();
+	} else {
+		$('.test_A').hide();
+		$('.test_B').show();
+	}
+}, 500);
 
 </script>

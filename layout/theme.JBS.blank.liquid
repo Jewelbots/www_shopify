@@ -1,2 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title>{{ page_title }}{% if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif %}{% if current_page != 1 %} &ndash; Page {{ current_page }}{% endif %}{% unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless %}</title>
+	<meta name="description" content="{{ page_description | escape }}" />
+	<!--
+	***********************************************************************************************************
+
+		www.jewelbots.com
+		v.4.1
+                                _ _           _
+           (♥) _____      _____| | |__   ___ | |_ ___
+           | |/ _ \ \ /\ / / _ \ | '_ \ / _ \| __/ __|
+           | |  __/\ V  V /  __/ | |_) | (_) | |_\__ \
+          _/ |\___| \_/\_/ \___|_|_.__/ \___/ \__|___/
+         |__/
+
+	***********************************************************************************************************
+	-->
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<meta name="HandheldFriendly" content="true" />
+	<meta name="format-detection" content="telephone=no">
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+	<meta name="robots" content="index, follow" />
+	<meta name="revisit-after" content="15" />
+	<meta name="google-site-verification" content="WkWMC2U0n_lT3U1t_-PhLM0CGoeS25ux-D6LGOwu8Fg" />
+	<link rel="shortcut icon" href="{{ 'JBS__favicon.png' | asset_url }}" type="image/png">
+	<link rel="canonical" href="{{ canonical_url }}" />
+  <style>
+
+  .inner-welcome img{
+  	max-width: 450px;
+  	height: auto;
+  }
+  .inner-welcome h2, h3{
+  	font-weight: bold;
+  	font-size: 20px;
+  }
+  .inner-welcome{
+  	display: block;
+  	width: 100%;
+  	color: #2e2e2e;
+  	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  	background-color: white;
+  	right:0;
+  	top: 0;
+  	min-height: 700px;
+  }
+  .inner-welcome.copy{
+  	background-color: white;
+  }
+  .jbot_onboarding img{
+    width: 100%;
+    max-width:1000px;
+  }
+  </style>
+
+</head>
 {{ content_for_header }}
 {{ content_for_layout }} <!-- placeholder for each template file -->
+
+</body>
+</html>
