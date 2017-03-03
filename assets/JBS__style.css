@@ -416,7 +416,9 @@ em {
 
 /* section for side menu */
 .welcome {
-	float:left;
+	float:right;
+	width: 100%;
+	height: 100%;
 }
 .welcome iframe{
 	display: block;
@@ -460,6 +462,8 @@ nav.sidebar{
 	.welcome {
 		float:left;
 		width:80%;
+		margin-left: 90px;
+		position: fixed;
 	}
 	.welcome iframe{
 		padding-top:0px;
@@ -468,12 +472,10 @@ nav.sidebar{
   {
 		width:20%;
 	}
-	.navbar-default .navbar-nav .open .dropdown-menu>li>a {
-		font-size: 9px;
-	}
-	.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover
+
+  .navbar-default .navbar-nav .open .dropdown-menu>li>a
 	{
-		font-size: 11px;
+		font-size: 9px;
 	}
 	nav.sidebar{
 		padding-top: 30px;
@@ -481,7 +483,12 @@ nav.sidebar{
 	.caret{
 		display: none !important;
 	}
-
+	.nav>li>a{
+		padding: 5px !important;
+	}
+	.dropdown-menu>li>a {
+		padding: 3px 5px !important;
+	}
 
 }
 @media (min-width: 767px) {
@@ -615,12 +622,5 @@ nav:hover .forAnimate{
 		height:100%;
     float: left;
     min-height: 700px;
-}
-.sample_code
-{
-	width: 400px;
-	background-color: #ccc;
-	font-size: 20px;
-	padding: 40px;
 }
 /* @end */

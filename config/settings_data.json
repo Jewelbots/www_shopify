@@ -323,6 +323,23 @@
           "cta_note": "To learn more please <br \/> scroll down.",
           "cta_note_icon": "ion-arrow-down-c"
         }
+      },
+      "JBS_emailstory__section_hero__img_2": {
+        "type": "JBS_emailstory__section_hero__img_2",
+        "settings": {
+          "hero_enabled": true,
+          "hero_size": false,
+          "background_color": "#14143C",
+          "background_opacity": "0.4",
+          "background_image": "shopify:\/\/shop_images\/20161106_151106.jpg",
+          "background_image_blurr": "0px",
+          "content_headline": "From the classroom into daily life",
+          "content_subheadline": "Jewelbots inspires Eleanor to code",
+          "cta_copy": "Learn More",
+          "cta_link": "",
+          "cta_note": "To learn more please <br \/> scroll down.",
+          "cta_note_icon": "ion-arrow-down-c"
+        }
       }
     },
     "content_for_index": [

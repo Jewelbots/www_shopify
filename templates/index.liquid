@@ -197,17 +197,56 @@ setTimeout(function(){
 		</ul>
 	</div>
   <div class="clear"></div>
+  <div class="section_testimonials">
+  	<script>
+  		setInterval(function(){ section_testimonials(); }, 3000);
+
+  		var section_testimonials_current_quote = 1;
+  		var section_testimonials_max_quotes = 3;
+  		function section_testimonials(){
+  			if(section_testimonials_current_quote <= section_testimonials_max_quotes){
+  				$('.section_testimonials li').removeClass('active');
+  				$('.section_testimonials #quote_'+section_testimonials_current_quote).addClass('active');
+  				$('.section_testimonials #dot_'+section_testimonials_current_quote).addClass('active');
+  				section_testimonials_current_quote = section_testimonials_current_quote + 1;
+  			} else {
+  				$('.section_testimonials li').removeClass('active');
+  				$('.section_testimonials #quote_1').addClass('active');
+  				$('.section_testimonials #dot_1').addClass('active');
+  				section_testimonials_current_quote = 1;
+  			}
+  		}
+  	</script>
+  	<ul class="quotes">
+  		<li id="quote_1">
+  			<img class="quote" src="{{ 'index_section_hero__press_britco.png' | asset_url }}" height="30" />
+  			<p>»This Is the Friendship Bracelet of the Future...«</p>
+  		</li>
+  		<li id="quote_2">
+  			<img class="quote" src="{{ 'index_section_hero__press_wired.png' | asset_url }}" height="30" />
+  			<p>»The most interesting wearable I’ve seen this year...«</p>
+  		</li>
+  		<li id="quote_3">
+  			<img class="quote" src="{{ 'index_section_hero__press_psfk.png' | asset_url }}" height="30" />
+  			<p>»An introduction to coding motivated by high school tribes...«</p>
+  		</li>
+  	</ul>
+  	<ul class="interface">
+  		<li id="dot_1" onClick="javascript:section_testimonials('1'); mixpanel.track('INTERACTION', {'ACTION': 'clicked_section_testimonials'});">●</li>
+  		<li id="dot_2" onClick="javascript:section_testimonials('2'); mixpanel.track('INTERACTION', {'ACTION': 'clicked_section_testimonials'});">●</li>
+  		<li id="dot_3" onClick="javascript:section_testimonials('3'); mixpanel.track('INTERACTION', {'ACTION': 'clicked_section_testimonials'});">●</li>
+  	</ul>
+  </div><!--//section_testimonials -->
+  <div class="clear"></div>
 
   <div class="section_how">
   	<h3>How it works</h3>
   	<h4>1. Become friends</h4>
   	<p>Rahima, Jewel and Kiara are best friends. With the push of a button they connect their Jewelbots:</p>
-  	<img class="nopadding" src="{{ 'index_section_how__1_top.gif' | asset_url }}" /><!--
-  	--><img class="nopadding" src="{{ 'index_section_how__1_middle.gif' | asset_url }}" /><!--
-  	--><img src="{{ 'index_section_how__1_bottom.gif' | asset_url }}" />
+  	<img class="nopadding" src="{{ 'Jewelbot_design_animated_2-color-change-transparent.gif' | asset_url }}" />
   	<h4>2. Interact and send secret messages</h4>
   	<p>Their paired Jewelbots light up when they are close by. They then can send each other secret messages.</p>
-  	<img class="jewelbots" src="{{ 'index_section_how__2.gif' | asset_url }}" />
+  	<img class="jewelbots" src="{{ 'Jewelbot_design_animated_5-transparent.gif' | asset_url }}" />
     <h4>3. Give their devices superpowers through coding</h4>
     <p>Using a desktop or a laptop users can code and personalize their devices, the only limit is their imagination!</p>
 
@@ -281,46 +320,7 @@ setTimeout(function(){
 		Shipping within the US generally takes 2-5 Postal days after it is shipped. International shipping can take up to 3 to 5 weeks to receive after it is shipped.<br /><br /><strong>INTERNATIONAL BUYERS: We are not responsible for any additional customs charges levied by your country. Please be aware of the import laws of your country. <br />Customs clearance procedures can cause delays beyond original delivery-time estimates.</strong><br /><br />
 	</p>
 </div><!--//section_sale -->
-<div class="section_testimonials">
-	<script>
-		setInterval(function(){ section_testimonials(); }, 3000);
 
-		var section_testimonials_current_quote = 1;
-		var section_testimonials_max_quotes = 3;
-		function section_testimonials(){
-			if(section_testimonials_current_quote <= section_testimonials_max_quotes){
-				$('.section_testimonials li').removeClass('active');
-				$('.section_testimonials #quote_'+section_testimonials_current_quote).addClass('active');
-				$('.section_testimonials #dot_'+section_testimonials_current_quote).addClass('active');
-				section_testimonials_current_quote = section_testimonials_current_quote + 1;
-			} else {
-				$('.section_testimonials li').removeClass('active');
-				$('.section_testimonials #quote_1').addClass('active');
-				$('.section_testimonials #dot_1').addClass('active');
-				section_testimonials_current_quote = 1;
-			}
-		}
-	</script>
-	<ul class="quotes">
-		<li id="quote_1">
-			<img class="quote" src="{{ 'index_section_hero__press_britco.png' | asset_url }}" height="30" />
-			<p>»This Is the Friendship Bracelet of the Future...«</p>
-		</li>
-		<li id="quote_2">
-			<img class="quote" src="{{ 'index_section_hero__press_wired.png' | asset_url }}" height="30" />
-			<p>»The most interesting wearable I’ve seen this year...«</p>
-		</li>
-		<li id="quote_3">
-			<img class="quote" src="{{ 'index_section_hero__press_psfk.png' | asset_url }}" height="30" />
-			<p>»An introduction to coding motivated by high school tribes...«</p>
-		</li>
-	</ul>
-	<ul class="interface">
-		<li id="dot_1" onClick="javascript:section_testimonials('1'); mixpanel.track('INTERACTION', {'ACTION': 'clicked_section_testimonials'});">●</li>
-		<li id="dot_2" onClick="javascript:section_testimonials('2'); mixpanel.track('INTERACTION', {'ACTION': 'clicked_section_testimonials'});">●</li>
-		<li id="dot_3" onClick="javascript:section_testimonials('3'); mixpanel.track('INTERACTION', {'ACTION': 'clicked_section_testimonials'});">●</li>
-	</ul>
-</div><!--//section_testimonials -->
 
 <div class="clear"></div>
 
@@ -1025,7 +1025,7 @@ setTimeout(function(){
 		height: auto;
 		margin: 0 0 0 0;
 		padding: 50px 75px 30px 75px;
-		background-color: rgba(255,240,235,1.0);
+		background-color: white;
 
 		text-align: center;
 	}
@@ -1997,7 +1997,7 @@ setTimeout(function(){
 	}
 	@media (max-width: 767px) {
 		.section_features {
-			padding: 50px 20px 20px 20px;
+			padding: 0px 0px 20px 0px;
 		}
 
 		.section_features h3 {
@@ -2915,7 +2915,6 @@ setTimeout(function(){
 			width: 100%;
 			margin: 25px 0 0 0;
 			padding: 0 0 0 0;
-			border-bottom: solid 1px rgba(0,205,180,1.0);
 		}
 		.section_sale ul.products li.pack_3 {
 			width: 100%;
@@ -2927,7 +2926,7 @@ setTimeout(function(){
 			width: 100%;
 			margin: 25px 0 20px 0;
 			padding: 0 0 0 0;
-			border-bottom: solid 1px rgba(0,205,180,1.0);
+      border: solid 1px rgba(0,205,180,1.0)
 		}
 		.section_sale ul.products li img {}
 		.section_sale ul.products li h5 {}
