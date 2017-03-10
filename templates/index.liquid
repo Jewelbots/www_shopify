@@ -2,9 +2,9 @@
 
 <!-- A/B TESTS  ⬇ -->
 <script type="text/javascript">
+document.addEventListener('DOMContentLoaded', function() {
 
-setTimeout(function(){
-  	if (Math.random() >= 0.5){
+  	if (Math.random() >= 0.5) {
 		mixpanel.register_once({ "T__7": "A" });
 		$('.test_A').show();
 		$('.test_B').hide();
@@ -12,17 +12,23 @@ setTimeout(function(){
 		mixpanel.register_once({ "T__7": "B" });
 		$('.test_A').hide();
 		$('.test_B').show();
-	}
-}, 100);
-setTimeout(function(){
-  	if(mixpanel.get_property('T__7') == 'A' ){
-		$('.test_A').show();
-		$('.test_B').hide();
-	} else {
-		$('.test_A').hide();
-		$('.test_B').show();
-	}
-}, 500);
+}
+
+
+mixpanel.init('2c57a6bc8da1e23548fd2c3b8dda6e2d', {
+ loaded: function(mixpanel) {
+ setTimeout(function(){
+     if(mixpanel.get_property('T__7') == 'A' ){
+     $('.test_A').show();
+     $('.test_B').hide();
+   } else {
+     $('.test_A').hide();
+     $('.test_B').show();
+   }
+ }, 500);
+ }
+});
+}, false);
 </script>
 <!-- A/B TESTS  ⬆ -->
 
@@ -286,28 +292,24 @@ setTimeout(function(){
 				<h5>JEWELBOT</h5>
 				<img src="{{ 'index_section_sale__product_jewelbot_1pack.jpg' | asset_url }}" />
 				<p class="list_price"><span>&nbsp;</span></p>
-				<p>$69</p>
+				<p>$49</p>
 				<!--<a class="offer" href="javascript:void;" onClick="modal_newsletter('open_overlay'); mixpanel.track('INTERACTION', {'ACTION': 'clicked_safe', 'POSITION': 'sales'});">sign up and save $10</a>-->
-				<a class="cta_preorder test_A" href="https://jewelbots.com/products/jewelbots-open-source-programmable-friendship-bracelet?variant=29751932753" target="_self">Buy Now</a>
-        <a class="cta_preorder test_B" href="http://jewelbots.com/cart/29751932753:1" target="_self">Buy Now</a>
+				<a class="cta_preorder" href="https://jewelbots.com/products/jewelbots-open-source-programmable-friendship-bracelet?variant=29751932753" target="_self">Buy Now</a>
 			</li><!--
 		 --><li class="pack_2">
 				<h5>TWINNIE 2-PACK</h5>
 				<img src="{{ 'index_section_sale__product_jewelbot_2pack_2.png' | asset_url }}" />
 				<p class="list_price"><span>$138</span> List Price</p>
-				<p>$99 Sale!</p>
+				<p>$89 Sale!</p>
 				<!--<a class="offer" href="javascript:void;" onClick="modal_newsletter('open_overlay'); mixpanel.track('INTERACTION', {'ACTION': 'clicked_safe', 'POSITION': 'sales'});">sign up and save $10</a>-->
-				<a class="cta_preorder test_A" href="https://jewelbots.com/products/jewelbots-open-source-programmable-friendship-bracelet?variant=30055045137" target="_self">Buy Now</a>
-        <a class="cta_preorder test_B" href="http://jewelbots.com/cart/30055045137:1"" target="_self">Buy Now</a>
+				<a class="cta_preorder" href="https://jewelbots.com/products/jewelbots-open-source-programmable-friendship-bracelet?variant=30055045137" target="_self">Buy Now</a>
 			</li><!--
 		 --><li class="pack_3"><!-- id="pack_3_swap"-->
 				<h5>SQUAD 3-PACK</h5>
 				<img src="{{ 'index_section_sale__product_jewelbot_3pack.jpg' | asset_url }}" />
 				<p class="list_price"><span>$207</span> List Price</p>
 				<p>$129 Sale!</p>
-				<a class="cta_preorder test_A" href="https://jewelbots.com/products/jewelbots-open-source-programmable-friendship-bracelet?variant=30055105041" target="_self">Buy Now</a>
-        <a class="cta_preorder test_B" href="https://jewelbots.com/products/jewelbots-open-source-programmable-friendship-bracelet?variant=30055105041" target="_self">Buy Now</a>
-
+				<a class="cta_preorder" href="https://jewelbots.com/products/jewelbots-open-source-programmable-friendship-bracelet?variant=30055105041" target="_self">Buy Now</a>
 			</li>
 			<!--<a href="https://jewelbots-2.myshopify.com/cart/19729585926:1" onclick="mixpanel.track('SHOP', {'STEP': 'added_to_cart'});">order - -> checkout T2</a>-->
 		</ul><!--

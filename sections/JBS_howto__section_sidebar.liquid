@@ -13,23 +13,32 @@
     </div>
     <div class="collapse navbar-collapse" id="bs-sidebar-navbar-collapse-1">
       <ul class="nav navbar-nav">
-      <li class="dropdown open">
+      <li class="dropdown">
         <a href="/support" class="dropdown-toggle" data-toggle="dropdown">Welcome<span class="caret"></span><span style="font-size:16px;" class="pull-right hidden-xs showopacity">{{ '1f917.png' | asset_url | img_tag }}</span></a>
-        <ul class="dropdown-menu forAnimate" role="menu">
+        <ul class="dropdown-menu " role="menu">
           <li>{{ 'Charging' | link_to: '/pages/charging' }}</li>
           <li><a href="/pages/firmware">Update Firmware</a></li>
         </ul>
         </li>
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Friendship<span class="caret"></span><span style="font-size:16px;" class="pull-right hidden-xs showopacity">{{ '1f415.png' | asset_url | img_tag }}</span></a>
-          <ul class="dropdown-menu forAnimate" role="menu">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Friends<span class="caret"></span><span style="font-size:16px;" class="pull-right hidden-xs showopacity">{{ '1f478-1f3fe.png' | asset_url | img_tag }}</span></a>
+          <ul class="dropdown-menu " role="menu">
             <li><a href="/pages/pairing">Pairing</a></li>
             <li><a href="/pages/messaging">Messaging</a></li>
           </ul>
         </li>
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Coding<span class="caret"></span><span style="font-size:16px;" class="pull-right hidden-xs showopacity">{{ '1f308.png' | asset_url | img_tag }}</span></a>
-          <ul class="dropdown-menu forAnimate" role="menu">
+
+          <a class="dropdown-toggle" data-toggle="dropdown">Learn to Code<span class="caret"></span><span style="font-size:16px;" class="pull-right hidden-xs showopacity">{{ '1f392.png' | asset_url | img_tag }}</span></a>
+          <ul class="dropdown-menu " role="menu">
+            <li><a href="/pages/terms">Common Terms</a></li>
+            <li><a href="/pages/before-coding">Concepts</a></li>
+            <li><a href="/pages/get-started">Get Started</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Setup<span class="caret"></span><span style="font-size:16px;" class="pull-right hidden-xs showopacity">{{ '1f308.png' | asset_url | img_tag }}</span></a>
+          <ul class="dropdown-menu" role="menu">
             <li><a href="/pages/arduino">Install Arduino IDE</a></li>
             <li><a href="/pages/boards">Add Boards</a></li>
             <li><a href="/pages/sketch">Upload Sketch</a></li>
@@ -37,17 +46,34 @@
           </ul>
         </li>
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Coding FAQs<span class="caret"></span><span style="font-size:16px;" class="pull-right hidden-xs showopacity">{{ '1f511.png' | asset_url | img_tag }}</span></a>
-          <ul class="dropdown-menu forAnimate" role="menu">
+          <a class="dropdown-toggle" data-toggle="dropdown">Code With Friends<span class="caret"></span><span style="font-size:16px;" class="pull-right hidden-xs showopacity">{{ '1f3a2.png' | asset_url | img_tag }}</span></a>
+          <ul class="dropdown-menu" role="menu">
+          <li><a href="/pages/friendship-library">About</a></li>
+          <li><a href="/pages/LEDs">LEDs</a></li>
+          <li><a href="/pages/led-animations-1">LED Animations</a></li>
+          <li><a href="/pages/buzzer">Buzzer</a></li>
+          <li><a href="/pages/friendship-button">Magic Button</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown">Coding Library<span class="caret"></span><span style="font-size:16px;" class="pull-right hidden-xs showopacity">{{ '1f3a0.png' | asset_url | img_tag }}</span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="/pages/about-library">About</a></li>
+            <li><a href="/pages/LEDs">LEDs</a></li>
+            <li><a href="/pages/led-animations-1">LED Animations</a></li>
+            <li><a href="/pages/buzzer">Buzzer</a></li>
+            <li><a href="/pages/magic-button">Magic Button</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Troubleshoot<span class="caret"></span><span style="font-size:16px;" class="pull-right hidden-xs showopacity">{{ '1f511.png' | asset_url | img_tag }}</span></a>
+          <ul class="dropdown-menu" role="menu">
             <li><a href="/pages/FAQ-general">General</a></li>
             <li><a href="/pages/FAQ-battery">Battery</a></li>
             <li><a href="/pages/FAQ-messaging">Messaging</a></li>
             <li><a href="/pages/FAQ-pairing">Pairing</a></li>
           </ul>
         </li>
-        <li class="dropdown">
-
-          <a href="/pages/library">Library</span><span style="font-size:16px;" class="pull-right hidden-xs showopacity">{{ '1f392.png' | asset_url | img_tag }}</span></a></li>
       </ul>
     </div>
   </div>
@@ -70,6 +96,19 @@ $('.dropdown').find('a:not(.dropdown-toggle)').click(function(){
   }
   return false;
 });
+
+$(function(){
+    var height = window.innerHeight;
+    $('iframe').css('height', height);
+});
+
+//And if the outer div has no set specific height set..
+$(window).resize(function(){
+    var height = window.innerHeight;
+    $('iframe').css('height', height);
+    $('#Embed').hide();
+});
+
 
 
 })();

@@ -71,7 +71,7 @@
                         <!-- dropdown list -->
                           <select id="updates_{{ item.id }}" name="updates[]" onchange="this.form.submit();">
                           {% for i in (1..12) %} {% assign q = i | times: 1 %}
-                            <option value="{{ q }}"{% if item.quantity == q %} selected{% endif %}>Jewelbots {{ i }}-Pack</option>
+                            <option value="{{ q }}"{% if item.quantity == q %} selected{% endif %}> {{ i }} </option>
                           {% endfor %}
                           </select>
                         <!--// end -->

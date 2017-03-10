@@ -29,10 +29,16 @@
 
 
 <script>
-  function update_variant(){
-    $('.checkout-link').attr('href', 'http://jewelbots.com/cart/' + $('#variant_options option:selected').val() + ':1');
-    $(".selected-text").text($('#variant_options option:selected').text());
-  };
+function update_variant(){
+   if(window.location.href.indexOf("zine") < 0)
+   $('.checkout-link').attr('href', 'http://jewelbots.com/cart/' + $('#variant_options option:selected').val() + ':1');
+   else{
+   $('.checkout-link').attr('href', '');
+   $('.checkout-link').attr('onclick', 'addItemToCart(); return false;');
+   }
+   $(".selected-text").text($('#variant_options option:selected').text());
+ };
+
 
   var urlParams;
   (window.onpopstate = function () {
@@ -76,5 +82,33 @@ setTimeout(function(){
 		$('.test_B').show();
 	}
 }, 500);
+
+function addItemToCart () {
+  var variant_id = $("#variant_options").val()
+  , quantity = 1
+  , frequency = "1"
+  , interval = "Months"
+  , subscription_id = "46195";
+  data = {
+      "quantity": quantity,
+      "id": variant_id,
+      "properties[shipping_interval_frequency]": frequency,
+	"properties[shipping_interval_unit_type]": interval,
+	"properties[subscription_id]": subscription_id
+    }
+  jQuery.ajax({
+      type: 'POST',
+      url: '/cart/add.js',
+      data: data,
+      dataType: 'json',
+      success: function() {
+          window.location.href = '/cart';
+      },
+     error: function (xhr, ajaxOptions, thrownError) {
+        alert(xhr.status);
+        alert(thrownError);
+      }
+  });
+}
 
 </script>
