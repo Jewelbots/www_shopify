@@ -1,0 +1,116 @@
+{% layout 'theme.JBS.blank' %}
+
+
+<div class="inner-welcome" id="page-content-wrapper">
+<div class="copy">
+  <h2>Some things you need to know before coding your device.</h2>
+</div>
+<h3>Programming is case sensitive.</h3>
+For instance, the variable type int has to be in all lowercase, otherwise you will get an error.
+End every line of code with a semicolon. (unless it has parentheses or brackets)
+For instance,
+<div class="sample_code">
+void setup(){<br/>
+int x = 2; //there's a semicolon to end the line declaring the variable x.<br/>
+}<br/>
+</div>
+Variables can be named whatever you want them to be. For instance, in all examples in Jewelbot tutorials, the LED object has always been declared as led. </p>
+<p>However, you can totally declare it as whatever you want! </p>
+<h4>The Setup() function</h4>
+<p>The setup() function is called when a sketch starts. Use it to initialize variables, pin modes, etc. The setup function will only run once, after each power up or reset of the Arduino board.
+
+For example,</p>
+<div class="sample_code">
+void setup()<br/>
+{<br/>
+      LED led;<br/>
+     //declaring an LED variable to be named "led"<br/>
+}</div>
+<h3>Conditional Statements</h3>
+
+<p>These are logical arithmetic statements you can implement into your program in order to control different functions or loops.</p>
+
+<p>For instance, you can use these conditional statements to turn your Jewelbot into a calculator!
+Let's say you have variables called x and y.</p>
+
+<p>You can set these variables to equal your math homework problems!</p>
+<div class="sample_code">
+void setup(){<br/>
+//delcare the name of your LED object here.<br/>
+LED led;<br/>
+//declare the values of your variables x and y<br/>
+int x = (4*5+3)^2;<br/>
+int y = 20x - (8^2);<br/>
+}<br/>
+</div>
+<p>
+Now you can use the conditional statements to test which variable is bigger!
+
+If...then...
+This is a conditional statement that performs an activity only if something specific happens.
+</p>
+<div class="sample_code">
+if (x > y ) {<br/>
+led.on(1, purple, 2000);<br/>
+}<br/>
+if (y < x ){<br/>
+led.on(2, red, 2000);<br/>
+}<br/>
+</div>
+
+<p>This block of code programs states that if the variable x is greater than y then your Jewelbot will light up purple on LED pin 1.
+The second conditional states that if the variable y is greater than x then your Jewelbot will light up red on LED pin 2.</p>
+
+<h4>If...else...</h4>
+<p>This is a conditional statement that performs an activity if something specific happens, but in any situation where that specific thing doesn't happen, then it will do something else.</p>
+
+<div class="sample_code">
+if (x < y) {<br/>
+led.on(1, purple, 2000);<br/>
+}<br/>
+else {<br/>
+led.on(2, red, 2000);<br/>
+}<br/>
+</div>
+<p>
+This block of code programs your Jewelbot to turn the LED on pin 1 to light up purple if variable x is greater than y.
+Otherwise, your Jewelbot will turn the LED on pin 2 to light up red for all other conditions, without having to set up a conditional for if y is greater than x.
+</p>
+<h4>loop()</h4>
+<p>The loop() function does precisely what its name suggests, and loops consecutively whatever you coded your program to do over and over again!</p>
+<div class="sample_code">
+#include "Arduino.h"<br/>
+
+void setup() {<br/>
+     // put your setup code here, to run once:<br/>
+    LED led;<br/>
+}<br/>
+
+void loop() {<br/>
+    // put your main code here, to run repeatedly:<br/>
+    led.on(2, "blue", 650000);<br/>
+   //it will loop to have one LED be the color blue for 65000 milleseconds<br/>
+}<br/>
+</div>
+
+<h4>for loop</h4>
+<p>This is different from the if-then or if-else conditionals, as this will set a conditional that causes your program to loop itself a specific amount of times.</p>
+
+<p>The for-loop has a set of 3 parameters. A declaration of an int, a condition for running the loop, and an increment.
+
+For instance, a for-loop could start as for(int z = 0, z < 10, z++). This means that there a variable of z with the value of 0, that will increase by 1 for as long as it is less than 10.
+However, the value of z will only increment when the for-loop completes one cycle of the steps you programmed within it.</p>
+<div class="sample_code">
+for(int a = 2, a <=20, a++){
+
+led.on(1, "orange", 1000);
+led.on(2, "purpe", 1000);
+}
+</div>
+
+</div><!--//copy -->
+<!--//video -->
+<div class="clear"></div>
+
+
+</div>
