@@ -16,12 +16,13 @@ Please complete the instructions for installing the <a href="/pages/arduino">Ard
   <p>It will most likely appear at the bottom of the menu of Boards.</p>
 
 <h3><span>3. </span> Go to the Tools menu and select the correct port for the Jewelbot. It is easiest if the Jewelbot is the only USB device plugged into the computer.	</h3>
+  <p>says “The USB ports in the images are examples only, yours might differ.  On Windows it will say COM followed by a number.  On Mac it will say cu.usbserial- then a series of letters and numbers.  On Linux it will say ttyUSB and a number.</p>
   <p>a. Windows: Select the correct COM XX port
   {{ 'go_section_instruction_screengrab6a.png' | asset_url | img_tag }}
-  <br>b. Mac: Select the correct /dev/cu.usberial-XXXXXX
+  <br>b. Mac: Select the correct /dev/cu.usbserial-XXXXXX
   {{ 'go_section_instruction_screengrab6b.png' | asset_url | img_tag }}
   <br>c. Linux: Select the correct /dev/ttyUSBX.
-    {{ 'go_section_instruction_screengrab10.png' | asset_url | img_tag }}
+    {{ 'go_section_instruction_screengrab16.png' | asset_url | img_tag }}
 
   </p>
 
@@ -29,15 +30,17 @@ Please complete the instructions for installing the <a href="/pages/arduino">Ard
   <p>To know how to create a new sketch go to Coding > Upload a Sketch on the left side menu of this Getting Started page!</p>
 
 <h3><span>5. </span> Press and hold the Magic Button for 2 seconds while your Jewelbot is plugged in	to put your Jewelbot into Upload Mode.</h3>
-    <p>Note that the charging light (red or green) will turn off. Also, remember it's 2 full seconds (1 mississippi...) </p>
+    <p>Note that the charging light (red or green) will turn off. Also, remember it's 2 full seconds (1 mississippi...). Either the charging light will go out (if you did not update your firmware yet) or your device
+    will flash purple and then fade to indicate that coding mode is activated (if you updated your firmware). </p>
 
 <h3><span>6. </span>Press the “Upload” button to load the new firmware onto your Jewelbot. </h3>
-  <img class="screengrab" src="/assets/images/go_section_instruction_screengrab7.png" />
-<h3><span>5. </span>During the update, in the Arduino output window (the black space), orange text will be displayed. When completed, it will show “Device Programmed”.</h3>
+  {{ 'go_section_instruction_screengrab7.jpg' | asset_url | img_tag }}
+
+<h3><span>7. </span>During the update, in the Arduino output window (the black space), orange text will be displayed. When completed, it will show “Device Programmed”.</h3>
   <p> The Jewelbot will reboot and display the rainbow animation.
     <br> Note: For Mac OS users, it will say “failed to execute script --main--”. Ignore that. </p>
 
-<h3><span>7. </span>Now your Jewelbot is fully updated! Congrats! </h3>
+<h3><span>8. </span>Now your Jewelbot is fully updated! Congrats! </h3>
 
 <p></p>
 <h2>FUTURE FIRMWARE UPDATE STEPS</h2>
@@ -47,7 +50,7 @@ Please complete the instructions for installing the <a href="/pages/arduino">Ard
   <p>	Updating your Firmware again after the first time is slightly different from the original steps you followed from the first time. Look how to do it here.</p>
   <p><span>1. </span> From the Tools menu, scroll over "Board:" and then select "Boards Manager".
   <br><span>2. </span> Type in "j" in the "Filter your search" box to quickly find the Jewelbots Boards.
-{{ 'go_section_instruction_screengrab4.png' | asset_url | img_tag }}
+{{ 'go_section_instruction_screengrab17.png' | asset_url | img_tag }}
  <br><span>3. </span> 	Click anywhere in the box for "Firmware Update" to display the "Update" button.
   <br><span>4. </span>  Click the "Update" button to update the board to the most recent version.
   </p>

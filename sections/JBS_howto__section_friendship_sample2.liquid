@@ -1,0 +1,92 @@
+<div class="inner-welcome" id="page-content-wrapper">
+
+<h2>Sample Code for Friendship (Sample Two)</h2>
+<p>Here is a coding sample of how to use Friendship Coding to do something cool when your Jewelbot sees your red friends for the FIRST TIME (meaning the initial starting connection of being near a red friend). You can change this code to do different things for any and all color friends!
+
+Keep in mind that if you were to have code for two different friend colors AND you’re nearby both friend colors, then it will try to do both actions at the same time. This may cause animations to happen in a pattern or the color of the lights to blend.
+</p>
+<div class="sample_code">
+
+Animation animation;</br>
+</br>
+void setup() {</br>
+</br>
+  // put your setup code here, to run once</br>
+</br>
+} </br>
+</br>
+// Declare Jewelbots hardware components to use </br>
+Buzzer buzz; </br>
+Timer timer; </br>
+Animation animation;</br>
+</br>
+// Declare booleans which control when you first see a friend of a particular color</br>
+bool first_time_red = true;</br>
+</br>
+void loop() {</br>
+
+  // Red friend group:</br>
+  if ((see_red_friends()) && (first_time_red)) {</br>
+    buzz.short_buzz();</br>
+    animation.rainbows();</br>
+    buzz.short_buzz();</br>
+    timer.pause(500);</br>
+    first_time_red = false;</br>
+  } else if ((!see_red_friends()) && (!first_time_red)) {</br>
+    first_time_red = true;</br>
+  }</br>
+</br>
+} </br>
+</br>
+</div>
+<p>Note that a boolean is a “true or false” variable and that the && symbol represents “both must be true”.</p>
+
+<p>So in the beginning, you declare a variable named “first_time_red” as true. And so, in the line “if((see_red_friends()) && (first_time_red))” you are saying that the Jewelbot must see red friends and the variable “first_time_red” must both be true. When that is the case, this code will do a buzz and rainbow animation, and at the end, set “first_time_red” to false. </p>
+
+<p>Now, it can’t do a forever buzzing and rainbow loop until the Jewelbot no longer sees red friends. This is declared by the line “else if ((!see_red_friends()) && !(first_time_red))”. The exclamation in front symbolizes “false”. When the Jewelbot doesn’t see the red friends, then the function, “see_red_friends” is false.
+And because we set “first_time_red” as false in the “if” section, it is also false. These two false statements trigger the “else if” event to declare “first_time_red” as true again. Now, when your Jewelbot sees red friends again, it will do the buzzing and rainbows again.</p>
+<p>
+BEFORE UPLOADING THE CODE, PUT YOUR JEWELBOT INTO UPLOAD MODE BY PLUGGING IN THE USB AND HOLDING THE MAGIC BUTTON DOWN FOR TWO SECONDS.
+Remember, two full seconds (1 mississippi...)
+Either the charging light will go out (if you did not update your firmware yet) or your device will flash purple and then fade to indicate that coding mode is activated (if you updated your firmware).
+</p>
+<p>
+CLICK ON THE UPLOAD BUTTON FROM THE ARDUINO IDE TO TRANSFER THE CODE TO YOUR JEWELBOT.
+</p>
+<p>ONCE THE CODE IS UPLOADED ONTO YOUR JEWELBOT, UNPLUG IT TO SEE THE RESULTS!!
+The act of your Jewelbot running your code is it being in Coding Mode! (Isn't that cool?!)
+</p>
+<p>TEST OUT MORE CODE COMBINATIONS BY DOING THIS WITH DIFFERENT COLOR FRIEND GROUPS!
+</p>
+
+<p>
+SHARE WHAT YOU CODE FOR YOUR JEWELBOT <a href="http://community.jewelbots.com" target="blank"> HERE</a> ON THE FORUMS! </a></p>
+
+
+<h2>Troubleshooting</h2>
+
+<h4 class="question">I'm getting an error I didn't have before?</h4>
+  <p>Try updating your Arduino Library board to make sure you have the most recent coding functions!
+Go to Tools > Boards > Boards Manager. Search "j" to get the Jewelbots Friendship Coding board. Then hit update!
+  </p>
+
+<h4 class="question">I'm getting an error that says "failed to execute _main script"</h4>
+  <p>This is an error Mac users get (and we're not sure why yet!), but just ignore it.
+  It doesn't affect how your Jewelbot gets programmed! As long as it says "Device Programmed" or “Upload Complete” at the end, then just unplug your Jewelbot to see the results!
+  </p>
+
+<h4 class="question">There's an error that says "Possible causes: -boot loader..." etc</h4>
+  <p>Make sure you have the correct Board and Port selected. If you do, then make sure to put your Jewelbot in Upload Mode by pressing it for 2 seconds while plugged in when you hit the upload button.
+  </p>
+
+<h4 class="question">Getting an error that says error: 'LED' was not declared in this scope</h4>
+  <p>Some suggestions to solve this would be:
+  <ul>
+    <li><span>•</span> Go to Tools > Boards and then select the Jewelbots board called Friendship Coding Mode (or JWB nRF51822 depending on the version of firmware you are on).</li>
+    <li><span>•</span> Make sure you press the Magic Button for 2 whole seconds (1 Mississippi..) before hitting the upload button on the Arduino IDE</li>
+  </ul>
+
+    If none of these solutions seem to help, then email us at  <a href="mailto:hi@jewelbots.com">hi@jewelbots.com</a>
+    </p>
+
+</div>

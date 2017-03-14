@@ -1,0 +1,91 @@
+{% layout 'theme.JBS.blank' %}
+
+
+<div class="inner-welcome" id="page-content-wrapper">
+<div class="copy">
+  <h2>Here is how you code the Jewelbots for Friendship</h2>
+
+<p>This Library contains the full Jewelbots firmware and enables the user to add custom reactions to your friends and their color groups.
+Because of conflicts with existing Jewelbots functionality not everything that is available in Solo Coding mode is available in this Library.</p>
+
+<p>Inside the Jewelbots Friendship Library, there are 4 functions that can be used to create custom reactions to friends. These 4 functions each return a boolean (true / false value) that tells the user if there are any friends of the selected color group present nearby.</p>
+
+The four functions are:
+<div class="sample_code">
+see_red_friends() </br>
+see_green_friends() </br>
+see_blue_friends()</br>
+see_cyan_friends()</br>
+</div>
+<p>Once the Jewelbots Friendship board is selected in the Arduino IDE, there are examples available in the File menu. The example called "Friend_colorgroup_usage" provides an example of checking if any friends in the green color group are present and causes the Jewelbot to buzz and show an animation when a green friend is seen for the first time.</p>
+<p>If you can't find the Friendship Coding board, then go to "Set Up > Install Boards > Step 8" of the instructions to see how to install it.</p>
+
+<p>The four functions show changes on the same time period as the lights showing friend group colors. Something to keep in mind, although the Jewelbot checks for other Jewelbots wirelessly multiple times a second the lights and the see friends functions are only updated every few seconds.
+Similarly, it is important to note that the functions will return true continually when a friend is nearby, which is why the example shows one simple way to make the reaction happen only once when the color group is first encountered.</p>
+
+<h3>COMPONENT INTIALIZATION</h3>
+<div class="sample_code">
+</br>
+void setup() {</br>
+</br>
+  // put your setup code here, to run once:</br>
+</br>
+</br></br>
+} // setup</br>
+
+void loop() {</br>
+</br>
+  // put your main code here, to run repeatedly:</br>
+</br>
+</br>
+} // loop</br>
+</div>
+<p>The different functions are called the "API", because they are the way you interact with the device. APIs are ways you can work
+with different interfaces, sometimes in a computer and sometimes online. </p>
+</div>
+<h3>API</h3>
+
+<h4>see_red_friends()</h4>
+<p>This function returns true if any friends in the red color group are nearby. It returns false if none are nearby.</p>
+<div class="sample_code">
+if (see_red_friends()) {</br>
+  // Commands to carry out when red friends are nearby</br>
+}</br>
+</br>
+</div>
+
+<h4>see_green_friends()</h4>
+<p>This function returns true if any friends in the green color group are nearby. It returns false if none are nearby.</p>
+<div class="sample_code">
+if (see_green_friends()) {</br>
+  // Commands to carry out when green friends are nearby</br>
+}</br>
+</br>
+</div>
+
+<h4>see_cyan_friends()</h4>
+<p>This function returns true if any friends in the cyan color group are nearby. It returns false if none are nearby.</p>
+<div class="sample_code">
+if (see_cyan_friends()) {</br>
+  // Commands to carry out when cyan friends are nearby</br>
+}</br>
+</br>
+</div>
+
+<h4>see_blue_friends()</h4>
+<p>This function returns true if any friends in the blue color group are nearby. It returns false if none are nearby.</p>
+<div class="sample_code">
+if (see_blue_friends()) {</br>
+  // Commands to carry out when blue friends are nearby</br>
+}</br>
+</br>
+</div>
+
+</div>
+
+</div><!--//copy -->
+<!--//video -->
+<div class="clear"></div>
+
+
+</div>

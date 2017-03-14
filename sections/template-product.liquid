@@ -190,8 +190,8 @@
 
             {% if product.available %}
 
-                  <a class="checkout-link test_A cta_buy" href="http://jewelbots.com/cart/{{products.variants.id}}:1"> buy now </a>
-                  <a class="checkout-link test_B cta_buy" href="http://jewelbots.com/cart/{{products.variants.id}}:1"> add to cart </a>
+                  <a class="checkout-link test_A cta_buy" href="http://jewelbots.com/cart/{{products.variants.id}}:1">buy now</a>
+                    <a class="checkout-link test_B cta_buy" href="http://jewelbots.com/cart/add?id={{products.variants.id}}">buy now</a>
 
             {% else %}
               <input type="submit" class="button outline disabled" disabled="disabled" value="{{ 'products.product.sold_out' | t }}" />

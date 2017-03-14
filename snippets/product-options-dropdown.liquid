@@ -64,17 +64,17 @@ $(function(){
 
 setTimeout(function(){
   	if (Math.random() >= 0.5){
-		mixpanel.register_once({ "T__6": "A" });
+		mixpanel.register_once({ "T__8": "A" });
 		$('.test_A').show();
 		$('.test_B').hide();
 	} else {
-		mixpanel.register_once({ "T__6": "B" });
+		mixpanel.register_once({ "T__8": "B" });
 		$('.test_A').hide();
 		$('.test_B').show();
 	}
 }, 100);
 setTimeout(function(){
-  	if(mixpanel.get_property('T__6') == 'A' ){
+  	if(mixpanel.get_property('T__8') == 'A' ){
 		$('.test_A').show();
 		$('.test_B').hide();
 	} else {
