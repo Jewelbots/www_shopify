@@ -12,8 +12,8 @@ There are 4 LEDs total that are connected to the Jewelbot.</p>
 
 <h3>COMPONENT INTIALIZATION</h3>
 <div class="sample_code">
-LED led;</br>
-//naming the variable type and then the name of variable.</br>
+LED led;
+// Naming the variable type and then the name of variable.
 </div>
 
 <p>In order to use the LED functions, you first need to initialize the library. This tells your program that you want to code
@@ -34,58 +34,50 @@ with different interfaces, sometimes in a computer and sometimes online. </p>
 <h4>.turn_on_single(LED_Pos led, ColorLabel color)</h4>
 <p>This function turns on a single LED of the Jewelbot.</p>
 <div class="">
-LED led;</br>
+LED led;
 led.turn_on_single(SW, GREEN);
-</br>
 </div>
 
 <h4>.turn_on_all(ColorLabel color)</h4>
 <p>This function turns on all the LEDs on the Jewelbot.</p>
 <div class="sample_code">
-LED led;</br>
+LED led;
 led.turn_on_all(GREEN);
-</br>
 </div>
 
 
 <h4>.turn_off_single(LED_Pos led)</h4>
 <p>This function turns off a single LED of the Jewelbot.</p>
 <div class="sample_code">
-LED led;</br>
+LED led;
 led.turn_off_single(NE);
-</br>
 </div>
 
 
 <h4>.turn_off_all()</h4>
 <p>This function turns off all the LEDs on the Jewelbot.</p>
 <div class="sample_code">
-LED led;</br>
+LED led;
 led.turn_off_all();
-</br>
 </div>
-
 
 <h4>.flash_single(LED_Pos led, ColorLabel color, uint8_t milliseconds)</h4>
 <p>This function turns on the LED for a set amount of time and then turns off.</p>
 <div class="sample_code">
-LED led;</br>
+LED led;
 led.flash_single(SE, BLUE, 1000);
-</br>
 </div>
 
 
 <h4>.flash_all(ColorLabel color, uint8_t milliseconds)</h4>
 <p>This function turns all the LEDs for a set amount of time and then turns them off.</p>
 <div class="sample_code">
-LED led;</br>
+LED led;
 led.flash_all(BLUE, 1000);
-</br>
 </div>
 
 </div><!--//copy -->
 <!--//video -->
 <div class="clear"></div>
-
 
 </div>

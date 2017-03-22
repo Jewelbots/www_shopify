@@ -7,37 +7,32 @@ Keep in mind that if you were to have code for two different friend colors AND y
 </p>
 <div class="sample_code">
 
-Animation animation;</br>
-</br>
-void setup() {</br>
-</br>
-  // put your setup code here, to run once</br>
-</br>
-} </br>
-</br>
-// Declare Jewelbots hardware components to use </br>
-Buzzer buzz; </br>
-Timer timer; </br>
-Animation animation;</br>
-</br>
-// Declare booleans which control when you first see a friend of a particular color</br>
-bool first_time_red = true;</br>
-</br>
-void loop() {</br>
+Animation animation;
 
-  // Red friend group:</br>
-  if ((see_red_friends()) && (first_time_red)) {</br>
-    buzz.short_buzz();</br>
-    animation.rainbows();</br>
-    buzz.short_buzz();</br>
-    timer.pause(500);</br>
-    first_time_red = false;</br>
-  } else if ((!see_red_friends()) && (!first_time_red)) {</br>
-    first_time_red = true;</br>
-  }</br>
-</br>
-} </br>
-</br>
+void setup() {
+  // put your setup code here, to run once
+}
+
+// Declare Jewelbots hardware components to use
+Buzzer buzz;
+Timer timer;
+Animation animation;
+
+// Declare booleans which control when you first see a friend of a particular color
+bool first_time_red = true;
+
+void loop() {
+  // Red friend group:
+  if ((see_red_friends()) && (first_time_red)) {
+    buzz.short_buzz();
+    animation.rainbows();
+    buzz.short_buzz();
+    timer.pause(500);
+    first_time_red = false;
+  } else if ((!see_red_friends()) && (!first_time_red)) {
+    first_time_red = true;
+  }
+}
 </div>
 <p>Note that a boolean is a “true or false” variable and that the && symbol represents “both must be true”.</p>
 
