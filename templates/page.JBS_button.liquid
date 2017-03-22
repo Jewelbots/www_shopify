@@ -14,22 +14,21 @@ This function will allow you to code up a really cool effect and show it off to 
 
 </p>
 
-
 <h3>COMPONENT INTIALIZATION</h3>
 <div class="sample_code">
-// To use the Magic Button in Arduino, </br>
-// use the following functions to define what happens</br>
-// include the "set_arduino_button()" function in your setup </br>
+// To use the Magic Button in Arduino,
+// use the following functions to define what happens
+// include the "set_arduino_button()" function in your setup
 
 void setup() {
-  // Required first setup command here</br>
-  set_arduino_button();</br>
-}</br>
-</br>
-  void button_press(void){</br>
-    // Define what happens when the Magic Button is pressed quickly</br>
-    // (when the Jewelbot is not plugged into power)</br>
-  }</br>
+  // Required first setup command here
+  set_arduino_button();
+}
+
+void button_press(void){
+  // Define what happens when the Magic Button is pressed quickly
+  // (when the Jewelbot is not plugged into power)
+}
 </div>
 
 {% else %}
@@ -41,21 +40,21 @@ with the LEDs and buzzer to make very cool effects on your Jewelbots that get tr
 
 <h3>COMPONENT INTIALIZATION</h3>
 <div class="sample_code">
-// To use the Magic Button in Arduino, </br>
-// use the following functions to define what happens</br>
+// To use the Magic Button in Arduino,
+// use the following functions to define what happens
 
-  void button_press(void){</br>
-    // Define what happens when the Magic Button is pressed quickly</br>
-    // (when the Jewelbot is not plugged into power)</br>
-  }</br>
-  void button_press_long(void) {</br>
-    // Define what happens when the Magic Button is held for 2 seconds</br>
-    // (when the Jewelbot is not plugged into power)</br>
-  }</br>
-  void charging_button_press(void) {</br>
-    // Define what happens when the Magic Button is pressed quickly</br>
-    // (when the Jewelbot is plugged into power)</br>
-  }
+void button_press(void){
+  // Define what happens when the Magic Button is pressed quickly
+  // (when the Jewelbot is not plugged into power)
+}
+void button_press_long(void) {
+  // Define what happens when the Magic Button is held for 2 seconds
+  // (when the Jewelbot is not plugged into power)
+}
+void charging_button_press(void) {
+  // Define what happens when the Magic Button is pressed quickly
+  // (when the Jewelbot is plugged into power)
+}
 
 </div>
 {% endif %}
@@ -71,11 +70,11 @@ to happen after you do something else, in this case after pressing the button.</
 <p>This function happens when you hit your button one time.</p>
 <div class="sample_code">
 
-void button_press(void){</br>
-  LED led;</br>
-  led.turn_on_single(NW, GREEN);</br>
-}</br>
-</br>
+void button_press(void){
+  LED led;
+  led.turn_on_single(NW, GREEN);
+}
+
 </div>
 
 {% if page.url contains 'friendship' %}
@@ -83,27 +82,25 @@ void button_press(void){</br>
 <h4>button_press_long(void)</h4>
 <p>This function happens when you press the Magic Button and hold it for a moment.</p>
 <div class="sample_code">
-void button_press_long(void){</br>
-  LED led;</br>
-  led.turn_on_single(SE, YELLOW);</br>
-}</br>
-</br>
+void button_press_long(void){
+  LED led;
+  led.turn_on_single(SE, YELLOW);
+}
+
 </div>
 
 <h4>charging_button_press(void)</h4>
 <p>This function happens when you press the Magic Button when the device is plugged in.</p>
 <div class="sample_code">
-void charging_button_press(void){</br>
-  LED led;</br>
-  led. led.turn_on_single(NW, BLUE);</br>
-}</br>
-</br>
+void charging_button_press(void){
+  LED led;
+  led. led.turn_on_single(NW, BLUE);
+}
+
 </div>
 </div>
 {% endif %}
 </div><!--//copy -->
 <!--//video -->
 <div class="clear"></div>
-
-
 </div>

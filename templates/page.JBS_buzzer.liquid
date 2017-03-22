@@ -11,7 +11,7 @@
 
 <h3>COMPONENT INTIALIZATION</h3>
 <div class="sample_code">
-Buzzer buzz;</br>
+Buzzer buzz;
 //naming the variable type and then the name of variable.
 </div>
 
@@ -26,67 +26,61 @@ with different interfaces, sometimes in a computer and sometimes online. </p>
 <h4>.extra_short_buzz()</h4>
 <p>This function has your Jewelbot vibrate for an extra short amount of time (125 ms).</p>
 <div class="sample_code">
-Buzzer buzz;</br>
+Buzzer buzz;
 buzz.extra_short_buzz();
-</br>
 </div>
 
 <h4>.short_buzz()</h4>
 <p>This function has your Jewelbot vibrate for a short amount of time (250 ms).</p>
 <div class="sample_code">
-Buzzer buzz;</br>
+Buzzer buzz;
 buzz.short_buzz();
-</br>
 </div>
-
 
 <h4>.medium_buzz()</h4>
 <p>This function has your Jewelbot vibrate for a long amount of time (500 ms).</p>
 <div class="sample_code">
-Buzzer buzz;</br>
-buzz.long_buzz();</br>
+Buzzer buzz;
+buzz.long_buzz();
 </div>
 
 <h4>.long_buzz()</h4>
 <p>This function has your Jewelbot vibrate for an extra short amount of time (750 ms).</p>
 <div class="sample_code">
-Buzzer buzz;</br>
+Buzzer buzz;
 buzz.long_buzz();
-</br>
 </div>
 
 <h4>.extra_long_buzz()</h4>
 <p>This function has your Jewelbot vibrate for a short amount of time (1000 ms).</p>
 <div class="sample_code">
-Buzzer buzz;</br>
+Buzzer buzz;
 buzz.extra_long_buzz();
-</br>
 </div>
 
 
 <h4>.really_long_buzz()</h4>
 <p>This function has your Jewelbot vibrate for an extra long amount of time (1500 ms).</p>
 <div class="sample_code">
-Buzzer buzz;</br>
-buzz.really_long_buzz();</br>
+Buzzer buzz;
+buzz.really_long_buzz();
 </div>
 
 <h4>.custom_buzz(uint8_t amplitude, uint32_t milliseconds)()</h4>
 <p>This function creates a custom buzz!
-</br>
+
 Amplitude is a measure of how strong the motor vibrates.
 Amplitude can be from 0 (no buzz) to 127 (max buzz).
 Jewelbots typically buzz right in the middle at an amplitude of 63
-</br>
+
 Milliseconds is how long the motor will vibrate.
 Millisecond is measured in, you guessed it, milliseconds.
 40 ms is the minimum allowed and 2 s (2000 ms) is the max for longevity
 </p>
 <div class="sample_code">
-Buzzer buzz;</br>
 Buzzer buzz;
-buzz.custom_buzz(63, 500); //This will buzz at 50% strength for 1/2 second.
-</br>
+Buzzer buzz;
+buzz.custom_buzz(63, 500); // This will buzz at 50% strength for 1/2 second.
 </div>
 
 </div>

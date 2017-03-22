@@ -6,21 +6,18 @@
 Keep in mind that if you were to have code for two different friend colors AND you’re nearby both friend colors, then it will try to do both actions at the same time. This may cause animations to happen in a pattern or the color of the lights to blend.
 </p>
 <div class="sample_code">
+Animation animation;
 
-Animation animation;</br>
-</br>
-void setup() {</br>
-  // put your setup code here, to run once</br>
-</br>
-} </br>
-</br>
-void loop() {</br>
-</br>
- //this code means “if see red friends, then do rainbow animations”</br>
-  if(see_red_friends()){</br>
-    animation.rainbows();</br>
-  }</br>
-} </br>
+void setup() {
+  // put your setup code here, to run once
+}
+
+void loop() {
+  // This code means "if see red friends, then do rainbow animations"
+  if(see_red_friends()){
+    animation.rainbows();
+  }
+}
 </div>
 <p>
 BEFORE UPLOADING THE CODE, PUT YOUR JEWELBOT INTO UPLOAD MODE BY PLUGGING IN THE USB AND HOLDING THE MAGIC BUTTON DOWN FOR TWO SECONDS.

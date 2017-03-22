@@ -6,22 +6,19 @@
 Keep in mind that if you were to have code for two different friend colors AND you’re nearby both friend colors, then it will try to do both actions at the same time. This may cause animations to happen in a pattern or the color of the lights to blend.
 </p>
 <div class="sample_code">
+Animation animation;
 
-Animation animation;</br>
-</br>
-void setup() {</br>
-  // put your setup code here, to run once</br>
-</br>
-} </br>
-</br>
-void loop() {</br>
+void setup() {
+  // put your setup code here, to run once
+}
 
-</br>
- //this code means “if see red friends, then do rainbow animations”</br>
-  if(see_red_friends()){</br>
-    animation.rainbows();</br>
-  }</br>
-} </br>
+void loop() {
+
+ //this code means “if see red friends, then do rainbow animations”
+  if (see_red_friends()) {
+    animation.rainbows();
+  }
+}
 </div>
 
 <p>Note that the code for seeing red friends here is in the loop function, which means it will run continuously until you are out of range from red friends (so forever rainbows until you’re a part!!).
