@@ -1,4 +1,4 @@
-<script src="{{ 'jquery-3.1.1.min.js' | asset_url }}" ></script>
+{% layout 'theme' %}
 {% include 'bold-product' with product, hide_action: 'break' %}{% if bold_hidden_product %}{% break %}{%endif %}
 {% section 'template-product' %}
 
