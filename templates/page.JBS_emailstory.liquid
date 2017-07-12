@@ -6,26 +6,6 @@
 <!-- A/B TESTS  ⬇ -->
 <script type="text/javascript">
 
-setTimeout(function(){
-  	if (Math.random() >= 0.5){
-		mixpanel.register_once({ "T__4": "A" });
-		$('.test_A').show();
-		$('.test_B').hide();
-	} else {
-		mixpanel.register_once({ "T__4": "B" });
-		$('.test_A').hide();
-		$('.test_B').show();
-	}
-}, 100);
-setTimeout(function(){
-  	if(mixpanel.get_property('T__4') == 'A' ){
-		$('.test_A').show();
-		$('.test_B').hide();
-	} else {
-		$('.test_A').hide();
-		$('.test_B').show();
-	}
-}, 500);
 </script>
 <!-- A/B TESTS  ⬆ -->
 
@@ -57,7 +37,7 @@ setTimeout(function(){
 				<h5>TWINNIE 2-PACK</h5>
 				<img src="{{ 'index_section_sale__product_jewelbot_2pack_2.png' | asset_url }}" />
 				<p class="list_price"><span>$138</span> List Price</p>
-				<p>$99 Sale!</p>
+				<p>$109 Sale!</p>
 				<!--<a class="offer" href="javascript:void;" onClick="modal_newsletter('open_overlay'); mixpanel.track('INTERACTION', {'ACTION': 'clicked_safe', 'POSITION': 'sales'});">sign up and save $10</a>-->
 				<a class="test_B cta_preorder" href="https://shop.jewelbots.com/products/jewelbots-open-source-programmable-friendship-bracelet?variant=30055045137" target="_self">Learn more</a>
 				<a class="test_A cta_preorder" href="https://shop.jewelbots.com/products/jewelbots-open-source-programmable-friendship-bracelet?variant=30055045137" target="_self">Buy Now</a>
@@ -66,7 +46,7 @@ setTimeout(function(){
 				<h5>SQUAD 3-PACK</h5>
 				<img src="{{ 'index_section_sale__product_jewelbot_3pack.jpg' | asset_url }}" />
 				<p class="list_price"><span>$207</span> List Price</p>
-				<p>$129 Sale!</p>
+				<p>$139 Sale!</p>
 				<a class="test_B cta_preorder" href="https://shop.jewelbots.com/products/jewelbots-open-source-programmable-friendship-bracelet?variant=30055105041" target="_self">Learn more</a>
 				<a class="test_A cta_preorder" href="https://shop.jewelbots.com/products/jewelbots-open-source-programmable-friendship-bracelet?variant=30055105041" target="_self">Buy Now</a>
 			</li>

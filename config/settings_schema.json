@@ -104,6 +104,16 @@
             "group": "Sans Serif"
           },
           {
+            "value": "'Quicksand', sans-serif",
+            "label": "Quicksand",
+            "group": "Sans Serif"
+          },
+          {
+            "value": "'Nunito Sans', sans-serif",
+            "label": "Nunito Sans",
+            "group": "Sans Serif"
+          },
+          {
             "value": "'Archivo Narrow', sans-serif",
             "label": "Archivo Narrow",
             "group": "Condensed Sans Serif"
@@ -274,6 +284,16 @@
             "group": "Sans Serif"
           },
           {
+            "value": "'Quicksand', sans-serif",
+            "label": "Quicksand",
+            "group": "Sans Serif"
+          },
+          {
+            "value": "'Nunito Sans', sans-serif",
+            "label": "Nunito Sans",
+            "group": "Sans Serif"
+          },
+          {
             "value": "'Archivo Narrow', sans-serif",
             "label": "Archivo Narrow",
             "group": "Condensed Sans Serif"
@@ -441,6 +461,16 @@
           {
             "value": "'Helvetica Neue', Helvetica, Arial, sans-serif",
             "label": "Helvetica \/ Arial",
+            "group": "Sans Serif"
+          },
+          {
+            "value": "'Quicksand', sans-serif",
+            "label": "Quicksand",
+            "group": "Sans Serif"
+          },
+          {
+            "value": "'Nunito Sans', sans-serif",
+            "label": "Nunito Sans",
             "group": "Sans Serif"
           },
           {

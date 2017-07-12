@@ -9,8 +9,8 @@
     $(document).ready(function() {
         window.onload = function() {
             document.getElementById("mixpanel_id").value = mixpanel.get_distinct_id();
-			document.getElementById("utm_campaign_first").value = mixpanel.get_property('utm_campaign');
-			document.getElementById("utm_campaign_last").value  = mixpanel.get_property('utm_campaign [last touch]');
+	//		document.getElementById("utm_campaign_first").value = mixpanel.get_property('utm_campaign');
+	//		document.getElementById("utm_campaign_last").value  = mixpanel.get_property('utm_campaign [last touch]');
 		//	alert('first UTM: '+mixpanel.get_property('utm_campaign'));
 		//	alert('current UTM: '+mixpanel.get_property('utm_campaign [last touch]'));
         };

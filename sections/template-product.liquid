@@ -15,6 +15,24 @@
 <div> item count {{ cart.item_count }}</div>
 
 {% assign form_id = product.id %}
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org/",
+  "@type": "Product",
+  "name": "{{ product.title }}",
+  "image": "{{ featured_image | product_img_url: '600x600' }}",
+  "brand": {
+    "@type": "Thing",
+    "name": "Jewelbots"
+  },
+  "offers": {
+    "@type": "AggregateOffer",
+    "lowPrice": "{{ selectedVariant.price | money }}",
+    "highPrice": "{{ selectedVariant.compare_at_price | money }}",
+    "priceCurrency": "USD"
+  }
+}
+</script>
 
 <div class="module-wrapper">
   <div class="module module-product">
@@ -190,7 +208,7 @@
 
             {% if product.available %}
 
-                  <a class="checkout-link cta_buy" href="http://jewelbots.com/cart/{{products.variants.id}}:1">Add To Cart</a>
+                  <a class="checkout-link cta_buy" href="http://jewelbots.com/cart/29751932753:1">Add To Cart</a>
 
             {% else %}
               <input type="submit" class="button outline disabled" disabled="disabled" value="{{ 'products.product.sold_out' | t }}" />
@@ -294,122 +312,3 @@
 
 
 </script>
-
-<script type="application/json" data-product-json-{{ form_id }}>{{ product | json }}</script>
-{% schema %}
-{
-  "name": "Product pages",
-  "class": "section-product",
-  "settings": [
-    {
-      "type": "checkbox",
-      "id": "enable_zoom",
-      "label": "Enable image zoom",
-      "default": true
-    },
-    {
-      "type": "checkbox",
-      "id": "disable_ajax_add_product",
-      "label": "Enable cart redirection",
-      "info": "Automatically sends users to the Cart page after adding a product.",
-      "default": false
-    },
-    {
-      "type": "checkbox",
-      "id": "enable-share-buttons",
-      "label": "Show share buttons",
-      "default": true
-    },
-    {
-      "type": "header",
-      "content": "Additional info links"
-    },
-    {
-      "type": "paragraph",
-      "content": "[Additional Info Links](https:\/\/s3.amazonaws.com\/cdn.pixelunion.net\/startup\/additional-info-screenshot.png) appear wherever a customer can view product information. They’re perfect for linking to size charts, refund policies, or ordering details. Pick from six unique icons."
-    },
-    {
-      "type": "text",
-      "id": "additional_info_text_1",
-      "label": "Text"
-    },
-    {
-      "type": "url",
-      "id": "additional_info_url_1",
-      "label": "Link"
-    },
-    {
-      "type": "select",
-      "id": "additional_info_icon_1",
-      "label": "Icon",
-      "options": [
-        {
-          "value": "info",
-          "label": "Information (i)"
-        },
-        {
-          "value": "question-mark",
-          "label": "Question mark"
-        },
-        {
-          "value": "ruler",
-          "label": "Ruler"
-        },
-        {
-          "value": "envelope",
-          "label": "Envelope"
-        },
-        {
-          "value": "pencil",
-          "label": "Pencil"
-        },
-        {
-          "value": "shirt",
-          "label": "Shirt"
-        }
-      ]
-    },
-    {
-      "type": "text",
-      "id": "additional_info_text_2",
-      "label": "Text"
-    },
-    {
-      "type": "url",
-      "id": "additional_info_url_2",
-      "label": "Link"
-    },
-    {
-      "type": "select",
-      "id": "additional_info_icon_2",
-      "label": "Icon",
-      "options": [
-        {
-          "value": "info",
-          "label": "Information (i)"
-        },
-        {
-          "value": "question-mark",
-          "label": "Question mark"
-        },
-        {
-          "value": "ruler",
-          "label": "Ruler"
-        },
-        {
-          "value": "envelope",
-          "label": "Envelope"
-        },
-        {
-          "value": "pencil",
-          "label": "Pencil"
-        },
-        {
-          "value": "shirt",
-          "label": "Shirt"
-        }
-      ]
-    }
-  ]
-}
-{% endschema %}

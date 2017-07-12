@@ -422,11 +422,11 @@
       "body-text-color": "#5e5e5e",
       "border-color": "#e6e6e6",
       "body-background-color": "#ffffff",
-      "body-font": "Roboto Condensed, sans-serif",
+      "body-font": "'Nunito Sans', sans-serif",
       "body-font-weight": "300",
-      "heading-font": "'Playfair Display', serif",
+      "heading-font": "'Quicksand', sans-serif",
       "heading-font-weight": "700",
-      "primary-button-font": "Roboto, sans-serif",
+      "primary-button-font": "'Nunito Sans', sans-serif",
       "primary-button-font-weight": "700",
       "sections": {
         "general-newsletter": {

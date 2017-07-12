@@ -4,9 +4,9 @@
 		<a href="https://jewelbots.com" target="_self">
 			<img class="logo_icon_small" src="{{ 'JBS__section_header__icon_small.png' | asset_url }}" />
 			<img class="logo_icon_large" src="{{ 'JBS__section_header__icon_large.png' | asset_url }}" />
-			<img class="logo_wordmark" src="{{ 'JBS__section_header__wordmark.png' | asset_url }}" />
+			<img class="logo_wordmark" src="{{ 'logo_white.png' | asset_url }}" />
 		</a>
-		<img class="logo_mobile" src="{{ 'JBS__section_header__icon_small.png' | asset_url }}" />
+		<img class="logo_mobile" src="{{ 'hamburger.png' | asset_url }}" />
 		<ul class="navigation">
 			{% for link in linklists.main-menu.links %}
 				<li><a href="{{ link.url }}" title="{{ link.title }}" target="_self">{{ link.title }}</a></li>
@@ -120,12 +120,12 @@
 		display: block;
 		position: relative;
 		float: left;
-		width: 275px;
-		height: 100px;
-		left: 0px;
-		top: 0px;
-		margin: 0 0 0 -10px;
-		padding: 0 0 0 0;
+		height: 75px;
+		left: 10px;
+		top: -7px;
+		margin: 1px 10px 25px -10px;
+		padding: 2px 19px 0 0;
+
 	}
 	.section_header .header_default img.logo_mobile {
 		display: none;
@@ -178,8 +178,8 @@
 
 		font-family: "museo-sans", sans-serif;
 		font-style: normal;
-		font-weight: 300;
-		font-size: 12px;
+		font-weight: 600;
+		font-size: 15px;
 		line-height: 40px;
 		letter-spacing: 0px;
 		text-indent: 0px;
@@ -340,13 +340,14 @@
 				box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.0);
 	}
 
-	@media (max-width: 1023px) {
-		.section_header .header_default img.logo_wordmark {
-			display: none;
-		}
+	@media (max-width: 970px) {
+
 		.section_header .header_default a.cta_secondary {
 			display: none;
 		}
+    .section_header .header_sticky img.logo_wordmark {
+  		display: none;
+  	}
 	}
 
 	/*-------------------------------------------------------- (header_default) ------ */
@@ -358,7 +359,7 @@
 		height: 70px;
 		margin: 0 auto 0 auto;
 		padding: 0 0 0 0;
-		background-color: rgba(20,200,170,1.0);
+		background-color: rgba(20,200,170,0.8);
 
 		-webkit-box-shadow: 0px 2px 20px 0px rgba(0,0,0,0.3);
 	       -moz-box-shadow: 0px 2px 20px 0px rgba(0,0,0,0.3);
@@ -366,13 +367,13 @@
 	}
 
 	.section_header .header_sticky img.logo_icon_small {
-		display: block;
+		display: none;
 	}
 	.section_header .header_sticky img.logo_icon_large {
 		display: none;
 	}
 	.section_header .header_sticky img.logo_wordmark {
-		display: none;
+		display: block;
 	}
 	.section_header .header_sticky img.logo_mobile {
 		display: none;
@@ -448,15 +449,38 @@
 	}
 	.section_header .header_sticky a.cta_secondary:hover {}
 
-	@media (max-width: 1023px) {
-		.section_header .header_sticky img.logo_wordmark {
-			display: none;
-		}
+
+  @media (max-width: 970px) {
+
+    .section_header .header_default a.cta_secondary {
+      display: none;
+    }
+    .section_header .header_sticky img.logo_wordmark {
+      display: none;
+    }
+  }
+	@media (max-width: 1350px) {
+
+    .section_header .header_sticky a.cta_secondary {
+      display:none;
+    }
+    .section_header .header_default ul.navigation li a {
+      font-size: 13px;
+
+    }
+    .section_header .header_default img.logo_wordmark {
+      height: 60px;
+      padding: 13px 0px 0 0;
+      margin: 1px 10px 13px -16px;
+    }
 	}
 	@media (max-width: 767px) {
 		.section_header .header_sticky img.logo_icon_small {
 			display: none;
 		}
+    .section_header .header_default img.logo_wordmark {
+      display:none;
+    }
 		.section_header .header_default img.logo_mobile {
 			display: block;
 			position: relative;

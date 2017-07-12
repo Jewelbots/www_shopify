@@ -64,53 +64,15 @@ $(function(){
   update_variant();
 });
 
+function addItemToCart (){
 
-setTimeout(function(){
-  	if (Math.random() >= 0.5){
-		mixpanel.register_once({ "T__8": "A" });
-		$('.test_A').show();
-		$('.test_B').hide();
-	} else {
-		mixpanel.register_once({ "T__8": "B" });
-		$('.test_A').hide();
-		$('.test_B').show();
-	}
-}, 100);
-setTimeout(function(){
-  	if(mixpanel.get_property('T__8') == 'A' ){
-		$('.test_A').show();
-		$('.test_B').hide();
-	} else {
-		$('.test_A').hide();
-		$('.test_B').show();
-	}
-}, 500);
-
-function addItemToCart (isZine) {
-  if(isZine){
-  var variant_id = $("#variant_options").val()
-  , quantity = 1
-  , frequency = "1"
-  , interval = "Months"
-  , subscription_id = "46195";
-  data = {
-      "quantity": quantity,
-      "id": variant_id,
-      "properties[shipping_interval_frequency]": frequency,
-	"properties[shipping_interval_unit_type]": interval,
-	"properties[subscription_id]": subscription_id
-    }
-    }
-    else{
     var variant_id = $("#variant_options").val()
     , quantity = 1;
 
     data = {
         "quantity": quantity,
         "id": variant_id,
-
       }
-    }
   jQuery.ajax({
       type: 'POST',
       url: '/cart/add.js',

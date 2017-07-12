@@ -1,0 +1,96 @@
+{% layout 'theme.JBS.blank' %}
+
+
+<div class="inner-welcome" id="page-content-wrapper">
+<div class="copy">
+  <h2>Here are some helpful Utilities for coding your Jewelbots</h2>
+  <span class="back-mobile"><h1><a href="/pages/support">Back</a></h1></span>
+
+<p>These Utilities will help you will help you with making your code more powerful. The Jewelbots Utilities
+are here to help you! Check them out below.</p>
+
+
+<h2>The Timer Class</h2>
+
+<p>The Timer class constructs an objects that allows you to create a delay between other Jewelbot functions or keep track of time since the program started running.</p>
+
+<h3>COMPONENT INTIALIZATION</h3>
+
+<div class="sample_code">
+Timer timer;
+//naming the variable type and then the name of variable.
+</div>
+<p>The different functions are called the "API", because they are the way you interact with the device. APIs are ways you can work
+with different interfaces, sometimes in a computer and sometimes online. </p>
+</div>
+
+<h3>API</h3>
+
+<h4>.pause(uint32_t milliseconds)</h4>
+<p> This function pauses your Jewelbot.</p>
+<div class="sample_code">
+Timer timer;
+timer.pause(1000); //this pauses your Jewelbot for 1 second.
+</div>
+
+<h4>.runtime_ms()</h4>
+<p>This function returns the number of milliseconds since the program finished starting up the hardware. The return value is of type uint32_t.</p>
+<div class="sample_code">
+Timer timer;
+uint32_t how_long = timer.runtime_ms();
+</div>
+
+<h2>USB Serial Output</h2>
+<p>There are two functions available which allow for outputting messages and variable values from the Jewelbot.
+
+The primary objective of these messages is typically for debugging purposes, to learn where and how your program is running.
+
+The messages output from the Jewelbot can be viewed on the Serial Monitor. The Serial Monitor is located in the Tools menu of the Arduino IDE. Before accessing the Serial Monitor, the Jewelbot must be plugged in and the proper USB port selected under the Tools -> Port: menu.
+
+Once the Jewelbots Friendship Board is selected, there is an example sketch of this functionality under the File -> Examples -> Jewelbots_Examples called USB_output.ino.
+
+Before getting to outputting messages, a function which sets up the Jewelbot to enable the messaging.</p>
+
+<h3> Setup for Serial Output</h3>
+
+<p>The set_run_loop_charging() function sets an internal switch in the code so the Jewelbot will run the loop() function while it is plugged in to USB power. Typically the Jewelbot does not run the loop() function while charging so that the charge status can be displayed.
+
+In this case, since the USB must be plugged in for the desired output to be sent to the computer, this function tells the Jewelbot to run loop() while plugged in to power.
+
+To utilize set_run_loop_charging(), place the function inside the setup() section of the sketch:
+</p>
+
+<div class="sample_code">
+void setup() {
+// put your setup code here, to run once:
+
+// Function to tell the Jewelbot to run the loop() function
+// while plugged into USB power
+set_run_loop_charging();
+}
+</div>
+<br /><br />
+<br />
+<h3>USB output API</h3>
+
+<h4>JWB_SERIAL(string to output)</h4>
+<p>This function prints a string message to the Serial Monitor.</p>
+<div class="sample_code">
+JWB_SERIAL("Debugging message.\n");
+</div>
+
+
+<h4>JWB_SERIAL_PRINTF(string with formatting, variable)</h4>
+<p>This function prints a string message and variable value to the Serial Monitor.</p>
+<div class="sample_code">
+JWB_SERIAL_PRINTF("x = %u\n", x);
+
+</div>
+<p>Both functions follow the standard C formatting rules. The "\n" character in the above examples is for a new line, so each message will start on its own line.</p>
+</div>
+
+</div><!--//copy -->
+<!--//video -->
+<div class="clear"></div>
+
+</div>
