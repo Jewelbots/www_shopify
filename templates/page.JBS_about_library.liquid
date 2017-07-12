@@ -1,0 +1,15 @@
+{% layout 'theme.JBS.blank' %}
+<span class="back-mobile"><h1><a href="/pages/support">Back</a></h1></span>
+
+{% if page.url contains 'friendship' %}
+  {% include 'JBS__support__about__friendship' %}
+{% else %}
+  {% include 'JBS__support__about__solo' %}
+{% endif %}
+
+
+<!--//video -->
+<div class="clear"></div>
+
+
+</div>

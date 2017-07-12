@@ -1,0 +1,65 @@
+{% layout 'theme.JBS.blank' %}
+
+
+<div class="inner-welcome" id="page-content-wrapper">
+<span class="back-mobile"><h1><a href="/pages/support">Back</a></h1></span>
+
+<div class="copy">
+  <h2>Here is how you code the Jewelbots LEDs to animate!</h2>
+</div>
+
+<p>The Animation class constructs objects that represent all the LEDs attached
+to the physical Jewelbot. There are 4 LEDs total that are connected to the Jewelbot.</p>
+
+
+<h3>COMPONENT INTIALIZATION</h3>
+<div class="sample_code">
+Animation animation;
+//naming the variable type and then the name of variable.
+</div>
+
+<p>In order to use the LED functions, you first need to initialize the library. This tells your program that you want to code
+around the LEDs, then you can use the functions below to do cool things with LEDs!</p>
+
+<p>The different functions are called the "API", because they are the way you interact with the device. APIs are ways you can work
+with different interfaces, sometimes in a computer and sometimes online. </p>
+
+<h3>PARAMETERS</h3>
+<div class="led_image">
+{{ 'animation_parameters.png' | asset_url | img_tag }}
+</div>
+<div class="led_image">
+{{ 'LED_image.jpeg' | asset_url | img_tag }}
+</div>
+<h3>API</h3>
+
+<h4>.rainbows()</h4>
+<p>This function has your Jewelbot flash a rainbow color animation.</p>
+<div class="">
+Animation animation;
+animation.rainbows();
+</div>
+
+<h4>.jewelbots_logo()</h4>
+<p>This function has your Jewelbot showing the colors of the Jewelbot logo on all 4 of the LEDs.</p>
+<div class="sample_code">
+Animation animation;
+animation.jewelbots_logo();
+</div>
+
+
+<h4>.breathe_single_color(ColorLabel color)</h4>
+<p>This function turns off a single LED of the Jewelbot.</p>
+<div class="sample_code">
+Animation animation;
+animation.breathe_single_color(GREEN);
+</div>
+
+</div>
+
+</div><!--//copy -->
+<!--//video -->
+<div class="clear"></div>
+
+
+</div>

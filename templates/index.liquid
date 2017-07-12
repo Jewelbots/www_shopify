@@ -1,0 +1,3064 @@
+{% layout 'theme.JBS' %}
+
+<!-- A/B TESTS  ⬇ -->
+<script type="text/javascript">
+</script>
+<!-- A/B TESTS  ⬆ -->
+
+<!--{ { content_for_index } }-->
+
+{% section 'JBS_index__section_hero__img' %}
+
+<!-- temporary - will give it a once over this week -->
+<div class="section_banner" id="section_banner">
+	<h1>
+		Jewelbots now available at Target.com <img src="{{ 'index_target.png' | asset_url }}" />
+	</h1>
+</div><!--//section_banner -->
+<style>
+.section_banner {
+	display: block;
+	position: relative;
+	width: auto;
+	height: auto;
+	margin: 0 0 0 0;
+	padding: 10px 30px 10px 30px;
+	background: white;
+	text-align: center;
+	background-color: #FFF9F4;
+}
+.section_banner h1 {
+	display: block;
+	position: relative;
+	width: auto;
+	height: auto;
+	margin: 0 auto 0 auto;
+	padding: 0 0 0 0;
+
+	font-family: "museo-sans-rounded",sans-serif;
+	font-style: normal;
+	font-weight: 700;
+	font-size: 20px;
+	line-height: 30px;
+	letter-spacing: 0;
+	text-indent: 0;
+	text-transform: none;
+	text-align: center;
+	color: rgba(0,205,180,1.0);
+}
+.section_banner a {
+	color: rgba(200,10,0,1.0);
+}
+.section_banner h1 img {
+	display: inline-block;
+	position: relative;
+	width: 30px;
+	height: auto;
+	margin: -2px 0 0 0px;
+	padding: 0 0 0 0;
+	vertical-align: middle;
+}
+</style>
+<div class="section_sale" id="section_sale">
+	<h3>Get your Jewelbots</h3>
+	<h6>Most Popular</h6>
+	<!--
+ --><ul class="products">
+			<li class="pack_1">
+				<h5>JEWELBOT</h5>
+				<img src="{{ 'index_section_sale__product_jewelbot_1pack.jpg' | asset_url }}" />
+				<p class="list_price"><span>&nbsp;</span></p>
+				<p>$69</p>
+				<!--<a class="offer" href="javascript:void;" onClick="modal_newsletter('open_overlay'); mixpanel.track('INTERACTION', {'ACTION': 'clicked_safe', 'POSITION': 'sales'});">sign up and save $10</a>-->
+				<a class="cta_preorder" href="https://jewelbots.com/products/jewelbots-open-source-programmable-friendship-bracelet?variant=29751932753" target="_self">Buy Now</a>
+			</li><!--
+		 --><li class="pack_2">
+				<h5>TWINNIE 2-PACK</h5>
+				<img src="{{ 'index_section_sale__product_jewelbot_2pack_2.png' | asset_url }}" />
+				<p class="list_price"><span>$138</span> List Price</p>
+				<p>$99 Sale!</p>
+				<!--<a class="offer" href="javascript:void;" onClick="modal_newsletter('open_overlay'); mixpanel.track('INTERACTION', {'ACTION': 'clicked_safe', 'POSITION': 'sales'});">sign up and save $10</a>-->
+				<a class="cta_preorder" href="https://jewelbots.com/products/jewelbots-open-source-programmable-friendship-bracelet?variant=30055045137" target="_self">Buy Now</a>
+			</li><!--
+		 --><li class="pack_3"><!-- id="pack_3_swap"-->
+				<h5>SQUAD 3-PACK</h5>
+				<img src="{{ 'index_section_sale__product_jewelbot_3pack.jpg' | asset_url }}" />
+				<p class="list_price"><span>$207</span> List Price</p>
+				<p>$129 Sale!</p>
+				<a class="cta_preorder" href="https://jewelbots.com/products/jewelbots-open-source-programmable-friendship-bracelet?variant=30055105041" target="_self">Buy Now</a>
+			</li>
+			<!--<a href="https://jewelbots-2.myshopify.com/cart/19729585926:1" onclick="mixpanel.track('SHOP', {'STEP': 'added_to_cart'});">order - -> checkout T2</a>-->
+		</ul><!--
+ --><div class="clear"></div>
+	<ul class="info">
+		<li><img src="{{ 'index_section_sale__delivery_jb.png' | asset_url }}" /><p>Jewelbots are being fulfilled</p></li>
+		<li><img src="{{ 'index_section_sale__refund.png' | asset_url }}" /><p>Full refund as long as order has not shipped</p></li>
+	</ul>
+	<p class="notepresale">
+		Jewelbots are delayed due to demand! New orders will ship in 1-2 weeks.<br /><br /><strong>INTERNATIONAL BUYERS: We are not responsible for any additional customs charges levied by your country. Please be aware of the import laws of your country. <br />Customs clearance procedures can cause delays beyond original delivery-time estimates.</strong><br /><br />
+	</p>
+</div><!--//section_sale -->
+<div class="clear"></div>
+
+<div class="section_testimonials">
+  <script>
+    setInterval(function(){ section_testimonials(); }, 3000);
+
+    var section_testimonials_current_quote = 1;
+    var section_testimonials_max_quotes = 3;
+    function section_testimonials(){
+      if(section_testimonials_current_quote <= section_testimonials_max_quotes){
+        $('.section_testimonials li').removeClass('active');
+        $('.section_testimonials #quote_'+section_testimonials_current_quote).addClass('active');
+        $('.section_testimonials #dot_'+section_testimonials_current_quote).addClass('active');
+        section_testimonials_current_quote = section_testimonials_current_quote + 1;
+      } else {
+        $('.section_testimonials li').removeClass('active');
+        $('.section_testimonials #quote_1').addClass('active');
+        $('.section_testimonials #dot_1').addClass('active');
+        section_testimonials_current_quote = 1;
+      }
+    }
+  </script>
+  <ul class="quotes">
+    <li id="quote_1">
+      <img class="quote" src="{{ 'index_section_hero__press_britco.png' | asset_url }}" height="30" />
+      <p>»This Is the Friendship Bracelet of the Future...«</p>
+    </li>
+    <li id="quote_2">
+      <img class="quote" src="{{ 'index_section_hero__press_wired.png' | asset_url }}" height="30" />
+      <p>»The most interesting wearable I’ve seen this year...«</p>
+    </li>
+    <li id="quote_3">
+      <img class="quote" src="{{ 'index_section_hero__press_psfk.png' | asset_url }}" height="30" />
+      <p>»An introduction to coding motivated by high school tribes...«</p>
+    </li>
+  </ul>
+  <ul class="interface">
+    <li id="dot_1" onClick="javascript:section_testimonials('1'); mixpanel.track('INTERACTION', {'ACTION': 'clicked_section_testimonials'});">●</li>
+    <li id="dot_2" onClick="javascript:section_testimonials('2'); mixpanel.track('INTERACTION', {'ACTION': 'clicked_section_testimonials'});">●</li>
+    <li id="dot_3" onClick="javascript:section_testimonials('3'); mixpanel.track('INTERACTION', {'ACTION': 'clicked_section_testimonials'});">●</li>
+  </ul>
+</div><!--//section_testimonials -->
+<div class="clear"></div>
+
+<div class="section_specs" id="section_specs">
+	<div class="left">
+		<h4>Specifications</h4>
+		<p class="note">* Final colors and specs may vary slightly.</p>
+
+		<h5>What's Included</h5>
+		<p>Every bracelet will ship with 2x color bands, 2x Jewelbots charms and a charging cable:</p>
+		<img class="usb" src="{{ 'index_section_specs__usbcable.png' | asset_url }}" />
+
+		<h5>Dimensions</h5>
+		<p class="nopadding">32.5 x 32.5 x 14mm</p>
+
+		<h5>Band</h5>
+		<p class="nopadding">16mm wide and 230mm long</p>
+
+		<h5>Sensors & Components</h5>
+		<ul>
+			<li><span>•</span>Vibration motor</li>
+			<li><span>•</span>4x LEDs, 16.7m colors</li>
+			<li><span>•</span>Bluetooth 4.1</li>
+		</ul>
+
+		<h5>Batteries & Power</h5>
+		<ul>
+			<li><span>•</span>Battery life: up to 1-2 days</li>
+			<li><span>•</span>Battery type: Lithium-polymer</li>
+			<li><span>•</span>Charge time: 3-4 hours</li>
+		</ul>
+
+		<h5>Environmental Requirements</h5>
+		<ul>
+			<li><span>•</span>Operating temperature: 14° to 113° F</li>
+		</ul>
+	</div><!--//left -->
+	<div class="right">
+		<h5>Materials</h5>
+		<ul>
+			<li><span>•</span>Nylon Band</li>
+			<li><span>•</span>Plastic Casing</li>
+		</ul>
+
+		<h5>Care</h5>
+		<p>The Jewelbot nylon band can be washed by hand. The charms should be wiped with a wet cloth. The cases should only be wiped with a dry cloth.</p>
+
+		<h5>Water Resistance</h5>
+		<p>Jewelbots are splash resistant. Do not bath, shower or swim with your Jewelbot on.</p>
+
+		<h5>Syncing & Bluetooth</h5>
+		<p class="nopadding">Jewelbots sync wirelessly to tablets, iOS and Android smartphones using Bluetooth 4.0+ wireless technology.</p>
+		<ul>
+			<li><span>•</span>Syncing range: 20 feet</li>
+			<li><span>•</span>Syncing to desktop computers requires a USB connection</li>
+			<li><span>•</span>Syncing to mobile devices require Bluetooth 4.0+</li>
+			<li><span>•</span>Syncs with iPhone 4S and later, iPad 3 gen. and later, and leading Android devices</li>
+			<li><span>•</span>For Mac and Windows, we allow you to add code to your Jewelbot</li>
+		</ul>
+	</div><!--//right -->
+	<img class="product" src="{{ 'index_section_specs__exploded.jpg' | asset_url }}" />
+</div><!--//section_specs -->
+<div class="clear"></div>
+
+<div class="section_features" id="section_features">
+	<br /><br />
+	<h3>Spark Their Creativity</h3>
+	<p class="subheadline">Jewelbots are the first of its kind, an open source wearable device where kids dictate the functionality.</p>
+
+	<img class="jewelbot" src="{{ 'new_index_section_features__jewelbot.png' | asset_url }}" />
+	<div class="left">
+		<ul class="copy">
+			<li>
+				<img src="{{ 'new_index_section_features__icon_1.png' | asset_url }}" />
+				<h5>Connect with Friends</h5>
+				<p>Out of the box kids can connect with up to 8 different friends and give them a friendship color. If a friend is nearby the Jewelbot will glow in their color and friends can send secret messages to each other.</p>
+			</li><!--
+		 --><li>
+				<img src="{{ 'new_index_section_features__icon_2.png' | asset_url }}" />
+				<h5>100% Safe For Kids</h5>
+				<p>
+					We are making a product for kids, and their safety is our number one priority. Jewelbots don’t contain a GPS and we don’t store any personal data of any kind.
+				</p>
+			</li><!--
+		 --><li>
+				<img src="{{ 'new_index_section_features__icon_4.png' | asset_url }}" />
+				<h5>Online Community</h5>
+				<p>
+					Our Online Community provides a safe environment in case kids get stuck. They can get help, share what they have done, and find inspiring code to try for themselves while engaging with their friends.
+				</p>
+			</li>
+		</ul>
+	</div>
+	<div class="right">
+		<ul class="copy">
+			<li>
+					<img src="{{ 'new_index_section_features__icon_3.png' | asset_url }}" />
+					<h5>Coding through Arduino</h5>
+					<!--<p>
+						Our innovative Jewelbots App allows kids without prior coding experience to learn the fundamentals of computer science and to create their own Jewelbots functions.
+					</p>-->
+					<p>
+						Using the Arduino development environment users can build their own functionality for their Jewelbots. Making them as unique as they are!
+					</p>
+			</li><!--
+		 --><li>
+				<img src="{{ 'new_index_section_features__icon_5.png' | asset_url }}" />
+				<h5>Self Motivated Learning</h5>
+				<p>Jewelbots bring Computer Science education to the next level. Learning how to code with Jewelbots feels like playing with friends. Kids can test their skills with step by step coding challenges and get instant gratification.</p>
+			</li><!--
+		 --><li>
+				<img src="{{ 'new_index_section_features__icon_6.png' | asset_url }}" />
+				<h5>Open Source</h5>
+				<p>
+					For the curious tinkerer, Jewelbots offer the perfect platform to explore what is possible with wearable technology. Using the Arduino IDE, kids can literally make the bracelets do whatever they dream up.
+				</p>
+			</li>
+		</ul>
+	</div>
+  <div class="clear"></div>
+
+
+  <div class="section_outofthebox" id="section_outofthebox">
+  	<p>Out of the Box Features</p>
+  	<h3>More than just pretty Jewelry</h3>
+  	<ul class="copy">
+  		<li>
+  			<img src="{{ 'new_index_section_outofthebox__icon_1.png' | asset_url }}" />
+  			<h5>Detect Nearby Friends</h5>
+  			<p>
+  				Kids can connect their Jewelbots with each other as a symbol of their friendship. Unlike a traditional friendship bracelet, Jewelbots will glow with and give a short vibration to show when a friend is close by. If all kids of a friend group are together, their Jewelbots will go into "Rainbow party mode". Getting together with friends has never been more fun.
+  			</p>
+  		</li><!--
+  	 --><li>
+  			<img src="{{ 'new_index_section_outofthebox__icon_2.png' | asset_url }}" />
+  			<h5>Send Secret Messages</h5>
+  			<p>
+  				Kids love their secret messages. Jewelbots allow kids to come up with their own set of codes on the fly. Kids can then send a buzz or light message to a buddy across the room or to their complete friend group. Using the free Jewelbots App kids can come up with even more ways to communicate.
+  			</p>
+  		</li><!--
+  	 --><li>
+  			<img src="{{ 'new_index_section_outofthebox__icon_3.png' | asset_url }}" />
+  			<h5>Match Your Style</h5>
+  			<p>
+  				Jewelbots come with replaceable charms and bands. Kids can match their style, express their mood and have Jewelbots look different every day. Each Jewelbot comes with two charms and three different bands. We offer additional styles and colors so there is a Jewelbot for everyone.
+  			</p>
+  		</li>
+  		<div class="clear"></div>
+  	</ul>
+
+  	<p>
+  		<strong>No Phone or Computer required for all out of the box features!</strong>
+  	</p>
+  	<a href="https://jewelbots.com/products/jewelbots-open-source-programmable-friendship-bracelet?variant=29752700561" class="cta_preorder">Get Your Jewelbot</a>
+  </div><!--//section_outofthebox -->
+  <div class="clear"></div>
+
+
+  <div class="section_how">
+  	<h3>How it works</h3>
+  	<h4>1. Become friends</h4>
+  	<p>Rahima, Jewel and Kiara are best friends. With the push of a button they connect their Jewelbots:</p>
+  	<img class="nopadding" src="{{ 'Jewelbot_design_animated_2-color-change-transparent.gif' | asset_url }}" />
+  	<h4>2. Interact and send secret messages</h4>
+  	<p>Their paired Jewelbots light up when they are close by. They then can send each other secret messages.</p>
+  	<img class="jewelbots" src="{{ 'Jewelbot_design_animated_5-transparent.gif' | asset_url }}" />
+    <h4>3. Give their devices superpowers through coding</h4>
+    <p>Using a desktop or a laptop users can code and personalize their devices, the only limit is their imagination!</p>
+
+  </div><!--//section_how -->
+	<div class="clear"></div>
+  <div class="section_text">
+  	<ul class="copy">
+  		<li>
+  			<h4>Create Their Own Code</h4>
+  			<p>
+  				Jewelbots are the perfect tool to introduce kids 7-14 to the principles of programming. Jewelbots are perfect for beginners and our open source Arduino IDE offers a full fledged coding experience for pros. Jewelbots use Arduino - a language also taught in many school's educational programs.
+  			</p>
+  		</li><!--
+  	 --><li>
+  			<h4>No Prior Experience Needed</h4>
+  			<p>
+  				Even without prior exposure to code, or help from a parent, kids can learn how to write their own software for their Jewelbots. Our step-by-step tutorials and online courses take kids by the hand, resulting in a quick sense of achievement and motivational boost.
+  			</p>
+  		</li><!--
+  	 --><li>
+  			<h4>Online Community And Tutorials</h4>
+  			<p>
+  				Want to share what you have done? Get inspired and see what's possible with Jewelbots? Our Online Community offers easy step-by-step tutorials, sample code and articles for kids and parents alike. It's a safe, judgement free environment, and the perfect place to meet new friends and engage with likeminded coders.
+  			</p>
+  		</li>
+  	</ul>
+  </div>
+  <div class="clear"></div>
+	<div class="cta_preorder">Get Your Jewelbot</div>
+</div><!--//section_features -->
+
+
+<style>
+	/* ------ INDEX --------------------------------------------- */
+	/* @group ----- section_code -------------------- */
+	.section_code {
+		display: block;
+		position: relative;
+		width: 100%;
+		height: 100%;
+		min-height: 300px;
+		margin: 0 0 0 0;
+		padding: 0 0 0 0;
+		background-color: rgba(80,215,235,0.0);
+		background: url( {{ 'index_section_hero__background_1.jpg' | asset_url }} ) no-repeat bottom center;
+
+		-webkit-background-size: cover;
+	       -moz-background-size: cover;
+		     -o-background-size: cover;
+		        background-size: cover;
+
+		font-family: "museo-sans", sans-serif;
+		font-style: normal;
+		letter-spacing: 0px;
+		text-indent: 0;
+		text-transform: none;
+		text-align: center;
+		color: rgb(255,255,255);
+		text-shadow: 0px 0px 20px rgba(0,0,0,1.0);
+
+		overflow: hidden;
+	}
+
+	.section_code iframe#code_video_iframe {
+		display: block;
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		left: 0;
+		top: 0px;
+		margin: 0 0 -150px 0;
+		padding: 0 0 0 0;
+
+		z-index: 1;
+	}
+	.section_code .background {
+		display: block;
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		left: 0px;
+		top: 0px;
+		right: 0px;
+		bottom: 0px;
+		margin: 0 0 0 0;
+		padding: 0 0 0 0;
+		background-color: rgba(20,20,20,0.0);
+
+		z-index: 2;
+	}
+
+	.section_code h3 {
+		display: block;
+		position: absolute;
+		width: 100%;
+		height: auto;
+		top: 90px;
+		margin: 0 0 0 0;
+		padding: 0 0 0 0;
+
+		font-family: "museo-sans-rounded",sans-serif;
+		font-style: normal;
+		font-weight: 500;
+		font-size: 46px;
+		line-height: 50px;
+		letter-spacing: 0;
+		text-indent: 0;
+		text-transform: none;
+		text-align: center;
+		color: rgba(255,255,255,1.0);
+
+		z-index: 3;
+	}
+	.section_code p {
+		display: block;
+		position: absolute;
+		width: 100%;
+		height: auto;
+		top: 150px;
+		margin: 0 0 0 0;
+		padding: 0 0 0 0;
+
+		font-family: "museo-sans",sans-serif;
+		font-style: normal;
+		font-weight: 300;
+		font-size: 20px;
+		line-height: 25px;
+		letter-spacing: 0;
+		text-indent: 0;
+		text-transform: none;
+		text-align: center;
+		color: rgba(255,255,255,1.0);
+
+		z-index: 4;
+	}
+
+	.section_code .left {
+		display: block;
+		position: absolute;
+		float: left;
+		width: 60%;
+		height: auto;
+		margin: 0 0 0 0;
+		padding: 0 0 0 0;
+	}
+	.section_code .right {
+		display: block;
+		position: absolute;
+		float: left;
+		width: 40%;
+		height: auto;
+		margin: 0 0 0 60%;
+		padding: 0 0 0 0;
+	}
+
+	.section_code .left h1 {
+		display: block;
+		position: relative;
+		width: auto;
+		height: auto;
+		margin: 140px 0 0 0;
+		padding: 100px 0 20px 80px;
+
+		font-family: "museo-sans-rounded",sans-serif;
+		font-style: normal;
+		font-weight: 700; /*
+		font-size: 70px;
+		line-height: 70px; */
+		font-size: 50px;
+		line-height: 50px;
+		letter-spacing: 1px;
+		text-indent: 0;
+		text-transform: none;
+		text-align: right;
+		color: rgba(255,255,255,1.0);
+
+		z-index: 3;
+	}
+	.section_code .right img.jewelbot {
+		display: block;
+		position: relative;
+		width: 300px;
+		height: auto;
+		margin: 100px 0 100px 50px;
+		padding: 0 0 0 0;
+
+		z-index: 12;
+	}
+	.section_code .left div.cta_preorder {
+		display: block;
+		position: relative;
+		width: 260px;
+		height: auto;
+		margin: 0 0 0 auto;
+		padding: 10px 15px 10px 15px;
+		background-color: rgba(255,60,0,1.0);
+
+		-webkit-border-radius: 5px;
+		   -moz-border-radius: 5px;
+		        border-radius: 5px;
+
+		-webkit-transition: .2s ease-in-out;
+		   -moz-transition: .2s ease-in-out;
+		     -o-transition: .2s ease-in-out;
+		    -ms-transition: .2s ease-in-out;
+		        transition: .2s ease-in-out;
+
+				-webkit-box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.4);
+				   -moz-box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.4);
+						box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.4);
+
+		font-family: "museo-sans", sans-serif;
+		font-style: normal;
+		font-weight: 500;
+		font-size: 20px;
+		line-height: 40px;
+		letter-spacing: 1px;
+		text-indent: 0;
+		text-transform: uppercase;
+		text-align: center;
+
+		cursor: pointer;
+
+		z-index: 6;
+	}
+	.section_code .left div.cta_preorder:hover {
+		background-color: rgba(255,255,255,1.0);
+
+		font-weight: 700;
+		color: rgba(255,60,0,0.6);
+
+		-webkit-box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.0);
+		   -moz-box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.0);
+				box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.0);
+	}
+
+	.section_code p.small {
+		display: none;
+		position: absolute;
+		width: 300px;
+		height: auto;
+		left: 50%;
+		bottom: 50px;
+		margin: 0 0 0 -150px;
+		padding: 0 0 0 0;
+
+		font-weight: 100;
+		font-size: 12px;
+		line-height: 16px;
+	}
+	.section_code p.small img.arrow {
+		display: block;
+		position: relative;
+		width: 20px;
+		height: auto;
+		margin: 10px auto 0 auto;
+		padding: 0 0 0 0;
+	}
+
+	.section_code .alpha {
+		display: block;
+		position: absolute;
+		width: 100%;
+		height: 140px;
+		bottom: 0;
+		margin: 0 0 0 0;
+		padding: 30px 30px 0 30px;
+		background-color: rgba(40,50,60,0.6);
+
+		z-index: 5;
+	}
+	.section_code .cta_preorder {
+		display: block;
+		position: relative;
+		width: 220px;
+		height: 50px;
+		margin: 0 auto 0 auto;
+		padding: 0 0 0 0;
+		background-color: rgba(255,60,0,1.0);
+		border: solid 2px rgba(255,60,0,0.6);
+		color: rgba(255,255,255,1.0);
+
+		font-family: "museo-sans", sans-serif;
+		font-style: normal;
+		font-weight: 300;
+		font-size: 16px;
+		line-height: 46px;
+		letter-spacing: 0;
+		text-indent: 0;
+		text-align: center;
+		text-transform: uppercase;
+
+	  -webkit-border-radius: 3px;
+		 -moz-border-radius: 3px;
+			  border-radius: 3px;
+
+		-webkit-box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.4);
+		   -moz-box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.4);
+				box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.4);
+
+		-webkit-transition: .1s ease-in-out;
+		   -moz-transition: .1s ease-in-out;
+		     -o-transition: .1s ease-in-out;
+		    -ms-transition: .1s ease-in-out;
+		        transition: .1s ease-in-out;
+
+		cursor: pointer;
+		z-index: 6;
+	}
+	.section_code .cta_preorder:hover {
+		background-color: rgba(255,255,255,1.0);
+		border: solid 2px rgba(255,60,0,0.6);
+
+		color: rgba(255,60,0,0.6);
+
+		-webkit-box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.0);
+		   -moz-box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.0);
+				box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.0);
+	}
+
+	.section_code ul.copy {
+		display: block;
+		position: absolute;
+		width: 100%;
+		height: auto;
+		bottom: 140px;
+		margin: 0 0 0 0;
+		padding: 20px 30px 0 30px;
+		background-color: rgba(40,50,60,0.6);
+		border-top: rgba(255,255,255,0.9) solid 0px;
+
+		z-index: 5;
+	}
+	.section_code ul.copy li {
+		display: inline-block;
+		position: relative;
+		width: 33%;
+		height: auto;
+		margin: 0 0 0 0;
+		padding: 0 2% 0 2%;
+		vertical-align:top;
+	}
+	.section_code ul.copy li h5 {
+		display: block;
+		position: relative;
+		width: 100%;
+		height: auto;
+		margin: 0 0 0 0;
+		padding: 10px 0 10px 0;
+
+		font-family: "museo-sans",sans-serif;
+		font-style: normal;
+		font-weight: 500;
+		font-size: 20px;
+		line-height: 30px;
+		letter-spacing: 1px;
+		text-indent: 0;
+		text-transform: none;
+		text-align: center;
+		color: rgba(255,255,255,1.0);
+
+		z-index: 3;
+	}
+	.section_code ul.copy li p {
+		display: block;
+		position: relative;
+		width: 100%;
+		height: auto;
+		top: 0;
+		margin: 0 0 0 0;
+		padding: 0 0 0 0;
+
+		font-family: "museo-sans",sans-serif;
+		font-style: normal;
+		font-weight: 300;
+		font-size: 16px;
+		line-height: 25px;
+		letter-spacing: 0;
+		text-indent: 0;
+		text-transform: none;
+		text-align: center;
+		color: rgba(255,255,255,1.0);
+
+		z-index: 4;
+	}
+
+	/* delete below - this is a fix */
+	.section_code {
+		display: block;
+		position: relative;
+		width: 100%;
+		height: 100%;
+		min-height: 300px;
+		margin: 0 0 0 0;
+		padding: 0 0 0 0;
+		background-color: rgba(80,215,235,0.0);
+		background: url( {{ 'index_section_hero__background_1.jpg' | asset_url }} ) no-repeat bottom center;
+
+		-webkit-background-size: cover;
+	       -moz-background-size: cover;
+		     -o-background-size: cover;
+		        background-size: cover;
+
+		font-family: "museo-sans", sans-serif;
+		font-style: normal;
+		letter-spacing: 0px;
+		text-indent: 0;
+		text-transform: none;
+		text-align: center;
+		color: rgb(255,255,255);
+		text-shadow: 0px 0px 20px rgba(0,0,0,1.0);
+
+	}
+
+	.section_code iframe#code_video_iframe {
+		display: block;
+		position: relative;
+		width: 100%;
+		height: auto;
+		left: 0;
+		top: 0;
+	}
+	.section_code .background {
+		display: block;
+	}
+
+	.section_code .alpha {
+		display: block;
+		position: relative;
+		width: 100%;
+		height: 140px;
+		bottom: 0;
+		margin: 0 0 0 0;
+		padding: 30px 30px 0 30px;
+		background-color: rgba(40,180,210,1.0);
+
+		z-index: 5;
+	}
+
+	.section_code ul.copy {
+		display: block;
+		position: relative;
+		width: 100%;
+		height: auto;
+		bottom: 0;
+		margin: 0 0 0 0;
+		padding: 30px 20px 0 20px;
+		background-color: rgba(40,180,210,1.0);
+		border-top: rgba(255,255,255,0.2) solid 2px;
+
+		text-shadow: 0px 0px 20px rgba(0,0,0,0.0);
+	}
+	.section_code ul.copy li {
+		display: inline-block;
+		position: relative;
+		width: 33%;
+		height: auto;
+		margin: 0 0 0 0;
+		padding: 0 2% 0 2%;
+		vertical-align:top;
+	}
+	.section_code ul.copy li h5 {
+		display: block;
+		position: relative;
+		width: 100%;
+		height: auto;
+		margin: 0 0 0 0;
+		padding: 0 0 10px 0;
+
+		font-family: "museo-sans",sans-serif;
+		font-style: normal;
+		font-weight: 500;
+		font-size: 20px;
+		line-height: 30px;
+		letter-spacing: 1px;
+		text-indent: 0;
+		text-transform: none;
+		text-align: center;
+		color: rgba(255,255,255,1.0);
+
+		z-index: 3;
+	}
+	.section_code ul.copy li p {
+		display: block;
+		position: relative;
+		width: 100%;
+		height: auto;
+		margin: 0 0 0 0;
+		padding: 0 0 0 0;
+
+		font-family: "museo-sans",sans-serif;
+		font-style: normal;
+		font-weight: 300;
+		font-size: 16px;
+		line-height: 25px;
+		letter-spacing: 0;
+		text-indent: 0;
+		text-transform: none;
+		text-align: center;
+		color: rgba(255,255,255,1.0);
+
+		z-index: 4;
+	}
+
+
+/*	@media (max-width: 1279px) {} */
+	@media (max-width: 1023px) {
+		.section_code {
+			display: block;
+			position: relative;
+			width: 100%;
+			height: 100%;
+			min-height: 300px;
+			margin: 0 0 0 0;
+			padding: 0 0 0 0;
+			background-color: rgba(80,215,235,0.0);
+			background: url( {{ 'index_section_hero__background_1.jpg' | asset_url }} ) no-repeat bottom center;
+
+			-webkit-background-size: cover;
+		       -moz-background-size: cover;
+			     -o-background-size: cover;
+			        background-size: cover;
+
+			font-family: "museo-sans", sans-serif;
+			font-style: normal;
+			letter-spacing: 0px;
+			text-indent: 0;
+			text-transform: none;
+			text-align: center;
+			color: rgb(255,255,255);
+			text-shadow: 0px 0px 20px rgba(0,0,0,1.0);
+
+		}
+
+		.section_code iframe#code_video_iframe {
+			display: block;
+			position: relative;
+			width: 100%;
+			height: auto;
+			left: 0;
+			top: 0;
+			margin: 0 0 -50px 0;
+		}
+		.section_code .background {
+			display: block;
+		}
+
+		.section_code .alpha {
+			display: block;
+			position: relative;
+			width: 100%;
+			height: 140px;
+			bottom: 0;
+			margin: 0 0 0 0;
+			padding: 30px 30px 0 30px;
+
+			z-index: 5;
+		}
+
+		.section_code ul.copy {
+			display: block;
+			position: relative;
+			width: 100%;
+			height: auto;
+			bottom: 0;
+			margin: 0 0 0 0;
+			padding: 0 20px 0 20px;
+			background-color: rgba(40,180,210,1.0);
+			border-top: rgba(255,255,255,0.2) solid 2px;
+
+			text-shadow: 0px 0px 20px rgba(0,0,0,0.0);
+		}
+		.section_code ul.copy li {
+			display: inline-block;
+			position: relative;
+			width: 100%;
+			height: auto;
+			margin: 0 0 0 0;
+			padding: 20px 0 0 0;
+		}
+		.section_code ul.copy li h5 {
+			display: block;
+			position: relative;
+			width: 100%;
+			height: auto;
+			margin: 0 0 0 0;
+			padding: 0 0 10px 0;
+
+			font-family: "museo-sans",sans-serif;
+			font-style: normal;
+			font-weight: 500;
+			font-size: 20px;
+			line-height: 30px;
+			letter-spacing: 1px;
+			text-indent: 0;
+			text-transform: none;
+			text-align: center;
+			color: rgba(255,255,255,1.0);
+
+			z-index: 3;
+		}
+		.section_code ul.copy li p {
+			display: block;
+			position: relative;
+			width: 100%;
+			height: auto;
+			margin: 0 0 0 0;
+			padding: 0 0 0 0;
+
+			font-family: "museo-sans",sans-serif;
+			font-style: normal;
+			font-weight: 300;
+			font-size: 16px;
+			line-height: 25px;
+			letter-spacing: 0;
+			text-indent: 0;
+			text-transform: none;
+			text-align: center;
+			color: rgba(255,255,255,1.0);
+
+			z-index: 4;
+		}
+
+		.section_code .left {
+			width: 50%;
+		}
+		.section_code .right {
+			width: 50%;
+			margin: 0 0 0 50%;
+		}
+
+		.section_code .left h1 {
+			margin: 100px 0 0 0;
+			font-size: 30px;
+			line-height: 30px;
+		}
+		.section_code .right img.jewelbot {
+			width: 200px;
+			padding: 60px 0 0 0 ;
+		}
+		.section_code .left div.cta_preorder {}
+		.section_code .left div.cta_preorder:hover {}
+	}
+	@media (max-width: 767px) {
+		.section_code {
+			margin: 0 0 0 0;
+		}
+		.section_code iframe#code_video_iframe {
+			margin: 0 0 0px 0;
+		}
+		.section_code h3 {
+			top: 100px;
+
+			font-size: 26px;
+			line-height: 20px;
+		}
+		.section_code p {
+			top: 140px;
+
+			font-size: 14px;
+			line-height: 25px;
+		}
+		.section_code .left {
+			float: none;
+			width: 100%;
+		}
+		.section_code .right {
+			float: none;
+			width: 100%;
+		}
+
+		.section_code .left h1 {
+			margin: 180px auto 0 auto;
+			padding: 0 20px 0 20px;
+			font-size: 20px;
+			line-height: 25px;
+
+			text-align: center;
+		}
+		.section_code .right img.jewelbot {
+			width: 50%;
+			margin: 20px auto 100px 50%;
+		}
+		.section_code .left div.cta_preorder {
+			display: none;
+			margin: 40px auto 0 auto;
+		}
+		.section_code .left div.cta_preorder:hover {}
+	}
+	/* @end */
+	/* @group ----- section_how --------------------- */
+	.section_how {
+		display: block;
+		position: relative;
+		width: 100%;
+		height: auto;
+		margin: 0 0 0 0;
+		padding: 50px 75px 30px 75px;
+		background-color: white;
+
+		text-align: center;
+	}
+
+	.section_how h3 {
+		display: block;
+		position: relative;
+		width: 100%;
+		height: auto;
+		margin: 0 0 0 0;
+		padding: 0 0 35px 0;
+
+		font-family: "museo-sans-rounded",sans-serif;
+		font-style: normal;
+		font-weight: 700;
+		font-size: 40px;
+		line-height: 50px;
+		letter-spacing: 0;
+		text-indent: 0;
+		text-transform: none;
+		color: rgba(60,90,85,1.0);
+		color: rgba(0,205,180,1.0);
+	}
+	.section_how h4 {
+		display: block;
+		position: relative;
+		width: 100%;
+		height: auto;
+		margin: 0 0 0 0;
+		padding: 0 0 5px 0;
+
+		font-family: "museo-sans",sans-serif;
+		font-style: normal;
+		font-weight: 500;
+		font-size: 30px;
+		line-height: 32px;
+		letter-spacing: 0;
+		text-indent: 0;
+		text-transform: none;
+		color: rgba(60,90,85,1.0);
+	}
+	.section_how p {
+		display: block;
+		position: relative;
+		width: 100%;
+		max-width: 700px;
+		height: auto;
+		margin: 0 auto 30px auto;
+		padding: 0 0 0 0;
+
+		font-family: "museo-sans", sans-serif;
+		font-style: normal;
+		font-weight: 300;
+		font-size: 16px;
+		line-height: 20px;
+		letter-spacing: 0px;
+		text-indent: 0;
+		text-transform: none;
+		color: rgb(140,145,150);
+	}
+
+	.section_how img {
+		display: block;
+		position: relative;
+		width: 100%;
+		max-width: 760px;
+		height: auto;
+		margin: 0 auto 60px auto;
+		padding: 0 0 0 0;
+	}
+	.section_how img.nopadding {
+		margin: 0 auto 0 auto;
+		padding: 0 0 0 0;
+	}
+
+	.section_how .app {
+		display: block;
+		position: relative;
+		float: left;
+		width: auto;
+		margin: 0 0 0 0;
+		padding: 0 0 0 0;
+	}
+	.section_how .iphone, .section_how .iphone_app {
+		display: block;
+		position: absolute;
+		width: 550px;
+		height: auto;
+		left: 0%;
+		top: -100px;
+		margin: 0 0 0 0;
+		padding: 0 0 0 0;
+		z-index: 1;
+	}
+
+	.section_how ul.powerofcoding {
+		display: block;
+		position: relative;
+		width: 100%;
+		height: auto;
+		margin: 60px 0 0 0;
+		padding: 0 0 0 0;
+		/*
+		display: block;
+		position: relative;
+		width: 50%;
+		height: auto;
+		margin: 60px 0 0 35%;
+		padding: 0 0 0 0;
+		*/
+	}
+	.section_how ul.powerofcoding li {
+		display: inline-block;
+		position: relative;
+		width: 30%;
+		height: auto;
+		min-height: 150px;
+		margin: 0 auto 0 auto;
+		padding: 0 15px 0 15px;
+
+		overflow: auto;
+
+		font-family: "museo-sans", sans-serif;
+		font-style: normal;
+		font-weight: 500;
+		font-size: 15px;
+		line-height: 20px;
+		letter-spacing: 0px;
+		text-indent: 0;
+		text-transform: none;
+		color: rgb(140,145,150);
+		color: rgba(60,90,85,1.0);
+	}
+	.section_how ul.powerofcoding span {
+		font-style: italic;
+		font-weight: 300;
+		font-size: 15px;
+	}
+	.section_how ul.powerofcoding img {
+		display: block;
+		position: relative;
+		width: 80%;
+		max-width: 80px;
+		height: auto;
+		margin: 0 auto 15px auto;
+		padding: 0 0 0 0;
+	}
+
+	.section_how div.cta_sale {
+		display: block;
+		position: relative;
+		width: 220px;
+		height: 50px;
+		margin: 60px auto 20px auto;
+		padding: 0 20px 0 20px;
+		background-color: rgba(255,60,0,1.0);
+		border: solid 2px rgba(255,60,0,0.6);
+		color: rgba(255,255,255,1.0);
+
+		font-family: "museo-sans", sans-serif;
+		font-style: normal;
+		font-weight: 700;
+		font-size: 16px;
+		line-height: 46px;
+		letter-spacing: 0;
+		text-indent: 0;
+		text-transform: uppercase;
+
+	  -webkit-border-radius: 3px;
+		 -moz-border-radius: 3px;
+			  border-radius: 3px;
+
+		-webkit-box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.4);
+		   -moz-box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.4);
+				box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.4);
+
+		-webkit-transition: .1s ease-in-out;
+		   -moz-transition: .1s ease-in-out;
+		     -o-transition: .1s ease-in-out;
+		    -ms-transition: .1s ease-in-out;
+		        transition: .1s ease-in-out;
+		cursor: pointer;
+	}
+	.section_how div.cta_sale:hover {
+		background-color: rgba(255,255,255,1.0);
+		border: solid 2px rgba(255,60,0,0.6);
+
+		color: rgba(255,60,0,0.6);
+
+		-webkit-box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.0);
+		   -moz-box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.0);
+				box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.0);
+	}
+	.section_how a {
+		display: block;
+		position: relative;
+		width: auto;
+		max-width: auto;
+		height: 30px;
+		margin: 0 auto 40px auto;
+		padding: 0 0 0 0;
+
+		font-family: "museo-sans", sans-serif;
+		font-style: normal;
+		font-weight: 500;
+		font-size: 16px;
+		line-height: 20px;
+		letter-spacing: 0px;
+		text-indent: 0;
+		text-transform: none;
+		color: rgb(140,145,150);
+	}
+	.section_how a:hover {
+		color: rgba(255,60,0,0.6);
+	}
+
+
+	@media (max-width: 1279px) {
+		.section_how .app {
+		}
+		.section_how .iphone, .section_how .iphone_app {
+			width: 450px;
+			left: 0%;
+			top: -50px;
+		}
+	}
+	@media (max-width: 1179px) {
+		.section_how .app {
+		}
+		.section_how .iphone, .section_how .iphone_app {
+
+			width: 550px;
+			left: -100px;
+			top: -50px;
+		}
+	}
+	@media (max-width: 1023px) {
+		/*.section_how ul.powerofcoding {
+			width: 60%;
+			margin: 20px 0 0 40%;
+		}*/
+		.section_how ul.powerofcoding li {
+			width: 50%;
+			min-height: 150px;
+		}
+
+		.section_how .app {
+			float: none;
+		}
+		.section_how .iphone, .section_how .iphone_app {
+			width: 600px;
+			left: -200px;
+			top: -100px;
+		}
+	}
+	@media (max-width: 767px) {
+		.section_how {
+			padding: 50px 25px 75px 25px;
+		}
+
+		.section_how h3 {
+			padding: 0 0 0 0;
+
+			font-size: 40px;
+			line-height: 50px;
+		}
+		.section_how h4 {
+			padding: 0 0 0 0;
+
+			font-size: 26px;
+			line-height: 20px;
+		}
+		.section_how p {}
+		.section_how img {}
+
+		.section_how .app {
+			display: block;
+			position: relative;
+			float: none;
+			width: auto;
+			margin: 0 0 0 0;
+			padding: 0 0 0 0;
+		}
+		.section_how .iphone {
+			display: block;
+			position: absolute;
+			width: 550px;
+			height: auto;
+			left: -100px;
+			top: -60px;
+			margin: 0 0 0 0;
+			padding: 0 0 0 0;
+			z-index: 1;
+		}
+		.section_how .iphone_app {
+			display: block;
+			position: relative;
+			width: 550px;
+			height: auto;
+			left: -100px;
+			top: -60px;
+			margin: 0 0 0 0;
+			padding: 0 0 0 0;
+			z-index: 1;
+		}
+		.section_how ul.powerofcoding {
+			width: 100%;
+			margin: -60px 0 0 0;
+		}
+		.section_how ul.powerofcoding li {
+			width: 50%;
+			min-height: 150px;
+		}
+
+		.section_how {
+			display: none;
+		}
+	}
+	/* @end */
+	/* @group ----- section_specs ------------------- */
+	.section_specs {
+		display: none;
+		position: relative;
+		width: 100%;
+		height: auto;
+		margin: 0 0 0 0;
+		padding: 50px 75px 75px 75px;
+		background-color: #50d7ec;
+
+		font-family: "museo-sans",sans-serif;
+		font-style: normal;
+		letter-spacing: 0px;
+		text-indent: 0;
+		text-transform: none;
+		color: rgb(255,255,255);
+	}
+
+	.section_specs h4 {
+		display: block;
+		position: relative;
+		width: 400px;
+		height: auto;
+		margin: 0 auto 0 auto;
+		padding: 0 0 0 0;
+
+		font-weight: 300;
+		font-size: 26px;
+		line-height: 30px;
+	}
+	.section_specs .left p.note {
+		display: block;
+		position: relative;
+		width: auto;
+		height: auto;
+		margin: 0 0 0 0;
+		padding: 0 0 30px 0;
+
+		font-weight: 100;
+		font-style: italic;
+		font-size: 14px;
+		line-height: 25px;
+	}
+
+	.section_specs .left {
+		display: block;
+		position: relative;
+		float: left;
+		width: 40%;
+		max-width: 400px;
+		height: auto;
+		margin: 0 0 0 0;
+		padding: 0 0 0 0;
+
+		text-align: left;
+	}
+	.section_specs .right {
+		display: inline-block;
+		position: relative;
+		float: right;
+		width: 40%;
+		max-width: 400px;
+		height: auto;
+		margin: 0 0 0 0;
+		padding: 5px 0 0 0;
+
+		text-align: left;
+	}
+
+	.section_specs .left h5, .section_specs .right h5 {
+		display: block;
+		position: relative;
+		width: auto;
+		height: auto;
+		margin: 0 0 0 0;
+		padding: 0 0 0 0;
+
+		font-weight: 700;
+		font-size: 14px;
+		line-height: 20px;
+	}
+	.section_specs .left p, .section_specs .right p {
+		display: block;
+		position: relative;
+		width: auto;
+		height: auto;
+		margin: 0 0 0 0;
+		padding: 0 0 25px 0;
+
+		font-weight: 300;
+		font-size: 14px;
+		line-height: 20px;
+	}
+	.section_specs .left p.nopadding, .section_specs .right p.nopadding  {
+		padding: 0 0 5px 0;
+	}
+	.section_specs .left ul, .section_specs .right ul {
+		display: block;
+		position: relative;
+		width: auto;
+		height: auto;
+		margin: 0 0 0 0;
+		padding: 0 0 25px 0;
+	}
+	.section_specs .left ul li, .section_specs .right ul li {
+		display: block;
+		position: relative;
+		width: auto;
+		height: auto;
+		margin: 0 0 0 0;
+		padding: 0 0 0 12px;
+
+		font-weight: 300;
+		font-size: 14px;
+		line-height: 20px;
+	}
+	.section_specs .left ul li span, .section_specs .right ul li span {
+		display: inline-block;
+		position: relative;
+		width: 12px;
+		height: auto;
+		margin: 0 0 0 -12px;
+		padding: 0 12px 0 0px;
+
+		font-weight: 300;
+		font-size: 14px;
+		line-height: 20px;
+	}
+
+	.section_specs .left img.band {
+		display: inline-block;
+		position: relative;
+		width: auto;
+		height: 50px;
+		margin: -5px 0 20px 0;
+		padding: 0 5px 0 0;
+	}
+	.section_specs .left img.usb {
+		display: block;
+		position: absolute;
+		width: 80px;
+		height: auto;
+		margin: 0 0 0 0;
+		padding: 100px 0 0 0;
+		right: 0px;
+		top: 75px;
+	}
+	.section_specs img.product {
+		display: block;
+		position: relative;
+		width: 23%;
+		height: auto;
+		margin: 0 auto 0 auto;
+		padding: 0 0 0 0;
+	}
+
+
+	@media (max-width: 1250px) {
+		.section_specs img.product {
+			width: 17%;
+		}
+	}
+	@media (max-width: 1025px) {
+		.section_specs .left {
+			width: 50%;
+		}
+		.section_specs .right {}
+
+		.section_specs img.product {
+			display: none;
+		}
+	}
+	@media (max-width: 767px) {
+		.section_specs {
+			padding: 50px 25px 50px 25px;
+		}
+
+		.section_specs .left {
+			float: none;
+			width: 100%;
+		}
+		.section_specs .right {
+			float: none;
+			width: 100%;
+		}
+	}
+	/* @end */
+
+
+	/* @group ----- section_testimonials ------------ */
+	.section_testimonials {
+		display: block;
+		position: relative;
+		width: 100%;
+		height: 100%;
+		margin: 0 0 0 0;
+		padding: 60px 60px 40px 60px;
+		background-color: rgb(140,153,253);
+
+		-webkit-background-size: cover;
+	       -moz-background-size: cover;
+		     -o-background-size: cover;
+		        background-size: cover;
+
+		font-family: "museo-sans", sans-serif;
+		font-style: normal;
+		letter-spacing: 0px;
+		text-indent: 0;
+		text-transform: none;
+		text-align: center;
+		color: rgb(255,255,255);
+
+		overflow: hidden;
+		opacity: 1.0;
+	}
+
+	.section_testimonials ul.quotes {
+		display: block;
+		position: relative;
+		width: auto;
+		height: auto;
+		min-height: 160px;
+		margin: 0 auto 0 auto;
+		padding: 0 0 0 0;
+	}
+	.section_testimonials ul.quotes li {
+		display: block;
+		position: absolute;
+		width: 100%;
+		height: auto;
+		min-height: 200px;
+		margin: 0 0 0 0;
+		padding: 0 0 0 0;
+
+		font-family: "museo-sans", sans-serif;
+		font-style: normal;
+		line-height: 40px;
+		letter-spacing: 0px;
+		text-indent: 0;
+		text-transform: none;
+		text-align: center;
+		color: rgba(255,255,255,1.0);
+
+		-webkit-transition: 1s ease-in-out;
+		   -moz-transition: 1s ease-in-out;
+		     -o-transition: 1s ease-in-out;
+			-ms-transition: 1s ease-in-out;
+			    transition: 1s ease-in-out;
+
+		opacity: 0.0;
+	}
+	.section_testimonials ul.quotes li.active {
+		opacity: 1.0;
+	}
+	.section_testimonials ul.quotes li p {
+		display: block;
+		position: relative;
+		width: 100%;
+		height: auto;
+		max-width: 800px;
+		margin: 0 auto 0 auto;
+		padding: 0 0 0 0;
+
+		font-family: "museo-sans", sans-serif;
+		font-style: normal;
+		font-weight: 300;
+		font-size: 40px;
+		line-height: 45px;
+		letter-spacing: 0px;
+		text-indent: 0;
+		text-transform: none;
+		color: rgb(255,255,255);
+	}
+
+	.section_testimonials ul.interface {
+		display: block;
+		position: relative;
+		width: auto;
+		height: 40px;
+		margin: 0 auto 0 auto;
+		padding: 0 0 0 0;
+	}
+	.section_testimonials ul.interface li {
+		display: inline-block;
+		position: relative;
+		width: 20px;
+		height: 40px;
+		margin: 0 0 0 0;
+		padding: 0 0 0 0;
+
+		font-family: "museo-sans", sans-serif;
+		font-style: normal;
+		line-height: 40px;
+		letter-spacing: 0px;
+		text-indent: 0;
+		text-transform: none;
+		text-align: center;
+		color: rgba(255,255,255,0.5);
+
+		-webkit-transition: .1s ease-in-out;
+		   -moz-transition: .1s ease-in-out;
+		     -o-transition: .1s ease-in-out;
+			-ms-transition: .1s ease-in-out;
+			    transition: .1s ease-in-out;
+
+		cursor: pointer;
+	}
+	.section_testimonials ul.interface li.active, .section_testimonials ul.interface li:hover {
+		color: rgba(255,255,255,1.0);
+	}
+
+
+	@media (max-width: 1279px) {}
+	@media (max-width: 1023px) {}
+	@media (max-width: 767px) {
+		.section_testimonials {
+			padding: 50px 30px 70px 30px;
+		}
+		.section_testimonials ul.interface {
+			display: none;
+		}
+		.section_testimonials ul.quotes li p {
+			font-size: 30px;
+			line-height: 35px;
+		}
+	}
+	/* @end */
+	/* @group ----- section_features ---------------- */
+	.section_features {
+		display: block;
+		position: relative;
+		width: 100%;
+		height: 100%;
+		min-height: 300px;
+		margin: 0 0 0 0;
+		padding: 0px 0px 0px 0px;
+		background-color: rgba(255,255,255,1.0);
+
+		font-family: "museo-sans", sans-serif;
+		font-style: normal;
+		letter-spacing: 0px;
+		text-indent: 0;
+		text-transform: none;
+		color: rgb(255,255,255);
+
+		overflow: hidden;
+	}
+
+	.section_features h3 {
+		display: block;
+		position: relative;
+		width: 100%;
+		height: auto;
+		margin: 0 0 0 0;
+		padding: 10px 0 10px 0;
+
+		font-family: "museo-sans-rounded",sans-serif;
+		font-style: normal;
+		font-weight: 500;
+		font-size: 46px;
+		line-height: 50px;
+		letter-spacing: 0;
+		text-indent: 0;
+		text-transform: none;
+		text-align: center;
+		color: rgba(140,145,150,1.0);
+		color: rgba(60,90,85,1.0);
+
+		z-index: 3;
+	}
+	.section_features p.subheadline {
+		display: block;
+		position: relative;
+		width: 100%;
+		height: auto;
+		margin: 0 0 30px 0;
+		padding: 0 0 0 0;
+
+		font-family: "museo-sans",sans-serif;
+		font-style: normal;
+		font-weight: 300;
+		font-size: 20px;
+		line-height: 25px;
+		letter-spacing: 0;
+		text-indent: 0;
+		text-transform: none;
+		text-align: center;
+		color: rgba(140,145,150,1.0);
+
+		z-index: 4;
+	}
+
+	.section_features .left {
+		display: block;
+		position: relative;
+		float: left;
+		width: 35%;
+		height: auto;
+		margin: 0 0 0 0;
+		padding: 0 0 0 0;
+
+		text-align: right;
+	}
+	.section_features .right {
+		display: block;
+		position: relative;
+		float: right;
+		width: 35%;
+		height: auto;
+		margin: 0 0 0 0;
+		padding: 0 0 0 0;
+
+		text-align: left;
+	}
+
+	.section_features img.jewelbot {
+		display: block;
+		position: absolute;
+		float: right;
+		width: 260px;
+		height: auto;
+		left: 50%;
+		margin: 30px 0 0 -150px;
+		padding: 0 0 0 0;
+
+		z-index: 12;
+	}
+	.section_features .left ul.copy li img {
+		right: -75px;
+		margin: 0 0 0 0;
+		padding: 0 0 0 0;
+	}
+	.section_features .right ul.copy li img {
+		left: -75px;
+		margin: 0 0 0 0;
+		padding: 0 0 0 0;
+	}
+
+	.section_features ul.copy {
+		display: block;
+		position: relative;
+		width: 100%;
+		height: auto;
+		margin: 0 0 0 0;
+		padding: 20px 30px 40px 30px;
+
+		z-index: 5;
+	}
+	.section_features ul.copy li {
+		display: block;
+		position: relative;
+		width: 100%;
+		height: auto;
+		margin: 0 0 0 0;
+		padding: 0 0 0 0;
+	}
+	.section_features ul.copy li img {
+		display: block;
+		position: absolute;
+		width: 60px;
+		height: 60px;
+		margin: 0 0 0 0;
+		padding: 0 0 0 0;
+	}
+	.section_features ul.copy li h5 {
+		display: block;
+		position: relative;
+		width: 100%;
+		height: auto;
+		margin: 0 0 0 0;
+		padding: 15px 0 0 0;
+
+		font-family: "museo-sans",sans-serif;
+		font-style: normal;
+		font-weight: 700;
+		font-size: 18px;
+		line-height: 30px;
+		letter-spacing: 0px;
+		text-indent: 0;
+		text-transform: uppercase;
+		color: rgba(60,90,85,1.0);
+	}
+	.section_features ul.copy li p {
+		display: block;
+		position: relative;
+		width: 100%;
+		height: auto;
+		margin: 0 0 0 0;
+		padding: 0 0 0 0;
+
+		font-family: "museo-sans",sans-serif;
+		font-style: normal;
+		font-weight: 300;
+		font-size: 16px;
+		line-height: 25px;
+		letter-spacing: 0;
+		text-indent: 0;
+		text-transform: none;
+		color: rgba(140,145,150,1.0);
+	}
+
+	.section_features .cta_preorder {
+		display: none;
+		position: relative;
+		width: 220px;
+		height: 50px;
+		margin: 0 auto 0 auto;
+		padding: 0 0 0 0;
+		background-color: rgba(255,60,0,1.0);
+		border: solid 2px rgba(255,60,0,0.6);
+		color: rgba(255,255,255,1.0);
+
+		font-family: "museo-sans", sans-serif;
+		font-style: normal;
+		font-weight: 700;
+		font-size: 16px;
+		line-height: 46px;
+		letter-spacing: 0;
+		text-indent: 0;
+		text-align: center;
+		text-transform: uppercase;
+
+	  -webkit-border-radius: 3px;
+		 -moz-border-radius: 3px;
+			  border-radius: 3px;
+
+		-webkit-box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.4);
+		   -moz-box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.4);
+				box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.4);
+
+		-webkit-transition: .1s ease-in-out;
+		   -moz-transition: .1s ease-in-out;
+		     -o-transition: .1s ease-in-out;
+		    -ms-transition: .1s ease-in-out;
+		        transition: .1s ease-in-out;
+
+		cursor: pointer;
+		z-index: 6;
+	}
+	.section_features .cta_preorder:hover {
+		background-color: rgba(255,255,255,1.0);
+		border: solid 2px rgba(255,60,0,0.6);
+
+		color: rgba(255,60,0,0.6);
+
+		-webkit-box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.0);
+		   -moz-box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.0);
+				box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.0);
+	}
+
+	@media (max-width: 1279px) {}
+	@media (max-width: 1023px) {
+		.section_features .left {
+			display: block;
+			position: relative;
+			float: left;
+			width: 30%;
+			height: auto;
+			margin: 0 0 0 0;
+			padding: 0 0 0 0;
+
+			text-align: right;
+		}
+		.section_features .right {
+			display: block;
+			position: relative;
+			float: right;
+			width: 30%;
+			height: auto;
+			margin: 0 0 0 0;
+			padding: 0 0 0 0;
+
+			text-align: left;
+		}
+		.section_features img.jewelbot {
+			display: block;
+			position: absolute;
+			float: right;
+			width: 200px;
+			height: auto;
+			left: 50%;
+			margin: 200px 0 0 -100px;
+			padding: 0 0 0 0;
+
+			z-index: 12;
+		}
+		.section_features ul.copy {
+			display: block;
+			position: relative;
+			width: 100%;
+			height: auto;
+			margin: 0 0 0 0;
+			padding: 20px 30px 40px 30px;
+
+			z-index: 5;
+		}
+		.section_features ul.copy li {
+			display: block;
+			position: relative;
+			width: 100%;
+			height: auto;
+			margin: 0 0 0 0;
+			padding: 0 0 0 0;
+		}
+		.section_features ul.copy li img {
+			display: block;
+			position: absolute;
+			width: 40px;
+			height: auto;
+			margin: 0 0 0 0;
+			padding: 0 0 0 0;
+		}
+		.section_features ul.copy li h5 {
+			display: block;
+			position: relative;
+			width: 100%;
+			height: auto;
+			margin: 0 0 0 0;
+			padding: 10px 0 10px 0;
+
+			font-family: "museo-sans",sans-serif;
+			font-style: normal;
+			font-weight: 500;
+			font-size: 18px;
+			line-height: 30px;
+			letter-spacing: 1px;
+			text-indent: 0;
+			text-transform: none;
+			color: rgba(100,105,110,1.0);
+		}
+		.section_features ul.copy li p {
+			display: block;
+			position: relative;
+			width: 100%;
+			height: auto;
+			margin: 0 0 0 0;
+			padding: 0 0 0 0;
+
+			font-family: "museo-sans",sans-serif;
+			font-style: normal;
+			font-weight: 300;
+			font-size: 14px;
+			line-height: 20px;
+			letter-spacing: 0;
+			text-indent: 0;
+			text-transform: none;
+			color: rgba(140,145,150,1.0);
+		}
+	}
+	@media (max-width: 767px) {
+		.section_features {
+			padding: 0px 0px 20px 0px;
+		}
+
+		.section_features h3 {
+		}
+		.section_features p {
+		}
+
+		.section_features .left {
+			float: none;
+			width: 100%;
+			margin: 0 0 0 0;
+			padding: 0 0 0 0;
+
+			text-align: center;
+		}
+		.section_features .right {
+			float: none;
+			width: 100%;
+			margin: 0 0 0 0;
+			padding: 0 0 0 0;
+
+			text-align: center;
+		}
+
+		.section_features img.jewelbot {
+			display: block;
+			position: relative;
+			float: none;
+			width: 100%;
+			max-width: 200px;
+			height: auto;
+			left: 0;
+			margin: 20px auto 0 auto;
+			padding: 0 0 0 0;
+
+			z-index: 12;
+		}
+		.section_features .left ul.copy li img {
+			position: relative;
+			right: 0;
+			margin: 20px auto 0 auto;
+			padding: 0 0 0 0;
+		}
+		.section_features .right ul.copy li img {
+			position: relative;
+			left: 0;
+			margin: 20px auto 0 auto;
+			padding: 0 0 0 0;
+		}
+
+
+
+		.section_features ul.copy {
+			display: block;
+			position: relative;
+			width: 100%;
+			height: auto;
+			margin: 0 0 0 0;
+			padding: 20px 30px 0 30px;
+
+			z-index: 5;
+		}
+		.section_features ul.copy li {
+			display: inline-block;
+			position: relative;
+			width: 100%;
+			height: auto;
+			margin: 0 0 0 0;
+			padding: 0 0 0 0;
+		}
+		.section_features ul.copy li h5 {
+		}
+		.section_features ul.copy li p {
+		}
+
+		.section_features .cta_preorder {
+			margin: 40px auto 0 auto;
+		}
+		.section_features .cta_preorder:hover {}
+	}
+	/* @end */
+	/* @group ----- section_test -------------- */
+	.section_text {
+		display: block;
+		position: relative;
+		width: 100%;
+		height: 100%;
+		margin: 0 0 0 0;
+		background-color: rgb(140,153,253);
+		/* background: url(../../assets/images/new_index_section_hero__background_3.jpg) no-repeat bottom center; */
+
+		-webkit-background-size: cover;
+	       -moz-background-size: cover;
+		     -o-background-size: cover;
+		        background-size: cover;
+
+		font-family: "museo-sans", sans-serif;
+		font-style: normal;
+		letter-spacing: 0px;
+		text-indent: 0;
+		text-transform: none;
+		text-align: center;
+		color: rgb(255,255,255);
+
+		overflow: hidden;
+	}
+
+			.section_text ul.copy {
+				display: block;
+				position: relative;
+				width: 100%;
+				height: auto;
+				margin: 0 0 0 0;
+				padding: 20px 30px 40px 30px;
+
+				z-index: 5;
+			}
+			.section_text ul.copy li {
+				display: inline-block;
+				position: relative;
+				width: 33%;
+				height: auto;
+				margin: 0 0 0 0;
+				padding: 0 2% 0 2%;
+				vertical-align:top;
+			}
+			.section_text ul.copy li img {
+				display: block;
+				position: relative;
+				width: 60px;
+				height: auto;
+				margin: 0 auto 0 auto;
+				padding: 0 0 0 0;
+			}
+			.section_text ul.copy li h4 {
+				display: block;
+				position: relative;
+				width: 100%;
+				height: auto;
+				margin: 0 0 0 0;
+				padding: 10px 0 10px 0;
+
+				font-family: "museo-sans",sans-serif;
+				font-style: normal;
+				font-weight: 500;
+				font-size: 20px;
+				line-height: 30px;
+				letter-spacing: 1px;
+				text-indent: 0;
+				text-transform: none;
+				text-align: center;
+				color: rgba(255,255,255,1.0);
+
+				z-index: 3;
+			}
+			.section_text ul.copy li p {
+				display: block;
+				position: relative;
+				width: 100%;
+				height: auto;
+				margin: 0 0 0 0;
+				padding: 0 0 0 0;
+
+				font-family: "museo-sans",sans-serif;
+				font-style: normal;
+				font-weight: 300;
+				font-size: 16px;
+				line-height: 25px;
+				letter-spacing: 0;
+				text-indent: 0;
+				text-transform: none;
+				text-align: center;
+				color: rgba(255,255,255,1.0);
+
+				z-index: 4;
+			}
+
+
+			@media (max-width: 1279px) {}
+			@media (max-width: 1023px) {}
+			@media (max-width: 767px) {
+				.section_text {}
+
+				.section_text h3 {
+				}
+				.section_text p {
+				}
+
+				.section_text ul.copy {}
+				.section_text ul.copy li {
+					display: inline-block;
+					position: relative;
+					width: 100%;
+					height: auto;
+					margin: 0 0 0 0;
+					padding: 20px 0 0 0;
+				}
+				.section_text ul.copy li h4 {
+					display: block;
+					position: relative;
+					width: 100%;
+					height: auto;
+					margin: 0 0 0 0;
+					padding: 10px 0 10px 0;
+
+					font-family: "museo-sans",sans-serif;
+					font-style: normal;
+					font-weight: 600;
+					font-size: 40px;
+					line-height: 40px;
+					letter-spacing: 1px;
+					text-indent: 0;
+					text-transform: none;
+					text-align: center;
+					color: rgba(255,255,255,1.0);
+
+					z-index: 3;
+				}
+				.section_text ul.copy li p {
+					display: block;
+					position: relative;
+					width: 100%;
+					height: auto;
+					margin: 0 0 0 0;
+					padding: 0 0 0 0;
+
+					font-family: "museo-sans",sans-serif;
+					font-style: normal;
+					font-weight: 300;
+					font-size: 16px;
+					line-height: 25px;
+					letter-spacing: 0;
+					text-indent: 0;
+					text-transform: none;
+					text-align: center;
+					color: rgba(255,255,255,1.0);
+
+					z-index: 4;
+				}
+			}
+	/* END */
+	/* @group ----- section_outofthebox ------------- */
+	.section_outofthebox {
+		display: block;
+		position: relative;
+		width: 100%;
+		height: 100%;
+		min-height: 300px;
+		margin: 0 0 0 0;
+		padding: 50px 0 60px 0;
+		background-color: rgba(80,215,235,1.0);
+		/* background: url(../../assets/images/new_index_section_hero__background_3.jpg) no-repeat bottom center; */
+
+		-webkit-background-size: cover;
+	       -moz-background-size: cover;
+		     -o-background-size: cover;
+		        background-size: cover;
+
+		font-family: "museo-sans", sans-serif;
+		font-style: normal;
+		letter-spacing: 0px;
+		text-indent: 0;
+		text-transform: none;
+		text-align: center;
+		color: rgb(255,255,255);
+
+		overflow: hidden;
+	}
+
+	.section_outofthebox h3 {
+		display: block;
+		position: relative;
+		width: 100%;
+		height: auto;
+		margin: 0 0 0 0;
+		padding: 10px 0 25px 0;
+
+		font-family: "museo-sans-rounded",sans-serif;
+		font-style: normal;
+		font-weight: 500;
+		font-size: 46px;
+		line-height: 50px;
+		letter-spacing: 0;
+		text-indent: 0;
+		text-transform: none;
+		text-align: center;
+		color: rgba(255,255,255,1.0);
+
+		z-index: 3;
+	}
+	.section_outofthebox p {
+		display: block;
+		position: relative;
+		width: 100%;
+		height: auto;
+		margin: 0 0 0 0;
+		padding: 0 0 0 0;
+
+		font-family: "museo-sans",sans-serif;
+		font-style: normal;
+		font-weight: 300;
+		font-size: 20px;
+		line-height: 25px;
+		letter-spacing: 0;
+		text-indent: 0;
+		text-transform: none;
+		text-align: center;
+		color: rgba(255,255,255,1.0);
+
+		z-index: 4;
+	}
+
+	.section_outofthebox .cta_preorder {
+		display: block;
+		position: relative;
+		width: 220px;
+		height: 50px;
+		margin: 20px auto 0 auto;
+		padding: 0 0 0 0;
+		background-color: rgba(255,60,0,1.0);
+		border: solid 2px rgba(255,60,0,0.6);
+		color: rgba(255,255,255,1.0);
+
+		font-family: "museo-sans", sans-serif;
+		font-style: normal;
+		font-weight: 700;
+		font-size: 16px;
+		line-height: 46px;
+		letter-spacing: 0;
+		text-indent: 0;
+		text-align: center;
+		text-transform: uppercase;
+
+	  -webkit-border-radius: 3px;
+		 -moz-border-radius: 3px;
+			  border-radius: 3px;
+
+		-webkit-box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.4);
+		   -moz-box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.4);
+				box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.4);
+
+		-webkit-transition: .1s ease-in-out;
+		   -moz-transition: .1s ease-in-out;
+		     -o-transition: .1s ease-in-out;
+		    -ms-transition: .1s ease-in-out;
+		        transition: .1s ease-in-out;
+
+		cursor: pointer;
+		z-index: 6;
+	}
+	.section_outofthebox .cta_preorder:hover {
+		background-color: rgba(255,255,255,1.0);
+		border: solid 2px rgba(255,60,0,0.6);
+
+		color: rgba(255,60,0,0.6);
+
+		-webkit-box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.0);
+		   -moz-box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.0);
+				box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.0);
+	}
+
+	.section_outofthebox ul.copy {
+		display: block;
+		position: relative;
+		width: 100%;
+		height: auto;
+		margin: 0 0 0 0;
+		padding: 20px 30px 40px 30px;
+
+		z-index: 5;
+	}
+	.section_outofthebox ul.copy li {
+		display: inline-block;
+		position: relative;
+		width: 33%;
+		height: auto;
+		margin: 0 0 0 0;
+		padding: 0 2% 0 2%;
+		vertical-align:top;
+	}
+	.section_outofthebox ul.copy li img {
+		display: block;
+		position: relative;
+		width: 60px;
+		height: auto;
+		margin: 0 auto 0 auto;
+		padding: 0 0 0 0;
+	}
+	.section_outofthebox ul.copy li h5 {
+		display: block;
+		position: relative;
+		width: 100%;
+		height: auto;
+		margin: 0 0 0 0;
+		padding: 10px 0 10px 0;
+
+		font-family: "museo-sans",sans-serif;
+		font-style: normal;
+		font-weight: 500;
+		font-size: 20px;
+		line-height: 30px;
+		letter-spacing: 1px;
+		text-indent: 0;
+		text-transform: none;
+		text-align: center;
+		color: rgba(255,255,255,1.0);
+
+		z-index: 3;
+	}
+	.section_outofthebox ul.copy li p {
+		display: block;
+		position: relative;
+		width: 100%;
+		height: auto;
+		margin: 0 0 0 0;
+		padding: 0 0 0 0;
+
+		font-family: "museo-sans",sans-serif;
+		font-style: normal;
+		font-weight: 300;
+		font-size: 16px;
+		line-height: 25px;
+		letter-spacing: 0;
+		text-indent: 0;
+		text-transform: none;
+		text-align: center;
+		color: rgba(255,255,255,1.0);
+
+		z-index: 4;
+	}
+
+
+	@media (max-width: 1279px) {}
+	@media (max-width: 1023px) {}
+	@media (max-width: 767px) {
+		.section_outofthebox {}
+
+		.section_outofthebox h3 {
+		}
+		.section_outofthebox p {
+		}
+
+		.section_outofthebox ul.copy {}
+		.section_outofthebox ul.copy li {
+			display: inline-block;
+			position: relative;
+			width: 100%;
+			height: auto;
+			margin: 0 0 0 0;
+			padding: 20px 0 0 0;
+		}
+		.section_outofthebox ul.copy li h5 {
+			display: block;
+			position: relative;
+			width: 100%;
+			height: auto;
+			margin: 0 0 0 0;
+			padding: 10px 0 10px 0;
+
+			font-family: "museo-sans",sans-serif;
+			font-style: normal;
+			font-weight: 500;
+			font-size: 20px;
+			line-height: 30px;
+			letter-spacing: 1px;
+			text-indent: 0;
+			text-transform: none;
+			text-align: center;
+			color: rgba(255,255,255,1.0);
+
+			z-index: 3;
+		}
+		.section_outofthebox ul.copy li p {
+			display: block;
+			position: relative;
+			width: 100%;
+			height: auto;
+			margin: 0 0 0 0;
+			padding: 0 0 0 0;
+
+			font-family: "museo-sans",sans-serif;
+			font-style: normal;
+			font-weight: 300;
+			font-size: 16px;
+			line-height: 25px;
+			letter-spacing: 0;
+			text-indent: 0;
+			text-transform: none;
+			text-align: center;
+			color: rgba(255,255,255,1.0);
+
+			z-index: 4;
+		}
+	}
+	/* @end */
+
+	/* @group ----- section_sale -------------------- */
+	.section_sale {
+		display: block;
+		position: relative;
+		width: 100%;
+		height: auto;
+		margin: 0 0 0 0;
+		padding: 0px 75px 60px 75px;
+		background-color: rgba(255,255,255,1.0);
+
+		text-align: center;
+	}
+
+	.section_sale h3 {
+		display: block;
+		position: relative;
+		width: 100%;
+		height: auto;
+		margin: 0 0 0 0;
+		padding: 38px 0 35px 0;
+
+		font-family: "museo-sans-rounded",sans-serif;
+		font-style: normal;
+		font-weight: 500;
+		font-size: 46px;
+		line-height: 50px;
+		letter-spacing: 0;
+		text-indent: 0;
+		text-transform: none;
+		text-align: center;
+		color: rgba(60,90,85,1.0);
+	}
+	.section_sale p {
+		display: block;
+		position: relative;
+		width: 100%;
+		height: auto;
+		margin: 0 0 0 0;
+		padding: 0 0 0 0;
+
+		font-family: "museo-sans",sans-serif;
+		font-style: normal;
+		font-weight: 700;
+		font-size: 20px;
+		line-height: 25px;
+		letter-spacing: 0;
+		text-indent: 0;
+		text-transform: none;
+		text-align: center;
+		color: rgba(140,145,150,1.0);
+	}
+	.section_sale h6 {
+		display: absolute;
+		position: relative;
+		width: 100%;
+		height: 30px;
+		margin: 0 0 0 0;
+		padding: 0 0 0 0;
+
+		font-family: "museo-sans", sans-serif;
+		font-style: normal;
+		font-weight: 500;
+		font-size: 13px;
+		line-height: 25px;
+		letter-spacing: 1px;
+		text-indent: 0px;
+		text-transform: uppercase;
+		color: rgba(100,100,100,1.0);
+	}
+
+	.section_sale ul.products {
+		display: block;
+		position: relative;
+		width: 100%;
+		max-width: 1100px;
+		height: auto;
+		margin: 0 auto 0 auto;
+		padding: 0 0 0 0;
+	}
+	.section_sale ul.products li {
+		display: inline-block;
+		position: relative;
+		width: 33%;
+		height: auto;
+		margin: 0 0 0 0;
+		padding: 0 0 0 0;
+		border: solid 0px rgba(0,205,180,1.0);
+		vertical-align:top;
+	}
+	.section_sale ul.products li.pack_2 {
+		background: rgba(240,240,240,1.0);
+		-webkit-border-radius: 10px;
+		   -moz-border-radius: 10px;
+		        border-radius: 10px;
+
+		-webkit-box-shadow: 0px 1px 10px 0px rgba(0,0,0,0.4);
+		   -moz-box-shadow: 0px 1px 10px 0px rgba(0,0,0,0.4);
+		        box-shadow: 0px 1px 10px 0px rgba(0,0,0,0.4);
+	}
+	.section_sale ul.products li img {
+		display: block;
+		position: relative;
+		width: auto;
+		height: auto;
+		max-height: 200px;
+		margin: 80px auto 10px auto;
+		padding: 0 0 0 0;
+	}
+	.section_sale ul.products li h5 {
+		display: block;
+		position: absolute;
+		width: 100%;
+		height: auto;
+		margin: 0 0 0 0;
+		padding: 30px 0 0 0;
+
+		font-family: "museo-sans-rounded",sans-serif;
+		font-style: normal;
+		font-weight: 700;
+		font-size: 20px;
+		line-height: 25px;
+		letter-spacing: 0;
+		text-indent: 0;
+		text-transform: none;
+		text-align: center;
+		color: rgba(0,205,180,1.0);
+	}
+	.section_sale ul.products li p {
+		display: block;
+		position: relative;
+		width: auto;
+		height: auto;
+		margin: 0 0 0 0;
+		padding: 0 0 0 0;
+
+		font-family: "museo-sans", sans-serif;
+		font-style: normal;
+		font-weight: 500;
+		font-size: 20px;
+		line-height: 25px;
+		letter-spacing: 0px;
+		text-indent: 0;
+		text-transform: none;
+		color: rgba(100,100,100,1.0);
+	}
+	.section_sale ul.products li a {
+		display: block;
+		position: relative;
+		width: auto;
+		height: auto;
+		margin: 0 0 0 0;
+		padding: 0 0 0 0;
+
+		font-family: "museo-sans", sans-serif;
+		font-style: normal;
+		font-weight: 500;
+		font-size: 13px;
+		line-height: 25px;
+		letter-spacing: 0px;
+		text-indent: 0;
+		text-transform: none;
+		text-decoration: none;
+		color: rgba(255,60,0,1.0);
+	}
+	.section_sale ul.products li p.list_price {
+		font-weight: 300;
+		color: rgba(180,180,180,1.0);
+	}
+	.section_sale ul.products li p.list_price span {
+		text-decoration: line-through;
+	}
+	.section_sale ul.products li a.cta_preorder {
+		display: block;
+		position: relative;
+		width: 180px;
+		height: 50px;
+		margin: 15px auto 50px auto;
+		padding: 0 0 0 0;
+		background-color: rgba(255,60,0,1.0);
+		border: solid 2px rgba(255,60,0,0.6);
+		color: rgba(255,255,255,1.0);
+
+		font-family: "museo-sans", sans-serif;
+		font-style: normal;
+		font-weight: 700;
+		font-size: 16px;
+		line-height: 46px;
+		letter-spacing: 0;
+		text-indent: 0;
+		text-transform: uppercase;
+
+	  -webkit-border-radius: 3px;
+		 -moz-border-radius: 3px;
+			  border-radius: 3px;
+
+		-webkit-box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.4);
+		   -moz-box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.4);
+				box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.4);
+
+		-webkit-transition: .1s ease-in-out;
+		   -moz-transition: .1s ease-in-out;
+		     -o-transition: .1s ease-in-out;
+		    -ms-transition: .1s ease-in-out;
+		        transition: .1s ease-in-out;
+	}
+	.section_sale ul.products li a.cta_preorder:hover {
+		background-color: rgba(255,255,255,1.0);
+		border: solid 2px rgba(255,60,0,0.6);
+
+		color: rgba(255,60,0,0.6);
+
+		-webkit-box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.0);
+		   -moz-box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.0);
+				box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.0);
+	}
+
+	.section_sale ul.products li .buy-button-wrapper {
+		margin: 0 auto 0 auto;
+		width: 130px;
+	}
+
+	.section_sale ul.info {
+		display: block;
+		position: relative;
+		width: 100%;
+		height: auto;
+		max-width: 1100px;
+		margin: 20px auto 30px auto;
+		padding: 0 0 0 60px;
+	}
+	.section_sale ul.info li {
+		display: inline-block;
+		position: relative;
+		width: 33%;
+		height: 60px;
+		margin: 0 0 0 0;
+		padding: 0 0 0 75px;
+	}
+	.section_sale ul.info li p {
+		display: inline-block;
+		position: relative;
+		width: 100%;
+		height: 60px;
+		margin: 0 0 0 0;
+		padding: 25px 0 0 0;
+
+		font-family: "museo-sans", sans-serif;
+		font-style: normal;
+		font-weight: 300;
+		font-size: 13px;
+		line-height: 18px;
+		letter-spacing: 0px;
+		text-indent: 0;
+		text-transform: none;
+		text-align: left;
+		color: rgba(100,100,100,1.0);
+	}
+	.section_sale ul.info li img {
+		display: block;
+		position: absolute;
+		width: 60px;
+		height: 60px;
+		left: 0;
+		margin: 0 0 0 0;
+		padding: 0 0 0 0;
+	}
+
+	.section_sale p.notepresale {
+		display: block;
+		position: relative;
+		width: auto;
+		height: auto;
+		margin: 0 0 0 0;
+		padding: 0 0 0 0;
+
+		font-family: "museo-sans", sans-serif;
+		font-style: normal;
+		font-weight: 300;
+		font-size: 12px;
+		line-height: 18px;
+		letter-spacing: 0px;
+		text-indent: 0;
+		text-transform: none;
+		text-align: center;
+		color: rgba(100,100,100,1.0);
+	}
+
+
+	@media (max-width: 1279px) {
+		.section_sale {
+			padding: 0px 5px 60px 5px;
+		}
+
+		.section_sale h3 {}
+
+		.section_sale ul.products {}
+		.section_sale ul.products li {}
+		.section_sale ul.products li img {}
+		.section_sale ul.products li h5 {}
+		.section_sale ul.products li p {}
+		.section_sale ul.products li p.list_price {}
+		.section_sale ul.products li p.list_price span {}
+		.section_sale ul.products li a.cta_preorder {}
+		.section_sale ul.products li a.cta_preorder:hover {}
+	}
+	@media (max-width: 1023px) {
+		.section_sale {
+			padding: 0px 0 60px 0;
+		}
+
+		.section_sale h3 {}
+
+		.section_sale ul.products {}
+		.section_sale ul.products li {}
+		.section_sale ul.products li.pack_1 {
+				width: 32%;
+				height: auto;
+				margin: 0 0 0 0;
+		}
+		.section_sale ul.products li.pack_3 {
+				width: 32%;
+				height: auto;
+				margin: 0 2% 0 2%;
+		}
+		.section_sale ul.products li.pack_2 {
+				width: 32%;
+				height: auto;
+				margin: 0 0 0 0;
+		}
+		.section_sale ul.products li img {}
+		.section_sale ul.products li h5 {}
+		.section_sale ul.products li p {}
+		.section_sale ul.products li p.list_price {}
+		.section_sale ul.products li p.list_price span {}
+		.section_sale ul.products li a.cta_preorder {
+			display: block;
+			position: relative;
+			width: 160px;
+			height: 40px;
+			margin: 15px auto 35px auto;
+
+			font-weight: 300;
+			font-size: 12px;
+			line-height: 36px;
+			letter-spacing: 1px;
+		}
+		.section_sale ul.products li a.cta_preorder:hover {}
+
+		.section_sale ul.info {
+				margin: 35px auto 0 auto;
+				padding: 0 0 0 0;
+		}
+		.section_sale ul.info li {
+				display: block;
+				width: 100%;
+				height: auto;
+				padding: 0 0 0 0;
+		}
+		.section_sale ul.info li p {
+				display: block;
+				width: 100%;
+				height: 60px;
+				padding: 5px 0 20px 0;
+
+				text-align: center;
+		}
+		.section_sale ul.info li img {
+				display: block;
+				position: relative;
+				width: 60px;
+				height: 60px;
+				left: 0;
+				margin: 0 auto 0 auto;
+				padding: 0 0 0 0;
+		}
+
+		.section_sale p.notepresale {
+				display: block;
+				position: relative;
+				width: auto;
+				height: auto;
+				margin: 0 0 0 0;
+				padding: 0 25px 20px 25px;
+
+				font-family: "museo-sans", sans-serif;
+				font-style: normal;
+				font-weight: 300;
+				font-size: 12px;
+				line-height: 18px;
+				letter-spacing: 0px;
+				text-indent: 0;
+				text-transform: none;
+				text-align: center;
+				color: rgba(100,100,100,1.0);
+		}
+	}
+	@media (max-width: 767px) {
+		.section_sale {
+			padding: 30px 0 60px 0;
+		}
+
+		.section_sale h3 {
+			padding: 0 0 20px 0;
+
+			font-size: 25px;
+			line-height: 30px;
+		}
+		.section_sale p {
+			font-size: 16px;
+			line-height: 25px;
+		}
+
+		.section_sale ul.products {
+		}
+		.section_sale ul.products li {
+
+		}
+		.section_sale ul.products li.pack_1 {
+			width: 100%;
+			margin: 25px 0 0 0;
+			padding: 0 0 0 0;
+		}
+		.section_sale ul.products li.pack_3 {
+			width: 100%;
+			margin: 25px 0 0 0;
+			padding: 0 0 0 0;
+			border-bottom: solid 1px rgba(0,205,180,1.0);
+		}
+		.section_sale ul.products li.pack_2 {
+			width: 100%;
+			margin: 25px 0 20px 0;
+			padding: 0 0 0 0;
+      border: solid 1px rgba(0,205,180,1.0)
+		}
+		.section_sale ul.products li img {}
+		.section_sale ul.products li h5 {}
+		.section_sale ul.products li p {}
+		.section_sale ul.products li p.list_price {}
+		.section_sale ul.products li p.list_price span {}
+		.section_sale ul.products li a.cta_preorder {}
+		.section_sale ul.products li a.cta_preorder:hover {}
+	}
+	/* @end */
+	/* @group ----- section_press_quotes ------------ */
+	.section_press_quotes {
+		display: block;
+		position: relative;
+		width: 100%;
+		height: 100%;
+		/* min-height: 800px; */
+		margin: 0 0 0 0;
+		padding: 0 0 0 0;
+		background-color: rgba(160,0,185,0.0);
+
+		-webkit-background-size: cover;
+	       -moz-background-size: cover;
+		     -o-background-size: cover;
+		        background-size: cover;
+
+		font-family: "museo-sans", sans-serif;
+		font-style: normal;
+		letter-spacing: 0px;
+		text-indent: 0;
+		text-transform: none;
+		text-align: center;
+		color: rgb(255,255,255);
+
+		overflow: hidden;
+		opacity: 1.0;
+	}
+
+	.section_press_quotes {
+		display: block;
+		position: relative;
+		width: auto;
+		height: auto;
+		margin: 0 auto 0 auto;
+		padding: 0 50px 0 50px;
+
+		z-index: 7;
+	}
+	.section_press_quotes ul.quotes {
+		display: block;
+		position: relative;
+		width: 100%;
+		max-width: 1200px;
+		height: auto;
+		margin: 0 auto 0 auto;
+		padding: 0 0 0 0;
+	}
+	.section_press_quotes ul.quotes li {
+		display: inline-block;
+		position: relative;
+		width: auto;
+		max-width: 280px;
+		height: auto;
+		margin: 0 15px 0 15px;
+		padding: 0 0 0 0
+	}
+	.section_press_quotes ul.quotes li a.quote {
+		display: block;
+		position: relative;
+		width: auto;
+		height: auto;
+		margin: 0 auto 0 auto;
+		padding: 0 0 0 0;
+
+		font-family: "museo-sans", sans-serif;
+		font-style: italic;
+		font-weight: 100;
+		font-size: 16px;
+		line-height: 25px;
+		color: rgba(255,255,255,0.8);
+	}
+	.section_press_quotes ul.quotes li img.stars {
+		display: block;
+		position: relative;
+		width: auto;
+		height: 20px;
+		margin: 40px auto 5px auto;
+		padding: 0 0 0 0;
+
+		opacity: 0.8;
+	}
+	.section_press_quotes ul.quotes li img.quote {
+		display: block;
+		position: relative;
+		margin: 10px auto 35px auto;
+		padding: 0 0 0 0;
+
+		opacity: 0.8;
+	}
+
+	.section_press_quotes ul.logos {
+		display: block;
+		position: relative;
+		width: 100%;
+		max-width: 1200px;
+		height: auto;
+		margin: 0 auto 40px auto;
+		padding: 0 0 0 0;
+	}
+	.section_press_quotes ul.logos li {
+		display: inline-block;
+		position: relative;
+		width: auto;
+		height: 35px;
+		margin: 0 10px 0 10px;
+		padding: 0 0 0 0
+	}
+	.section_press_quotes ul.logos li img {
+		display: block;
+		position: relative;
+		width: auto;
+		height: 100%;
+		margin: 0 0 0 0;
+		padding: 0 0 0 0;
+
+		opacity: 1.0;
+	}
+	.section_press_quotes ul.logos li a:hover img {
+		opacity: 0.6;
+	}
+
+	@media (max-width: 1279px) {}
+	@media (max-width: 1023px) {}
+	@media (max-width: 767px) {
+		.section_press_quotes {
+			display: block;
+			position: relative;
+			width: auto;
+			height: auto;
+			margin: 0 auto 0 auto;
+			padding: 40px 50px 0 50px;
+
+			z-index: 7;
+		}
+
+		.section_press_quotes ul.quotes li a.quote {}
+		.section_press_quotes ul.quotes li img.stars {
+			margin: 0 auto 10px auto;
+		}
+		.section_press_quotes ul.quotes li img.quote {}
+
+		.section_press_quotes ul.logos {}
+		.section_press_quotes ul.logos li {}
+		.section_press_quotes ul.logos li img {}
+		.section_press_quotes ul.logos li a:hover img {}
+	}
+	/* @end */
+</style>

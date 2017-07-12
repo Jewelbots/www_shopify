@@ -1,0 +1,617 @@
+{% layout 'theme.JBS' %}
+
+{% section 'JBS_emailstory__section_hero__img_2' %} <!-- part of shopify template, visit page: https://jewelbots.myshopify.com/admin/themes/173464593/editor#/pages/template_1 -->
+
+
+
+
+<!-- section_copy  ⬇ ..ASSETS/JBS__style.css -->
+<div class="section_copy" id="learn_more">
+	<div class="opening">
+		 {{ page.content }}
+		<br /><br />
+	</div>
+</div>
+<!-- section_copy  ⬆ -->
+
+<div class="section_sale" id="section_sale">
+	<h3>Get your Jewelbots</h3>
+	<h6>Most Popular</h6>
+	<!--
+ --><ul class="products">
+			<li class="pack_1">
+				<h5>JEWELBOT</h5>
+				<img src="{{ 'index_section_sale__product_jewelbot_1pack.jpg' | asset_url }}" />
+				<p class="list_price"><span>&nbsp;</span></p>
+				<p>$69</p>
+				<!--<a class="offer" href="javascript:void;" onClick="modal_newsletter('open_overlay'); mixpanel.track('INTERACTION', {'ACTION': 'clicked_safe', 'POSITION': 'sales'});">sign up and save $10</a>-->
+				<a class="cta_preorder" href="https://shop.jewelbots.com/products/jewelbots-open-source-programmable-friendship-bracelet?variant=29751932753" target="_self">Learn more</a>
+			</li><!--
+		 --><li class="pack_2">
+				<h5>TWINNIE 2-PACK</h5>
+				<img src="{{ 'index_section_sale__product_jewelbot_2pack_2.png' | asset_url }}" />
+				<p class="list_price"><span>$138</span> List Price</p>
+				<p>$109 Sale!</p>
+				<!--<a class="offer" href="javascript:void;" onClick="modal_newsletter('open_overlay'); mixpanel.track('INTERACTION', {'ACTION': 'clicked_safe', 'POSITION': 'sales'});">sign up and save $10</a>-->
+				<a class="cta_preorder" href="https://shop.jewelbots.com/products/jewelbots-open-source-programmable-friendship-bracelet?variant=30055045137" target="_self">Learn more</a>
+			</li><!--
+		 --><li class="pack_3"><!-- id="pack_3_swap"-->
+				<h5>SQUAD 3-PACK</h5>
+				<img src="{{ 'index_section_sale__product_jewelbot_3pack.jpg' | asset_url }}" />
+				<p class="list_price"><span>$207</span> List Price</p>
+				<p>$139 Sale!</p>
+				<a class="cta_preorder" href="https://shop.jewelbots.com/products/jewelbots-open-source-programmable-friendship-bracelet?variant=30055105041" target="_self">Learn more</a>
+			</li>
+			<!--<a href="https://jewelbots-2.myshopify.com/cart/19729585926:1" onclick="mixpanel.track('SHOP', {'STEP': 'added_to_cart'});">order - -> checkout T2</a>-->
+		</ul><!--
+ --><div class="clear"></div>
+	<ul class="info">
+		<li><img src="{{ 'index_section_sale__delivery_jb.png' | asset_url }}" /><p>Ships within 1-2 days</p></li>
+		<li><img src="{{ 'index_section_sale__refund.png' | asset_url }}" /><p>Full refund as long as order has not shipped</p></li>
+	</ul>
+	<p class="notepresale">
+		Shipping within the US generally takes 2-5 Postal days after it is shipped. International shipping can take up to 3 to 5 weeks to receive after it is shipped.<br /><br /><strong>INTERNATIONAL BUYERS: We are not responsible for any additional customs charges levied by your country. Please be aware of the import laws of your country. <br />Customs clearance procedures can cause delays beyond original delivery-time estimates.</strong><br /><br />
+	</p>
+</div><!--//section_sale -->
+
+<!-- section_press  ⬇ -->
+<div class="section_press">
+	<img class="stars" src="{{ 'JBS_about__section_press__stars.png' | asset_url }}" />
+	<a class="quote" href="http://www.wired.com/2015/07/somehow-teen-girls-get-coolest-wearable/" target="_blank">»The most interesting wearable I’ve seen this year«</a>
+	<img class="quote" src="{{ 'JBS_about__section_press__wired.png' | asset_url }}" />
+	<ul>
+		<li><a href="http://www.forbes.com/sites/leoking/2015/07/31/tech-women-triumph-women-in-tech-jewelbots-ellen-pao-susan-wojcicki/" target="_blank"><img src="{{ 'JBS_about__section_press__forbes.png' | asset_url }}" /></a></li><!--
+	 --><li><a href="http://www.bustle.com/articles/97235-jewelbots-programmable-friendship-bracelets-are-designed-to-get-girls-coding-plus-4-other-toys-getting-girls" target="_blank"><img src="{{ 'JBS_about__section_press__bustle.png' | asset_url }}" /></a></li><!--
+	 --><li><a href="http://www.theverge.com/2015/7/23/9020083/jewelbots-programming-wearable-jewelry" target="_blank"><img src="{{ 'JBS_about__section_press__theverge.png' | asset_url }}" /></a></li><!--
+	 --><li><a href="http://www.psfk.com/2015/06/girls-coding-programmable-bracelets-inspire-girls-to-code.html" target="_blank"><img src="{{ 'JBS_about__section_press__psfk.png' | asset_url }}" /></a></li><!--
+	 --><li><a href="http://techcrunch.com/2015/07/13/jewelbots-is-a-friendship-bracelet-that-teaches-girls-how-to-code/" target="_blank"><img src="{{ 'JBS_about__section_press__techcrunch.png' | asset_url }}" /></a></li><!--
+	 --><li><a href="http://www.businessinsider.com/wearable-tech-is-all-the-rage-at-this-hackathon-for-girls-as-young-as-five-years-old-2015-6" target="_blank"><img src="{{ 'JBS_about__section_press__businessinsider.png' | asset_url }}" /></a></li><!--
+	 --><li><a href="http://www.brit.co/jewelbots-friendship-bracelet-future/" target="_blank"><img src="{{ 'JBS_about__section_press__britco.png' | asset_url }}" /></a></li><!--
+	 --><li><a href="http://www.glamour.com/fashion/blogs/dressed/2015/07/jewelbots-teaches-teen-girls-t" target="_blank"><img src="{{ 'JBS_about__section_press__glamour.png' | asset_url }}" /></a></li><!--
+	 --><li><a href="http://www.teenvogue.com/story/jewelbot-bracelet-code-education" target="_blank"><img src="{{ 'JBS_about__section_press__teenvogue.png' | asset_url }}" /></a></li><!--
+	 --><li><a href="http://finance.yahoo.com/news/startup-bets-wearable-will-solve-a-huge-problem-for-girls-145434164.html" target="_blank"><img src="{{ 'JBS_about__section_press__yahoo.png' | asset_url }}" /></a></li><!--
+	 --><li><a href="http://www.buzzfeed.com/nicolenguyen/hurry-up-and-exist-irl#.evylyjyx6" target="_blank"><img src="{{ 'JBS_about__section_press__buzzfeed.png' | asset_url }}" /></a></li>
+	</ul>
+</div>
+<!-- section_press  ⬆ -->
+
+<style>
+
+	.section_sale {
+		display: block;
+		position: relative;
+		width: 100%;
+		height: auto;
+		margin: 0 0 0 0;
+		padding: 0px 75px 60px 75px;
+		background-color: rgba(255,255,255,1.0);
+
+		text-align: center;
+	}
+
+	.section_sale h3 {
+		display: block;
+		position: relative;
+		width: 100%;
+		height: auto;
+		margin: 0 0 0 0;
+		padding: 38px 0 35px 0;
+
+		font-family: "museo-sans-rounded",sans-serif;
+		font-style: normal;
+		font-weight: 500;
+		font-size: 46px;
+		line-height: 50px;
+		letter-spacing: 0;
+		text-indent: 0;
+		text-transform: none;
+		text-align: center;
+		color: rgba(60,90,85,1.0);
+	}
+	.section_sale p {
+		display: block;
+		position: relative;
+		width: 100%;
+		height: auto;
+		margin: 0 0 0 0;
+		padding: 0 0 0 0;
+
+		font-family: "museo-sans",sans-serif;
+		font-style: normal;
+		font-weight: 700;
+		font-size: 20px;
+		line-height: 25px;
+		letter-spacing: 0;
+		text-indent: 0;
+		text-transform: none;
+		text-align: center;
+		color: rgba(140,145,150,1.0);
+	}
+	.section_sale h6 {
+		display: absolute;
+		position: relative;
+		width: 100%;
+		height: 30px;
+		margin: 0 0 0 0;
+		padding: 0 0 0 0;
+
+		font-family: "museo-sans", sans-serif;
+		font-style: normal;
+		font-weight: 500;
+		font-size: 13px;
+		line-height: 25px;
+		letter-spacing: 1px;
+		text-indent: 0px;
+		text-transform: uppercase;
+		color: rgba(100,100,100,1.0);
+	}
+
+	.section_sale ul.products {
+		display: block;
+		position: relative;
+		width: 100%;
+		max-width: 1100px;
+		height: auto;
+		margin: 0 auto 0 auto;
+		padding: 0 0 0 0;
+	}
+	.section_sale ul.products li {
+		display: inline-block;
+		position: relative;
+		width: 33%;
+		height: auto;
+		margin: 0 0 0 0;
+		padding: 0 0 0 0;
+		border: solid 0px rgba(0,205,180,1.0);
+		vertical-align:top;
+	}
+	.section_sale ul.products li.pack_2 {
+		background: rgba(240,240,240,1.0);
+		-webkit-border-radius: 10px;
+		   -moz-border-radius: 10px;
+		        border-radius: 10px;
+
+		-webkit-box-shadow: 0px 1px 10px 0px rgba(0,0,0,0.4);
+		   -moz-box-shadow: 0px 1px 10px 0px rgba(0,0,0,0.4);
+		        box-shadow: 0px 1px 10px 0px rgba(0,0,0,0.4);
+	}
+	.section_sale ul.products li img {
+		display: block;
+		position: relative;
+		width: auto;
+		height: auto;
+		max-height: 200px;
+		margin: 80px auto 10px auto;
+		padding: 0 0 0 0;
+	}
+	.section_sale ul.products li h5 {
+		display: block;
+		position: absolute;
+		width: 100%;
+		height: auto;
+		margin: 0 0 0 0;
+		padding: 30px 0 0 0;
+
+		font-family: "museo-sans-rounded",sans-serif;
+		font-style: normal;
+		font-weight: 700;
+		font-size: 20px;
+		line-height: 25px;
+		letter-spacing: 0;
+		text-indent: 0;
+		text-transform: none;
+		text-align: center;
+		color: rgba(0,205,180,1.0);
+	}
+	.section_sale ul.products li p {
+		display: block;
+		position: relative;
+		width: auto;
+		height: auto;
+		margin: 0 0 0 0;
+		padding: 0 0 0 0;
+
+		font-family: "museo-sans", sans-serif;
+		font-style: normal;
+		font-weight: 500;
+		font-size: 20px;
+		line-height: 25px;
+		letter-spacing: 0px;
+		text-indent: 0;
+		text-transform: none;
+		color: rgba(100,100,100,1.0);
+	}
+	.section_sale ul.products li a {
+		display: block;
+		position: relative;
+		width: auto;
+		height: auto;
+		margin: 0 0 0 0;
+		padding: 0 0 0 0;
+
+		font-family: "museo-sans", sans-serif;
+		font-style: normal;
+		font-weight: 500;
+		font-size: 13px;
+		line-height: 25px;
+		letter-spacing: 0px;
+		text-indent: 0;
+		text-transform: none;
+		text-decoration: none;
+		color: rgba(255,60,0,1.0);
+	}
+	.section_sale ul.products li p.list_price {
+		font-weight: 300;
+		color: rgba(180,180,180,1.0);
+	}
+	.section_sale ul.products li p.list_price span {
+		text-decoration: line-through;
+	}
+	.section_sale ul.products li a.cta_preorder {
+		display: block;
+		position: relative;
+		width: 180px;
+		height: 50px;
+		margin: 15px auto 50px auto;
+		padding: 0 0 0 0;
+		background-color: rgba(255,60,0,1.0);
+		border: solid 2px rgba(255,60,0,0.6);
+		color: rgba(255,255,255,1.0);
+
+		font-family: "museo-sans", sans-serif;
+		font-style: normal;
+		font-weight: 700;
+		font-size: 16px;
+		line-height: 46px;
+		letter-spacing: 0;
+		text-indent: 0;
+		text-transform: uppercase;
+
+	  -webkit-border-radius: 3px;
+		 -moz-border-radius: 3px;
+			  border-radius: 3px;
+
+		-webkit-box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.4);
+		   -moz-box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.4);
+				box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.4);
+
+		-webkit-transition: .1s ease-in-out;
+		   -moz-transition: .1s ease-in-out;
+		     -o-transition: .1s ease-in-out;
+		    -ms-transition: .1s ease-in-out;
+		        transition: .1s ease-in-out;
+	}
+	.section_sale ul.products li a.cta_preorder:hover {
+		background-color: rgba(255,255,255,1.0);
+		border: solid 2px rgba(255,60,0,0.6);
+
+		color: rgba(255,60,0,0.6);
+
+		-webkit-box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.0);
+		   -moz-box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.0);
+				box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.0);
+	}
+
+	.section_sale ul.products li .buy-button-wrapper {
+		margin: 0 auto 0 auto;
+		width: 130px;
+	}
+
+	.section_sale ul.info {
+		display: block;
+		position: relative;
+		width: 100%;
+		height: auto;
+		max-width: 1100px;
+		margin: 20px auto 30px auto;
+		padding: 0 0 0 60px;
+	}
+	.section_sale ul.info li {
+		display: inline-block;
+		position: relative;
+		width: 33%;
+		height: 60px;
+		margin: 0 0 0 0;
+		padding: 0 0 0 75px;
+	}
+	.section_sale ul.info li p {
+		display: inline-block;
+		position: relative;
+		width: 100%;
+		height: 60px;
+		margin: 0 0 0 0;
+		padding: 25px 0 0 0;
+
+		font-family: "museo-sans", sans-serif;
+		font-style: normal;
+		font-weight: 300;
+		font-size: 13px;
+		line-height: 18px;
+		letter-spacing: 0px;
+		text-indent: 0;
+		text-transform: none;
+		text-align: left;
+		color: rgba(100,100,100,1.0);
+	}
+	.section_sale ul.info li img {
+		display: block;
+		position: absolute;
+		width: 60px;
+		height: 60px;
+		left: 0;
+		margin: 0 0 0 0;
+		padding: 0 0 0 0;
+	}
+
+	.section_sale p.notepresale {
+		display: block;
+		position: relative;
+		width: auto;
+		height: auto;
+		margin: 0 0 0 0;
+		padding: 0 0 0 0;
+
+		font-family: "museo-sans", sans-serif;
+		font-style: normal;
+		font-weight: 300;
+		font-size: 12px;
+		line-height: 18px;
+		letter-spacing: 0px;
+		text-indent: 0;
+		text-transform: none;
+		text-align: center;
+		color: rgba(100,100,100,1.0);
+	}
+
+
+	@media (max-width: 1279px) {
+		.section_sale {
+			padding: 0px 5px 60px 5px;
+		}
+
+		.section_sale h3 {}
+
+		.section_sale ul.products {}
+		.section_sale ul.products li {}
+		.section_sale ul.products li img {}
+		.section_sale ul.products li h5 {}
+		.section_sale ul.products li p {}
+		.section_sale ul.products li p.list_price {}
+		.section_sale ul.products li p.list_price span {}
+		.section_sale ul.products li a.cta_preorder {}
+		.section_sale ul.products li a.cta_preorder:hover {}
+	}
+	@media (max-width: 1023px) {
+		.section_sale {
+			padding: 0px 0 60px 0;
+		}
+
+		.section_sale h3 {}
+
+		.section_sale ul.products {}
+		.section_sale ul.products li {}
+		.section_sale ul.products li.pack_1 {
+				width: 32%;
+				height: auto;
+				margin: 0 0 0 0;
+		}
+		.section_sale ul.products li.pack_3 {
+				width: 32%;
+				height: auto;
+				margin: 0 2% 0 2%;
+		}
+		.section_sale ul.products li.pack_2 {
+				width: 32%;
+				height: auto;
+				margin: 0 0 0 0;
+		}
+		.section_sale ul.products li img {}
+		.section_sale ul.products li h5 {}
+		.section_sale ul.products li p {}
+		.section_sale ul.products li p.list_price {}
+		.section_sale ul.products li p.list_price span {}
+		.section_sale ul.products li a.cta_preorder {
+			display: block;
+			position: relative;
+			width: 160px;
+			height: 40px;
+			margin: 15px auto 35px auto;
+
+			font-weight: 300;
+			font-size: 12px;
+			line-height: 36px;
+			letter-spacing: 1px;
+		}
+		.section_sale ul.products li a.cta_preorder:hover {}
+
+		.section_sale ul.info {
+				margin: 35px auto 0 auto;
+				padding: 0 0 0 0;
+		}
+		.section_sale ul.info li {
+				display: block;
+				width: 100%;
+				height: auto;
+				padding: 0 0 0 0;
+		}
+		.section_sale ul.info li p {
+				display: block;
+				width: 100%;
+				height: 60px;
+				padding: 5px 0 20px 0;
+
+				text-align: center;
+		}
+		.section_sale ul.info li img {
+				display: block;
+				position: relative;
+				width: 60px;
+				height: 60px;
+				left: 0;
+				margin: 0 auto 0 auto;
+				padding: 0 0 0 0;
+		}
+
+		.section_sale p.notepresale {
+				display: block;
+				position: relative;
+				width: auto;
+				height: auto;
+				margin: 0 0 0 0;
+				padding: 0 25px 20px 25px;
+
+				font-family: "museo-sans", sans-serif;
+				font-style: normal;
+				font-weight: 300;
+				font-size: 12px;
+				line-height: 18px;
+				letter-spacing: 0px;
+				text-indent: 0;
+				text-transform: none;
+				text-align: center;
+				color: rgba(100,100,100,1.0);
+		}
+	}
+	@media (max-width: 767px) {
+		.section_sale {
+			padding: 30px 0 60px 0;
+		}
+
+		.section_sale h3 {
+			padding: 0 0 20px 0;
+
+			font-size: 25px;
+			line-height: 30px;
+		}
+		.section_sale p {
+			font-size: 16px;
+			line-height: 25px;
+		}
+
+		.section_sale ul.products {
+		}
+		.section_sale ul.products li {
+
+		}
+		.section_sale ul.products li.pack_1 {
+			width: 100%;
+			margin: 25px 0 0 0;
+			padding: 0 0 0 0;
+			border-bottom: solid 1px rgba(0,205,180,1.0);
+		}
+		.section_sale ul.products li.pack_3 {
+			width: 100%;
+			margin: 25px 0 0 0;
+			padding: 0 0 0 0;
+			border-bottom: solid 1px rgba(0,205,180,1.0);
+		}
+		.section_sale ul.products li.pack_2 {
+			width: 100%;
+			margin: 25px 0 20px 0;
+			padding: 0 0 0 0;
+			border-bottom: solid 1px rgba(0,205,180,1.0);
+		}
+		.section_sale ul.products li img {}
+		.section_sale ul.products li h5 {}
+		.section_sale ul.products li p {}
+		.section_sale ul.products li p.list_price {}
+		.section_sale ul.products li p.list_price span {}
+		.section_sale ul.products li a.cta_preorder {}
+		.section_sale ul.products li a.cta_preorder:hover {}
+	}
+	/* @group ----- section_press ------------------- */
+	.section_press {
+		display: block;
+		position: relative;
+		width: 100%;
+		height: 100%;
+		margin: 0 0 0 0;
+		padding: 0 75px 50px 75px;
+		background-color: rgba(255,255,255,1.0);
+
+		font-family: "museo-sans", sans-serif;
+		font-style: normal;
+		letter-spacing: 0px;
+		text-indent: 0;
+		text-transform: none;
+		text-align: center;
+	}
+
+	.section_press a.quote {
+		display: block;
+		position: relative;
+		width: auto;
+		height: auto;
+		margin: 0 auto 0 auto;
+		padding: 0 0 0 0;
+
+		font-family: "museo-sans", sans-serif;
+		font-style: italic;
+		font-weight: 300;
+		font-size: 30px;
+		line-height: 40px;
+		color: rgba(100,100,100,0.6);
+	}
+	.section_press img.stars {
+		display: block;
+		position: relative;
+		width: auto;
+		height: 20px;
+		margin: 0 auto 5px auto;
+		padding: 0 0 0 0;
+
+		opacity: 0.4;
+	}
+	.section_press img.quote {
+		display: block;
+		position: relative;
+		width: auto;
+		height: 15px;
+		margin: 10px auto 15px auto;
+		padding: 0 0 0 0;
+
+		opacity: 0.4;
+	}
+
+	.section_press ul {
+		display: block;
+		position: relative;
+		width: 100%;
+		max-width: 1200px;
+		height: auto;
+		margin: 50px auto 0 auto;
+		padding: 0 0 0 0;
+	}
+	.section_press ul li {
+		display: inline-block;
+		position: relative;
+		width: auto;
+		height: 40px;
+		margin: 0 15px 0 15px;
+		padding: 0 0 0 0
+	}
+	.section_press ul li img {
+		display: block;
+		position: relative;
+		width: auto;
+		height: 100%;
+		margin: 0 0 0 0;
+		padding: 0 0 0 0;
+
+		opacity: 0.4;
+	}
+	.section_press ul li a:hover img {
+		opacity: 0.7;
+	}
+
+	@media (max-width: 1279px) {
+
+	}
+	@media (max-width: 1023px) {
+
+	}
+	@media (max-width: 767px) {
+
+	}
+	/* @end */
+</style>

@@ -1,0 +1,101 @@
+
+{% if section.blocks.size > 0 %}
+  <div
+    class="module-wrapper"
+    data-section-id="{{ section.id }}"
+    data-section-type="social-feeds">
+
+    <div class="module footer-widget">
+
+      {%- capture widget_classes -%}
+        module-body
+        footer-widget-body
+        column-{{ section.blocks.size }}
+      {%- endcapture -%}
+      <div class="{{ widget_classes | strip_newlines }}">
+        {% for block in section.blocks %}
+          {%- capture block_classes -%}
+            footer-widget-item
+            {{ block.type }}
+            {% if block.settings.style %}
+              style-{{ block.settings.style }}
+            {% endif %}
+          {%- endcapture -%}
+
+          <div
+            class="{{ block_classes | strip_newlines }}"
+            {{ block.shopify_attributes }}
+            data-widget="{{ block.type }}">
+            {% assign block_type = 'social-feed-' | append: block.type %}
+            {% include block_type %}
+          </div>
+        {% endfor %}
+      </div>
+
+    </div>
+
+  </div>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Social feeds",
+  "blocks": [
+    {
+      "type": "instagram",
+      "name": "Instagram feed",
+      "settings": [
+        {
+          "type": "text",
+          "id": "access_token",
+          "label": "Access token",
+          "info": "Get your [access token](http:\/\/instagram.pixelunion.net)."
+        }
+      ],
+      "limit": 1
+    },
+    {
+      "type": "twitter",
+      "name": "Twitter feed",
+      "settings": [
+        {
+          "type": "text",
+          "id": "username",
+          "label": "Username"
+        },
+        {
+          "type": "checkbox",
+          "id": "retweets",
+          "label": "Show retweets",
+          "default": false
+        },
+        {
+          "type": "select",
+          "id": "style",
+          "label": "Background style",
+          "options": [
+            {
+              "value": "default",
+              "label": "Default"
+            },
+            {
+              "value": "light",
+              "label": "Light"
+            },
+            {
+              "value": "color",
+              "label": "Color"
+            },
+            {
+              "value": "gradient",
+              "label": "Gradient"
+            }
+          ],
+          "default": "color"
+        }
+      ],
+      "limit": 1
+    }
+  ]
+}
+{% endschema %}

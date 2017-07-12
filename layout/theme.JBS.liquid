@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title>{{ page_title }}{% if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif %}{% if current_page != 1 %} &ndash; Page {{ current_page }}{% endif %}{% unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless %}</title>
+	<meta name="description" content="{{ page_description | escape }}" />
+	<!--
+	***********************************************************************************************************
+
+		www.jewelbots.com
+		v.4.1
+                                _ _           _
+           (♥) _____      _____| | |__   ___ | |_ ___
+           | |/ _ \ \ /\ / / _ \ | '_ \ / _ \| __/ __|
+           | |  __/\ V  V /  __/ | |_) | (_) | |_\__ \
+          _/ |\___| \_/\_/ \___|_|_.__/ \___/ \__|___/
+         |__/
+
+	***********************************************************************************************************
+	-->
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<meta name="HandheldFriendly" content="true" />
+	<meta name="format-detection" content="telephone=no">
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+	<meta name="robots" content="index, follow" />
+	<meta name="msvalidate.01" content="A436D31FB846002AAC3085B94305EA4D" />
+	<meta name="revisit-after" content="15" />
+	<meta name="google-site-verification" content="WkWMC2U0n_lT3U1t_-PhLM0CGoeS25ux-D6LGOwu8Fg" />
+	<link rel="shortcut icon" href="{{ 'JBS__favicon.png' | asset_url }}" type="image/png">
+	<link rel="canonical" href="{{ canonical_url }}" />
+
+  <!-- Google Search Data -->
+
+	<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "url": "https://jewelbots.com",
+  "logo": "https://cdn.shopify.com/s/files/1/0935/5176/t/10/assets/JBS__section_footer__logo.png?554007850950067709",
+	"sameAs": [
+	 "http://www.facebook.com/jewelbots",
+	 "http://instagram.com/jewelbots",
+	 "http://www.twitter.com/jewelbots",
+	 "https://www.youtube.com/jewelbots"
+ ],
+  "contactPoint": [{
+    "@type": "ContactPoint",
+    "telephone": "+1-862-201-3065",
+    "contactType": "customer service"
+  }]
+}
+</script>
+	<!-- STYLES: ⬇ -->
+  <link type="text/css" rel="stylesheet" href="{{ 'JBS__style_reset.css' | asset_url }}" media="screen" />
+	<link type="text/css" rel="stylesheet" href="{{ 'JBS__style.css' | asset_url }}" media="screen" />
+	<link type="text/css" rel="stylesheet" href="//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" media="screen" />
+	{{ "rwa.css" | asset_url | stylesheet_tag }}
+
+	<!-- start Mixpanel --><script type="text/javascript">(function(e,a){if(!a.__SV){var b=window;try{var c,l,i,j=b.location,g=j.hash;c=function(a,b){return(l=a.match(RegExp(b+"=([^&]*)")))?l[1]:null};g&&c(g,"state")&&(i=JSON.parse(decodeURIComponent(c(g,"state"))),"mpeditor"===i.action&&(b.sessionStorage.setItem("_mpcehash",g),history.replaceState(i.desiredHash||"",e.title,j.pathname+j.search)))}catch(m){}var k,h;window.mixpanel=a;a._i=[];a.init=function(b,c,f){function e(b,a){var c=a.split(".");2==c.length&&(b=b[c[0]],a=c[1]);b[a]=function(){b.push([a].concat(Array.prototype.slice.call(arguments,
+	0)))}}var d=a;"undefined"!==typeof f?d=a[f]=[]:f="mixpanel";d.people=d.people||[];d.toString=function(b){var a="mixpanel";"mixpanel"!==f&&(a+="."+f);b||(a+=" (stub)");return a};d.people.toString=function(){return d.toString(1)+".people (stub)"};k="disable time_event track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config reset people.set people.set_once people.increment people.append people.union people.track_charge people.clear_charges people.delete_user".split(" ");
+	for(h=0;h<k.length;h++)e(d,k[h]);a._i.push([b,c,f])};a.__SV=1.2;b=e.createElement("script");b.type="text/javascript";b.async=!0;b.src="undefined"!==typeof MIXPANEL_CUSTOM_LIB_URL?MIXPANEL_CUSTOM_LIB_URL:"file:"===e.location.protocol&&"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//)?"https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js":"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";c=e.getElementsByTagName("script")[0];c.parentNode.insertBefore(b,c)}})(document,window.mixpanel||[]);
+	mixpanel.init("f65e8da0dc6a3b25ea6c7bc8345c3f80");</script><!-- end Mixpanel -->
+	<!-- STYLES  ⬆ -->
+	<!-- TYPEKIT: ⬇ used for adding Museo  -->
+	<script src="//use.typekit.net/rbz5qur.js"></script>
+	<script>try{Typekit.load();}catch(e){}</script>
+ <!-- TYPEKIT  ⬆ -->
+
+ <script>
+  !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t){var e=document.createElement("script");e.type="text/javascript";e.async=!0;e.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(e,n)};analytics.SNIPPET_VERSION="4.0.0";
+  analytics.load("Xk5IfqMJ2gAkgQ316lZeIxZal5NOPIUP");
+  analytics.page();
+  }}();
+</script>
+	<!-- SCRIPTS: ⬇ note: oll other functions are found inside the individual section's source file -->
+  <script src="{{ 'jquery-3.1.1.min.js' | asset_url }}" ></script>
+
+
+	<script>
+	//	window.onload=body_load; function body_load(){$('.section_header').stop().show().animate({'opacity': '1.0'}, 250, function() {	});}
+	</script>
+	<style>
+	<!-- section_header {opacity: 0.0;} -->
+	</style>
+
+  	{{ content_for_header }}
+
+
+	<!-- SCRIPTS  ⬆ -->
+
+	<!-- ZENDESK  ⬇ -->
+	<script>/*<![CDATA[*/window.zEmbed||function(e,t){var n,o,d,i,s,a=[],r=document.createElement("iframe");window.zEmbed=function(){a.push(arguments)},window.zE=window.zE||window.zEmbed,r.src="javascript:false",r.title="",r.role="presentation",(r.frameElement||r).style.cssText="display: none",d=document.getElementsByTagName("script"),d=d[d.length-1],d.parentNode.insertBefore(r,d),i=r.contentWindow,s=i.document;try{o=s}catch(e){n=document.domain,r.src='javascript:var d=document.open();d.domain="'+n+'";void(0);',o=s}o.open()._l=function(){var o=this.createElement("script");n&&(this.domain=n),o.id="js-iframe-async",o.src=e,this.t=+new Date,this.zendeskHost=t,this.zEQueue=a,this.body.appendChild(o)},o.write('<body onload="document._l();">'),o.close()}("https://assets.zendesk.com/embeddable_framework/main.js","jewelbots.zendesk.com");
+	/*]]>*/</script>
+	<!-- ZENDESK  ⬆ -->
+</head>
+
+<body>
+	{% include 'JBS__newsletter__modal__v1' %}
+	{% section 'JBS__section__header' %}
+	<div id="site_container">
+		{{ content_for_layout }} <!-- placeholder for each template file -->
+		{% section 'JBS__section__footer' %}
+	</div>
+</body>
+</html>

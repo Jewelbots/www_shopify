@@ -1,0 +1,11 @@
+{% assign product_goal_enabled = false %}
+
+{% assign product_goal = settings.product-goal | plus: 0 %}
+{% assign product_goal_handle = settings.featured-product-main %}
+{% if all_products[product_goal_handle].variants.first.inventory_management == "shopify" %}
+  {% if settings.product-goal-starting-quantity != blank and settings.product-sale-goal-use%}
+    {% if settings.product-goal != blank %}
+      {% assign product_goal_enabled = true %}
+    {% endif %}
+  {% endif %}
+{% endif %}

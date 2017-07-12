@@ -1,0 +1,866 @@
+/* scss-combine:abstractions/user-settings */
+
+// Colors
+
+$primary-color: {{ settings.theme-primary-color }};
+$primary-color-hover: $primary-color;
+$secondary-color: {{ settings.theme-secondary-color }};
+$secondary-color-hover: $secondary-color;
+$body-text-color: {{ settings.body-text-color }};
+$body-background-color: {{ settings.body-background-color }};
+$heading-text-color: {{ settings.heading-text-color }};
+$border-color: {{ settings.border-color }};
+
+$error-color: #e13333;
+$success-color: #5bef6b;
+$black: #000;
+$white: #fff;
+$light-grey: #eeeeee;
+$very-light-grey: #fafafa;
+$dark-color: #191919;
+
+// Fonts
+
+$body-font: {{ settings.body-font }};
+$body-weight: {{ settings.body-font-weight }};
+$heading-font: {{ settings.heading-font }};
+$heading-weight: {{ settings.heading-font-weight }};
+$button-font: {{ settings.primary-button-font }};
+$button-weight: {{ settings.primary-button-font-weight }};
+$button-min-width: 220px;
+
+// Logo
+
+$logo-max-width: 200px;
+$logo-max-height: 100px;
+
+// Layout
+
+$gutter: 30px;
+$gutter-half: $gutter / 2;
+$gutter-triple: $gutter * 3;
+$max-width: 1200px;
+$ease: cubic-bezier(0.250, 0.460, 0.450, 0.940);
+
+// Typography
+
+$heading-font-size-1: 48px;
+$heading-font-size-1-xs: 38px;
+$heading-font-size-2: 36px;
+$heading-font-size-2-xs: 26px;
+$heading-font-size-3: 22px;
+$heading-font-size-3-xs: 18px;
+$heading-font-size-4: 20px;
+$heading-font-size-4-xs: 18px;
+$heading-font-size-5: 18px;
+
+$body-font-size-1: 16px;
+$body-font-size-2: 14px;
+$body-font-size-3: 12px;
+$body-line-height-1: 28px;
+$body-line-height-2: 26px;
+$subtitle-font-size: 18px;
+$button-height: 55px;
+
+$header-height: 120px;
+$header-small-height: 80px;
+$header-font-size: 12px;
+$header-zindex: 110;
+$header-goal-height: 56px;
+$drawer-font-size: 26px;
+
+$input-number-height: 53px;
+$input-number-width: 75px;
+$input-number-nav-width: 25px;
+$select-height: 55px;
+
+$list-icon-size: 60px;
+$sale-badge-size-small: 45px;
+$sale-badge-size-large: 65px;
+$outline-setting: 4px auto $primary-color;
+
+$stock-badge-size: $body-font-size-2;
+
+// Breakpoint Sizes
+
+$l: 1200px;
+$md: 1020px;
+$featured-product: 920px;
+$medium-small: 920px;
+$ipad: 768px;
+$sm: 720px;
+$xs: 480px;
+
+$use-font-smoothing: {% if settings.heading-font == "Bitter, serif" or settings.heading-font == "Roboto, sans-serif" or settings.heading-font == "'Open Sans', sans-serif" or settings.heading-font == "Volkhov, serif" or settings.heading-font == "Lato, sans-serif"%}true{% else %}false{% endif %};
+
+// Icons
+
+$icon-fancy: "\e900";
+$icon-rss2: "\ea9c";
+$icon-pinterest: "\ead1";
+$icon-google-plus: "\ea8b";
+$icon-twitter: "\ea96";
+$icon-facebook: "\ea91";
+$icon-info: "\e101";
+$icon-questionmark: "\e102";
+$icon-ruler: "\e105";
+$icon-email: "\e104";
+$icon-pencil: "\e103";
+$icon-shirt: "\e106";
+$icon-amazon-payments: "\e800";
+$icon-american-express: "\41";
+$icon-bitcoin: "\42";
+$icon-dankort: "\e210";
+$icon-diners-club: "\e213";
+$icon-discover: "\e205";
+$icon-dogecoin: "\e908";
+$icon-dwolla: "\e218";
+$icon-forbrugsforeningen: "\e903";
+$icon-jcb: "\e211";
+$icon-litecoin: "\e909";
+$icon-maestro: "\e212";
+$icon-mastercard: "\e202";
+$icon-paypal: "\e204";
+$icon-visa: "\e201";
+$icon-cirrus: "\e208";
+$icon-interac: "\e207";
+$icon-stripe: "\e206";
+$icon-apple-pay: "\e901";
+
+// Slideshow variables
+// This value also has to match `./scripts/SlideshowView.coffee`, line 214
+$slideshowSpeed: 0.7s;
+
+/* scss-combine:templates/gift-card */
+.gift-card-template {
+  margin: 0;
+  font-family: $body-font;
+
+  a {
+    color: $primary-color;
+    text-decoration: none;
+
+    &:hover {
+      color: $primary-color-hover;
+    }
+  }
+
+  .btn {
+    font-family: $button-font;
+    background-color: $primary-color;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 1.5em;
+    font-size: 0.875em;
+    font-weight: $button-weight;
+    line-height: 1;
+    border-radius: 4px;
+    display: inline-block;
+    vertical-align: baseline;
+    zoom: 1;
+    *display: inline;
+    *vertical-align: auto;
+  }
+
+  .btn:hover {
+    color: #fff;
+    background-color: $primary-color-hover;
+  }
+
+  .wrap {
+    width: 95%;
+    max-width: 540px;
+    margin: 0 auto;
+
+    &:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+  }
+
+  @-webkit-keyframes slideup {
+    0% {
+      opacity: 0;
+      -webkit-transform: translateY(2000px) rotate(10deg);
+    }
+
+    60% {
+      opacity: 1;
+      -webkit-transform: translateY(-30px);
+    }
+
+    80% {
+      -webkit-transform: translateY(10px);
+    }
+
+    100% {
+      -webkit-transform: translateY(0) rotate(0deg);
+    }
+  }
+
+  @-ms-keyframes slideup {
+    0% {
+      opacity: 0;
+      -webkit-transform: translateY(2000px) rotate(10deg);
+    }
+
+    60% {
+      opacity: 1;
+      -webkit-transform: translateY(-30px);
+    }
+
+    80% {
+      -webkit-transform: translateY(10px);
+    }
+
+    100% {
+      -webkit-transform: translateY(0) rotate(0deg);
+    }
+  }
+
+  @keyframes slideup {
+    0% {
+      opacity: 0;
+      -webkit-transform: translateY(2000px) rotate(10deg);
+    }
+
+    60% {
+      opacity: 1;
+      -webkit-transform: translateY(-30px);
+    }
+
+    80% {
+      -webkit-transform: translateY(10px);
+    }
+
+    100% {
+      -webkit-transform: translateY(0) rotate(0deg);
+    }
+  }
+
+  @-webkit-keyframes popup {
+    0% {
+      opacity: 0;
+      -webkit-transform: translateY(30px);
+    }
+
+    60% {
+      opacity: 1;
+      -webkit-transform: translateY(-10px);
+    }
+
+    80% {
+      -webkit-transform: translateY(2px);
+    }
+
+    100% {
+      -webkit-transform: translateY(0);
+    }
+  }
+
+  @-ms-keyframes popup {
+    0% {
+      opacity: 0;
+      -webkit-transform: translateY(30px);
+    }
+
+    60% {
+      opacity: 1;
+      -webkit-transform: translateY(-10px);
+    }
+
+    80% {
+      -webkit-transform: translateY(2px);
+    }
+
+    100% {
+      -webkit-transform: translateY(0);
+    }
+  }
+
+  @keyframes popup {
+    0% {
+      opacity: 0;
+      -webkit-transform: translateY(30px);
+    }
+
+    60% {
+      opacity: 1;
+      -webkit-transform: translateY(-10px);
+    }
+
+    80% {
+      -webkit-transform: translateY(2px);
+    }
+
+    100% {
+      -webkit-transform: translateY(0);
+    }
+  }
+
+  @-webkit-keyframes container-slide {
+    0% {
+      opacity: 0;
+      -webkit-transform: rotate(0deg);
+    }
+
+    100% {
+      -webkit-transform: rotate(0deg);
+    }
+  }
+
+  @-ms-keyframes container-slide {
+    0% {
+      opacity: 0;
+      -webkit-transform: rotate(0deg);
+    }
+
+    100% {
+      -webkit-transform: rotate(0deg);
+    }
+  }
+
+  @keyframes container-slide {
+    0% {
+      opacity: 0;
+      -webkit-transform: rotate(0deg);
+    }
+
+    100% {
+      -webkit-transform: rotate(0deg);
+    }
+  }
+
+  @-webkit-keyframes fadein {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 100;
+    }
+  }
+
+  @-ms-keyframes fadein {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 100;
+    }
+  }
+
+  @keyframes fadein {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 100;
+    }
+  }
+
+  header {
+    text-align: center;
+    padding: 3em 0;
+    -webkit-animation: fadein 0.5s ease-in-out both 0.4s;
+    animation:fadein 0.5s ease-in-out both 0.4s
+  }
+
+  .shop-title {
+    font-family: $heading-font;
+    font-size: 2.25em;
+    font-weight: $heading-weight;
+    color: $primary-color;
+    max-width: 300px;
+    display: block;
+    margin: 0 auto;
+
+    &:hover {
+      color: $primary-color-hover;
+    }
+
+    img {
+      max-height: 100%;
+      margin: 0 auto;
+    }
+  }
+
+  main {
+    padding-bottom: 3em;
+    -webkit-animation: slideup 0.8s ease-in-out;
+    animation: slideup 0.8s ease-in-out;
+  }
+
+  .gift-card-outer-container {
+    background-color: #34aadc;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 0 0 1px rgba(0,0,0,0.1) inset;
+    box-shadow:0 0 0 1px rgba(0,0,0,0.1) inset;
+    padding: 1em;
+    -webkit-animation: container-slide 0.8s ease-in-out;
+    animation: container-slide 0.8s ease-in-out;
+  }
+
+  .gift-card-inner-container {
+    background-color: #fff;
+    -webkit-box-shadow: 0 0 0 1px rgba(0,0,0,0.1);
+    box-shadow: 0 0 0 1px rgba(0,0,0,0.1);
+    border-radius: 2px;
+    -webkit-animation: cardslide 0.8s ease-in-out;
+    animation: cardslide 0.8s ease-in-out;
+
+    &:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+  }
+
+  .gift-card-header {
+    border-bottom: 1px solid #f2f2f2;
+    padding: 0.75em;
+    display: block;
+    overflow: hidden;
+    position: relative;
+
+    h2 {
+      float: left;
+      margin: 0.12em 0;
+    }
+
+    .tag {
+      float: right;
+    }
+  }
+
+  .tag {
+    background-color: $primary-color;
+    padding: 0.5em;
+    padding-bottom: 0.35em;
+    border-radius: 4px;
+    font-size: 0.75em;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #fff;
+    line-height: 1;
+
+    &.light {
+      background: transparent;
+      color: #bfbfbf;
+      border: 1px solid $primary-color;
+    }
+  }
+
+  .gift-card-holder {
+    margin: 0.75em;
+    margin-bottom: 1.25em;
+    margin-top: 1.25em;
+    position: relative;
+
+    .corner {
+      display: block;
+      width: 47px;
+      height: 47px;
+      position: absolute;
+      z-index: 2;
+
+      &.top-left {
+        background: url("//cdn.shopify.com/s/assets/gift-card/corner-top-left-1585103bdd46bf1297b88f31bdfce999.png") 0 0 no-repeat;
+        top: -1px;
+        left: -1px;
+      }
+
+      &.bottom-right {
+        background: url("//cdn.shopify.com/s/assets/gift-card/corner-bottom-right-ba899b18631cb91859e186c2cc1c6970.png") 0 0 no-repeat;
+        bottom: -1px;
+        right: -1px;
+      }
+    }
+  }
+
+  .gift-card {
+    position: relative;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    position: relative;
+
+    &:before {
+      content:  '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      -webkit-box-shadow: inset 0px 0px 0px 1px rgba(0,0,0,0.1);
+      box-shadow: inset 0px 0px 0px 1px rgba(0,0,0,0.1);
+      border-radius: 10px;
+      z-index: 1;
+      pointer-events: none;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      display: block;
+    }
+
+    img {
+      border-radius: 10px;
+      max-width: 100%;
+    }
+  }
+
+  .gift-card-code-outer {
+    position: absolute;
+    bottom: 1em;
+    text-align: center;
+    width: 100%;
+
+    &.medium {
+      font-size: 0.875em;
+    }
+
+    &.small {
+      font-size: 0.75em;
+    }
+  }
+
+  .gift-card-code-inner {
+    display: inline-block;
+    vertical-align: baseline;
+    zoom: 1;
+    *display: inline;
+    *vertical-align: auto;
+    background-color: #fff;
+    padding: 0.5em;
+    border-radius: 4px;
+    max-width: 450px;
+    -webkit-box-shadow: 0 0 0 1px rgba(0,0,0,0.1);
+    box-shadow: 0 0 0 1px rgba(0,0,0,0.1);
+
+    strong {
+      font-weight: 400;
+      font-size: 1.875em;
+      text-transform: uppercase;
+      border-radius: 2px;
+      border: 1px dashed #e5e5e5;
+      padding: 0.4em 0.5em;
+      display: inline-block;
+      vertical-align: baseline;
+      zoom: 1;
+      *display: inline;
+      *vertical-align: auto;
+      color: #777;
+      line-height: 1;
+    }
+  }
+
+  .small .gift-card-code-inner {
+    overflow: auto;
+  }
+
+  .disabled .gift-card-code-inner strong {
+    color: #999;
+    text-decoration: line-through;
+  }
+
+  .gift-card-code-inner span+span {
+    margin-left: 0.25em;
+  }
+
+  .gift-card-amount {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #fff;
+    font-size: 2.75em;
+    padding: 0.4em 0.5em;
+  }
+
+  .gift-card-amount.medium {
+    font-size: 2.25em;
+  }
+
+  .gift-card-amount strong {
+    text-shadow: 3px 3px 0 rgba(0,0,0,0.1);
+    display: block;
+  }
+
+  .tooltip {
+    position: relative;
+
+    &:hover .tooltip-container {
+      display: block;
+    }
+  }
+
+  .tooltip-container {
+    display: block;
+    position: absolute;
+    top: -100%;
+    right: 50%;
+    z-index: 3;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    -webkit-animation: popup 0.5s ease-in-out both 0.7s;
+    animation: popup 0.5s ease-in-out both 0.7s;
+    top: -50%;
+    margin-top: 0.25em;
+  }
+
+  .tooltip-triangle {
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 5px solid #333;
+    border-top: 5px solid rgba(51,51,51,0.9);
+    position: absolute;
+    left: 100%;
+    bottom: 0;
+    margin-left: -5px;
+    margin-bottom: -5px;
+  }
+
+  .tooltip-label {
+    display: block;
+    position: relative;
+    right: -50%;
+    border: none;
+    border-radius: 4px;
+    background: #333;
+    background: rgba(51,51,51,0.9);
+    color: #fff;
+    min-height: 14px;
+    font-weight: 400;
+    font-size: 0.4em;
+    text-decoration: none;
+    line-height: 16px;
+    text-shadow: none;
+    padding: 0.5em 0.75em;
+    margin-left: 0.25em;
+  }
+
+  .gift-card-instructions {
+    font-size: 0.875em;
+    text-align: center;
+    color: #999;
+    margin: 0 0.75em 1.5em;
+  }
+
+  .gift-card-qr-code{
+    display: block;
+
+    img {
+      padding: 1.25em;
+      border: 1px solid #f2f2f2;
+      border-radius: 10px;
+      margin: 0 auto 1.25em;
+    }
+  }
+
+  .gift-card-actions {
+    border-top: 1px solid #f2f2f2;
+    padding: 1.25em 0.75em;
+    text-align: center;
+    position: relative;
+    display: block;
+    overflow: hidden;
+  }
+
+  .action-link {
+    font-size: 0.875em;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: #bfbfbf;
+    margin-top: 1.75em;
+    position: absolute;
+    left: 1.25em;
+    top: 1.25em;
+
+    &:hover {
+      color: #999;
+
+      .ico-16 {
+        opacity: 0.4;
+      }
+    }
+  }
+
+  .ico-16 {
+    display: inline-block;
+    vertical-align: baseline;
+    zoom: 1;
+    *display: inline;
+    *vertical-align: auto;
+    width: 17px;
+    height: 17px;
+    vertical-align: bottom;
+    margin-bottom: -1px;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    margin-right: 0.5em;
+    opacity: 0.25;
+    -webkit-transition: opacity 0.3s ease-in-out;
+    transition: opacity 0.3s ease-in-out;
+
+    &.print {
+      background-image: url("//cdn.shopify.com/s/assets/gift-card/icon-print-164daa1ae32d10d1f9b83ac21b6f2c70.png");
+    }
+  }
+
+  footer[role='contentinfo'] {
+    padding-bottom: 3em;
+    text-align: center;
+    -webkit-animation: fadein 0.5s ease-in-out both 0.4s;
+    animation: fadein 0.5s ease-in-out both 0.4s;
+  }
+
+  .gift-card-apple-wallet-badge {
+    display: inline-block;
+  }
+
+  .gift-card-apple-wallet-badge-image {
+    display: block;
+  }
+
+  @media screen and (max-width: 580px){
+    body {
+      font-size: 12px;
+    }
+
+    h2 {
+      font-size: 1.5em;
+    }
+
+    .gift-card-outer-container {
+      padding: 0.5em;
+    }
+
+    .tooltip-container {
+      top: -65%;
+    }
+
+    .gift-card-actions .btn {
+      width: 100%;
+      padding-left: 0
+      ;padding-right: 0;
+      font-size: 1.125em;
+    }
+
+    .action-link {
+      position: relative !important;
+      left: auto !important;
+      right: auto !important;
+      top: auto !important;
+      font-size: 1.125em;
+      display: none;
+    }
+
+    .action-link + .action-link {
+      margin-left: 1.5em;
+    }
+  }
+
+  @media screen and (max-width: 400px){
+    h2 {
+      font-size: 1.25em;
+    }
+
+    .gift-card {
+      font-size: 10px;
+    }
+
+    .gift-card-holder .corner {
+      display: none;
+
+      &.bottom-right {
+        background-position: bottom right !important;
+      }
+    }
+
+    .gift-card-amount strong {
+      text-shadow: 2px 2px 0 rgba(0,0,0,0.1);
+    }
+
+    .tooltip-container {
+      top: -75%;
+    }
+  }
+
+  @media screen and (max-height: 800px){
+    .shop-title {
+      max-height: 100px;
+    }
+  }
+
+  @media screen and (max-height: 750px){
+    .shop-title {
+      max-height: 80px;
+    }
+
+    header {
+      padding: 2em 0;
+    }
+
+    footer[role='contentinfo'],
+    main {
+      padding-bottom: 2em;
+    }
+  }
+
+  @media print{
+    @page {
+      margin: 0.5cm;
+    }
+
+    p,
+    h2,
+    h3 {
+      orphans: 3;
+      widows: 3;
+    }
+
+    h2,
+    h3 {
+      page-break-after: avoid;
+    }
+
+    body {
+      background-color: #fff;
+    }
+
+    .gift-card-actions,
+    .gift-card-holder .corner,
+    .tooltip-container,
+    .gift-card:before {
+      display: none;
+    }
+
+    .gift-card-code-inner strong {
+      color: #555;
+    }
+
+    .gift-card-amount .tooltip {
+      color: #fff !important;
+    }
+
+    .shop-title {
+      color: #58686f;
+    }
+
+    .gift-card-outer-container,
+    .gift-card-inner-container,
+    .gift-card-code-inner,
+    .gift-card:before {
+      -webkit-box-shadow: none;
+      box-shadow: none;
+    }
+  }
+}
+

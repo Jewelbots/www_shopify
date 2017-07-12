@@ -1,0 +1,219 @@
+<div class="footer-wrapper style-{{ section.settings.style }} {% if section.settings.enable_borders %}has-borders{% endif %}">
+  <footer class="main-footer">
+    {% if section.blocks.size or section.settings.show_logo %}
+      <div class="footer-row footer-columns clearfix">
+        {% if section.settings.show_logo %}
+          <div class="footer-column footer-logo">
+            <a class="footer-logo-link" href="/">
+              {% if section.settings.footer_logo_alternate and section.settings.style == 'dark' %}
+                <img
+                  class="footer-logo-image footer-logo-regular"
+                  alt="{{ shop.name | escape }}"
+                  src="{{ section.settings.footer_logo_alternate | img_url: '200x100' }}">
+              {% elsif section.settings.footer_logo %}
+                <img
+                  class="footer-logo-image footer-logo-alternate"
+                  alt="{{ shop.name | escape }}"
+                  src="{{ section.settings.footer_logo | img_url: '200x100' }}">
+              {% else %}
+                <h2 class="branding-logo">{{ shop.name }}</h2>
+              {% endif %}
+            </a>
+          </div>
+        {% endif %}
+
+        {% for block in section.blocks %}
+          {% if block.type == 'menu' %}
+            {% assign menu = block.settings.menu %}
+            {% if linklists[menu].links != blank %}
+              <div class="footer-column footer-menu">
+                <h4 class="footer-title footer-menu-title">{{ linklists[menu].title }}</h4>
+                <ul class="footer-menu-list">
+                  {% for link in linklists[menu].links %}
+                    <li class="footer-menu-list-item">
+                      <a class="footer-menu-list-item-anchor" href="{{ link.url }}">{{ link.title }}</a>
+                    </li>
+                  {% endfor %}
+                </ul>
+              </div>
+            {% endif %}
+          {% endif %}
+
+          {% if block.type == 'social_media' %}
+            {% assign social_media_accounts = "facebook|twitter|google|pinterest|instagram|vimeo|youtube|rss" | split: "|" %}
+            {% assign has_links = false %}
+            {% for account in social_media_accounts %}
+              {% capture url %}social-{{account}}-url{% endcapture %}
+              {% if settings[url] != blank %}
+                {% assign has_links = true %}
+                {% break %}
+              {% endif %}
+            {% endfor %}
+
+            {% if has_links %}
+              <div class="footer-column footer-menu">
+                <h4 class="footer-title footer-menu-title">{{ "general.social.social" | t }}</h4>
+                <ul class="footer-menu-list">
+                  {% for account in social_media_accounts %}
+                    {% capture url %}social-{{account}}-url{% endcapture %}
+                    {% if settings[url] != blank %}
+                      <li class="footer-menu-list-item">
+                        <a class="footer-menu-list-item-anchor" href="{{ settings[url] }}">
+                          {% if account == 'google' %}
+                            {{ account | capitalize | append: '+' }}
+                          {% elsif account == 'rss' %}
+                            {{ account | upcase }}
+                          {% else %}
+                            {{ account | capitalize }}
+                          {% endif %}
+                        </a>
+                      </li>
+                    {% endif %}
+                  {% endfor %}
+                </ul>
+              </div>
+            {% endif %}
+          {% endif %}
+
+          {% if block.type == 'richtext' %}
+            <div class="footer-column footer-content">
+              {% if block.settings.title != blank %}
+                <h4 class="footer-title footer-content-title">
+                  {{ block.settings.title }}
+                </h4>
+              {% endif %}
+              {% if block.settings.text != blank %}
+                <div class="footer-content-text">
+                  {{ block.settings.text }}
+                </div>
+              {% endif %}
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    <div role="contentinfo" class="footer-row footer-information">
+      <p class="footer-copyright">
+        {% capture year %}{{ "now" | date: "%Y" }}{% endcapture %}
+        {{ 'general.general.copyright_text_html' | t: year: year }} {{ 'general.general.copyright_credit_html' | t }}
+      </p>
+
+      {% if shop.enabled_payment_types.size > 0 and section.settings.payment_icons %}
+        <ul class="payment-icons">
+          {% comment %}
+            - Use the following code to test all payment types, based on the supplied list
+            from Shopify (https://help.shopify.com/themes/customization/store/add-credit-card-icons)
+            - Note that 'Dodgecoin' is actually 'dogecoin', so CSS should use both spellings just in case
+            {% assign payment_types_all = 'amazon_payments|american_express|apple_pay|bitcoin|dankort|diners_club|discover|dodgecoin|dogecoin|dwolla|forbrugsforeningen|jcb|litecoin|maestro|master|paypal|visa|cirrus|interac|stripe' %}
+            {% assign payment_types_all = payment_types_all | split: '|' %}
+          {% endcomment %}
+          {% for type in shop.enabled_payment_types %}
+            <li class="payment-icon-{{ type | replace: '_','-' }}"></li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    </div>
+  </footer>
+</div>
+
+{% schema %}
+{
+  "name": "Footer",
+  "max_blocks": 4,
+  "settings": [
+    {
+      "type": "select",
+      "id": "style",
+      "label": "Background style",
+      "options": [
+        {
+          "value": "default",
+          "label": "Default"
+        },
+        {
+          "value": "dark",
+          "label": "Dark"
+        }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_borders",
+      "label": "Show borders"
+    },
+    {
+      "type": "checkbox",
+      "id": "payment_icons",
+      "label": "Enable payment icons",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Logo"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_logo",
+      "label": "Show logo in footer",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "footer_logo",
+      "label": "Logo image",
+      "info": "400 x 200px .png recommended"
+    },
+    {
+      "type": "image_picker",
+      "id": "footer_logo_alternate",
+      "label": "Inverted logo image",
+      "info": "400 x 200px .png recommended"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "menu",
+      "name": "Menu",
+      "settings": [
+        {
+          "type": "link_list",
+          "id": "menu",
+          "label": "Menu",
+          "default": "main-menu"
+        }
+      ]
+    },
+    {
+      "type": "social_media",
+      "name": "Social media links",
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "Configure your social media linksunder \"General settings\" in \"Social media\""
+        }
+      ],
+      "limit": 1
+    },
+    {
+      "type": "richtext",
+      "name": "Rich text",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading",
+          "default": "Rich text"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text",
+          "default": "<p>Use this section to welcome customers to your store, say a bit about your brand, or share news and seasonal promotions.</p>"
+        }
+      ],
+      "limit": 1
+    }
+  ]
+}
+{% endschema %}

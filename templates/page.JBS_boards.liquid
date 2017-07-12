@@ -1,0 +1,38 @@
+{% layout 'theme.JBS.blank' %}
+
+<div class="inner-welcome" >
+<span class="back-mobile"><h1><a href="/pages/support">Back</a></h1></span>
+
+<h2>Adding the Jewelbots boards</h2>
+In order to code your Jewelbots, you need to add the special Jewelbots boards to the Arduino IDE. After you are done with
+this, you can move on to the next step, which is uploading the sample code.
+
+<h3><span>1. </span>Open the Arduino preferences</h3>
+  <p><b>a. Windows/Linux </b> File > Preferences
+  <br><b>b. Mac OS </b> Arduino > Preferences</p>
+  {{ 'go_section_instruction_screengrab1.jpg' | asset_url | img_tag }}
+
+<h3><span>2. </span>Find the box for "Additional Boards Manager URL"</h3>
+{{ 'go_section_instruction_screengrab2.png' | asset_url | img_tag }}
+
+<h3><span>3. </span>Copy and paste the following into the box:</h3>
+  <p> https://jewelbots.github.io/arduino-library/package_jewelbots_index.json,https://jewelbots.github.io/arduino-firmware/package_jewelbots_firmware_index.json,https://jewelbots.github.io/arduino-friendship/package_jewelbots_friendship_index.json</p>
+<h3><span>4. </span>Click "OK".</h3>
+
+<h3><span>5.</span> Restart your Arduino IDE </h3>
+  <p>Close it and reopen the program</p>
+
+<h3><span>6.</span> From the Tools menu, scroll over <i>"Board:"</i> and then click on <i>"Boards Manager"</i>.</h3>
+{{ 'go_section_instruction_screengrab3.png' | asset_url | img_tag }}
+
+<h3><span>7. </span> Type in "j" in the search box to quickly find the Jewelbots Boards</h3>
+{{ 'go_section_instruction_screengrab17.png' | asset_url | img_tag }}
+
+<h3><span>8. </span> Click anywhere in the box for "Jewelbots Firmware Update", "Jewelbots Friendship Mode" and "Jewelbots Solo Mode" to display the "Install" button.</h3>
+  <p>a. Make sure to install all three so you are ready to code your Jewelbot after updating your firmware (if your Jewelbot came in the child-safe package).</p>
+
+<h3><span>9. </span> Click on the "Install" button to download.</h3>
+{{ 'go_section_instruction_screengrab18.png' | asset_url | img_tag }}
+<h3><span>10. </span> Restart your Arduino IDE once more.</h3>
+<p>Close it and reopen the program. </p></div>
+<div class="clear"></div>

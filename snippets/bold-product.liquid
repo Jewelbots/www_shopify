@@ -1,0 +1,239 @@
+<!-- bold-product.liquid -->
+{% comment %} Last updated: May 12, 2016 {% endcomment %}
+{% capture bold_product_liquid %}
+{% comment %}
+BOLD-PRODUCT.LIQUID - Universal Bold Price Generator  
+This file creates 10 liquid variables to replace their respective product variables in the template. Additionally, 3 Javascript variables are created to aid in post-installation troubleshooting. 
+
+To use this file:
+* Include this file at the top of any snippet that displays prices with a product-style object. 
+	Example: {% include 'bold-product' with product %}
+    
+    Make the page stop with a "Product not available" message:
+             {% include 'bold-product' with product, hide_action: 'break' %}
+
+    Load an error page (bold-product-error.liquid):
+             {% include 'bold-product' with product, hide_action: 'error' %}
+
+    Go on to the next product (use inside of a for loop, such as on collection or search pages)
+             {% include 'bold-product' with product, hide_action: 'skip' %}
+             
+    Print out the 'noindex' meta tag (use inside of theme.liquid header)
+             {% include 'bold-product' with product, hide_action: 'header' %}
+
+
+* Make the following replacements. (The example assumes the product object is called 'product', but it might be called 'item' or similar instead - in that case, you would still replace the 'item.' with 'bold_')
+	bold_price                                      replaces	product.price
+	bold_price_min                                  replaces	product.price_min
+	bold_price_max                                  replaces	product.price_max
+	bold_price_varies                               replaces	product.price_varies
+	bold_compare_at_price                           replaces	product.compare_at_price 	
+	bold_compare_at_price_min                       replaces	product.compare_at_price_min 
+	bold_compare_at_price_max                       replaces	product.compare_at_price_max 
+	bold_compare_at_price_varies                    replaces	product.compare_at_price_varies
+	bold_selected_or_first_available_variant        replaces	product.selected_or_first_available_variant
+	bold_variants_size                              replaces	product.variants.size
+
+* Do **NOT** change anything that is named 'variant.price' or similar (except in very exceptional situations).
+
+* The following helper variables are set
+    bold_hidden_product     Values: false if visible, true if the product should be hidden because of product metafields, hidden type or legal variant count = 0
+
+* The following JSON object is created in Liquid:
+	bold_product_json: 	A sanitized JSON object that can be used to create selectors
+
+* The following Javascript objects are created:
+	bold_hidden_variants: 	A key/value (variantID/variant title) pairing of all the variants that should be scrubbed
+	bold_hidden_options:	A list of option titles that should be scrubbed, intended to help fix swatch display errors
+	bold_option_clean_names:A key/value (option title/clean title) pairing of valid options and the option name without any additional information in parenthenticals at the end, intended to help fix swatch display errors	
+{% endcomment %}
+
+{% assign bold_product = bold-product %}
+{% assign bold_price_min = 2147483647 %}               {% comment %} Starting the count at max int {% endcomment %}
+{% assign bold_price_max = 0 %}
+{% assign bold_price = bold_price_min %}
+{% assign bold_price_varies = false %}
+{% assign bold_compare_at_price_min = 2147483647 %}    {% comment %} Starting the count at max int {% endcomment %}
+{% assign bold_compare_at_price_max = 0 %}
+{% assign bold_compare_at_price = bold_compare_at_price_min %}
+{% assign bold_compare_at_price_varies = false %}
+{% assign bold_selected_or_first_available_variant = "" %}
+{% assign bold_variants_size = 0 %}
+{% assign bold_product_json = bold_product | json %}
+
+{% assign bold_hidden_product = false %}
+{% assign bold_trigger_break = false %}
+
+{% if bold_product_init != true or hide_action == 'header' %}
+  <script>
+    var bold_hidden_variants = {};
+    var bold_hidden_options = {};
+    var bold_option_clean_names = {};
+    var bold_product_json = {};
+  </script>
+{% endif %}
+
+{% comment %} Find out what CSP groups are associated with each default variant, drop the invisble QB grid placeholder {% endcomment %}
+{% assign csp_child_variants = "" %}
+{% for var in bold_product.variants %}
+  {% if var.metafields.shappify_csp.csp_tag != blank %}
+    {% unless csp_child_variants == blank %}{% assign csp_child_variants = csp_child_variants | append: '~' %}{% endunless %}
+    {% assign csp_child_variants = csp_child_variants | append: var.metafields.shappify_csp.csp_base | append: ':' | append: var.metafields.shappify_csp.csp_tag %}
+  {% endif %}
+{% endfor %}
+{% assign csp_child_variants = csp_child_variants | split: '~' %}
+
+{% comment %} Check to see if user is a default CSP user, compare with any '-HIDE' tags on the product {% endcomment %}
+{% assign csp_is_default_user = true %}
+{% assign csp_hide_tag = false %}
+{% assign csp_customer_tag = 'default' %}
+{% for customer_tag in customer.tags %}
+  {% assign all_shop_tags = shop.metafields.shop_csp_tag_group['shop_csp_tag'] | split: ',' %}
+  {% for shop_tag in all_shop_tags %}
+    {% if shop_tag == customer_tag %}
+      {% assign csp_is_default_user = false %}
+      {% assign csp_customer_tag = customer_tag %}
+      {% assign hide_check = customer_tag | append: '-HIDE' %}
+      {% if bold_product.tags contains hide_check %}
+        {% assign csp_hide_tag = true %}
+      {% endif %} 
+    {% endif %}
+  {% endfor %}
+{% endfor %}
+{% if csp_is_default_user and bold_product.tags contains 'default-HIDE' %}
+  {% assign csp_hide_tag = true %}
+{% endif %} 
+
+{% comment %} Prepare the QB grid, if applicable {% endcomment %}
+{% for var in bold_product.variants %}
+  {% if var.metafields.shappify_qb.pricing_html %}
+    <div class='bold-hidden' style='display:none' id='variant_html_{{ var.id }}'>{{ var.metafields.shappify_qb.pricing_html }}</div>
+  {% elsif var.metafields.shappify_csp.pricing_html %}
+    <div class='bold-hidden' style='display:none' id='variant_html_{{ var.id }}'>{{ var.metafields.shappify_csp.pricing_html }}</div>
+  {% endif %}
+{% endfor %}
+
+{% for variant in bold_product.variants %}
+    {% include 'bold-hidden-variants' with variant %}
+    {% if bold_hidden != true %}
+          {% if variant.price < bold_price_min %}{% assign bold_price_min = variant.price %}{% endif %}
+          {% if variant.price > bold_price_max %}{% assign bold_price_max = variant.price %}{% endif %}
+          {% if bold_price_max != bold_price_min %}{% assign bold_price_varies = true %}{% endif %}
+          {% assign bold_price = bold_price_min %}
+
+          {% if variant.compare_at_price < bold_compare_at_price_min %}{% assign bold_compare_at_price_min = variant.compare_at_price %}{% endif %}
+          {% if variant.compare_at_price > bold_compare_at_price_max %}{% assign bold_compare_at_price_max = variant.compare_at_price %}{% endif %}
+          {% if bold_compare_at_price_max != bold_compare_at_price_min %}{% assign bold_compare_at_price_varies = true %}{% endif %}
+          {% assign bold_compare_at_price = bold_compare_at_price_min %}
+
+          {% if variant.id == bold_product.selected_or_first_available_variant.id %}{% assign bold_selected_or_first_available_variant = variant %}{% endif %}
+          {% if bold_selected_or_first_available_variant == "" %}{% assign bold_selected_or_first_available_variant = variant %}{% endif %}
+          {% if bold_selected_or_first_available_variant.available == false and variant.available == true %}{% assign bold_selected_or_first_available_variant = variant %}{% endif %}
+          {% assign bold_variants_size = bold_variants_size | plus: 1 %}
+
+          <script>{% unless variant.option1 == null %}bold_option_clean_names["{{ variant.option1 | escape }}"]="{{ variant.option1 | split: '(' | first | escape | rstrip }}";{% endunless %}{% unless variant.option2 == null %}bold_option_clean_names["{{ variant.option2 | escape  }}"]="{{ variant.option2 | split: '(' | first | escape | rstrip }}";{% endunless %}{% unless variant.option3 == null %}bold_option_clean_names["{{ variant.option3 | escape }}"]="{{ variant.option3 | split: '(' | first | escape | rstrip }}";{% endunless %}</script>
+
+    {% else %}
+          {% assign json_to_remove = variant | json  %}
+          {% assign bold_product_json = bold_product_json | remove: json_to_remove | replace: ',,', ',' | replace: ',]', ']' | replace: '[,', '[' %}
+          <script> bold_hidden_variants[{{ variant.id }}] = "{{ variant.title | escape }}";{% unless variant.option1 == null %}bold_hidden_options["{{ variant.option1 | escape }}"]=true;{% endunless %}{% unless variant.option2 == null %}bold_hidden_options["{{ variant.option2 | escape }}"]=true;{% endunless %}{% unless variant.option3 == null %}bold_hidden_options["{{ variant.option3 | escape }}"]=true;{% endunless %}</script>
+
+    {% endif %}
+{% endfor %}
+
+{% assign variant_check = true %}
+{% if bold_variants_size == 0 and bold_product.variants.size > 0%}
+{% assign variant_check = false %}
+{% endif %}
+
+{% if variant_check == false or csp_hide_tag == true or bold_product.type == 'OPTIONS_HIDDEN_PRODUCT' or bold_product.type == 'MOTIVATOR_HIDDEN_PRODUCT' or bold_product.metafields.inventory.ShappifyHidden == "true" %}
+  {% assign bold_hidden_product = true %}
+
+  {% comment %} What is the reason for the hidden product? {% endcomment %}
+  {% if bold_variants_size == 0 %}                                        {% assign reason = 'no-legal-variants' %}
+  {% elsif csp_hide_tag == true %}                                        {% assign reason = 'customer-hide-tag' %}
+  {% elsif bold_product.type == 'MOTIVATOR_HIDDEN_PRODUCT' %}             {% assign reason = 'motivator-hidden-product' %}
+  {% elsif bold_product.type == 'OPTIONS_HIDDEN_PRODUCT' %}               {% assign reason = 'options-hidden-product' %}
+  {% elsif bold_product.metafields.inventory.ShappifyHidden == "true" %}  {% assign reason = 'duplicate-and-hide' %}
+  {% else %}                                                              {% assign reason = 'other' %}
+  {% endif %}
+
+  {% case hide_action %}
+    {% when 'break' %}
+      {% capture error_page_check %}{% include 'bold-product-error' with reason %}{% endcapture %}
+      {% unless error_page_check contains 'Liquid error'%}
+        {{ error_page_check }}
+      {% else %}
+        <p class='bold_not_available'>Product is not available</p>
+      {% endunless %}
+
+      {% assign hide_action = '' %}
+      {% assign bold_trigger_break = true %}
+
+    {% when 'error' %}
+      {% if bold_variants_size == 0 %}                                        {% assign reason = 'no-legal-variants' %}
+      {% elsif csp_hide_tag == true %}                                        {% assign reason = 'customer-hide-tag' %}
+      {% elsif bold_product.type == 'MOTIVATOR_HIDDEN_PRODUCT' %}             {% assign reason = 'motivator-hidden-product' %}
+      {% elsif bold_product.type == 'OPTIONS_HIDDEN_PRODUCT' %}               {% assign reason = 'options-hidden-product' %}
+      {% elsif bold_product.metafields.inventory.ShappifyHidden == "true" %}  {% assign reason = 'duplicate-and-hide' %}
+      {% else %}                                                              {% assign reason = 'other' %}
+      {% endif %}
+      {% include 'bold-product-error' with reason %}
+      {% assign hide_action = '' %}
+      {% assign bold_trigger_break = true %}
+
+    {% when 'skip' %}
+      {% assign hide_action = '' %}
+      {% continue %}
+      
+    {% when 'header' %}
+      {% if template == 'product' %}<meta name="robots" content="noindex">{% endif %}
+      {% assign hide_action = '' %}
+  {% endcase %}
+{% endif %}
+
+
+{% comment %}Failsafe: This will set all the Bold prices to "NaN" (Not A Number) in the unexpected case where all variants are supposed to be hidden from the customer {% endcomment %}
+{% if bold_variants_size == 0 %}{% assign bold_price_min = "NaN" %}{% assign bold_price_max = "NaN" %}{% assign bold_price = "NaN" %}{% assign bold_compare_at_price_min = "NaN" %}{% assign bold_compare_at_price_max = "NaN" %}{% assign bold_compare_at_price = "NaN" %}{% endif %}
+
+{% comment %}Failsafe: This will set all the Bold compare_at prices to the default compare_at_prices when 'compare_at' is not found {% endcomment %}
+{% if bold_compare_at_price_min > bold_compare_at_price_max %}{% assign bold_compare_at_price_min = bold_product.compare_at_price_min %}{% assign bold_compare_at_price_max = bold_product.compare_at_price_max %}{% assign bold_compare_at_price = bold_product.compare_at_price %}{% endif %}
+
+{% comment %}Failsafe: If no valid variants exist, fail back to product.selected_or_first_available_variant after all {% endcomment %}
+{% if bold_selected_or_first_available_variant == "" %}{% assign bold_selected_or_first_available_variant = product.selected_or_first_available_variant %}{% endif %}
+
+{% if bold_product.id != blank and bold_product_json != blank %}
+<script>
+  bold_product_json[{{ bold_product.id }}] = {{ bold_product_json }};
+  bold_product_json[{{ bold_product.id }}].price = {{ bold_price }};
+  bold_product_json[{{ bold_product.id }}].price_min = {{ bold_price_min }};
+  bold_product_json[{{ bold_product.id }}].price_max = {{ bold_price_max }};
+  bold_product_json[{{ bold_product.id }}].price_varies = {{ bold_price_varies }};
+  {% if bold_compare_at_price != blank %}bold_product_json[{{ bold_product.id }}].compare_at_price = {{ bold_compare_at_price }};{% endif %}
+  {% if bold_compare_at_price_min != blank %}bold_product_json[{{ bold_product.id }}].compare_at_price_min = {{ bold_compare_at_price_min }};{% endif %}
+  {% if bold_compare_at_price_max != blank %}bold_product_json[{{ bold_product.id }}].compare_at_price_max = {{ bold_compare_at_price_max }};{% endif %}
+  {% if bold_compare_at_price_varies != blank %}bold_product_json[{{ bold_product.id }}].compare_at_price_varies = {{ bold_compare_at_price_varies }};{% endif %}  
+  for (var variant in bold_product_json[{{ bold_product.id }}].variants){
+    bold_product_json[{{ bold_product.id }}].variants[variant].inventory_management = Bold.inventory_lookup[bold_product_json[{{ bold_product.id }}].variants[variant].id].inventory_management;
+    bold_product_json[{{ bold_product.id }}].variants[variant].inventory_policy = Bold.inventory_lookup[bold_product_json[{{ bold_product.id }}].variants[variant].id].inventory_policy;
+    bold_product_json[{{ bold_product.id }}].variants[variant].inventory_quantity = Bold.inventory_lookup[bold_product_json[{{ bold_product.id }}].variants[variant].id].inventory_quantity;
+    bold_product_json[{{ bold_product.id }}].variants[variant].available = Bold.inventory_lookup[bold_product_json[{{ bold_product.id }}].variants[variant].id].available;
+  }
+</script>
+{% endif %}
+
+{% endcapture %}{% unless hide_action == 'skip' %}{% assign bold_product_init = true %}{{ bold_product_liquid | strip_newlines }}{% endunless %}{% assign hide_action = '' %}{% if bold_trigger_break %}{% break %}{% endif %}
+
+{% comment %} Put bold_product_quantity_check at the beginning of the selectCallback function to enable this feature {% endcomment %}
+{% capture bold_product_quantity_check %}
+    var bold_selector = jQuery(selector.variantIdField);
+    var bold_selected_variant = bold_selector.find(':selected');
+    var bold_form = bold_selector.closest('form');
+    var data_inventory_policy = bold_selected_variant.data('inventory-policy'), data_inventory_management = bold_selected_variant.data('inventory-management'), bold_max = bold_selected_variant.data('max');
+    
+    bold_form.find('[name="quantity"]').attr('data-bold-inventory-policy', data_inventory_policy);
+
+    if(data_inventory_policy == 'deny'){
+      bold_form.find('[name="quantity"]').attr('max', bold_max).trigger('change');
+    }
+{% endcapture %}

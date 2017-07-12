@@ -1,0 +1,12 @@
+{% layout 'theme.JBS.blank' %}
+<span class="back-mobile"><h1><a href="/pages/support">Back</a></h1></span>
+
+{% if page.url contains 'friendship-sample1' %}
+  {% section 'JBS_howto__section_friendship_sample1' %}
+{% elsif page.url contains 'friendship-sample2' %}
+  {% section 'JBS_howto__section_friendship_sample2' %}
+{% else %}
+  {% section 'JBS_howto__section_beginner_sample1' %}
+{% endif %}
+
+<div class="clear"></div>

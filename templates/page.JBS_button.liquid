@@ -1,0 +1,108 @@
+{% layout 'theme.JBS.blank' %}
+
+
+<div class="inner-welcome" id="page-content-wrapper">
+<span class="back-mobile"><h1><a href="/pages/support">Back</a></h1></span>
+
+<div class="copy">
+  <h2>Here is how you code events for the Jewelbots' Magic Button</h2>
+</div>
+
+{% if page.url contains 'friendship' %}
+
+<p>There is only one Magic Button function that allows you to change the effect of a button press and only under a specific circumstance.
+A single button press function is available when the Jewelbot is unplugged and doesn't have any friends to show.
+This function will allow you to code up a really cool effect and show it off to your friends, while keeping all the friendship functionality.
+
+</p>
+
+<h3>COMPONENT INTIALIZATION</h3>
+<div class="sample_code">
+// To use the Magic Button in Arduino,
+// use the following functions to define what happens
+// include the "set_arduino_button()" function in your setup
+
+void setup() {
+  // Required first setup command here
+  set_arduino_button();
+}
+
+void button_press(void){
+  // Define what happens when the Magic Button is pressed quickly
+  // (when the Jewelbot is not plugged into power)
+}
+</div>
+
+{% else %}
+<p>There are a few Magic Button functions that allow you to change the effect of a button press on your Jewelbots. You can use these
+with the LEDs and buzzer to make very cool effects on your Jewelbots that get triggered by pressing the button.
+
+</p>
+
+
+<h3>COMPONENT INTIALIZATION</h3>
+<div class="sample_code">
+// To use the Magic Button in Arduino,
+// use the following functions to define what happens
+
+void button_press(void){
+  // Define what happens when the Magic Button is pressed quickly
+  // (when the Jewelbot is not plugged into power)
+}
+void button_press_long(void) {
+  // Define what happens when the Magic Button is held for 2 seconds
+  // (when the Jewelbot is not plugged into power)
+}
+void charging_button_press(void) {
+  // Define what happens when the Magic Button is pressed quickly
+  // (when the Jewelbot is plugged into power)
+}
+
+</div>
+{% endif %}
+<p>You can use the function below independently and add LEDs, LED Animations, or Buzzers inside.</p>
+
+<p>The function is called an event, because it is triggered by an interaction on the device. Events are ways you can trigger things
+to happen after you do something else, in this case after pressing the button.</p>
+
+<h3>API</h3>
+
+
+<h4>button_press(void)</h4>
+<p>This function happens when you hit your button one time.</p>
+<div class="sample_code">
+
+void button_press(void){
+  LED led;
+  led.turn_on_single(NW, GREEN);
+}
+
+</div>
+
+{% if page.url contains 'friendship' %}
+{% else %}
+<h4>button_press_long(void)</h4>
+<p>This function happens when you press the Magic Button and hold it for a moment.</p>
+<div class="sample_code">
+void button_press_long(void){
+  LED led;
+  led.turn_on_single(SE, YELLOW);
+}
+
+</div>
+
+<h4>charging_button_press(void)</h4>
+<p>This function happens when you press the Magic Button when the device is plugged in.</p>
+<div class="sample_code">
+void charging_button_press(void){
+  LED led;
+  led. led.turn_on_single(NW, BLUE);
+}
+
+</div>
+</div>
+{% endif %}
+</div><!--//copy -->
+<!--//video -->
+<div class="clear"></div>
+</div>

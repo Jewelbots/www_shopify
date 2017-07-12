@@ -1,0 +1,8 @@
+{% capture bodyClasses = '' %}template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}{% endcapture %}
+
+{% unless template contains 'index' %}
+  {% include 'product-goal-enabled' %}
+  {% if product_goal_enabled %}
+    {% assign bodyClasses = bodyClasses | append: ' has-goal-enabled' %}
+  {% endif %}
+{% endunless %}
