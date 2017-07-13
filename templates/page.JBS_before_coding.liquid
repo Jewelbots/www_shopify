@@ -18,6 +18,12 @@ int x = 2; //there's a semicolon to end the line declaring the variable x.
 </div>
 Variables can be named whatever you want them to be. For instance, in all examples in Jewelbot tutorials, the LED object has always been declared as led. </p>
 <p>However, you can totally declare it as whatever you want! </p>
+
+<h3>Comments</h3>
+<p>Programmers will often put comments next to their code to help other users understand what their code does.
+All comments start with "//", and are ignored by the compiler, meaning they do not affect your code.</p>
+
+
 <h4>The Setup() function</h4>
 <p>The setup() function is called when a sketch starts. Use it to initialize variables, pin modes, etc. The setup function will only run once, after each power up or reset of the Arduino board.
 
@@ -46,21 +52,21 @@ void setup(){
 }
 </div>
 <p>
-Now you can use the conditional statements to test which variable is bigger!
+Now you can use the conditional statements to test which variable is bigger!</p>
 
-If...then...
-This is a conditional statement that performs an activity only if something specific happens.
-</p>
+<h4>If...then...</h4>
+<p>This is a conditional statement that performs an activity only if something specific happens.</p>
+
 <div class="sample_code">
 if (x > y ) {
-  led.on(1, purple, 2000);
+  led.turn_on_all(GREEN;
 }
 if (y < x ){
-  led.on(2, red, 2000);
+  led.turn_on_all(BLUE);
 }
 </div>
 
-<p>This block of code programs states that if the variable x is greater than y then your Jewelbot will light up purple on LED pin 1.
+<p>This block of code states that if the variable x is greater than y then your Jewelbot will light up purple on LED pin 1.
 The second conditional states that if the variable y is greater than x then your Jewelbot will light up red on LED pin 2.</p>
 
 <h4>If...else...</h4>
@@ -68,17 +74,17 @@ The second conditional states that if the variable y is greater than x then your
 
 <div class="sample_code">
 if (x < y) {
-  led.on(1, purple, 2000);
+  led.turn_on_all(RED);
 }
 else {
-  led.on(2, red, 2000);
+  led.turn_on_all(WHITE);
 }
 </div>
 <p>
 This block of code programs your Jewelbot to turn the LED on pin 1 to light up purple if variable x is greater than y.
 Otherwise, your Jewelbot will turn the LED on pin 2 to light up red for all other conditions, without having to set up a conditional for if y is greater than x.
 </p>
-<h4>loop()</h4>
+<h4>Loop()</h4>
 <p>The loop() function does precisely what its name suggests, and loops consecutively whatever you coded your program to do over and over again!</p>
 <div class="sample_code">
 void setup() {
@@ -88,22 +94,22 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
-  led.on(2, "blue", 650000);
+  led.flash_single(SE, BLUE, 65000);
   // it will loop to have one LED be the color blue for 65000 milleseconds
 }
 </div>
 
-<h4>for loop</h4>
+<h4>For loop</h4>
 <p>This is different from the if-then or if-else conditionals, as this will set a conditional that causes your program to loop itself a specific amount of times.</p>
 
-<p>The for-loop has a set of 3 parameters. A declaration of an int, a condition for running the loop, and an increment.
+<p>The for loop has a set of 3 parameters. A declaration of an int, a condition for running the loop, and an increment.
 
-For instance, a for-loop could start as for(int z = 0, z < 10, z++). This means that there a variable of z with the value of 0, that will increase by 1 for as long as it is less than 10.
-However, the value of z will only increment when the for-loop completes one cycle of the steps you programmed within it.</p>
+For instance, a for loop could start as for(int z = 0, z < 10, z++). This means that there is a variable of z with the value of 0, that will increase by 1 for as long as it is less than 10.
+However, the value of z will only increment when the for loop completes one cycle of the steps you programmed within it.</p>
 <div class="sample_code">
 for(int a = 2, a <=20, a++){
-  led.on(1, "orange", 1000);
-  led.on(2, "purpe", 1000);
+  led.flash_single(NW, YELLOW, 1000);
+  led.flash_single(NE, MAGENTA, 1000);
 }
 </div>
 
