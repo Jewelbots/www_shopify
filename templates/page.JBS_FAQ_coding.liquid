@@ -1,0 +1,76 @@
+{% layout 'theme.JBS.blank' %}
+
+<div class="inner-welcome" id="page-content-wrapper">
+<span class="back-mobile"><h1><a href="/pages/support">Back</a></h1></span>
+
+<div class="section_faqs">
+<h1>Coding FAQs</h1>
+	<p class="subheadline">If you don't see your question here please head over to our <a href="http://community.jewelbots.com" target="blank">forums</a> and we will get back to you ASAP.</p>
+	<p>For more help, please contact us at <a href="mailto:hi@jewelbots.com">hi@jewelbots.com</a> for more help.</p>
+
+	<div><!-- CODING - - - - - - - - - - - - - - - - - - - -  - - - - - - - - - - - - - - - - -->
+		<div class="question_container">
+			<h4 class="question">I'm getting an error I didn't have before?</h4>
+			<div class="answer">
+				Try updating your Jewelbots boards. Go to Tools > Boards > Boards Manager. Type "j" in the search bar to find the Jewelbots boards.
+				There should be 3 Jewelbots boards in total. Update all of them by clicking within the box to show the button.
+			</div>
+		</div><!--//question_container -->
+		<div class="question_container">
+			<h4 class="question">I'm getting an error that says "failed to execute_main script"</h4>
+			<div class="answer">
+				This is an error only Mac users get (and we're not sure why yet! It's an Arduino side error), but just ignore it. It doesn't affect how your Jewelbots get programmed!
+				As long as it says "Done Uploading" or "Device Programmed" at the end, then just unplug your Jewelbots to see the result!
+			</div>
+		</div><!--//question_container -->
+		<div class="question_container">
+			<h4 class="question">There's an error that says "Possible causes: -boot loader..." etc</h4>
+			<div class="answer">
+				<ul>
+					<li>Check to see if you have the correct Board and Port selected.</li>
+					<li>Before clicking the "upload" button on Arduino, make sure the Jewelbots is in "Uploading Mode". To do this, press the Jewelbots magic button for 2 seconds (1 mississippi...) while it's plugged in.</li>
+					<li>If none of the above seems to work, try closing your Arduino window and restarting it. (Make sure to copy your code or save it somewhere before closing Arduino!)</li>
+				</ul>
+			</div>
+		</div><!--//question_container -->
+		<div class="question_container">
+			<h4 class="question">I'm getting an error that says "'LED' was not declared in this scope".</h4>
+			<div class="answer">
+				<ul>
+					<li>Go to Tools > Boards. Make sure you have selected one of the Jewelbots board; either "Solo Coding Mode" or "Friendship Coding Mode" </li>
+					<li>Make sure you press the Magic Button for 2 seconds before hitting the upload button on the Arduino IDE.</li>
+				</ul>
+			</div>
+		</div><!--//question_container -->
+		<div class="question_container">
+			<h4 class="question">After coding my Jewelbots, it doesn't light up or has become inactive, whether it's plugged in or not!</h4>
+			<div class="answer">
+				Try waiting 2 minutes. When the Jewelbot is plugged in and the magic button was pressed for 2 seconds, it enters "Upload Mode".
+				<br>If code is uploaded successfully to the Jewelbot, you should see a rainbow animation (the "success rainbow"). If code is not uploaded properly, then the Jewelbot will stay in "Upload Mode" until it times out at 2 minutes.
+				<br>Upload Mode over-rides the Jewelbots' functions in order to allow new code onto it. Successful uploading can be interrupted if there are errors(bugs) in your code or if it was prematurely unplugged before finishing the upload.
+			</div>
+		</div><!--//question_container -->
+		<div class="question_container">
+			<h4 class="question">Nothing is showing up when I try to select "port". The port is grayed out.</h4>
+			<div class="answer">
+				<ul>
+					<li>If you have multiple USB ports, try plugging your Jewelbot into the different ones.</li>
+					<li>Try a different USB cord. Best to use the one originally sent with your Jewelbot.</li>
+					<li>Try closing the Arduino IDE and restarting it. You can also try restarting your computer.</li>
+					After trying either of the different suggested solutions, make sure to click out of Tools and then back to Tools in order to refresh your view of ports.
+				</ul>
+			</div>
+		</div><!--//question_container -->
+		<div class="question_container">
+			<h4 class="question">Help! My Jewelbot wont go into messaging mode!</h4>
+			<div class="answer">
+				If you've recently coded your device, your code is over-riding the Jewelbot friendship functions. To have friendship functions, put your Jewelbot back to factory firmware settings. You can do this by uploading a blank sketch to your Jewelbot with the "Factory Firmware Update" board back onto your Jewelbots in order to pair and message.
+			</div>
+		</div><!--//question_container -->
+	</div>
+  <div class="clear"></div>
+
+
+	<script>
+	document.getElementById('section_newsletter').style.visibility="hidden";
+	</script>
