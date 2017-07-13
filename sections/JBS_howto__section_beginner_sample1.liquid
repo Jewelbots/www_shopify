@@ -15,50 +15,36 @@ void loop() {
   led.turn_on_single(SE, GREEN);
 }
 </div>
-<p>
-BEFORE UPLOADING THE CODE, PUT YOUR JEWELBOT INTO UPLOAD MODE BY PLUGGING IN THE USB AND HOLDING THE MAGIC BUTTON DOWN FOR TWO SECONDS.
-Remember, two full seconds (1 mississippi...)
-Either the charging light will go out (if you did not update your firmware yet) or your device will flash purple and then fade to indicate that coding mode is activated (if you updated your firmware).
-</p>
-<p>
-CLICK ON THE UPLOAD BUTTON FROM THE ARDUINO IDE TO TRANSFER THE CODE TO YOUR JEWELBOT.
-</p>
-<p>ONCE THE CODE IS UPLOADED ONTO YOUR JEWELBOT, UNPLUG IT TO SEE THE RESULTS!!
-The act of your Jewelbot running your code is it being in Coding Mode! (Isn't that cool?!)
-</p>
-<p>TEST OUT MORE CODE COMBINATIONS BY CHANGING THE VARIABLES IN THE “LED.ON(INT, STRING, TIME)” METHOD!
-</p>
-<p>
-Possible LED positions are NW,NE,SW,SE. The south side being where the USB port is. Possible colors would be RED, GREEN, BLUE, YELLOW, MAGENTA, CYAN, WHITE. These have to be typed in capitals to work.
-</p>
-<p>
-LEARN MORE ABOUT CODING YOUR JEWELBOT <a href="http://community.jewelbots.com" target="blank"> HERE ON THE FORUMS! </a></p>
+
+<h3>After pasting the code into Arduino...</h3>
+
+<h4>1. Make sure your Jewelbots is plugged in to your computer </h4>
+It is suggested that the original USB that came with your Jewelbots be used.
+
+<h4>2. Select the correct Jewelbots Board and Port.</h4>
+To select a Jewelbots Board: Go to Tools > Boards and scroll down to select "Solo Coding Mode".
+<br> To select the port: Go to Tools > Port. Windows should have "COMXX". Mac should have /dev/usberial-xxxx. (The X's representing numbers)
+
+<h4>3. Press the magic button for 2 seconds to put your Jewelobts in Uploading Mode</h4>
+Make sure it is 2 full seconds (1 mississippi...).
+<br> You should see a fading of purple lights, which represents the Jewelbots entering Uploade Mode.
+
+<h4>4. Press the Upload Button on the Arduino IDE</h4>
+It is the arrow button in the top left.
+
+<h4>5. Unplug your Jewelbots to see the results!</h4>
+When it says "Done Uploading", you can unplug your Jewelbots to see the code in action.
+<br> The act of your Jewelbots running custom code is called "Coding Mode".
+
+<h4> Test out more code combinations</h4>
+Try using different colors! (RED, BLUE, GREEN, WHITE, CYAN, YELLOW, MAGENTA)
+<br>Try using different animations too!
+
+<h4> Share what you code for your Jewelbots </h4>
+
+You can post your code creations on the <a href="http://community.jewelbots.com" target="blank">Jewelbots Forums</a>!
 
 
-<h2>Troubleshooting</h2>
 
-<h4 class="question">I'm getting an error I didn't have before?</h4>
-  <p>Try updating your Arduino Library board to make sure you have the most recent coding functions!
-Go to Tools > Boards > Boards Manager. Search "j" to get the Jewelbots Arduino Library board. Then hit update!
-  </p>
-
-<h4 class="question">I'm getting an error that says "failed to execute _main script"</h4>
-  <p>This is an error Mac users get (and we're not sure why yet!), but just ignore it.
-  It doesn't affect how your Jewelbot gets programmed! As long as it says "Device Programmed" or “Upload Complete” at the end, then just unplug your Jewelbot to see the results!
-  </p>
-
-<h4 class="question">There's an error that says "Possible causes: -boot loader..." etc</h4>
-  <p>Make sure you have the correct Board and Port selected. If you do, then make sure to put your Jewelbot in Upload Mode by pressing it for 2 seconds while plugged in when you hit the upload button.
-  </p>
-
-<h4 class="question">Getting an error that says error: 'LED' was not declared in this scope</h4>
-  <p>Some suggestions to solve this would be:
-  <ul>
-    <li><span>•</span> Go to Tools > Boards and then select the Jewelbots board called Solo Coding Mode (or JWB nRF51822 depending on the version of firmware you are on).</li>
-    <li><span>•</span> Make sure you press the Magic Button for 2 whole seconds (1 Mississippi..) before hitting the upload button on the Arduino IDE</li>
-  </ul>
-
-    If none of these solutions seem to help, then email us at  <a href="mailto:hi@jewelbots.com">hi@jewelbots.com</a>
-    </p>
 
 </div>
