@@ -1,7 +1,7 @@
 {% layout 'theme.JBS.blank' %}
 
 <div class="inner-welcome" id="page-content-wrapper">
-<span class="back-mobile"><h1><a href="/pages/support">Back</a></h1></span>
+<span class="back-mobile"><h1><a id="back-mobile" href="/pages/support">Back</a></h1></span>
 
 <h2 class="topic"><span>How to pair Jewelbots</span></h2>
 <!--<p></p>-->
@@ -11,9 +11,8 @@
   <p>In order to do this, both devices must have the same firmware earlier or later than 1.0.4 which was published 3/1/17. </p>
   <p>If you are unsure, update them both.</p>
 
-  If you receive a device in the child proof plastic packaging, please make sure to complete the <a href="/pages/firmware">Update Firmware</a> step before pairing or messaging.
-  <div class="video">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/pQFnPt3i_Bk?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+  <div>
+  {{ 'pairing.gif' | asset_url | img_tag }}
   </div><!--//video -->
   <h3><span>1. Make sure both Jewelbots are unplugged.</span></h3>
   <p> This is to ensure you don't accidentally put your Jewelbot into Upload Mode, which is for coding.</p>
