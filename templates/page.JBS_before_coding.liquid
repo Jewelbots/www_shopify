@@ -7,19 +7,20 @@
 
 <h2>Some things you need to know before coding your device.</h2>
 
-<h3>Programming is case sensitive.</h3>
-For instance, the variable type int has to be in all lowercase, otherwise you will get an error.
-End every line of code with a semicolon. (unless it has parentheses or brackets)
-For instance,
+<h4>Programming is case sensitive.</h4>
+<p>For instance, the variable type int has to be in all lowercase, otherwise you will get an error.</p>
+<p> Also, you must end every line of code with a semicolon. (unless it has parentheses or brackets)
+For instance,<p>
 <div class="sample_code">
 void setup(){
 int x = 2; //there's a semicolon to end the line declaring the variable x.
 }
 </div>
-Variables can be named whatever you want them to be. For instance, in all examples in Jewelbot tutorials, the LED object has always been declared as led. </p>
-<p>However, you can totally declare it as whatever you want! </p>
+<h4>Variable Names</h4>
+<p>Variables can be named whatever you want them to be.</p>
+<p>For instance, in all examples in Jewelbot tutorials, the LED object has always been declared as led. However, you can totally declare it as whatever you want! </p>
 
-<h3>Comments</h3>
+<h4>Comments</h4>
 <p>Programmers will often put comments next to their code to help other users understand what their code does.
 All comments start with "//", and are ignored by the compiler, meaning they do not affect your code.</p>
 
@@ -59,7 +60,7 @@ Now you can use the conditional statements to test which variable is bigger!</p>
 
 <div class="sample_code">
 if (x > y ) {
-  led.turn_on_all(GREEN;
+  led.turn_on_all(GREEN);
 }
 if (y < x ){
   led.turn_on_all(BLUE);
@@ -84,6 +85,8 @@ else {
 This block of code programs your Jewelbot to turn the LED on pin 1 to light up purple if variable x is greater than y.
 Otherwise, your Jewelbot will turn the LED on pin 2 to light up red for all other conditions, without having to set up a conditional for if y is greater than x.
 </p>
+<h3>Loops</h3>
+<p>A loop is a sequence of instructions that continually repeats.</p>
 <h4>Loop()</h4>
 <p>The loop() function does precisely what its name suggests, and loops consecutively whatever you coded your program to do over and over again!</p>
 <div class="sample_code">
