@@ -22,7 +22,7 @@ LED led;
 around the LEDs, then you can use the functions below to do cool things with LEDs!</p>
 
 <p>The different functions are called the "API", because they are the way you interact with the device. APIs are ways you can work
-with different interfaces, sometimes in a computer and sometimes online. </p>
+with different interfaces, sometimes in a computer and sometimes online.</p>
 
 <h3>PARAMETERS</h3>
 <div class="led_image">
@@ -37,46 +37,59 @@ with different interfaces, sometimes in a computer and sometimes online. </p>
 <p>This function turns on a single LED of the Jewelbot.</p>
 <div class="sample_code">
 LED led;
-led.turn_on_single(SW, GREEN);
+led.turn_on_single(SW, GREEN);<br>
 </div>
+
+<img src="{{ 'turn_on_single.gif' | asset_url }}" class="example-gifs"/>
+
 
 <h4>.turn_on_all(ColorLabel color)</h4>
 <p>This function turns on all the LEDs on the Jewelbot.</p>
 <div class="sample_code">
 LED led;
-led.turn_on_all(GREEN);
+led.turn_on_all(GREEN);<br>
 </div>
 
+{{ 'turn_on_all.gif' | asset_url | img_tag }}
 
 <h4>.turn_off_single(LED_Pos led)</h4>
 <p>This function turns off a single LED of the Jewelbot.</p>
 <div class="sample_code">
 LED led;
-led.turn_off_single(NE);
+led.turn_off_single(NE);<br>
 </div>
 
+{{ 'turn_off_single_2.gif' | asset_url | img_tag }}
 
 <h4>.turn_off_all()</h4>
 <p>This function turns off all the LEDs on the Jewelbot.</p>
 <div class="sample_code">
 LED led;
-led.turn_off_all();
+led.turn_off_all();<br>
 </div>
+
+{{ 'turn_off_all_2.gif' | asset_url | img_tag }}
+
 
 <h4>.flash_single(LED_Pos led, ColorLabel color, uint8_t milliseconds)</h4>
 <p>This function turns on the LED for a set amount of time and then turns off.</p>
 <div class="sample_code">
 LED led;
-led.flash_single(SE, BLUE, 1000);
+led.flash_single(SE, BLUE, 1000);<br>
 </div>
+
+{{ 'flash_single.gif' | asset_url | img_tag }}
 
 
 <h4>.flash_all(ColorLabel color, uint8_t milliseconds)</h4>
 <p>This function turns on all the LEDs for a set amount of time and then turns them off.</p>
 <div class="sample_code">
 LED led;
-led.flash_all(BLUE, 1000);
+led.flash_all(BLUE, 1000);<br>
 </div>
+
+{{ 'flash_all_2.gif' | asset_url | img_tag }}
+
 
 </div><!--//copy -->
 <!--//video -->
