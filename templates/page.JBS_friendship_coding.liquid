@@ -11,22 +11,22 @@ Because of conflicts with existing Jewelbots functionality not everything that i
 
 <p>Inside the Jewelbots Friendship Library, there are 4 functions that can be used to create custom reactions to friends. These 4 functions each return a boolean (true / false value) that tells the user if there are any friends of the selected color group present nearby.</p>
 
-The four functions are:
+<p>The four functions are:</p>
 <div class="sample_code">
 see_red_friends()
 see_green_friends()
 see_blue_friends()
 see_cyan_friends()
+
 </div>
 <p>Once the Jewelbots Friendship board is selected in the Arduino IDE, there are examples available in the File menu. The example called "Friend_colorgroup_usage" provides an example of checking if any friends in the green color group are present and causes the Jewelbot to buzz and show an animation when a green friend is seen for the first time.</p>
-<p>If you can't find the Friendship Coding board, then go to "Set Up > Install Boards > Step 8" of the instructions to see how to install it.</p>
+<p>If you can't find the Friendship Coding board, see how to add the board <a href="/pages/boards/"> here</a>.</p>
 
-<p>The four functions show changes on the same time period as the lights showing friend group colors. Something to keep in mind, although the Jewelbot checks for other Jewelbots wirelessly multiple times a second the lights and the see friends functions are only updated every few seconds.
+<p>The four functions show changes on the same time period as the lights showing friend group colors. Something to keep in mind, although the Jewelbot checks for other Jewelbots wirelessly multiple times a second, the lights and the see friends functions are only updated every few seconds.
 Similarly, it is important to note that the functions will return true continually when a friend is nearby, which is why the example shows one simple way to make the reaction happen only once when the color group is first encountered.</p>
 
 <h3>COMPONENT INTIALIZATION</h3>
 <div class="sample_code">
-
 void setup() {
   // put your setup code here, to run once:
 }

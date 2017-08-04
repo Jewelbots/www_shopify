@@ -4,6 +4,9 @@
 <p>This sample code is the "Hello World" for your Jewelbots.
 Copy and paste the sample test code into the Arduino IDE as a new sketch.
 This makes one of the LEDs on your Jewelbot turn green:</p>
+
+{{ 'turn_on_single.gif' | asset_url | img_tag }}
+
 <div class="sample_code">
 void setup() {
   // put your setup code here, to run once:
@@ -12,22 +15,23 @@ void setup() {
 void loop() {
   // put your main code here, to run repeatedly:
   LED led;
-  led.turn_on_single(SE, GREEN);
+  led.turn_on_single(SW, GREEN);
 }
 </div>
 
+
 <h3>After pasting the code into Arduino...</h3>
 
-<h4>1. Make sure your Jewelbots is plugged in to your computer </h4>
-It is suggested that the original USB that came with your Jewelbots be used.
+<h4>1. Plug your Jewelbots into your computer.</h4>
+We suggest using the original USB cable that came with your Jewelbots.
 
 <h4>2. Select the correct Jewelbots Board and Port.</h4>
 To select a Jewelbots Board: Go to Tools > Boards and scroll down to select "Solo Coding Mode".
 <br> To select the port: Go to Tools > Port. Windows should have "COMXX". Mac should have /dev/usberial-xxxx. (The X's representing numbers)
 
-<h4>3. Press the magic button for 2 seconds to put your Jewelobts in Uploading Mode</h4>
+<h4>3. Press the magic button for 2 seconds to put your Jewelbots in Uploading Mode</h4>
 Make sure it is 2 full seconds (1 mississippi...).
-<br> You should see a fading of purple lights, which represents the Jewelbots entering Uploade Mode.
+<br> You should see a fading of purple lights, which represents the Jewelbots entering Upload Mode.
 
 <h4>4. Press the Upload Button on the Arduino IDE</h4>
 It is the arrow button in the top left.
